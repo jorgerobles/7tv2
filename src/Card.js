@@ -144,3 +144,11 @@ export class CardBack extends React.Component {
 
     }
 }
+
+export class Card extends React.Component {
+    render() {
+        return <div className="viewPort">
+            <CardFront/><CardBack/>
+        </div>
+    }
+}

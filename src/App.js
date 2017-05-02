@@ -1,25 +1,21 @@
 import React, { Component } from 'react';
-import { CardFront, CardBack } from './Card.js'
-
+import { connect } from 'react-redux'
+import { Card } from './Card'
+import { Toolbar } from './Ui'
 
 class App extends Component {
   render() {
+
+    console.log(this.props)
     return (
       <div className="App">
-        
-        <div className="viewport">
-        <CardFront/>
-        <CardBack/>
-        </div>
-
-        <div className="viewport portrait">
-        <CardFront/>
-        <CardBack/>
-        </div>
-
+        {this.props.cast.map((character,i)=>{
+         return <Card character={character}/>
+        })}
+        <Toolbar/>
       </div>
     );
   }
 }
 
-export default App;
+export default App = connect((state)=>{return state})(App);
