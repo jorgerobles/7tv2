@@ -46,21 +46,21 @@ const Health = ({ value }) => {
 const Trait = ({ object, full }) => {
     let { cost, name, level, description } = object
     let stars = cost ? Array(cost).fill("").map((v, i) => { return <i key={i} className="icon-star_icon"></i> }) : undefined
-    if (full){
+    if (full) {
         return <div>
             <h4>{name}{level ? ` (${level})` : ''}{stars ? " " : ""}{stars}</h4>
             <p>{description}</p>
         </div>
-    } 
+    }
     return <span>{name}{level ? ` (${level})` : ''}{stars ? " " : ""}{stars}</span>
 }
 
 const Title = ({ name, alignment, type }) => {
-    return <div className="title"><strong>{name}</strong> <i className={type}/> <span>{alignment} {type}</span></div>
+    return <div className="title"><strong>{name}</strong> <i className={type} /> <span>{alignment} {type}</span></div>
 }
 
 const Tags = ({ values }) => {
-    return <div className="tags">{values.map((v, i) => { return <i key={i} className={"icon-"+v}></i> })}</div>
+    return <div className="tags">{values.map((v, i) => { return <i key={i} className={"icon-" + v}></i> })}</div>
 }
 
 export class CardFront extends React.Component {
@@ -68,31 +68,16 @@ export class CardFront extends React.Component {
 
 
 
-        let { fight = 0, shoot = 0, defence = 0, mind = 0, body = 0, spirit = 0 } = stats;
+        let { fight = 0, shoot = 0, defence = 0, mind = 0, body = 0, spirit = 0 } = this.props.character.stats;
+        let { health, ratings, weapons, name, role, type } = this.props.character
 
-        let qlty = [
-            { name: "Burst of action", cost: 2, description: `Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do.` }
-        ]
-        let sfx = [
-            { name: "Special", level: 1, description: `The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. ` },
-            { name: "Special", description:`Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. ` },
-            { name: "Repair", description:`And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers.` },
-            { name: "Unit Leader", level: 2,description:`And you will know My name is the Lord when I lay My vengeance upon thee.` },
-            { name: "Cucumber" }
-        ];
-        let weapons = [
-            { type: "melee", attack: "Punch", range: "0", strike: "+5", "effects": "0 Health + Weakened" },
-            { type: "range", attack: "Laser Pistol", range: "12", strike: "+5", "effects": "2 Shots, Deadly; Lorem ipsum dolor sit amet " },
-        ]
+        let qlty = this.props.character.star_quality
+        let sfx = this.props.character.special_effects;
+        let tags = this.props.character.genres
 
-        let name = "Brolin"
-        let alignment = "heroic"
-        let type = "co-star"
-
-        let tags = ["military", "civilian", "secret"]
 
         return <div className="cellophan"><div className="card front">
-            <Title name={name} alignment={alignment} type={type} />
+            <Title name={name} alignment={role} type={type} />
             <Pic />
             <StatBlock className="left" stats={{ fight, shoot, defence }} />
             <StatBlock className="right" stats={{ mind, body, spirit }} />
@@ -102,8 +87,8 @@ export class CardFront extends React.Component {
 
             </div>
             <Weapons items={weapons} />
-            <Ratings value={30} />
-            <Health value={3} />
+            <Ratings value={ratings} />
+            <Health value={health} />
             <Tags values={tags} />
         </div></div>
 
@@ -114,30 +99,19 @@ export class CardBack extends React.Component {
 
     render() {
 
-        let qlty = [
-            { name: "Burst of action", cost: 2, description: `Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do.` }
-        ]
+        let qlty = this.props.character.star_quality
+        let sfx = this.props.character.special_effects;
 
-        let sfx = [
-            { name: "Special", level: 1, description: `The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. ` },
-            { name: "Special", description:`Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. ` },
-            { name: "Repair", description:`And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers.` },
-            { name: "Unit Leader", level: 2,description:`And you will know My name is the Lord when I lay My vengeance upon thee.` },
-            { name: "Cucumber" }
-        ];
-
-        let name = "Brolin"
-        let alignment = "heroic"
-        let type = "co-star"
+        let { health, ratings, weapons, name, role, type } = this.props.character
 
         return <div className="cellophan"><div className="card back">
-            <Title name={name} alignment={alignment} type={type} />
+            <Title name={name} alignment={role} type={type} />
 
             <section>
                 <heading>Star quality</heading>
-                {qlty.map((v,i)=>(<Trait key={i} object={v} full/>))}
+                {qlty.map((v, i) => (<Trait key={i} object={v} full />))}
                 <heading>Special effects</heading>
-                {sfx.map((v,i)=>(<Trait key={i} object={v} full/>))}
+                {sfx.map((v, i) => (<Trait key={i} object={v} full />))}
             </section>
 
         </div></div>
@@ -148,7 +122,8 @@ export class CardBack extends React.Component {
 export class Card extends React.Component {
     render() {
         return <div className="viewPort">
-            <CardFront/><CardBack/>
+            <CardFront character={this.props.character} />
+            <CardBack character={this.props.character} />
         </div>
     }
 }

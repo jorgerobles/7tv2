@@ -42,12 +42,13 @@ export class FileField extends React.Component {
     handleSelect(e) {
         let self = this
         let files = e.target.files;
-        let file = files[0]
-        //for (let file of files) {
+        
+        for (let file of files) {
             window.characterLoader.add(loadYamlFile(file)).then((data) => {
                 self.props.onFileLoad(data)
             }).catch(console.error)
-        //}
+        }
+        this.fileinput.value = "";
     }
 
     render() {

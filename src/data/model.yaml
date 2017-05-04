@@ -27,9 +27,11 @@ special_effects:
     description: >
       if this model finds itself under a weapon template...
 weapons:
-  - name: Martial arts
+  - attack: Martial arts
     range: 0
     strike: 10
+    effects: >
+      Lorem Ipsum
 photo:
 notes: > 
   Samuel L.Ipsum
