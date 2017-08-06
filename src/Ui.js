@@ -8,16 +8,17 @@ export const loadYamlFile = (file) => {
     return () => {
         return new Promise((accept, reject) => {
             let reader = new FileReader();
-                reader.onload=(data) => {
-                    try {
-                        let obj=Yaml.safeLoad(reader.result);
-                        accept(obj)
-                    } catch(e) {
-                        console.error(e)
-                        reject(e)
-                    }
+            reader.onload = (data) => {
+                try {
+                    let objs = [];
+                    Yaml.safeLoadAll(reader.result, (obj) => { objs.push(obj) });
+                    accept(objs)
+                } catch (e) {
+                    console.error(e)
+                    reject(e)
                 }
-                reader.readAsText(file);
+            }
+            reader.readAsText(file);
         })
     }
 }
@@ -42,10 +43,13 @@ export class FileField extends React.Component {
     handleSelect(e) {
         let self = this
         let files = e.target.files;
-        
+
         for (let file of files) {
             window.characterLoader.add(loadYamlFile(file)).then((data) => {
-                self.props.onFileLoad(data)
+                data.forEach((obj, i) => {
+                    self.props.onFileLoad(obj, i)
+                }, this);
+
             }).catch(console.error)
         }
         this.fileinput.value = "";

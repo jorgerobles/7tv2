@@ -66,8 +66,6 @@ const Tags = ({ values }) => {
 export class CardFront extends React.Component {
     render() {
 
-
-
         let { fight = 0, shoot = 0, defence = 0, mind = 0, body = 0, spirit = 0 } = this.props.character.stats;
         let { health, ratings, weapons, name, role, type } = this.props.character
 
@@ -84,7 +82,6 @@ export class CardFront extends React.Component {
             <div className="sfxribbon">
                 <dl><dt>Star quality</dt><dd>{qlty.map((s, i) => (<Trait key={i} object={s} />))}</dd></dl>
                 <dl><dt>Special effects</dt><dd>{sfx.map((s, i) => (<Trait key={i} object={s} />))}</dd></dl>
-
             </div>
             <Weapons items={weapons} />
             <Ratings value={ratings} />
