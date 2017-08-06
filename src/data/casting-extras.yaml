@@ -1,0 +1,453 @@
+ADMINISTRATOR:
+  type: EXTRA
+  role: Neutral 
+  ratings: 2
+  genres: []
+  description: >
+      Administrators are great within the narrow confines of their environment but throw them into an unexpected situation and watch them go to pieces.
+ALIEN MERCENARY:
+  type: EXTRA
+  role: Neutral 
+  ratings: 4
+  genres: []
+  description: >
+      Battling from beyond the stars, these visitors may be bounty hunters, freedom fighters or laser guns for hire that can add some sci-fi to your spy-fi... for a price.
+ALIEN WAR LEADER:
+  type: EXTRA
+  role: Neutral 
+  ratings: 3
+  genres: []
+  description: >
+      At the head of an otherworldly visitation is often a wise leader or brutal warlord. They may be galactic explorers or have designs on Earth’s women, cows or simply on hollowing out the planet and fitting it with motors.
+ALIEN WAR PRIEST:
+  type: EXTRA
+  role: Neutral 
+  ratings: 3
+  genres: []
+  description: >
+      Armed with hokey religions and ancient weapons, these interstellar zealots help drive their troops into a spiritual fervour during battle.
+ALIEN WARRIOR:
+  type: EXTRA
+  role: Neutral 
+  ratings: 2
+  genres: []
+  description: >
+      Be they inquisitive greys, martial brutes or emotionally challenged war machines, aliens come in many and varied forms.
+ALIEN HEAVY:
+  type: EXTRA
+  role: Neutral 
+  ratings: 4
+  genres: []
+  description: >
+      A special weapons alien is always a fan favourite - just add a parabolic dish or oily cannon and get blasting!
+ANIMATED CONSTRUCT:
+  type: EXTRA
+  role: Villainous 
+  ratings: 3
+  genres: []
+  description: >
+      Did that statue move in the corner of your eye? Has that scarecrow been following you? Dark powers have conjured everyday objects into deadly weapons – ones that cannot be reasoned with and are out for blood.
+ARMED ASTRONAUT:
+  type: EXTRA
+  role: Neutral  
+  ratings: 4|6
+  genres: []
+  description: >
+      Space is the new frontier, and one that needs protecting. Armed Astronauts represent the pinnacle of training and bravery - true defenders of the earth.
+ARMY CORPORAL:
+  type: EXTRA
+  role: Heroic 
+  ratings: 3
+  genres: []
+  description: >
+      Leading the charge into battle is a stalwart soldier who has earned his stripes through bravery and strategy, to ensure his squad comes back from the frontline.
+ARMY DOG HANDLER:
+  type: EXTRA
+  role: Heroic 
+  ratings: 2
+  genres: []
+  description: >
+      Unleash the dogs of war! Whether guarding a base or sniffing out the enemy, a dog handler will keep our four- legged friends in check.
+ARMY PRIVATE:
+  type: EXTRA
+  role: Heroic 
+  ratings: 2
+  genres: []
+  description: >
+      The military forces of the government can be handy as their training normally allows them to keep fighting in sticky situations.
+ARMY SUPPORT WEAPON TEAM:
+  type: EXTRA
+  role: Heroic 
+  ratings: 7
+  genres: []
+  description: >
+      To face more substantial threats, troops can be bolstered with support weaponry, to literally get more bang for your buck.
+
+ASTRONAUT:
+  type: EXTRA
+  role: Neutral 
+  ratings: 3
+  genres: []
+  description: >
+      Whether in orbit or on the moon, the fight never stops, no matter the gravity of the situation.
+ATTACK DOG:
+  type: EXTRA
+  role: Neutral
+  ratings: 1
+  genres: []
+  description: >
+      Sometimes dogs are not man’s best friends – especially if that man is pointing a gun at you from behind a wall. Quick and with one end very full of sharp teeth, dogs can bring down the hardest of foes.
+BODYGUARD BRUISER:
+  type: EXTRA
+  role: Heroic 
+  ratings: 3
+  genres: []
+  description: >
+      Barely contained in a suit and impassive behind dark glasses, the Bruiser is in charge of security and the ranking officer in a protective detail.
+BODYGUARD:
+  type: EXTRA
+  role: Heroic 
+  ratings: 2
+  genres: []
+  description: >
+      Bodyguards excel at protecting others, even being prepared to lay down their lives if necessary.
+BYSTANDER:
+  type: EXTRA
+  role: Neutral
+  ratings: 1|2x3
+  genres: []
+  description: >
+      Civilians can get mixed up in 7TV affairs, although they are invariably more of a hindrance than a benefit to whoever has to deal with them.
+CRIMINAL BOSS:
+  type: EXTRA
+  role: Villainous 
+  ratings: 3
+  genres: []
+  description: >
+      Specialising in low-level robbery and violence, the Criminal Boss menaces their manor looking for the next big score for their motley crew of career villains.
+CRIMINAL:
+  type: EXTRA
+  role: Villainous 
+  ratings: 2
+  genres: []
+  description: >
+      A cut above your common leg-breaker, these professional criminals dream of a day when their finally pull one big heist and retire to the Costa Patata.
+CRIMINAL DOG HANDLER:
+  type: EXTRA
+  role: Villainous 
+  ratings: 2
+  genres: []
+  description: >
+      As rough and vicious as the beasts they use to guard their lock-ups, boozers and mock-tudor mansions.
+CULTIST LEADER:
+  type: EXTRA
+  role: Villainous 
+  ratings: 3
+  genres: []
+  description: >
+      This charismatic leader holds sway over his fervant followers through willpower, brainwashing or a cocktail of dubious narcotics.
+CULTIST:
+  type: EXTRA
+  role: Villainous 
+  ratings: 2
+  genres: []
+  description: >
+      Cultists are hard-line followers of some exotic religion or mesmeric figurehead. Usually drugged or indoctrinated, their fanaticism is difficult to break.
+CULTIST DOG HANDLER:
+  type: EXTRA
+  role: Villainous 
+  ratings: 2
+  genres: []
+  description: >
+      Seen patrolling the cult’s compound with their snarling canines, the dog handler is tasked with deterring unwelcome visitors from uncovering the truth behind the esoteric secrets.
+DOCTOR:
+  type: EXTRA
+  role: Neutral
+  rating: 1
+  genres: []
+  description: >
+      The deft hands of a dreamy surgeon or the quick wits of a battlefield medic can be a deciding factor in keeping your cast going in the heat of battle.
+EXPLOSIVE EXPERT:
+  type: EXTRA
+  role: Neutral 
+  ratings: 3
+  genres: []
+  description: >
+      Safecracker, bomb disposal or demolitions crew? This expert has been trained to defuse or destroy.
+FAILED EXPERIMENT:
+  type: EXTRA
+  role: Neutral 
+  ratings: 2
+  genres: []
+  description: >
+      Those who dabble at the fringes of science often fail before making a breakthrough and the result may be a twisted abomination, rampaging robot or transformed lab assistant.
+FEMDROID:
+  type: EXTRA
+  role: Villainous 
+  ratings: 3
+  genres: []
+  description: >
+      These alluring aluminium killer robots are a new threat on the international criminal scene. They specialise in surprise attacks against soft targets.
+FIRST MATE:
+  type: EXTRA
+  role: Neutral 
+  ratings: 3
+  genres: []
+  description: >
+      Life on the ocean waves brings adventure, danger and a healthy respect for the cruel sea. It is the First Mate’s role to keep their salty seamen in check.
+GHOST:
+  type: EXTRA
+  role: Neutral 
+  ratings: 3
+  genres: []
+  description: >
+      These lost souls may be summoned for good or ill, either haunting the place of their death to drive off meddling mortals, or seeking out some person or object to assist their journey to the next world.
+HITMAN:
+  type: EXTRA
+  role: Villainous 
+  ratings: 4
+  genres: []
+  description: >
+      Hitmen cultivate few friendships but if you need someone taken out without getting your hands dirty, they are the masters of the long-range sniper shot.
+
+MARKSMAN:
+  type: EXTRA
+  role: Heroic 
+  ratings: 4
+  genres: []
+  description: >
+      Experts in precision firepower, Marksmen are trained to bring down specific targets, ascertain weak points and use their rifles with clinical accuracy.
+METALNAUT:
+  type: EXTRA
+  role: Villainous 
+  ratings: 5
+  genres: []
+  description: >
+      Silver-skinned hulking metal figures, Metalnauts are often crudely disguised as humans using coats, hats and dark glasses. They excel at using their terrifying strength to kill and destroy.
+MINION COMMANDER:
+  type: EXTRA
+  role: Villainous 
+  ratings: 3
+  genres: []
+  description: >
+      Guarding volcanic lairs for a megalomaniac is not suited to everyone. Pay is good, but the prospect of ending up in the shark tank or being dispatched by a super-spy are tragically high.
+MINION:
+  type: EXTRA
+  role: Villainous 
+  ratings: 2x1|5x3
+  genres: []
+  description: >
+      In boiler suit and hard hat, these faceless guards seem to come in an endless supply; handy to get thrown from gantries or propelled into the air by explosions.
+MINION DOG HANDLER:
+  type: EXTRA
+  role: Villainous 
+  ratings: 2
+  genres: []
+  description: >
+      Call on your canine-friendly guard to help keep snoopers away from your secret bases and guard your missile silos.
+MINION HEAVY WEAPON TEAM:
+  type: EXTRA
+  role: Villainous 
+  ratings: 6
+  genres: []
+  description: >
+      The presence of heavy support can make the difference to both assault and defence operations for your trigger- happy minions.
+MINION FLAMETHROWER:
+  type: EXTRA
+  role: Villainous 
+  ratings: 3
+  genres: []
+  description: >
+      When things heat up, blaze away with this fiery heavy weapon to clear your enemies. Also popular at team barbecues.
+NINJA:
+  type: EXTRA
+  role: Neutral 
+  ratings: 4
+  genres: []
+  description: >
+      These ultimate warriors use secretive ancient techniques and razor-sharp skills to infiltrate, assassinate and extricate themselves from the most impregnable locations.
+PLASTON:
+  type: EXTRA
+  role: Villainous 
+  ratings: 4
+  genres: []
+  description: >
+      Until they begin moving, Plastons look exactly like shop window dummies. Their blank expressions and silent unnatural movement can be quite terrifying.
+POLICE SERGEANT:
+  type: EXTRA
+  role: Heroic 
+  ratings: 3
+  genres: []
+  description: >
+      No nonsense, salt-of-the-earth copper who has earned his stripes through walking the beat and collaring scrotes since he was a nipper.
+POLICE CONSTABLE:
+  type: EXTRA
+  role: Heroic 
+  ratings: 2x1|5x3
+  genres: []
+  description: >
+      The brave boys in blue can deal effectively with low- level crime or back up the more seriously tooled-up agent in bigger operations.
+
+POLICE DOG HANDLER:
+  type: EXTRA
+  role: Heroic 
+  ratings: 2
+  genres: []
+  description: >
+      Brilliant in leading their working dogs through hoops and over hurdles on the display team. But even better at getting them to bite the face off a fleeing burglar.
+
+PRIMITIVE CHIEFTAIN:
+  type: EXTRA
+  role: Neutral 
+  ratings: 3
+  genres: []
+  description: >
+      The strongest, wisest or cruellest of his people, a chieftain must show strength in all things or lose the respect of his tribe.
+
+PRIMITIVE HUNTER:
+  type: EXTRA
+  role: Neutral 
+  ratings: 2
+  genres: []
+  description: >
+      Primitives may be forgotten island dwellers or undiscovered peoples from the deepest jungles. Perhaps they are more exotic and are a primitive alien race on
+      a new world or even a lost race of ancient creatures slumbering beneath the earth.
+
+PRIMITIVE SHAMAN:
+  type: EXTRA
+  role: Neutral 
+  ratings: 2
+  genres: []
+  description: >
+      A Shaman may help or hinder, depending on the relations their forefathers have had with humanity or the deference you show to their bizarre customs and strange gods.
+
+RIOT POLICE SERGEANT:
+  type: EXTRA
+  role: Heroic 
+  ratings: 4
+  genres: []
+  description: >
+      Armed with shield, baton and nerves of steel, this senior officer will mobilise his squad to quell unrest.
+RIOT POLICE MOUNTED SERGEANT:
+  type: EXTRA
+  role: Heroic 
+  ratings: 5
+  genres: []
+  description: >
+      Horseback offers a better vantage point and can put the fear of God into looters when their mounts charge!
+RIOT POLICE CONSTABLE:
+  type: EXTRA
+  role: Heroic 
+  ratings: 3
+  genres: []
+  description: >
+      These policemen have been trained to deal with all manner of urban disturbances, from football violence to full-scale civil riots.
+RIOT POLICE MOUNTED CONSTABLE:
+  type: EXTRA
+  role: Heroic
+  ratings: 4
+  genres: []
+  description: >
+      Mounted constables help maintain order over large crowds. Sugar lumps are essential kit.
+ROBO-RODENT:
+  type: EXTRA
+  role: Villainous 
+  ratings: 1
+  genres: []
+  description: >
+      These mechanical menaces look like foot-and-a-half-long silverfish. They are used to infiltrate enemy locations and to perform covert surveillance and assassination missions, often prior to a main attack.
+SAILOR:
+  type: EXTRA
+  role: Neutral 
+  ratings: 2
+  genres: []
+  description: >
+      Sailors may be merchant seamen, a secret submarine crew, modern-day pirates or even the crew of an experimental deep-sea mining rig.
+SCIENTIST:
+  type: EXTRA
+  role: Neutral 
+  ratings: 2
+  genres: []
+  description: >
+      These scholarly roles have turned their intelligence to either the advancement of good or evil – through choice, ignorance or coercion.
+SCUBA DIVER:
+  type: EXTRA
+  role: Neutral 
+  ratings: 4
+  genres: []
+  description: >
+      Divers can sneak aboard enemy vessels, perform underwater reconnaissance and retrieval missions or just get stuck in to a cinematic underwater sea battle!
+SECURITY GUARD COMMANDER:
+  type: EXTRA
+  role:  Heroic 
+  ratings: 3
+  genres: []
+  description: >
+      Ensuring regular patrols and that the uniforms of his colour-coded troops don’t clash is the key to the performance of a good commander.
+SECURITY GUARD:
+  type: EXTRA
+  role: Heroic 
+  ratings: 2x1|5x3
+  genres: []
+  description: >
+      Guarding VIPs, private organisations and top secret installations is all in day’s work for the Security Guard.
+
+SECURITY GUARD DOG HANDLER:
+  type: EXTRA
+  role: Heroic 
+  ratings: 2 
+  genres: []
+  description: >
+      Spending days walking the perimeter makes the dog handler an expert in canine behaviour and the variations in the construction of the chain link fence.
+
+SPAWN: 
+  type: EXTRA
+  role: Villainous 
+  ratings: 3
+  genres: []
+  description: >
+      These near mindless amorphous cross-dimensional monstrosities are created to serve unspeakable elder gods as unstoppable titans of destruction.
+SPY:
+  type: EXTRA
+  role: Neutral 
+  ratings: 4
+  genres: []
+  description: >
+      Battles can be won or lost through the intelligence brought back from behind enemy lines by these duplicitous agents.
+SURVIVALIST:
+  type: EXTRA
+  role: Neutral 
+  ratings: 4
+  genres: []
+  description: >
+      These grizzled outdoorsmen are well suited to life in the wilds, snowy wastes or amongst the peaks of the world. They may be a brave mountain rescue team, trusty Inuit trappers or a deranged band of survivalist hunters who want to hear you squeal!
+
+TECHNICIAN:
+  type: EXTRA
+  role: Neutral 
+  ratings: 1
+  genres: []
+  description: >
+      A vital piece of a military machine, Technicians are invaluable when you’re faced with a bit of equipment with more dials than the Rolling Stones’ mixing desk, or allies which need constant attention to keep them functioning and happy.
+
+THUG BRUISER:
+  type: EXTRA
+  role: Villainous 
+  ratings: 4
+  genres: []
+  description: >
+      Only slightly less mindless than his leg-breaking brothers, the Thug Bruiser is wily as well as destructive - always looking for new opportunities to engage the gang in a bit of wanton violence.
+THUG:
+  type: EXTRA
+  role: Villainous 
+  ratings: 2
+  genres: []
+  description: >
+      Getting up close and personal and leaving some kind of broken face calling card is what Thugs are good at. The simpler and more violent the job at hand the better for these beauties.
+VIP:
+  type: EXTRA
+  role: Heroic 
+  ratings: 0
+  genres: []
+  description: >
+      Ambassadors, celebrities, or heads of industry or academia can be handy to have around - or at the very least protect from the fight.

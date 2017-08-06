@@ -1,0 +1,112 @@
+Combat:
+  - Aware: This model can make fight attacks all round (360o) and never counts as having been attacked in the rear. The model loses this special effect while Stunned.
+  - Dodge: When defending against a fight attack, this model gains +1 extra die if they are not behind an obstacle.
+  - Expert: (specify one attack) When making a strike roll with this attack, for each 5+ you roll you can choose to reroll one other die.
+  - Fight Back: Once per turn, after this model has been the target of a fight attack, it can make a fight attack against that model, if that model is in range of that attack.
+  - Follow Up: After this model makes a fight attack, they can move up to 2” as a free action if no opposing models have this model in their fight range. Models can only make Follow Up moves in your turn.
+  - Parry: This model never suffers from free strikes. You can also make your opponent reroll one die when you are the target of a fight attack.
+  - Shield: 
+      description: >
+        This model gains +1 Defence against attacks from the front. As this bonus is already included in the statistics of the provided 7TV profiles against rear attacks you must subtract –1 Defence. 
+        Models with this special effect also gain the shield bash attack.
+      weapon:
+        Type: Fight
+        Weapon: Shield Bash
+        Range: 0”
+        Strike¡: Body +3
+        Special: 0 Health + Push 1”
+  - Snap Shot: > 
+        This model can make one shoot attack each turn as a free action with –2 to the strike roll. Snap shots cannot be aimed. 
+        A snap shot counts as this model’s shoot attack for the turn, so unless the model has a weapon with the 2 Shots effect, this model cannot make another shoot attack this turn.
+
+Knowledge:
+  - Gadget: This model adds one additional gadget card to the player's gadgets pool.
+  - Hypnotise: Special Action. Choose any non-Robot Extra with no more than 1 Health within 4”. That model gains the Dominated status immediately. Only one model can be hypnotised at any one time by this model.
+  - Leader {#}: When this model activates choose {#} friendly models within 6” who have not activated this turn. Chosen models can activate this turn for free but cannot use their own Leader or Unit Leader special effects this turn.
+  - Medic: Special Action. If this model passes a Mind test one friendly model in base contact can recover 1 lost Health up to its starting value. This effect does not work on Alien, Robot or Vehicle models.
+  - Military Training: When this model makes a strike, it can choose to add +1 to its strike roll for every ✪ spent on extra dice, instead of getting the extra dice.
+  - Repair: Special Action. If this model passes a Mind test one friendly Robot or Vehicle model in base contact can recover 1 lost Health.
+  - Spy: This model can be set up anywhere on the table, as long as it is no further than 12” from another friendly non-Spy model. Spies are placed after all other models (see the rules about cast start locations (see page 51). Opposing models cannot make strikes against a model with this special effect in their first turn of an episode.
+  - Tactics: When this model is activated, choose up to two friendly Extra models within 6”. Each of these models can immediately move up to 2” as free actions.
+  - Unit Leader: >
+      (specify unit type)
+      Some models operate well in tightly defined groups led by particularly commanding individuals. These groups of models are known as units, and they sacrifice tactical flexibility for increased presence on the battlefield.
+      Choose any number of models in this unit within 6” who have not activated this turn. You must include the Unit Leader. Pay 1/2✪ for each model (round up). All these models can activate this turn.
+
+Physical:
+  - Aquatic: This model can move through water as if it was clear ground.
+  - Block: Opposing non-vehicle models moving to within 1” of this model must either end their movement or move into base contact with the blocking model. Models cannot block if they are knocked down, or are Stunned or On Fire.
+  - Climb: This model can climb any surface as though it is on a ladder. If it falls, count the fall as though it was from two levels less. If this model falls two levels or less it can continue its activation after the fall.
+  - Fly: When this model makes a move action it never incurs movement penalties for rough ground or obstacles. Flyers can move over other models but must end each move action clear of the bases of any other models.
+  - Hard: Roll 1D6 if this model receives the Stunned or Weakened statuses. On a roll of 4+ this model does not gain that status. You can add extra dice to this roll roll using ✪.
+  - Hide: If this model has a cover bonus from soft cover, hard cover or obstacles, then models making shoot attacks against this model automatically miss if the distance to the target is more than half the attack’s range.
+  - Immune (Fire): This model never loses Health when struck by any attack which confers the On Fire status, and can never gain the On Fire status.
+  - Immune (Vacuum): This model never loses Health due to being in a vacuum.
+  - Jump: Special Action. Move this model up to 5” away. Any opposing models that this model moves over may make a free strike. Models can only Jump once per turn.
+  - Large: >
+     Models on bases 40–50mm and between 40–60mm high (or long) automatically gain this special effect for free – it is not optional.
+     This model is much larger than man-sized. Large models gain +1 Health – this is already factored into our profiles. Opponents gain one extra die when making a strike against a Large model.
+  - Massive: >
+     Models on bases 50–60mm and between 60mm or more high (or long) automatically gain this special effect for free – it is not optional.
+     Massive models are truly huge. Massive models gain +2 Health – this is already factored into our profiles. Opponents gain two extra dice when making a strike against a Massive model.
+  - Move X”: This model travels X” with a single move action.
+  - Roar: Special Action. Centre the 5” blast template over this model. Opposing models under this template failing a Spirit test are pushed away from this model the minimum distance required to move them clear of the template.
+  - Small: >
+     Models on bases less than 25mm and less than 20mm or more high (or long) automatically gain this special effect for free – it is not optional.
+     This model is small and hard to see and/or target. This model gains +1 Defence – this is already factored into the provided 7TV profiles. This model can move through the bases of opposing models.
+  - Sure Footed: This model cannot be knocked down, unless they gain the Stunned status. This model treats rough ground as clear ground.
+  
+Traits:
+  - Alien: This model cannot recover Health using the Medic special effect. In the player’s end phase, this model can automatically remove one of its statuses.
+  - Bodyguard: When a model within 2” of this model is targetted by any strike, you can choose to have this model targetted instead if this model is a legal target.
+  - Brave: This model is never affected by Fearsome models and counts its strike rolls as +1 against these models.
+  - Clumsy: This model cannot add extra dice when making a fight attack. If this model makes a successful fight attack you gain ✪ immediately.
+  - Coward: If this model passes a Spirit statistic test you must reroll all dice rolled. If you fail this second Spirit test you gain ✪ immediately. You cannot choose this special effect for models who also have the Brave special effect.
+  - Fearsome: Models making a fight attack against this model must pass a Spirit test or must count their Strike number as half (round up) against this model until the end of the turn.
+  - Four Eyes: This model has impaired vision. This model cannot add extra dice when making a shoot attack. If this model makes a successful shoot attack you gain ✪ immediately.
+  - Loner: This model can activate for free if it is more than 6” from any other model. This model can never have the Leader or Unit Leader special effects.
+  - Lucky: This model can reroll any one dice they roll, once per turn.
+  - Robot: This model is never affected by Fearsome models. This model never loses Health due to being underwater or in a vacuum.
+  - Screamer: This model can activate without ✪ if there are one or more opposing models within 6”. This model can never have the Leader orUnit Leader special effects.
+  - Seduce: Free action. Choose any non-Robot Extra with no more than 1 Health within 4” of this model. That model gains the Weakened status immediately if they don’t already have it.
+  - Sidekick: >
+     (specify one friendly model to be boss)
+     When the specified boss model is activated, this model can activate for free if it is within 6”. A boss model can only have one sidekick, and sidekicks activated in this way cannot use their own Sidekick or Leader abilities this turn.
+     When specifiying the boss, Sidekick Stars must choose a friendly Star, Sidekick Co-Stars must choose a friendly Star or Co-Star, and Sidekick Extras may choose any friendly model.
+  - Slow: This model cannot spend more than one action moving in any turn.
+  - Soft: This model cannot add extra dice when making a defence roll. Gain ✪ immediately each time this model successfully defends against a strike.
+  - Thick: If you pass a Mind statistic test you must reroll all dice rolled. If you fail this second Mind test you gain ✪ immediately.
+  - Unique: You can only have one model with this profile name in your cast. Named models from the Programme Guides (General Gordon for example) are also automatically Unique even if this special effect isn’t listed on their profile.
+
+Unexplained:
+  - Energy Blast:
+      cost: 1
+      description: >
+        Special Action. This model can make one Energy Blast attack. It can make up to two such attacks each turn by paying the action and ✪ cost twice. This attack is subject to the normal strike roll modifiers.
+      weapon:
+        Type: Special
+        Weapon: Energy Blast
+        Range: 12”
+        Strike: Mind +5
+        Special: Knockdown
+  - Invisible:
+      cost: 1
+      description: >
+        This model becomes invisible for the turn. While invisible, models can move through other models and are not affected by the Block special effect. 
+        Targets struck by an Invisible model count as being attacked in the rear. After any strike roll, an Invisible model becomes visible and loses the benefits of this special effect.
+  - Invulnerable:
+      cost: 1
+      description: >
+        This model can ignore any strike it has just suffered if it can roll 4+ on 1D6. This special effect can be used during an opponent’s turn. You can add extra dice to this roll.
+  - Psychic:
+      cost: 1
+      description: >
+        This model can change the result of up to two dice just rolled to either a 1 or a 6. These dice need to relate to an action the model performs or an action another model performs on it. This special effect can be used during an opponent’s turn.
+  - Regenerate:
+      cost: 1
+      description: >
+        Roll 1D6. On the roll of 4+ one point of Health is recovered, up to this model’s starting Health value. This special effect can be used only once per turn. You can add extra dice to this roll. You can never reroll or change the results of these rolls by any means.
+  - Teleport:
+      cost: 1
+      description: >
+        A model can teleport if it has not used any actions this turn. Immediately move this model up to 12” in any direction. Models do not suffer free strikes when they teleport. Once a model has teleported its activation ends.
