@@ -2,14 +2,33 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux'
 import logger from 'redux-logger';
-import { createStore, applyMiddleware } from 'redux'
+import { compose, createStore, applyMiddleware } from 'redux'
 import reducer from './reducers/index'
 import App from './App';
 import './index.css';
 import './assets/fonts/icons/style.css'
 
+import persistState from 'redux-localstorage';
+import mergePersistedState from 'redux-localstorage/lib/mergePersistedState'
+import adapter from 'redux-localstorage/lib/adapters/localStorage';
+import filter from 'redux-localstorage-filter';
 
-export const store = createStore(reducer, applyMiddleware(logger));
+export const LOCALSTORAGE_KEY = 'Studios7TV'
+
+const storeReducer = compose(
+  mergePersistedState()
+)(reducer);
+
+const storage = compose(
+  filter('cast')
+)(adapter(window.localStorage));
+
+const enhancer = compose(
+  applyMiddleware(logger),
+  persistState(storage, LOCALSTORAGE_KEY)
+);
+
+export const store = createStore(storeReducer /*, [initialState]*/, enhancer);
 
 ReactDOM.render(
   <Provider store={store}>

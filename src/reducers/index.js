@@ -1,4 +1,6 @@
 
+import uuid from 'uuid/v4';
+
 const INITIALSTATE = {
     __version: "0.0.1",
     cast: []
@@ -6,8 +8,16 @@ const INITIALSTATE = {
 
 const reducer = (state = INITIALSTATE, action) => {
     state = Object.assign( {}, state)
-    if (action.type === "CHARACTER_LOAD")
-        state.cast = [...state.cast, action.payload];
+   
+    switch(action.type){
+        case "CHARACTER_LOAD":
+            state.cast = [...state.cast, Object.assign(action.payload,{ id:uuid() })];
+        break;
+        case "CHARACTER_REMOVE":
+            state.cast = state.cast.slice().filter((item)=>{ return item.id!==action.payload.id;})
+        break;
+    }
+    
     return state;
 
 }

@@ -10,11 +10,16 @@
     "react-scripts": "0.8.5",
     "react-thunk": "^1.0.0",
     "redux": "^3.6.0",
-    "redux-logger": "^3.0.1"
+    "redux-localstorage": "^1.0.0-rc5",
+    "redux-localstorage-filter": "^0.1.1",
+    "redux-logger": "^3.0.1",
+    "uuid": "^3.1.0"
   },
   "dependencies": {
+    "jquery": "^3.2.1",
     "react": "^15.4.2",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "redux-localstorage": "^1.0.0-rc5"
   },
   "scripts": {
     "start": "react-scripts start",

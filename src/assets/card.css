@@ -98,6 +98,7 @@ strong {
 .viewport.portrait {flex-direction: column; }
 .viewport.portrait .card.back { transform: rotate(180deg); }
 
+.viewport { margin: 5mm}
 
 @media screen {
   .viewport{margin: 0.2em}
@@ -113,6 +114,7 @@ strong {
   .card {
     width: 63.5mm; height: 88mm; position:relative;
   }
+  .viewport {margin: 0}
   
 }
 

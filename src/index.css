@@ -3,7 +3,12 @@ html, body {
   padding: 0;
   font-family: sans-serif;
    width: 100%; height: 100%;
-   background:#666; box-shadow: inset 0 0 10px #000000;
+   background-attachment: fixed;
+   background-color:#666;
+   background-image: url(./assets/images/canvas.svg);
+   background-repeat:no-repeat; background-position: bottom right
+    
+   
 }
 
 .App { padding: 10mm;}
@@ -11,7 +16,7 @@ html, body {
 
 @media print {
   html, body {background:none; box-shadow: none}
-
+  .toolbar { display: none}
   /*.card.back { transform: rotate(180deg)}*/
 
 }
