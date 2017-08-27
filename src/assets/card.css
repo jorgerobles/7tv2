@@ -43,7 +43,7 @@ strong {
 .card .stats.right > div {flex-direction: row-reverse}
 .card .stats.right > div > div {border-right: 0.15em solid #fff;}
 .card .stats.right > div > div:first-child {border-right: none;}
-.card .pic {width: 36%; height: 25.5%; position:absolute; left: 30.5%; top:11%; display:block; border: 0.4em solid black; background: white; border-radius: 100%}
+.card .pic {width: 36%; height: 25.5%; position:absolute; left: 32.5%; top:11%; display:block; border: 0.4em solid black; background: white; border-radius: 100%}
 
 .card .sfxribbon { top: 42%; left: 5%; width: 90%; font-size: 90%; margin:0  }
 

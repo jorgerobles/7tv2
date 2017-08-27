@@ -15,6 +15,7 @@ import filter from 'redux-localstorage-filter';
 
 export const LOCALSTORAGE_KEY = 'Studios7TV'
 
+
 const storeReducer = compose(
   mergePersistedState()
 )(reducer);
@@ -28,7 +29,9 @@ const enhancer = compose(
   persistState(storage, LOCALSTORAGE_KEY)
 );
 
-export const store = createStore(storeReducer /*, [initialState]*/, enhancer);
+export const store = createStore(storeReducer , enhancer);
+
+//export const store = createStore(reducer);
 
 ReactDOM.render(
   <Provider store={store}>

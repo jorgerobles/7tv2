@@ -1,6 +1,6 @@
 import React from 'react'
-import {connect} from 'react-redux'
-import  {Button } from 'react-materialize'
+import { connect } from 'react-redux'
+import { Button, Dropdown, NavItem, Icon } from 'react-materialize'
 
 import './assets/fonts/din-cond/style.css';
 import './assets/card.css'
@@ -50,7 +50,7 @@ const Trait = ({ object, full }) => {
     let stars = cost ? Array(cost).fill("").map((v, i) => { return <i key={i} className="icon-star_icon"></i> }) : undefined
     if (full) {
         return <div>
-            <p><strong>{name}{level ? ` (${level})` : ''}{stars ? " " : ""}{stars}</strong><br/>{description}</p>
+            <p><strong>{name}{level ? ` (${level})` : ''}{stars ? " " : ""}{stars}</strong><br />{description}</p>
         </div>
     }
     return <span>{name}{level ? ` (${level})` : ''}{stars ? " " : ""}{stars}</span>
@@ -119,12 +119,24 @@ export class CardBack extends React.Component {
 
 export class Card extends React.Component {
     render() {
-        return <div className="viewport">
+        let id = this.props.character.id;
+        return <div className="viewport" data-id={id} style={{position:"relative"}}>
             <CardFront character={this.props.character} />
             <CardBack character={this.props.character} />
-            <Button floating icon='remove' className='black' waves='light' style={{left:-20}} onClick={e=>this.props.dispatch({type:'CHARACTER_REMOVE',payload:{id: this.props.character.id}})}/>
+            <div className="ui" style={{position:"absolute", right:0}}>
+                <Dropdown trigger={
+                    <Button floating icon='arrow_drop_down' className='red' style={{ left: -20, position: "absolute" }} />
+                }>
+                    <NavItem onClick={e => this.props.dispatch({ type: 'CHARACTER_REMOVE', payload: { id } })}>Remove</NavItem>
+                    <NavItem>Download</NavItem>
+                    <NavItem>Edit</NavItem>
+                    
+                </Dropdown>
+
+            </div>
+
         </div>
     }
 }
 
-Card=connect()(Card);
+Card = connect()(Card);
