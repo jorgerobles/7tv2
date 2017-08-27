@@ -1,6 +1,7 @@
 
-var uuid = require('uuid');
+import uuid from 'uuid';
 import Yaml from 'js-yaml';
+import randomName from 'random-name'
 
 export const loadYamlFile = (file) => {
     return () => {
@@ -33,13 +34,16 @@ const reducer = (state = INITIALSTATE, action) => {
     
     switch (action.type) {
         case "CHARACTER_NEW":
-            state.cast = [...state.cast, Object.assign({},TEMPLATE_CHARACTER_NEW, { id: uuid.v4() })];
+            state.cast = [...state.cast, Object.assign({},TEMPLATE_CHARACTER_NEW, { id: uuid.v4(), name: randomName() })];
             break;
         case "CHARACTER_LOAD":
             state.cast = [...state.cast, Object.assign({},action.payload, { id: uuid.v4() })];
             break;
         case "CHARACTER_REMOVE":
             state.cast = state.cast.slice().filter((item) => { return item.id !== action.payload.id; })
+            break;
+        case "CHARACTER_SELECT":
+            state.currentCharacter=action.payload.id;
             break;
         default:
             return state;

@@ -89,8 +89,7 @@ strong {
 .card .tags i {margin-left: 0.2em}
 
 .card section {top: 12%; font-size: 70%; width: 90%; left: 5%; column-count: 2; height: 79% }
-.card section heading {text-transform: uppercase; font-weight: bold; font-size: 110%; color: #862419; margin: 0.5em 0 0.5em 0}
-.card section h4 {font-weight: bold; margin: 0.5em 0 0.1em 0}
+.card section heading {text-transform: uppercase; font-weight: bold; font-size: 110%; color: #862419; margin: 0 0 0.5em 0; display:block}
 .card section .icon-star_icon:before { font-size: 90%; color: #862419;}
 .card section p {margin: 0 0 1em 0}
 
@@ -98,10 +97,15 @@ strong {
 .viewport.portrait {flex-direction: column; }
 .viewport.portrait .card.back { transform: rotate(180deg); }
 
-.viewport { margin: 5mm}
+#root {width: 100%; height:100%}
+
+.App { display:flex; flex-direction: row; height:100%}
+.App .canvas {flex-grow:1; height:100%; width:100%; overflow: auto}
+.App .sidebar {flex-grow:1; background: white; box-shadow: 0 0 10px #000; width: 100mm}
 
 @media screen {
-  .viewport{margin: 0.2em}
+  .viewport { margin: 2mm;  padding: 0 10px 0 10px; position: relative}
+  .viewport.selected {     background: rgba(0,255,255,0.2);}
   /*transform: scale(1.5); transform-origin: left top*/
 
 }
@@ -114,7 +118,10 @@ strong {
   .card {
     width: 63.5mm; height: 88mm; position:relative;
   }
-  .viewport {margin: 0}
+  .viewport {margin: 0 2mm 0 2mm}
+  #root, .App {height: auto}
+
+  .cellophan+.cellophan { border-color: rgba(0,0,0,0.5)}
   
 }
 

@@ -120,17 +120,19 @@ export class CardBack extends React.Component {
 export class Card extends React.Component {
     render() {
         let id = this.props.character.id;
-        return <div className="viewport" data-id={id} style={{position:"relative"}}>
+        return <div 
+            className={"viewport "+((id == this.props.currentCharacter)?"selected":"")} data-id={id} 
+            onClick={e =>  {e.preventDefault(); this.props.dispatch({ type: 'CHARACTER_SELECT', payload: { id } })}}
+         >
             <CardFront character={this.props.character} />
             <CardBack character={this.props.character} />
             <div className="ui" style={{position:"absolute", right:0}}>
                 <Dropdown trigger={
                     <Button floating icon='arrow_drop_down' className='red' style={{ left: -20, position: "absolute" }} />
                 }>
-                    <NavItem onClick={e => this.props.dispatch({ type: 'CHARACTER_REMOVE', payload: { id } })}>Remove</NavItem>
+                    <NavItem onClick={e => {e.preventDefault(); this.props.dispatch({ type: 'CHARACTER_REMOVE', payload: { id } })}}>Remove</NavItem>
                     <NavItem>Download</NavItem>
-                    <NavItem>Edit</NavItem>
-                    
+                   
                 </Dropdown>
 
             </div>
@@ -139,4 +141,6 @@ export class Card extends React.Component {
     }
 }
 
-Card = connect()(Card);
+Card = connect((state)=>{
+    return { currentCharacter: state.currentCharacter}
+})(Card);
