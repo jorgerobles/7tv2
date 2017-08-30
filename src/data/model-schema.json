@@ -1,0 +1,296 @@
+{
+    "definitions": {},
+    "id": "http://crooked-dice.co.uk/model.json",
+    
+    "properties": {
+      "genres": {
+        "title":"Genre/s",
+        "description": "The genre of each model determines if it can join your cast or not. Models from a Programme Guide will have their cast’s symbol here instead.",
+        "id": "/properties/genres",
+        "type": "array",
+        "items": {
+          "id": "/properties/genres/items",
+          "title": "Genre",
+          "type": "string",
+          "enum": [
+            "Civilian",
+            "Crime",
+            "Law & Order",
+            "Military",
+            "Secret",
+            "Science",
+            "Unknown"
+          ]
+        },
+        "uniqueItems": true
+      },
+      
+      "health": {
+        "default": 1,
+        "description": "From 1 and up. Stars normally have 3, Co-Stars 2 and Extras 1. When a model’s Health is reduced to 0 it is removed from play.",
+        "id": "/properties/health",
+        "maximum": 5,
+        "minimum": 1,
+        "title": "Health",
+        "type": "integer"
+      },
+      "name": {
+        "description": "The name of the model",
+        "id": "/properties/name",
+        "title": "Name",
+        "type": "string"
+      },
+      "notes": {
+        "default": "",
+        "description": "Some notes about the model",
+        "id": "/properties/notes",
+        "title": "Notes",
+        "type": "string"
+      },
+      "photo": {
+        "description": "Image depicting model",
+        "id": "/properties/photo",
+        "title": "Picture",
+        "type": "string",
+        "format": "data-url"
+      },
+      "profile": {
+        "default":"",
+        "description": "Reference to the base profile",
+        "id": "/properties/profile",
+        "title": "Profile",
+        "type": "string"
+      },
+      "ratings": {
+        "default": 0,
+        "description": "A number which represents the effectiveness and value of the model in the game.",
+        "id": "/properties/ratings",
+        "minimum": 0,
+        "title": "Ratings",
+        "type": "number"
+      },
+      "role": {
+        "default": "Heroic",
+        "description": "Model behaviour.",
+        "enum": [
+          "",
+          "Heroic",
+          "Neutral",
+          "Villain"
+        ],
+        "id": "/properties/role",
+        "title": "Role",
+        "type": "string"
+      },
+      "special_effects": {
+        "title": "Special Effects",
+        "description": "These allow the model to do all kinds of useful things during a game. Each special effect listed here is fully explained on the back of the card.",
+        "id": "/properties/special_effects",
+        "items": {
+          "id": "/properties/special_effects/items",
+          "properties": {
+            "cost": {
+              "default": 0, 
+              "description": "Cost in Plot Points", 
+              "id": "/properties/star_quality/items/properties/cost", 
+              "title": "Cost", 
+              "type": "integer"
+            }, 
+            "description": {
+              "default": "",
+              "description": "SFX explained",
+              "id": "/properties/special_effects/items/properties/description",
+              "title": "Description",
+              "type": "string"
+            },
+            "name": {
+              "default": "",
+              "description": "Name of the SFX",
+              "id": "/properties/special_effects/items/properties/name",
+              "title": "Name",
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "type": "array"
+      },
+      "star_quality": {
+        "id": "/properties/star_quality", 
+        "title" : "Star Quality",
+        "description":"Each Star and Co-Star profile lists a star quality. A model can use its star quality up to once per turn, before or after any action it performs, as a free action. To use a star quality, a player must immediately pay the listed plot point (aka ✪) cost (see page 10), as given on the star quality entry.",
+        "items": {
+          "id": "/properties/star_quality/items", 
+          "properties": {
+            "cost": {
+              "default": 1, 
+              "description": "Cost in Plot Points", 
+              "id": "/properties/star_quality/items/properties/cost", 
+              "title": "Cost", 
+              "type": "integer"
+            }, 
+            "description": {
+              "default": "", 
+              "description": "Star Quality description", 
+              "id": "/properties/star_quality/items/properties/description", 
+              "title": "Description", 
+              "type":"string"
+            }, 
+            "name": {
+              "default": "", 
+              "description": "Star Quality short name", 
+              "id": "/properties/star_quality/items/properties/name", 
+              "title": "Name", 
+              "type": "string"
+            }
+          }, 
+          "type": "object"
+        }, 
+        "type": "array"
+      }, 
+      "stats": {
+        "description": "The overall model attributes",
+        "title":"Statistics",
+        "additionalProperties": false,
+        "id": "/properties/stats",
+        "properties": {
+          "body": {
+            "default": 0,
+            "description": "The physical strength of a model. High Body equals better Fight attacks.",
+            "id": "/properties/stats/properties/body",
+            "title": "Body",
+            "type": "integer",
+            "maximum": 6, 
+            "minimum": 0 
+          },
+          "defence": {
+            "default": 0,
+            "maximum": 10,
+            "description": "A combination of agility, size and natural toughness.",
+            "id": "/properties/stats/properties/defence",
+            "title": "Defence",
+            "type": "integer"
+          },
+          "fight": {
+            "default": 0,
+            "description": "How good the model is at making attacks at close range (e.g. a punch).",
+            "id": "/properties/stats/properties/fight",
+            "title": "Fight",
+            "type": "integer",
+            "maximum": 6, 
+            "minimum": 0 
+          },
+          "mind": {
+            "default": 0,
+            "description": "An explanation about the purpose of this instance.",
+            "id": "/properties/stats/properties/mind",
+            "title": "Mind",
+            "type": "integer",
+            "maximum": 6, 
+            "minimum": 0 
+          },
+          "shoot": {
+            "default": 0,
+            "description": "How good the model is at making ranged attacks (e.g. with a pistol).",
+            "id": "/properties/stats/properties/shoot",
+            "title": "Shoot",
+            "type": "integer",
+            "maximum": 6, 
+            "minimum": 0 
+          },
+          "spirit": {
+            "default": 0,
+            "description": "A model’s courage, staying power and leadership abilities.",
+            "id": "/properties/stats/properties/spirit",
+            "title": "Spirit",
+            "type": "integer",
+            "maximum": 6, 
+            "minimum": 0 
+          }
+        },
+        "required": [
+          "shoot",
+          "body",
+          "defence",
+          "mind",
+          "fight",
+          "spirit"
+        ],
+        "type": "object"
+      },
+      "type": {
+        "default": "Star",
+        "description": "Character promotion",
+        "enum": [
+          "",
+          "Star",
+          "Co-Star",
+          "Extra",
+          "Vehicle"
+        ],
+        "id": "/properties/type",
+        "title": "Type",
+        "type": "string"
+      },
+      "weapons": {
+        "title":"Weapons",
+        "id": "/properties/weapons",
+        "description":"Most models have at least one attack. This section details:",
+        "items": {
+          "id": "/properties/weapons/items",
+          "properties": {
+            "type": {
+              "default": "",
+              "description": "There will be one of two symbols here, depending on whether the attack is a fight attack (fist symbol) or shoot attack (target symbol).",
+              "id": "/properties/weapons/items/properties/attack",
+              "title": "Type",
+              "type": "string",
+              "enum": [
+                "",
+                "Melee",
+                "Range"
+              ]
+            },
+            "attack": {
+              "default": "",
+              "description": "The name of the attack (or weapon).",
+              "id": "/properties/weapons/items/properties/attack",
+              "title": "Attack",
+              "type": "string"
+            },
+            "effects": {
+              "default": "",
+              "description": "Any special rules the weapon may have.",
+              "id": "/properties/weapons/items/properties/effects",
+              "title": "Effects",
+              "type":"string"
+            },
+            "range": {
+              "default": 0,
+              "description": "The maximum range in inches you can make an attack with this weapon, measured from the attacker to the target model.",
+              "id": "/properties/weapons/items/properties/range",
+              "title": "Range",
+              "type": "integer"
+            },
+            "strike": {
+              "default": 0,
+              "description": "The number you add to your dice roll when you make an attack. The higher the better.",
+              "id": "/properties/weapons/items/properties/strike",
+              "title": "Strike",
+              "type": "integer"
+            }
+          },
+          "type": "object"
+        },
+        "type": "array"
+      }
+    },
+    "required": [
+      "ratings",
+      "stats",
+      "name",
+      "health",
+      "type"
+    ],
+    "type": "object"
+  }

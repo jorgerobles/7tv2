@@ -21,7 +21,7 @@ const storeReducer = compose(
 )(reducer);
 
 const storage = compose(
-  filter('cast')
+  filter('cast','currentCharacter')
 )(adapter(window.localStorage));
 
 const enhancer = compose(

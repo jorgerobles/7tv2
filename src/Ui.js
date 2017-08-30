@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import Queue from 'promise-queue';
 
-import { Button } from 'react-materialize'
-import { loadYamlFile } from './reducers/index';
+import { loadYamlFile, saveYamlFile } from './reducers/index';
+import { SplitButton, MenuItem, Button} from 'react-bootstrap';
+import { sendAsFile } from './lib/helpers'
+import slug from 'slug';
 
 export class FileField extends React.Component {
 
@@ -54,13 +56,26 @@ export const loadCharacter = (e, action) => {
     }
 }
 
-export function Toolbar({ action, dispatch }) {
-    return <div className="ui">
-        <Button floating fab='vertical' icon='menu' className='red' large style={{ bottom: '45px', right: '24px' }}>
-            <Button floating icon='add' className='red' onClick={e=>dispatch({ type: 'CHARACTER_NEW' })}/>
-            <FileField accept=".yaml" onChange={e => loadCharacter(e, (file) => dispatch({ type: 'CHARACTER_LOAD', payload: file }))}><Button floating icon='publish' className='green' /></FileField>
-        </Button>
-    </div>
+export const downloadCharacters=(characters)=>{
+    sendAsFile("7TV_cast.yaml",saveYamlFile(characters,true,'application/x-yaml'))
 }
 
-Toolbar = connect()(Toolbar);
+export const downloadSingleCharacter=(character)=>{
+    sendAsFile("7TV_cast-"+slug(character.name||character.id)+".yaml",saveYamlFile(character,false,'application/x-yaml'));
+}
+
+export class Toolbar extends React.Component {
+    render(){
+        return <div className="ui paper">
+            
+                <Button eventKey="1" onClick={e=>this.props.dispatch({ type: 'CHARACTER_NEW' })} bsStyle="primary">New</Button>
+                <FileField accept=".yaml" onChange={e => loadCharacter(e, (file) => this.props.dispatch({ type: 'CHARACTER_LOAD', payload: file }))}><Button eventKey="2" bsStyle="success">Upload</Button></FileField>
+                <Button eventKey="3" onClick={e=>downloadCharacters(this.props.cast)} bsStyle="danger">Download all</Button>
+            
+        </div>
+    }
+}
+
+Toolbar = connect(
+    (state)=>{return {cast: state.cast}}
+)(Toolbar);

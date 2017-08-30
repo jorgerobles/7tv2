@@ -1,6 +1,5 @@
-
-.cellophan {display:inline-block;}
-.cellophan+.cellophan {border:none; border-left: 1px dashed rgba(255,255,255,0.5)}
+.cellophan {all:initial; display:inline-block;}
+.cellophan+.cellophan {border:none; border-left: 1px dashed rgba(255,255,255,0.5); margin-left: -1px}
 
 .viewport.portrait .cellophan+.cellophan {border:none; border-top: 1px dashed rgba(255,255,255,0.5) }
 
@@ -43,11 +42,13 @@ strong {
 .card .stats.right > div {flex-direction: row-reverse}
 .card .stats.right > div > div {border-right: 0.15em solid #fff;}
 .card .stats.right > div > div:first-child {border-right: none;}
-.card .pic {width: 36%; height: 25.5%; position:absolute; left: 32.5%; top:11%; display:block; border: 0.4em solid black; background: white; border-radius: 100%}
+.card .pic {
+  width: 36%; height: 25.5%; position:absolute; left: 30.5%; top:11%; display:block; border: 0.4em solid black; background: white; border-radius: 100%;
+  background-size: contain; background-repeat:   no-repeat; background-position: center center;  
+
+}
 
 .card .sfxribbon { top: 42%; left: 5%; width: 90%; font-size: 90%; margin:0  }
-
-
 
 .card .sfxribbon dl {margin:0; display:flex; flex-direction: row; width: 100%; align-content: flex-start; font-size: 90%;}
 .card .sfxribbon dt { line-height: 150%; white-space: nowrap; font-weight: bold; width: 35%; text-transform: uppercase}
@@ -68,9 +69,11 @@ strong {
 .card .weapons tbody td.strike { background: black; color: white; text-align: center; width: 10%}
 .card .weapons tbody td.range {text-align: center; ; width: 10%}
 .card .weapons tbody td.range:after {content:'"'}
-.card .weapons tbody td.attack {padding-left:5%; ; width: 30%}
-.card .weapons tbody tr.melee td.attack:before, .card .weapons tbody tr.range td.attack:before  {
-  font-family: 'icomoon'; content: "\e909"; position:absolute; left: -2.5%; background: white; border-radius: 100%; font-size: 110%; box-shadow: 0 0 10px rgba(0,0,0,0.5);
+.card .weapons tbody td.attack {padding-left:5%; ; width: 30%; position: relative}
+
+.card .weapons tbody tr.melee td.attack:before,
+.card .weapons tbody tr.range td.attack:before  {
+  font-family: 'icomoon'; content: "\e909"; position:absolute; left: -2.5%;  background: white; border-radius: 100%; font-size: 110%; box-shadow: 0 0 10px rgba(0,0,0,0.5); line-height: 100%; 
 }
 .card .weapons tbody tr.range td.attack:before {content: "\e908";}
 .card .title {color: white; line-height: 225%; margin-left: 2% }
@@ -99,12 +102,17 @@ strong {
 
 #root {width: 100%; height:100%}
 
-.App { display:flex; flex-direction: row; height:100%}
-.App .canvas {flex-grow:1; height:100%; width:100%; overflow: auto}
-.App .sidebar {flex-grow:1; background: white; box-shadow: 0 0 10px #000; width: 100mm}
+
+
+
 
 @media screen {
-  .viewport { margin: 2mm;  padding: 0 10px 0 10px; position: relative}
+  .App { display:flex; flex-direction: row; height:100%}
+  
+  .App .sidebar {flex-grow:1; background: white; box-shadow: 0 0 10px #000; width: 100%; display:flex; flex-direction: column}
+  .App .canvas {flex-grow:1; height:100%; width:100%; overflow: auto}
+
+  .viewport {  margin: 2mm;  padding: 10px; position: relative}
   .viewport.selected {     background: rgba(0,255,255,0.2);}
   /*transform: scale(1.5); transform-origin: left top*/
 
@@ -113,15 +121,43 @@ strong {
 @media print {
   @page {
     size: A4 landscape;
-    margin: 0;
+    margin: 10mm;
   }
   .card {
     width: 63.5mm; height: 88mm; position:relative;
   }
-  .viewport {margin: 0 2mm 0 2mm}
-  #root, .App {height: auto}
+  
+  #root, .App, .canvas, html, body {height: auto; width: auto}
 
-  .cellophan+.cellophan { border-color: rgba(0,0,0,0.5)}
+  .canvas {
+    overflow:visible; margin: 6mm; 
+  }
+  .cellophan+.cellophan { border-color: rgba(0,0,0,0.5); border-width: 0.25mm;}
+
+  .cellophan {position: relative}
+  .cellophan:before, .cellophan:after {
+    position: absolute;
+    content: '';
+    border: solid black;
+    z-index: -1;
+    
+  }
+  .cellophan:before {
+    top: -3mm; bottom: -3mm;
+    left: 0px; right: 0px;
+    border-width: 0 1px 0 1px;
+    border-style: dotted
+  }
+  .cellophan:after {
+    left: -3mm; right: -3mm;
+    top: 0px; bottom: 0px;
+    border-width: 1px 0 1px 0;
+    border-style: dotted
+  }
+
+  .viewport { page-break-after: always; height: 88mm;  display:block; float:left; position: relative; top:3mm }
+  
+  /*.card.back { transform: rotate(180deg)}*/
   
 }
 

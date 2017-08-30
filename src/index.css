@@ -7,16 +7,10 @@ html, body {
    background-color:#666;
    background-image: url(./assets/images/canvas.svg);
    background-repeat:no-repeat; background-position: bottom right
-    
    
 }
 
-
-
-
 @media print {
   html, body {background:none; box-shadow: none}
-  .ui { display: none}
-  /*.card.back { transform: rotate(180deg)}*/
-
+  .ui { display: none !important}
 }

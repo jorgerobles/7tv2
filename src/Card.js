@@ -1,9 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Button, Dropdown, NavItem, Icon } from 'react-materialize'
-
+import { DropdownButton, MenuItem} from 'react-bootstrap';
+import slug from 'slug';
 import './assets/fonts/din-cond/style.css';
 import './assets/card.css'
+import { sendAsFile } from './lib/helpers'
+
+import { downloadSingleCharacter } from './Ui'
 
 const stats = { fight: 10, shoot: 10, defence: 10, mind: 10, body: 10, spirit: 10 };
 
@@ -16,8 +19,8 @@ const StatBlock = ({ stats, className, ...rest }) => {
     </div>
 }
 
-const Pic = ({ ...rest }) => {
-    return <div className="pic" />
+const Pic = ({ photo, ...rest }) => {
+    return <div className="pic" style={{backgroundImage: "url("+photo+")"}} />
 }
 
 
@@ -27,7 +30,7 @@ const Weapons = ({ items }) => {
         <thead><tr><td>Attack</td><td>Range</td><td>Strike</td><td>Effects</td></tr></thead>
         <tbody>
             {items.map((item, i) => {
-                return <tr className={item.type} key={i}>
+                return <tr className={slug(item.type||"").toLowerCase()} key={i}>
                     <td className="attack">{item.attack}</td><td className="range">{item.range}</td><td className="strike">{item.strike}</td><td className="effects">{item.effects}</td>
                 </tr>
             })}
@@ -41,7 +44,7 @@ const Ratings = ({ value }) => {
 
 
 const Health = ({ value }) => {
-    let health = Array(value).fill("").map((v, i) => { return <div key={i}></div> })
+    let health = Array(Number(value)).fill("").map((v, i) => { return <div key={i}></div> })
     return <div className="health">{health}</div>
 }
 
@@ -57,18 +60,20 @@ const Trait = ({ object, full }) => {
 }
 
 const Title = ({ name, alignment, type }) => {
-    return <div className="title"><strong>{name}</strong> <i className={type} /> <span>{alignment} {type}</span></div>
+    return <div className="title"><strong>{name}</strong> <i className={type.toLowerCase()} /> <span>{alignment} {type}</span></div>
 }
 
 const Tags = ({ values }) => {
-    return <div className="tags">{values.map((v, i) => { return <i key={i} className={"icon-" + v}></i> })}</div>
+    return <div className="tags">{values.map((v, i) => { 
+        return <i key={i} className={"icon-" + slug(v||"").toLowerCase()}></i> 
+    })}</div>
 }
 
 export class CardFront extends React.Component {
     render() {
 
         let { fight = 0, shoot = 0, defence = 0, mind = 0, body = 0, spirit = 0 } = this.props.character.stats;
-        let { health, ratings, weapons, name, role, type } = this.props.character
+        let { health, ratings, weapons, name, role, type, photo } = this.props.character
 
         let qlty = this.props.character.star_quality
         let sfx = this.props.character.special_effects;
@@ -77,7 +82,7 @@ export class CardFront extends React.Component {
 
         return <div className="cellophan"><div className="card front">
             <Title name={name} alignment={role} type={type} />
-            <Pic />
+            <Pic photo={photo}/>
             <StatBlock className="left" stats={{ fight, shoot, defence }} />
             <StatBlock className="right" stats={{ mind, body, spirit }} />
             <div className="sfxribbon">
@@ -117,27 +122,23 @@ export class CardBack extends React.Component {
     }
 }
 
+
+
 export class Card extends React.Component {
     render() {
         let id = this.props.character.id;
-        return <div 
+        return (<div 
             className={"viewport "+((id == this.props.currentCharacter)?"selected":"")} data-id={id} 
             onClick={e =>  {e.preventDefault(); this.props.dispatch({ type: 'CHARACTER_SELECT', payload: { id } })}}
          >
             <CardFront character={this.props.character} />
             <CardBack character={this.props.character} />
-            <div className="ui" style={{position:"absolute", right:0}}>
-                <Dropdown trigger={
-                    <Button floating icon='arrow_drop_down' className='red' style={{ left: -20, position: "absolute" }} />
-                }>
-                    <NavItem onClick={e => {e.preventDefault(); this.props.dispatch({ type: 'CHARACTER_REMOVE', payload: { id } })}}>Remove</NavItem>
-                    <NavItem>Download</NavItem>
-                   
-                </Dropdown>
+            <div className="ui paper" style={{position:"absolute", right:0}}>
 
-            </div>
-
-        </div>
+            <DropdownButton bsSize="xsmall" title="" bsStyle="warning" >
+            <MenuItem eventKey="1" onClick={e => {this.props.dispatch({ type: 'CHARACTER_REMOVE', payload: { id } })}}>Remove</MenuItem>
+            <MenuItem eventKey="2" onClick={e => { downloadSingleCharacter(this.props.character)}}>Download</MenuItem>
+            </DropdownButton></div></div>)
     }
 }
 

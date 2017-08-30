@@ -32,7 +32,7 @@ weapons:
     strike: 10
     effects: >
       Lorem Ipsum
-photo:
+    type: melee
 notes: > 
   Samuel L.Ipsum
 customization:

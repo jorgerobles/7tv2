@@ -1,0 +1,6 @@
+.characterEditor { height: 100%; overflow: auto}
+.characterEditor .field-description {
+    font-size: smaller; color: #666; margin-left: 1em; 
+}
+
+.characterEditor .array-item {display:flex; background: rgba(0,0,0, 0.05); margin-left: 5%; padding: 1%}

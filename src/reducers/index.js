@@ -1,7 +1,11 @@
 
 import uuid from 'uuid';
 import Yaml from 'js-yaml';
-import randomName from 'random-name'
+import { first, middle, last} from 'random-name'
+
+const randomName=()=>{
+    return (Math.round(Math.random())?first():middle())+" "+last();
+}
 
 export const loadYamlFile = (file) => {
     return () => {
@@ -22,8 +26,17 @@ export const loadYamlFile = (file) => {
     }
 }
 
+export const saveYamlFile=(docs,asSingleFile=false, options={})=>{
+    if (asSingleFile && Array.isArray(docs)){
+        return docs.map((doc)=>Yaml.safeDump(doc, options)).join("\n---\n")
+    } else {
+        return Yaml.safeDump(docs, options);
+    }
+}
+
 const INITIALSTATE = {
     __version: "0.0.1",
+    currentCharacter:null,
     cast: []
 }
 
@@ -34,7 +47,9 @@ const reducer = (state = INITIALSTATE, action) => {
     
     switch (action.type) {
         case "CHARACTER_NEW":
-            state.cast = [...state.cast, Object.assign({},TEMPLATE_CHARACTER_NEW, { id: uuid.v4(), name: randomName() })];
+            let uid=uuid.v4();
+            state.cast = [...state.cast, Object.assign({},TEMPLATE_CHARACTER_NEW, { id: uid, name: randomName() })];
+            state.currentCharacter=uid
             break;
         case "CHARACTER_LOAD":
             state.cast = [...state.cast, Object.assign({},action.payload, { id: uuid.v4() })];
@@ -44,6 +59,13 @@ const reducer = (state = INITIALSTATE, action) => {
             break;
         case "CHARACTER_SELECT":
             state.currentCharacter=action.payload.id;
+            break;
+        case "CHARACTER_UPDATE":
+            state.cast = state.cast.slice().map((item)=>{
+                if (item.id!==action.payload.id)
+                    return item;
+                return action.payload;
+            })
             break;
         default:
             return state;
