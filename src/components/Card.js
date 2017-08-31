@@ -60,7 +60,7 @@ const Trait = ({ object, full }) => {
     return <span>{name}{level ? ` (${level})` : ''}{stars ? " " : ""}{stars}</span>
 }
 
-const Title = ({ name, alignment, type }) => {
+const Title = ({ name="", alignment="", type="" }) => {
     return <div className="title"><strong>{name}</strong> <i className={type.toLowerCase()} /> <span>{alignment} {type}</span></div>
 }
 
