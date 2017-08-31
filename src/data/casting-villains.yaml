@@ -1,47 +1,47 @@
 Despotic Dictator:
-  type: STAR
+  type: Star
   role: Villain
   ratings: 10
   genres: []
   description: >
       You may be the leader of a small country, alien battlefleet or rogue mercenary force. But those under your command obey you without question, living in fear of your merciless retribution, fragile sanity and bloody fists.
 Evil Mastermind:
-  type: STAR
+  type: Star
   role: Villain
   ratings: 10
   genres: []
   description: >
       You have risen through the ranks of ultra-secretive criminal organisations and now intend to stop at nothing to achieve world domination. No scheme is too insane - although those who question your grip on sanity will find themselves at the wrong end of an industrial laser.
 Insidious Industrialist:
-  type: STAR
+  type: Star
   role: Villain
   ratings: 10
   genres: []
   description: >
       As the head of a global web of business interests, you used to be about making money and having absolute power. And they say absolute power corrupts absolutely... Now you are intent on using your empire to put yourself in charge of the planet – whatever that takes.
 Otherworldly Invader:
-  type: STAR
+  type: Star
   role: Villain
   ratings: 10
   genres: []
   description: >
       You keep your alien origins a secret from the snivelling primates who serve you. Your ultimate aims are incomprehensible and too terrible for their tiny human minds; and their primitive laws and moral code will not stand in the way of your machinations.
 Sinister Mystic:
-  type: STAR
+  type: Star
   role: Villain
   ratings: 10
   genres: []
   description: >
       Unimaginable forces lurk on the fringes of our reality that most never have the good sense or fortune to cross. But you seek them out, channel them and try to bend their ancient power to your will. Such power attracts cults and fanatics – your tools to bring chaos to these green and pleasant lands!
 Underworld Boss:
-  type: STAR
+  type: Star
   role: Villain
   ratings: 10
   genres: []
   description: >
       Your manor can be lethal to the uninvited. Your business is protection, smuggling, arson, gambling and narcotics – ideally all with menaces. With an army of lowlifes ready to act on your orders, it’s time the world took notice.
 Double Agent:
-  type: CO-STAR
+  type: Co-Star
   role: Villain
   ratings: 6
   genres: []
@@ -50,35 +50,35 @@ Double Agent:
       You may be an unassuming mole or a seductive femme fatale, but your actions prove one thing: trust no-one.
       
 Faithful Lackey:
-  type: CO-STAR
+  type: Co-Star
   role: Villain
   ratings: 6
   genres: []
   description: >
       Every arch-villain needs a trusted operative to undertake his plans. Having the boss’ ear allows you the pick of the spoils or access to the latest high-tech weaponry. Just don’t mess up or you may find yourself swimming in the shark tank.
 Inhuman Servitor:
-  type: CO-STAR
+  type: Co-Star
   role: Villain
   ratings: 6
   genres: []
   description: >
       You serve otherworldly masters with minds more cold and calculating than our own. You may be an ancient power, an alien observer or from a lost race of superhumans – but you will ensure their plans remain secret at any cost.
 Jackbooted Sadist:
-  type: CO-STAR
+  type: Co-Star
   role: Villain
   ratings: 6
   genres: []
   description: >
       Your ‘talents’ are often required to do those jobs where any scruples or compassion would only be a hindrance. Those under your command follow you into battle, too scared to question your authority.
 Mad Scientist:
-  type: CO-STAR
+  type: Co-Star
   role: Villain
   ratings: 6
   genres: []
   description: >
       Mainstream science is too restrictive with its laws and ethics. When not busy fitting lasers to sharks’ heads or installing underfloor heating in your arctic lair, you still find the time to build the odd doomsday weapon.
 Marauding Monster:
-  type: CO-STAR
+  type: Co-Star
   role: Villain
   ratings: 6
   genres: []
