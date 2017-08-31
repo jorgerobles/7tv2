@@ -1,10 +1,11 @@
+/* eslint-disable */
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import Queue from 'promise-queue';
 
-import { loadYamlFile, saveYamlFile } from './reducers/index';
-import { SplitButton, MenuItem, Button} from 'react-bootstrap';
-import { sendAsFile } from './lib/helpers'
+import { loadYamlFile, saveYamlFile } from '../reducers/index';
+import { SplitButton, MenuItem, Button, ButtonToolbar} from 'react-bootstrap';
+import { sendAsFile } from '../lib/helpers'
 import slug from 'slug';
 
 export class FileField extends React.Component {
@@ -67,10 +68,13 @@ export const downloadSingleCharacter=(character)=>{
 export class Toolbar extends React.Component {
     render(){
         return <div className="ui paper">
-            
-                <Button eventKey="1" onClick={e=>this.props.dispatch({ type: 'CHARACTER_NEW' })} bsStyle="primary">New</Button>
-                <FileField accept=".yaml" onChange={e => loadCharacter(e, (file) => this.props.dispatch({ type: 'CHARACTER_LOAD', payload: file }))}><Button eventKey="2" bsStyle="success">Upload</Button></FileField>
-                <Button eventKey="3" onClick={e=>downloadCharacters(this.props.cast)} bsStyle="danger">Download all</Button>
+                <h2 className="din" style={{textAlign:"center", marginBottom:0}}>7TV Studios</h2>
+                <h5 className="din" style={{textAlign:"center", marginTop:0}}> casting agency</h5>
+                <ButtonToolbar>
+                <Button  onClick={e=>this.props.dispatch({ type: 'CHARACTER_NEW' })} bsStyle="primary">New</Button>
+                <FileField accept=".yaml" onChange={e => loadCharacter(e, (file) => this.props.dispatch({ type: 'CHARACTER_LOAD', payload: file }))}><Button  bsStyle="success">Upload</Button></FileField>
+                <Button  onClick={e=>downloadCharacters(this.props.cast)} bsStyle="danger">Download all</Button>
+                </ButtonToolbar>
             
         </div>
     }

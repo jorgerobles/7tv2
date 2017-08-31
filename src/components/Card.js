@@ -1,10 +1,11 @@
+/* eslint-disable */
 import React from 'react'
 import { connect } from 'react-redux'
 import { DropdownButton, MenuItem} from 'react-bootstrap';
 import slug from 'slug';
-import './assets/fonts/din-cond/style.css';
-import './assets/card.css'
-import { sendAsFile } from './lib/helpers'
+import '../assets/fonts/din-cond/style.css';
+import '../assets/card.css'
+import { sendAsFile } from '../lib/helpers'
 
 import { downloadSingleCharacter } from './Ui'
 
@@ -105,16 +106,18 @@ export class CardBack extends React.Component {
         let qlty = this.props.character.star_quality
         let sfx = this.props.character.special_effects;
 
-        let { health, ratings, weapons, name, role, type } = this.props.character
+        let { health, ratings, weapons, name, role, type, notes } = this.props.character
 
         return <div className="cellophan"><div className="card back">
             <Title name={name} alignment={role} type={type} />
 
             <section>
-                <heading>Star quality</heading>
+                {qlty.length? <heading>Star quality</heading> :undefined} 
                 {qlty.map((v, i) => (<Trait key={i} object={v} full />))}
-                <heading>Special effects</heading>
+                {sfx.length? <heading>Special effects</heading> : undefined}
                 {sfx.map((v, i) => (<Trait key={i} object={v} full />))}
+                {notes.length? <heading>Notes</heading> : undefined}
+                {notes.length? notes : undefined}
             </section>
 
         </div></div>
@@ -135,7 +138,7 @@ export class Card extends React.Component {
             <CardBack character={this.props.character} />
             <div className="ui paper" style={{position:"absolute", right:0}}>
 
-            <DropdownButton bsSize="xsmall" title="" bsStyle="warning" >
+            <DropdownButton bsSize="xsmall" title="" bsStyle="warning" id={"ddb-"+id} >
             <MenuItem eventKey="1" onClick={e => {this.props.dispatch({ type: 'CHARACTER_REMOVE', payload: { id } })}}>Remove</MenuItem>
             <MenuItem eventKey="2" onClick={e => { downloadSingleCharacter(this.props.character)}}>Download</MenuItem>
             </DropdownButton></div></div>)

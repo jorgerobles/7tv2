@@ -7,15 +7,19 @@ const randomName=()=>{
     return (Math.round(Math.random())?first():middle())+" "+last();
 }
 
-export const loadYamlFile = (file) => {
+export const loadYamlFile = (file,asSingleFile=false) => {
     return () => {
         return new Promise((accept, reject) => {
             let reader = new FileReader();
             reader.onload = (data) => {
                 try {
-                    let objs = [];
-                    Yaml.safeLoadAll(reader.result, (obj) => { objs.push(obj) });
-                    accept(objs)
+                    if (asSingleFile){
+                        accept(Yaml.safeLoad(reader.result))
+                    } else {
+                        let objs = [];
+                        Yaml.safeLoadAll(reader.result, (obj) => { objs.push(obj) });
+                        accept(objs)
+                    }
                 } catch (e) {
                     console.error(e)
                     reject(e)
@@ -58,7 +62,11 @@ const reducer = (state = INITIALSTATE, action) => {
             state.cast = state.cast.slice().filter((item) => { return item.id !== action.payload.id; })
             break;
         case "CHARACTER_SELECT":
-            state.currentCharacter=action.payload.id;
+            if (state.currentCharacter === action.payload.id){
+                state.currentCharacter=null
+            } else {
+                state.currentCharacter=action.payload.id;
+            }
             break;
         case "CHARACTER_UPDATE":
             state.cast = state.cast.slice().map((item)=>{

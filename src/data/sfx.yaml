@@ -13,7 +13,7 @@ Combat:
         Type: Fight
         Weapon: Shield Bash
         Range: 0”
-        Strike¡: Body +3
+        Strike: Body +3
         Special: 0 Health + Push 1”
   - Snap Shot: > 
         This model can make one shoot attack each turn as a free action with –2 to the strike roll. Snap shots cannot be aimed. 

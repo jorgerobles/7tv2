@@ -4,8 +4,8 @@ import { Provider } from 'react-redux'
 import logger from 'redux-logger';
 import { compose, createStore, applyMiddleware } from 'redux'
 import reducer from './reducers/index'
-import App from './App';
-import './index.css';
+import App from './components/App';
+import './assets/index.css';
 import './assets/fonts/icons/style.css'
 
 import persistState from 'redux-localstorage';
