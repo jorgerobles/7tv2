@@ -132,7 +132,7 @@ export class Card extends React.Component {
         let id = this.props.character.id;
         return (<div 
             className={"viewport "+((id == this.props.currentCharacter)?"selected":"")} data-id={id} 
-            onClick={e =>  {e.preventDefault(); this.props.dispatch({ type: 'CHARACTER_SELECT', payload: { id } })}}
+            onClick={e =>  {e.stopPropagation(); this.props.dispatch({ type: 'CHARACTER_SELECT', payload: { id } })}}
          >
             <CardFront character={this.props.character} />
             <CardBack character={this.props.character} />

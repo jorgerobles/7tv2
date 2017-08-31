@@ -73,7 +73,8 @@ export class Toolbar extends React.Component {
                 <ButtonToolbar>
                 <Button  onClick={e=>this.props.dispatch({ type: 'CHARACTER_NEW' })} bsStyle="primary">New</Button>
                 <FileField accept=".yaml" onChange={e => loadCharacter(e, (file) => this.props.dispatch({ type: 'CHARACTER_LOAD', payload: file }))}><Button  bsStyle="success">Upload</Button></FileField>
-                <Button  onClick={e=>downloadCharacters(this.props.cast)} bsStyle="danger">Download all</Button>
+                <Button  onClick={e=>downloadCharacters(this.props.cast)} bsStyle="warning">Download all</Button>
+                <Button  onClick={e=> {if (confirm('Are you sure?')) this.props.dispatch({type: 'CAST_CLEAR'});}} bsStyle="danger">Reset all</Button>
                 </ButtonToolbar>
             
         </div>

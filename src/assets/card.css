@@ -98,6 +98,14 @@
 .card section .icon-star_icon:before { font-size: 90%; color: #862419;}
 .card section p {margin: 0 0 1em 0}
 
+
+.ProfileSelector .panel-body {padding:0 !important}
+.ProfileSelector .listing { overflow: auto; height:400px; }
+.ProfileSelector .listing .miniCard {margin: 5px}
+.ProfileSelector .listing .miniCard+.miniCard {border-top: 1px solid #eee}
+.ProfileSelector .listing .miniCard dd {font-size: smaller}
+.ProfileSelector .listing .miniCard.selected { background: #C1DFEA}
+
 .viewport {display:inline-flex; flex-direction: row}
 .viewport.portrait {flex-direction: column; }
 .viewport.portrait .card.back { transform: rotate(180deg); }

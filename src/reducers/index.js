@@ -52,7 +52,7 @@ const reducer = (state = INITIALSTATE, action) => {
     switch (action.type) {
         case "CHARACTER_NEW":
             let uid=uuid.v4();
-            state.cast = [...state.cast, Object.assign({},TEMPLATE_CHARACTER_NEW, { id: uid, name: randomName() })];
+            state.cast = [...state.cast, Object.assign({},TEMPLATE_CHARACTER_NEW, { id: uid, name: randomName() }, action.payload || {})];
             state.currentCharacter=uid
             break;
         case "CHARACTER_LOAD":
@@ -62,11 +62,7 @@ const reducer = (state = INITIALSTATE, action) => {
             state.cast = state.cast.slice().filter((item) => { return item.id !== action.payload.id; })
             break;
         case "CHARACTER_SELECT":
-            if (state.currentCharacter === action.payload.id){
-                state.currentCharacter=null
-            } else {
-                state.currentCharacter=action.payload.id;
-            }
+            state.currentCharacter=action.payload.id;
             break;
         case "CHARACTER_UPDATE":
             state.cast = state.cast.slice().map((item)=>{
@@ -75,6 +71,10 @@ const reducer = (state = INITIALSTATE, action) => {
                 return action.payload;
             })
             break;
+        
+        case "CAST_CLEAR":
+            state.cast=[]
+        break;
         default:
             return state;
     }

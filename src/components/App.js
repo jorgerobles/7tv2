@@ -21,7 +21,7 @@ class App extends Component {
               onChange={this.props.updateCharacter}
             />
           </div>
-          <div className="canvas">{
+          <div className="canvas" onClick={e=>this.props.deselectCharacter(e)}>{
             chunk(this.props.cast,4).map((ch,i)=>{
               return <div className="paged" key={i}>{ch.map((character,j)=>{return <Card character={character} key={j}/>})}</div>
             })
@@ -38,6 +38,9 @@ export default App = connect(
   },
   (dispatch)=>{
     return {
+      deselectCharacter:()=>{
+        dispatch({type:"CHARACTER_SELECT",payload: {id:null}})
+      },
       updateCharacter: (data)=>{
         dispatch({type:"CHARACTER_UPDATE",payload: data.formData})
       }
