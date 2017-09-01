@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import Queue from 'promise-queue';
 
 import { loadYamlFile, saveYamlFile } from '../reducers/index';
-import { SplitButton, MenuItem, Button, ButtonToolbar} from 'react-bootstrap';
+import { SplitButton, MenuItem, Button, ButtonToolbar, Glyphicon} from 'react-bootstrap';
 import { sendAsFile, sendAsImage } from '../lib/helpers'
 import slug from 'slug';
 
@@ -78,11 +78,11 @@ export class Toolbar extends React.Component {
                 <h2 className="din" style={{textAlign:"center", marginBottom:0}}>7TV Studios</h2>
                 <h5 className="din" style={{textAlign:"center", marginTop:0}}> casting agency</h5>
                 <ButtonToolbar>
-                <Button bsSize="small"  onClick={e=>this.props.dispatch({ type: 'CHARACTER_NEW' })} bsStyle="primary">New</Button>
-                <FileField accept=".yaml" onChange={e => loadCharacter(e, (file) => this.props.dispatch({ type: 'CHARACTER_LOAD', payload: file }))}><Button bsSize="small" bsStyle="success">Upload</Button></FileField>
-                <Button bsSize="small" onClick={e=>downloadCharacters(this.props.cast)} bsStyle="warning">Download all</Button>
-                <Button bsSize="small" onClick={e=>downloadCharactersAsImages(this.props.cast)} bsStyle="warning">Download all as Images</Button>
-                <Button bsSize="small" onClick={e=> {if (confirm('Are you sure?')) this.props.dispatch({type: 'CAST_CLEAR'});}} bsStyle="danger">Reset all</Button>
+                <Button bsSize="small"  onClick={e=>this.props.dispatch({ type: 'CHARACTER_NEW' })} bsStyle="primary"><Glyphicon glyph="plus" /> New</Button>
+                <FileField accept=".yaml" onChange={e => loadCharacter(e, (file) => this.props.dispatch({ type: 'CHARACTER_LOAD', payload: file }))}><Button bsSize="small" bsStyle="success"><Glyphicon glyph="upload" /> Upload</Button></FileField>
+                <Button bsSize="small" onClick={e=>downloadCharacters(this.props.cast)} bsStyle="warning"><Glyphicon glyph="download" /> as .Yaml</Button>
+                <Button bsSize="small" onClick={e=>downloadCharactersAsImages(this.props.cast)} bsStyle="warning"><Glyphicon glyph="download" /> as Images</Button>
+                <Button bsSize="small" onClick={e=> {if (confirm('Are you sure?')) this.props.dispatch({type: 'CAST_CLEAR'});}} bsStyle="danger"><Glyphicon glyph="trash" /> Reset all</Button>
                 </ButtonToolbar>
             
         </div>
