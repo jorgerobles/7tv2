@@ -13,13 +13,13 @@
     width: 288px; height: 400px; position:relative; font-family: "DINCond"; color: black;
 }
 
-.card > * {position:absolute}
 
-.card:before {content:" ";display:block; position:absolute; width: 100%; height:100%; left:0; top:0;}
-.card.front:before { background: url(images/2e_front_vanilla.jpg) ; background-size: contain; }
-.card.back:before { background: url(images/2e_back_vanilla.jpg); background-size: contain; }
 
-/*.card.front:before {filter: hue-rotate(50deg)}*/
+.card .background, .card .foreground {display:block; position:absolute; width: 100%; height:100%; left:0; top:0; z-index: 0;}
+.card .background > *, .card .foreground > * {position:absolute}
+.card.front .background {background: url(images/2e_front_vanilla.jpg) ; background-size: contain;}
+.card.back .background {background: url(images/2e_back_vanilla.jpg) ; background-size: contain;}
+.card .foreground {z-index: 1}
 
 .card .stats {
     position: absolute;  color: white; text-transform: uppercase; background: #3a3b3d; border: 0.15em solid #fff; width: 28%; border-collapse: collapse; 
@@ -170,7 +170,7 @@
   
   /*.card.back { transform: rotate(180deg)}*/
   
-
+  .Pane2 {margin-bottom: 6mm}
 
 }
 

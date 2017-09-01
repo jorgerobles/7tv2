@@ -5,7 +5,7 @@ import { DropdownButton, MenuItem} from 'react-bootstrap';
 import slug from 'slug';
 import '../assets/fonts/din-cond/style.css';
 import '../assets/card.css'
-import { sendAsFile } from '../lib/helpers'
+import { sendAsFile, sendAsImage } from '../lib/helpers'
 
 import { downloadSingleCharacter } from './Ui'
 
@@ -82,6 +82,8 @@ export class CardFront extends React.Component {
 
 
         return <div className="cellophan"><div className="card front">
+            <div className="background"></div>
+            <div className="foreground">
             <Title name={name} alignment={role} type={type} />
             <Pic photo={photo}/>
             <StatBlock className="left" stats={{ fight, shoot, defence }} />
@@ -94,6 +96,7 @@ export class CardFront extends React.Component {
             <Ratings value={ratings} />
             <Health value={health} />
             <Tags values={tags} />
+            </div>
         </div></div>
 
     }
@@ -109,6 +112,8 @@ export class CardBack extends React.Component {
         let { health, ratings, weapons, name, role, type, notes } = this.props.character
 
         return <div className="cellophan"><div className="card back">
+            <div className="background"></div>
+            <div className="foreground">
             <Title name={name} alignment={role} type={type} />
 
             <section>
@@ -119,7 +124,7 @@ export class CardBack extends React.Component {
                 {notes.length? <heading>Notes</heading> : undefined}
                 {notes.length? notes : undefined}
             </section>
-
+            </div>
         </div></div>
 
     }
@@ -131,16 +136,19 @@ export class Card extends React.Component {
     render() {
         let id = this.props.character.id;
         return (<div 
-            className={"viewport "+((id == this.props.currentCharacter)?"selected":"")} data-id={id} 
+            className={"viewport "+((id == this.props.currentCharacter)?"selected":"")}
             onClick={e =>  {e.stopPropagation(); this.props.dispatch({ type: 'CHARACTER_SELECT', payload: { id } })}}
          >
+            <div  id={id} >
             <CardFront character={this.props.character} />
             <CardBack character={this.props.character} />
+            </div>
             <div className="ui paper" style={{position:"absolute", right:0}}>
 
             <DropdownButton bsSize="xsmall" title="" bsStyle="warning" id={"ddb-"+id} >
             <MenuItem eventKey="1" onClick={e => {this.props.dispatch({ type: 'CHARACTER_REMOVE', payload: { id } })}}>Remove</MenuItem>
             <MenuItem eventKey="2" onClick={e => { downloadSingleCharacter(this.props.character)}}>Download</MenuItem>
+            <MenuItem eventKey="3" onClick={e => { sendAsImage(id, "7TV_cast-"+slug(this.props.character.name||this.props.character.id)+".png",{scale:2})}}>Download as Image</MenuItem>
             </DropdownButton></div></div>)
     }
 }

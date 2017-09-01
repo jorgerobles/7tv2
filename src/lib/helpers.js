@@ -1,3 +1,6 @@
+import domtoimage from 'dom-to-image';
+
+
 export function sendAsFile(filename, data, mimetype) {
     let blob = new Blob([data], {type: mimetype});
 
@@ -31,3 +34,28 @@ export function dataURItoBlob(dataURI) {
     return blob;
   
   }
+
+  export function sendAsImage(domId, filename,opts={})
+  {
+    let node=document.getElementById(domId)
+    if (opts.scale){
+        let rect=node.getBoundingClientRect();
+        opts=Object.assign(opts,{
+            style: {
+                transform:`scale(${opts.scale})`,
+                transformOrigin:"left top",
+            },
+            width: rect.width*opts.scale,
+            height: rect.height*opts.scale
+        })
+    }
+
+    domtoimage.toPng(node,opts)
+        .then(function (dataUrl) {
+            var link = document.createElement('a');
+                link.download = filename || ("7tv_cast-"+domId+".png");
+                link.href = dataUrl;
+                link.click();
+        }); 
+  }
+

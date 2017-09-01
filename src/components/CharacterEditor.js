@@ -116,8 +116,9 @@ export class CharacterEditor extends React.Component {
                 onSubmit={log("submitted")}
                 onError={log("errors")}
                 uiSchema={uiSchema}
+                liveValidate
                 formData = {character}
-                /> : <ProfileSelector/>}
+                ><Button bsStyle="danger" block type="submit">Validate</Button></Form> : <ProfileSelector/>}
                 </div>
         </div>
     }

@@ -22,9 +22,7 @@ class App extends Component {
             />
           </div>
           <div className="canvas" onClick={e=>this.props.deselectCharacter(e)}>{
-            chunk(this.props.cast,4).map((ch,i)=>{
-              return <div className="paged" key={i}>{ch.map((character,j)=>{return <Card character={character} key={j}/>})}</div>
-            })
+            this.props.cast.map((character,j)=>{return <Card character={character} key={j}/>})
           }</div>
         </SplitPane>
       </div>
