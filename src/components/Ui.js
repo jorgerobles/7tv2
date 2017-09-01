@@ -77,13 +77,16 @@ export class Toolbar extends React.Component {
         return <div className="ui paper">
                 <h2 className="din" style={{textAlign:"center", marginBottom:0}}>7TV Studios</h2>
                 <h5 className="din" style={{textAlign:"center", marginTop:0}}> casting agency</h5>
-                <ButtonToolbar>
-                <Button bsSize="small"  onClick={e=>this.props.dispatch({ type: 'CHARACTER_NEW' })} bsStyle="primary"><Glyphicon glyph="plus" /> New</Button>
-                <FileField accept=".yaml" onChange={e => loadCharacter(e, (file) => this.props.dispatch({ type: 'CHARACTER_LOAD', payload: file }))}><Button bsSize="small" bsStyle="success"><Glyphicon glyph="upload" /> Upload</Button></FileField>
-                <Button bsSize="small" onClick={e=>downloadCharacters(this.props.cast)} bsStyle="warning"><Glyphicon glyph="download" /> as .Yaml</Button>
-                <Button bsSize="small" onClick={e=>downloadCharactersAsImages(this.props.cast)} bsStyle="warning"><Glyphicon glyph="download" /> as Images</Button>
-                <Button bsSize="small" onClick={e=> {if (confirm('Are you sure?')) this.props.dispatch({type: 'CAST_CLEAR'});}} bsStyle="danger"><Glyphicon glyph="trash" /> Reset all</Button>
-                </ButtonToolbar>
+               <div style={{margin:5}}>
+                <Button bsSize="small" block  onClick={e=>this.props.dispatch({ type: 'CHARACTER_NEW' })} bsStyle="primary"><Glyphicon glyph="plus" /> New</Button>
+                <FileField style={{display:"block",margin: "5px 0 5px 0"}} accept=".yaml" onChange={e => loadCharacter(e, (file) => this.props.dispatch({ type: 'CHARACTER_LOAD', payload: file }))}><Button block  bsSize="small" bsStyle="success"><Glyphicon glyph="upload" /> Load .Yaml</Button></FileField>
+                
+                <Button block bsSize="small" onClick={e=>downloadCharacters(this.props.cast)} bsStyle="warning"><Glyphicon glyph="download" /> Download as .Yaml</Button>
+                
+                <Button block bsSize="small" onClick={e=>downloadCharactersAsImages(this.props.cast)} bsStyle="danger"><Glyphicon glyph="download" /> Download as Images</Button>
+                
+                <Button block bsSize="small" onClick={e=> {if (confirm('Are you sure?')) this.props.dispatch({type: 'CAST_CLEAR'});}} bsStyle="info"><Glyphicon glyph="trash" /> Reset all</Button>
+               </div>
             
         </div>
     }
