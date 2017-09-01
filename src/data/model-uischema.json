@@ -21,13 +21,19 @@
         "ui:widget": "file"
     },
     "notes":{
-        "ui:widget": "textarea"
+        "ui:widget": "textarea",
+        "ui:options": {
+            "rows": 15
+          }
     },
     "special_effects":{
         "items":{
             "ui:order":["name","cost","description"],
             "description": {
-                "ui:widget": "textarea"
+                "ui:widget": "textarea",
+                "ui:options": {
+                    "rows": 15
+                  }
             }
         }
     },
@@ -35,7 +41,10 @@
         "items":{
             "ui:order":["name","cost","description"],
             "description": {
-                "ui:widget": "textarea"
+                "ui:widget": "textarea",
+                "ui:options": {
+                    "rows": 15
+                  }
             }
         }
     },

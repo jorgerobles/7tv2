@@ -12,7 +12,10 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <SplitPane split="vertical" minSize={200} defaultSize={300}>
+        <SplitPane split="vertical" minSize={200} 
+              defaultSize={ parseInt(localStorage.getItem('splitPos'), 10) }
+              onChange={ size => localStorage.setItem('splitPos', size) }>
+          
           <div className="sidebar ui " >
             <Toolbar/>
             <CharacterEditor 

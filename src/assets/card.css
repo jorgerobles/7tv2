@@ -93,8 +93,10 @@
 .card .tags {color: white; bottom: 1.5%; right: 1%; font-size:130%; }
 .card .tags i {margin-left: 0.2em}
 
-.card section {top: 12%; font-size: 70%; width: 90%; left: 5%; height: 79%; display:flex; flex-flow: column wrap }
-.card section > * {width:50%}
+.card section {
+  top: 12%; font-size: 70%; width: 90%; left: 5%; height: 79%; display:flex; flex-flow: column wrap; overflow: visible; overflow-wrap: break-word ; text-overflow: ellipsis;
+ }
+.card section > * {width:50%; padding-right: 3%;}
 .card section heading {text-transform: uppercase; font-weight: bold; font-size: 110%; color: #862419; margin: 0 0 0.5em 0; display:block}
 .card section .icon-star_icon:before { font-size: 90%; color: #862419;}
 .card section p {margin: 0 0 1em 0; break-inside: avoid; widows: 3; white-space: pre-line}

@@ -53,9 +53,8 @@ const Trait = ({ object, full }) => {
     let { cost, name, level, description } = object
     let stars = cost ? Array(cost).fill("").map((v, i) => { return <i key={i} className="icon-star_icon"></i> }) : undefined
     if (full) {
-        return <div>
-            <p><strong>{name}{level ? ` (${level})` : ''}{stars ? " " : ""}{stars}</strong><br />{description}</p>
-        </div>
+        return <p><strong>{name}{level ? ` (${level})` : ''}{stars ? " " : ""}{stars}</strong><br />{description}</p>
+        
     }
     return <span>{name}{level ? ` (${level})` : ''}{stars ? " " : ""}{stars}</span>
 }
