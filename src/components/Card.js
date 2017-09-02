@@ -32,7 +32,7 @@ const Weapons = ({ items }) => {
         <tbody>
             {items.map((item, i) => {
                 return <tr className={slug(item.type||"").toLowerCase()} key={i}>
-                    <td className="attack">{item.attack}</td><td className="range">{item.range}</td><td className="strike">{item.strike}</td><td className="effects">{item.effects}</td>
+                    <td className="attack">{item.attack}</td><td className="range">{item.range}</td><td className="strike">+{item.strike}</td><td className="effects">{item.effects}</td>
                 </tr>
             })}
         </tbody>

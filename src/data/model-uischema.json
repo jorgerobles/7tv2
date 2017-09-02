@@ -21,19 +21,25 @@
         "ui:widget": "file"
     },
     "notes":{
-        "ui:widget": "textarea",
+        "ui:widget": "toolTextareaWidget",
         "ui:options": {
-            "rows": 15
-          }
+            "rows": 15,
+            "textTools":{
+                "ToolInsertText":["✪"]
+            }
+        }
     },
     "special_effects":{
         "items":{
             "ui:order":["name","cost","description"],
             "description": {
-                "ui:widget": "textarea",
+                "ui:widget": "toolTextareaWidget",
                 "ui:options": {
-                    "rows": 15
-                  }
+                    "rows": 15,
+                    "textTools":{
+                        "ToolInsertText":["✪"]
+                    }
+                }
             }
         }
     },
@@ -41,10 +47,13 @@
         "items":{
             "ui:order":["name","cost","description"],
             "description": {
-                "ui:widget": "textarea",
+                "ui:widget": "toolTextareaWidget",
                 "ui:options": {
-                    "rows": 15
-                  }
+                    "rows": 15,
+                    "textTools":{
+                        "ToolInsertText":["✪"]
+                    }
+                }
             }
         }
     },
