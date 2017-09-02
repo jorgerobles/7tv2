@@ -99,7 +99,8 @@
 .card section > * {width:50%; padding-right: 3%;}
 .card section heading {text-transform: uppercase; font-weight: bold; font-size: 110%; color: #862419; margin: 0 0 0.5em 0; display:block}
 .card section .icon-star_icon:before { font-size: 90%; color: #862419;}
-.card section p {margin: 0 0 1em 0; break-inside: avoid; widows: 3; white-space: pre-line}
+.card section p {margin: 0 0 1em 0; break-inside: avoid; widows: 3; }
+.card section p em { color: #862419; font-weight: bold; font-style: normal}
 
 
 .ProfileSelector .panel-body {padding:0 !important}

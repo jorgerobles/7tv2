@@ -6,6 +6,7 @@ import slug from 'slug';
 import '../assets/fonts/din-cond/style.css';
 import '../assets/card.css'
 import { sendAsFile, sendAsImage } from '../lib/helpers'
+import marked from 'marked'
 
 import { downloadSingleCharacter } from './Ui'
 
@@ -53,7 +54,7 @@ const Trait = ({ object, full }) => {
     let { cost, name, level, description } = object
     let stars = cost ? Array(cost).fill("").map((v, i) => { return <i key={i} className="icon-star_icon"></i> }) : undefined
     if (full) {
-        return <p><strong>{name}{level ? ` (${level})` : ''}{stars ? " " : ""}{stars}</strong><br />{description}</p>
+        return <p><strong>{name}{level ? ` (${level})` : ''}{stars ? " " : ""}{stars}</strong><br /><span dangerouslySetInnerHTML={{__html:marked(description)}}/></p>
         
     }
     return <span>{name}{level ? ` (${level})` : ''}{stars ? " " : ""}{stars}</span>
