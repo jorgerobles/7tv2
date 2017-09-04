@@ -15,7 +15,7 @@ import Queue from 'promise-queue';
 import Yaml from 'js-yaml';
 import { loadYamlFile } from '../reducers/index'
 import { dataURItoBlob } from '../lib/helpers'
-import { ToolTextareaWidget} from './FormWidgets'
+import { ToolTextareaWidget , ArrayFieldTemplate, CollapseObjectField, PictureWidget} from './FormWidgets'
 
 const getCharacterById=(id, cast)=>{
     return cast.find(item=>{return item.id == id})
@@ -109,8 +109,12 @@ export class CharacterEditor extends React.Component {
 
     render(){
         let character=getCharacterById(this.props.characterId, this.props.cast);
-        let widgets={
-            toolTextareaWidget:ToolTextareaWidget
+        const widgets={
+            toolTextareaWidget:ToolTextareaWidget,
+            pictureWidget:PictureWidget
+        }
+        const fields={
+            collapseObjectField:CollapseObjectField
         }
         return <div className="paper characterEditor">
             <div style={{margin:20}}>
@@ -122,6 +126,7 @@ export class CharacterEditor extends React.Component {
                 liveValidate
                 formData = {character}
                 widgets={widgets}
+                fields={fields}
                 ><Button bsStyle="danger" block type="submit">Validate</Button></Form> : <ProfileSelector/>}
                 </div>
         </div>

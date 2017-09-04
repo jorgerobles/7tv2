@@ -18,7 +18,7 @@
         "ui:widget": "checkboxes"
     },
     "photo":{
-        "ui:widget": "file"
+        "ui:widget": "pictureWidget"
     },
     "notes":{
         "ui:widget": "toolTextareaWidget",
@@ -32,6 +32,10 @@
     "special_effects":{
         "items":{
             "ui:order":["name","cost","description"],
+            "ui:field":"collapseObjectField",
+            "ui:options":{
+                "template":"{name} ({cost})"
+            },
             "description": {
                 "ui:widget": "toolTextareaWidget",
                 "ui:options": {
@@ -46,6 +50,10 @@
     "star_quality":{
         "items":{
             "ui:order":["name","cost","description"],
+            "ui:field":"collapseObjectField",
+            "ui:options":{
+                "template":"{name} ({cost})"
+            },
             "description": {
                 "ui:widget": "toolTextareaWidget",
                 "ui:options": {

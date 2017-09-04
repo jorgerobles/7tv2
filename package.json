@@ -21,6 +21,7 @@
     "redux-localstorage-filter": "^0.1.1",
     "redux-logger": "^3.0.1",
     "slug": "^0.9.1",
+    "string-template": "^1.0.0",
     "uuid": "^3.1.0"
   },
   "dependencies": {

@@ -2,12 +2,34 @@ import domtoimage from 'dom-to-image';
 
 
 export function sendAsFile(filename, data, mimetype) {
+    
     let blob = new Blob([data], {type: mimetype});
 
     let tempLink = document.createElement('a');
         tempLink.href = window.URL.createObjectURL(blob);
         tempLink.setAttribute('download', filename);
         tempLink.click();
+}
+
+export function parseDataUri(data) {
+    if (!data) 
+        return {};
+    let rex=/data:([^;]+);(?:([^;]+)?;)+(base64,.*$)/gi
+    let result={}
+    let groups= rex.exec(data);
+        if (groups){
+            result.mime=groups[1]
+        }
+        if (groups.length>2) {
+            groups.slice(2,groups.length-1).forEach((item)=>{
+                let [key,value]=item.split("=")
+                result[key]=value
+            })
+        } 
+        
+        result.data=dataURItoBlob(data);
+    
+    return result;
 }
 
 export function dataURItoBlob(dataURI) {

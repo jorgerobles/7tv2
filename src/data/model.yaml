@@ -1,5 +1,6 @@
 ---
 __version: 0.0.1
+__card: Model
 name: Monty
 profile: Action Hero
 role: Heroic

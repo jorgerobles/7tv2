@@ -44,7 +44,7 @@ const INITIALSTATE = {
     cast: []
 }
 
-const TEMPLATE_CHARACTER_NEW = require('../data/blank.json')
+const TEMPLATE_CHARACTER_NEW = require('../data/model-blank.json')
 
 const reducer = (state = INITIALSTATE, action) => {
     state = Object.assign( {}, state)
@@ -56,7 +56,7 @@ const reducer = (state = INITIALSTATE, action) => {
             state.currentCharacter=uid
             break;
         case "CHARACTER_LOAD":
-            state.cast = [...state.cast, Object.assign({},action.payload, { id: uuid.v4() })];
+            state.cast = [...state.cast, Object.assign({},TEMPLATE_CHARACTER_NEW,action.payload, { id: uuid.v4() })];
             break;
         case "CHARACTER_REMOVE":
             state.cast = state.cast.slice().filter((item) => { return item.id !== action.payload.id; })
