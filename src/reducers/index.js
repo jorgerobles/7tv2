@@ -71,7 +71,18 @@ const reducer = (state = INITIALSTATE, action) => {
                 return action.payload;
             })
             break;
-        
+        case "CHARACTER_APPEND_TRAIT":
+            if (!action.payload.value) return;
+            state.cast = state.cast.slice().map((item)=>{
+                if (item.id!==action.payload.id)
+                    return item;
+                let char=Object.assign({},item)
+                    char[action.payload.key].push(action.payload.value)
+
+                return char;
+            })
+            break;
+           
         case "CAST_CLEAR":
             state.cast=[]
         break;

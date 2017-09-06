@@ -30,6 +30,7 @@
         }
     },
     "special_effects":{
+        "ui:field":"sfxArrayField",
         "items":{
             "ui:order":["name","cost","description"],
             "ui:field":"collapseObjectField",

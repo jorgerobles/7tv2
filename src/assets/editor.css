@@ -10,3 +10,5 @@
 .characterEditor .pictureWidget:after {content: "";
     display: table;
     clear: both;}
+
+.characterEditor select {border-top: 1px solid #eee !important} 

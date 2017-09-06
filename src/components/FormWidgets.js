@@ -6,6 +6,8 @@ import TextAreaWidget from "react-jsonschema-form/lib/components/widgets/Textare
 import FileWidget from "react-jsonschema-form/lib/components/widgets/FileWidget";
 import TitleField  from "react-jsonschema-form/lib/components/fields/TitleField";
 import ObjectField  from "react-jsonschema-form/lib/components/fields/ObjectField";
+import ArrayField  from "react-jsonschema-form/lib/components/fields/ArrayField";
+
 import { ButtonGroup, Button, Glyphicon, Collapse } from "react-bootstrap";
 import { insertAtCaret } from '../lib/helpers'
 import format from 'string-template'
@@ -58,60 +60,10 @@ const parseTools=(options,props)=>{
   console.log(props)
 }
 
-export function ArrayFieldTemplate(props) {
-  return (
-    <div className={props.className}>
-      
-      <TitleField id={`${props.idSchema.$id}__title`} title={props.uiSchema["ui:title"] || props.title} required={props.required} />
-      
-
-      {(props.uiSchema["ui:description"] || props.schema.description) && (
-        <div
-          className="field-description"
-          key={`field-description-${props.idSchema.$id}`}>
-          {props.uiSchema["ui:description"] || props.schema.description}
-        </div>
-      )}
-      {props.items &&
-        props.items.map(element => (
-          <div key={element.index} className="array-item">
-
-            
-            <div style={{float:"right"}}>
-            <ButtonGroup bsSize="small">
-           
-              <Button  disabled={!element.hasMoveDown}
-                onClick={element.onReorderClick(
-                  element.index,
-                  element.index + 1
-                )}>
-                <Glyphicon glyph="arrow-down"/>
-              </Button>
-            
-            
-              <Button  disabled={!element.hasMoveUp}
-                onClick={element.onReorderClick(
-                  element.index,
-                  element.index - 1
-                )}>
-                <Glyphicon glyph="arrow-up"/>
-              </Button>
-            
-            <Button  bsStyle="danger" onClick={element.onDropIndexClick(element.index)}><Glyphicon glyph="remove"/></Button>
-            </ButtonGroup>
-            </div>
-            {element.children}
-          </div>
-        ))}
-
-      {props.canAdd && (
-        <div className="row">
-        {parseTools(props.uiSchema["ui:options"],{...props})}
-        <Button block onClick={props.onAddClick} bsStyle="success">Add new</Button>
-        </div>
-      )}
-    </div>
-  );
+export function ToolArrayField(children) {
+  return (props)=>{
+    return <div><ArrayField {...props}/>{children.map((c,i)=>(React.cloneElement(c,{key:i, widget:props})))}</div>
+  }
 }
 
 

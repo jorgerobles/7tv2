@@ -121,8 +121,8 @@ export class CardBack extends React.Component {
                 {qlty.map((v, i) => (<Trait key={i} object={v} full />))}
                 {sfx.length? <heading>Special effects</heading> : undefined}
                 {sfx.map((v, i) => (<Trait key={i} object={v} full />))}
-                {notes.length? <heading>Notes</heading> : undefined}
-                {notes.length? notes : undefined}
+                {notes && notes.length? <heading>Notes</heading> : undefined}
+                {notes && notes.length? notes : undefined}
             </section>
             </div>
         </div></div>
