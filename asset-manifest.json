@@ -1,8 +1,8 @@
 {
-  "main.css": "static/css/main.e74833c6.css",
-  "main.css.map": "static/css/main.e74833c6.css.map",
-  "main.js": "static/js/main.a03639f6.js",
-  "main.js.map": "static/js/main.a03639f6.js.map",
+  "main.css": "static/css/main.cb637cc4.css",
+  "main.css.map": "static/css/main.cb637cc4.css.map",
+  "main.js": "static/js/main.9c217c65.js",
+  "main.js.map": "static/js/main.9c217c65.js.map",
   "static/media/2e_back_vanilla.jpg": "static/media/2e_back_vanilla.e2d24dfd.jpg",
   "static/media/2e_front_vanilla.jpg": "static/media/2e_front_vanilla.51d424dd.jpg",
   "static/media/DINCond-Bold.eot": "static/media/DINCond-Bold.3901ac4e.eot",
@@ -21,5 +21,6 @@
   "static/media/icomoon.eot?1oyxw0": "static/media/icomoon.b6af2628.eot",
   "static/media/icomoon.svg?1oyxw0": "static/media/icomoon.d99d3f99.svg",
   "static/media/icomoon.ttf?1oyxw0": "static/media/icomoon.6e4fe71e.ttf",
-  "static/media/icomoon.woff?1oyxw0": "static/media/icomoon.24abee57.woff"
+  "static/media/icomoon.woff?1oyxw0": "static/media/icomoon.24abee57.woff",
+  "static/media/sfx.yaml": "static/media/sfx.d90b8436.yaml"
 }
