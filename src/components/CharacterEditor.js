@@ -41,7 +41,7 @@ export class CharacterEditor extends React.Component {
     render(){
         let character=getCharacterById(this.props.characterId, this.props.cast);
 
-        if (!character) return <div/>;
+        if (!character) return <div className="paper characterEditor"><div style={{margin:20}}><ProfileSelector/></div></div>;
 
         const uiSchema = require('../data/'+character.__card.toLowerCase()+'-uischema.json');
         const schema = require('../data/'+character.__card.toLowerCase()+'-schema.json');
@@ -56,7 +56,7 @@ export class CharacterEditor extends React.Component {
         }
         return <div className="paper characterEditor">
             <div style={{margin:20}}>
-            {character ? <Form schema={schema}
+            <Form schema={schema}
                 onChange={this.handleChange}
                 onSubmit={log("submitted")}
                 onError={log("errors")}
@@ -65,7 +65,7 @@ export class CharacterEditor extends React.Component {
                 formData = {character}
                 widgets={widgets}
                 fields={fields}
-                ><Button bsStyle="danger" block type="submit">Validate</Button></Form> : <ProfileSelector/>}
+                ><Button bsStyle="danger" block type="submit">Validate</Button></Form>}
                 </div>
         </div>
     }
