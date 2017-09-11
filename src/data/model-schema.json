@@ -3,6 +3,14 @@
     "id": "http://crooked-dice.co.uk/model.json",
     
     "properties": {
+      "__tint":{
+        "title":"Card tint",
+        "id": "/properties/__tint",
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 360,
+        "description":"Change card hue"
+      },
       "genres": {
         "title":"Genre/s",
         "description": "The genre of each model determines if it can join your cast or not. Models from a Programme Guide will have their cast’s symbol here instead.",
@@ -225,8 +233,7 @@
           "",
           "Star",
           "Co-Star",
-          "Extra",
-          "Vehicle"
+          "Extra"
         ],
         "id": "/properties/type",
         "title": "Type",

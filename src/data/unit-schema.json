@@ -1,0 +1,114 @@
+{
+    "definitions": {},
+    "id": "http://crooked-dice.co.uk/unit.json",
+    
+    "properties": {
+      "genres": {
+        "title":"Genre/s",
+        "description": "The genre of each model determines if it can join your cast or not. Models from a Programme Guide will have their cast’s symbol here instead.",
+        "id": "/properties/genres",
+        "type": "array",
+        "items": {
+          "id": "/properties/genres/items",
+          "title": "Genre",
+          "type": "string",
+          "enum": [
+            "Civilian",
+            "Crime",
+            "Law & Order",
+            "Military",
+            "Secret",
+            "Science",
+            "Unknown"
+          ]
+        },
+        "uniqueItems": true
+      },
+      
+     
+      "name": {
+        "description": "The name of the model",
+        "id": "/properties/name",
+        "title": "Name",
+        "type": "string"
+      },
+      "notes": {
+        "default": "",
+        "description": "Some notes about the model",
+        "id": "/properties/notes",
+        "title": "Notes",
+        "type": "string"
+      },
+      "photo": {
+        "description": "Image depicting model",
+        "id": "/properties/photo",
+        "title": "Picture",
+        "type": "string",
+        "format": "data-url"
+      },
+      "profile": {
+        "default":"",
+        "description": "Reference to the base profile",
+        "id": "/properties/profile",
+        "title": "Profile",
+        "type": "string"
+      },
+      "role": {
+        "default": "Heroic",
+        "description": "Model behaviour.",
+        "enum": [
+          "",
+          "Heroic",
+          "Neutral",
+          "Villain"
+        ],
+        "id": "/properties/role",
+        "title": "Role",
+        "type": "string"
+      },
+      "type": {
+        "default": "Unit",
+        "description": "Type",
+        "enum": [
+          "Unit"
+        ],
+        "id": "/properties/type",
+        "title": "Type",
+        "type": "string"
+      },
+      "models": {
+        "title":"Models",
+        "id": "/properties/models",
+        "description":"Unit composition",
+        "items": {
+          "id": "/properties/models/items",
+          "properties": {
+            "qty": {
+              "default": "",
+              "description": "Quantity",
+              "id": "/properties/models/items/properties/qty",
+              "title": "Qty",
+              "type": "string"
+            },
+            "model": {
+              "default": "",
+              "description": "Model name",
+              "id": "/properties/models/items/properties/effects",
+              "title": "Models",
+              "type":"string"
+            }
+          },
+          "type": "object"
+        },
+        "type": "array"
+      }
+    },
+    "required": [
+      "role",
+      "name",
+      "models",
+      "type"
+    ],
+    "type": "object",
+    "additionalProperties":true
+  }

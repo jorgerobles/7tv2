@@ -113,7 +113,7 @@ export class ProfileSelector extends React.Component {
             });
         }
 
-        return <div className="ProfileSelector">
+        return <div className="profileSelector">
             <h4>Select a character or Create new</h4>
             {cast}
             <Button onClick={e=>fromTemplate()} bsStyle="primary" block disabled={!this.state.selected}>New from template</Button>

@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import Queue from 'promise-queue';
 
 import { loadYamlFile, saveYamlFile } from '../reducers/index';
-import { SplitButton, MenuItem, Button, ButtonToolbar, Glyphicon} from 'react-bootstrap';
+import { SplitButton, MenuItem, Button, ButtonToolbar, Glyphicon, DropdownButton} from 'react-bootstrap';
 import { sendAsFile, sendAsImage } from '../lib/helpers'
 import slug from 'slug';
 
@@ -71,14 +71,20 @@ export const downloadCharactersAsImages=(cast)=>{
     })
     
 }
-
+/* <MenuItem eventKey="3" onClick={e=>this.props.dispatch({ type: 'CHARACTER_NEW', payload:{ __card:'unit'} })}>Unit</MenuItem> */
 export class Toolbar extends React.Component {
     render(){
-        return <div className="ui paper">
+        return <div className="ui paper editorToolBar">
                 <h2 className="din" style={{textAlign:"center", marginBottom:0}}>7TV Studios</h2>
                 <h5 className="din" style={{textAlign:"center", marginTop:0}}> casting agency</h5>
                <div style={{margin:5}}>
-                <Button bsSize="small" block  onClick={e=>this.props.dispatch({ type: 'CHARACTER_NEW' })} bsStyle="primary"><Glyphicon glyph="plus" /> New</Button>
+               <DropdownButton bsStyle="primary" bsSize="small" title="New"  id="new_model" >
+                <MenuItem eventKey="1" onClick={e=>this.props.dispatch({ type: 'CHARACTER_NEW' })}>Character</MenuItem>
+                <MenuItem eventKey="2" onClick={e=>this.props.dispatch({ type: 'CHARACTER_NEW', payload:{ __card:'vehicle'} })}>Vehicle</MenuItem>
+                
+               </DropdownButton>
+              
+                
                 <FileField style={{display:"block",margin: "5px 0 5px 0"}} accept=".yaml" onChange={e => loadCharacter(e, (file) => this.props.dispatch({ type: 'CHARACTER_LOAD', payload: file }))}><Button block  bsSize="small" bsStyle="success"><Glyphicon glyph="upload" /> Load .Yaml</Button></FileField>
                 
                 <Button block bsSize="small" onClick={e=>downloadCharacters(this.props.cast)} bsStyle="warning"><Glyphicon glyph="download" /> Download as .Yaml</Button>

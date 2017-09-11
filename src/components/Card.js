@@ -1,5 +1,6 @@
 /* eslint-disable */
 import React from 'react'
+import ReactDOM from 'react-dom'
 import { connect } from 'react-redux'
 import { DropdownButton, MenuItem} from 'react-bootstrap';
 import slug from 'slug';
@@ -60,6 +61,10 @@ const Trait = ({ object, full }) => {
     return <span>{name}{level ? ` (${level})` : ''}{stars ? " " : ""}{stars}</span>
 }
 
+const Description = ({text}) =>{
+    return <p className="description"><span dangerouslySetInnerHTML={{__html:marked(text)}}/></p>
+}
+
 const Title = ({ name="", alignment="", type="" }) => {
     return <div className="title"><strong>{name}</strong> <i className={type.toLowerCase()} /> <span>{alignment} {type}</span></div>
 }
@@ -70,20 +75,68 @@ const Tags = ({ values }) => {
     })}</div>
 }
 
+
 export class CardFront extends React.Component {
     render() {
+        const card = (this.props.character.__card||"Model").toLowerCase()
+        switch(card) {
+            case "vehicle":
+                return this.renderVehicle(card)
+            break;
+            case "unit":
+                return this.renderUnit(card)
+            break;
+            default:
+                return this.renderModel(card)
+            break;
+        }
+    }
 
+    renderVehicle(card)
+    {
+        let { health=0, ratings=0,name, type, photo, capacity=0, armour=0, defence=0, description="",__tint } = this.props.character
+        let tags = this.props.character.genres||[]
+        let sfx = this.props.character.special_effects || [];
+
+        return <div className="cellophan"><div className={"card "+card+" front"}>
+        <div className="background" style={{filter:`hue-rotate(${__tint}deg)`}}></div>
+        <div className="foreground">
+            <Title name={name} type={type} />
+            <Pic photo={photo}/>
+            <StatBlock stats={{ capacity, armour, defence }} />
+            <Description text={description}/>
+            <div className="sfxribbon">
+                <dl><dt>Special effects</dt><dd>{sfx.map((s, i) => (<Trait key={i} object={s} />))}</dd></dl>
+            </div>
+            <Ratings value={ratings} />
+            <Health value={health} />
+            <Tags values={tags} />
+        </div>
+        </div></div>
+    }
+
+    renderUnit(card)
+    {
+        return <div className="cellophan"><div className={"card "+card+" front"}>
+        <div className="background"></div>
+        <div className="foreground">
+        
+        </div>
+        </div></div>
+    }
+
+    renderModel(card) {
         let { fight = 0, shoot = 0, defence = 0, mind = 0, body = 0, spirit = 0 } = this.props.character.stats;
-        let { health, ratings, weapons, name, role, type, photo } = this.props.character
+        let { health, ratings, weapons, name, role, type, photo, __tint } = this.props.character
 
         let qlty = this.props.character.star_quality
         let sfx = this.props.character.special_effects;
         let tags = this.props.character.genres
-
-
-        return <div className="cellophan"><div className="card front">
-            <div className="background"></div>
-            <div className="foreground">
+        
+        
+        return <div className="cellophan"><div className={"card "+card+" front"}>
+             <div className="background" style={{filter:`hue-rotate(${__tint}deg)`}}></div>
+            <div className="foreground" >
             <Title name={name} alignment={role} type={type} />
             <Pic photo={photo}/>
             <StatBlock className="left" stats={{ fight, shoot, defence }} />
@@ -98,21 +151,59 @@ export class CardFront extends React.Component {
             <Tags values={tags} />
             </div>
         </div></div>
-
     }
+    
 }
 
 export class CardBack extends React.Component {
 
     render() {
+        const card = (this.props.character.__card||"Model").toLowerCase()
+        switch(card) {
+            case "vehicle":
+                return this.renderVehicle(card)
+            break;
+            case "unit":
+                return this.renderUnit(card)
+            break;
+            default:
+                return this.renderModel(card)
+            break;
+        }
+    }
+    renderVehicle(card){
+        let sfx = this.props.character.special_effects||[];
+        let {name, type="",notes="",__tint} = this.props.character
+        return <div className="cellophan"><div className={"card "+card+" back"}>
+        <div className="background" style={{filter:`hue-rotate(${__tint}deg)`}}></div>
+        <div className="foreground">
+            <Title name={name} type={type} />
+            <section>
+                {sfx.length? <heading>Special effects</heading> : undefined}
+                {sfx.map((v, i) => (<Trait key={i} object={v} full />))}
+                {notes && (<heading>Notes</heading>)}
+                {notes}
+            </section>
+        </div>
+        </div></div>
+    }
 
+    renderUnit(card) {
+        return <div className="cellophan"><div className={"card "+card+" back"}>
+            <div className="background"></div>
+            <div className="foreground">
+            </div>
+        </div></div>
+    }
+
+    renderModel(card) {
         let qlty = this.props.character.star_quality
         let sfx = this.props.character.special_effects;
+        let { health, ratings, weapons, name, role, type, notes='',__tint } = this.props.character
 
-        let { health, ratings, weapons, name, role, type, notes } = this.props.character
-
-        return <div className="cellophan"><div className="card back">
-            <div className="background"></div>
+       
+        return <div className="cellophan"><div className={"card "+card+" back"}>
+            <div className="background" style={{filter:`hue-rotate(${__tint}deg)`}}></div>
             <div className="foreground">
             <Title name={name} alignment={role} type={type} />
 
@@ -121,12 +212,11 @@ export class CardBack extends React.Component {
                 {qlty.map((v, i) => (<Trait key={i} object={v} full />))}
                 {sfx.length? <heading>Special effects</heading> : undefined}
                 {sfx.map((v, i) => (<Trait key={i} object={v} full />))}
-                {notes && notes.length? <heading>Notes</heading> : undefined}
-                {notes && notes.length? notes : undefined}
+                {notes && (<heading>Notes</heading>)}
+                {notes}
             </section>
             </div>
         </div></div>
-
     }
 }
 

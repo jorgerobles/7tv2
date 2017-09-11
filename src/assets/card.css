@@ -22,62 +22,74 @@
 .card .foreground {z-index: 1}
 
 .card .stats {
-    position: absolute;  color: white; text-transform: uppercase; background: #3a3b3d; border: 0.15em solid #fff; width: 28%; border-collapse: collapse; 
+    position: absolute;  color: white; text-transform: uppercase; 
+    background: #3a3b3d; border: 0.15em solid #fff; width: 28%; border-collapse: collapse; 
     text-align: center; font-size: 100%; line-height: 170%; font-weight: bold;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
 }
 
 
-
-.card .stats > div {display:flex; flex-direction: row; width:100%} 
-.card .stats > div > div {border-right: 0.15em solid #fff; border-bottom: 0.15em solid #fff; font-weight: normal; flex-grow:3; font-size: 90% }
-.card .stats > div:last-child > div {border-bottom:none}
-.card .stats > div > div:last-child { flex-grow:0; width: 30%; border-right: none; color: #000; font-size: 110%}
-.card .stats > div.fight > div:last-child {background: #c67229}
-.card .stats > div.shoot > div:last-child {background: #bf452d}
-.card .stats > div.defence > div:last-child {background: #862419; color: white}
-.card .stats > div.mind > div:last-child {background: #78a2b2}
-.card .stats > div.body > div:last-child {background: #7f8d73}
-.card .stats > div.spirit > div:last-child {background: #c1912d}
-.card .stats.left  { top: 14%; left: 5% }
-.card .stats.right { top: 14%; right: 5% }
-.card .stats.right > div {flex-direction: row-reverse}
-.card .stats.right > div > div {border-right: 0.15em solid #fff;}
-.card .stats.right > div > div:first-child {border-right: none;}
-.card .pic {
+/* MODEL  */
+.card.model .stats > div {display:flex; flex-direction: row; width:100%} 
+.card.model .stats > div > div {border-right: 0.15em solid #fff; border-bottom: 0.15em solid #fff; font-weight: normal; flex-grow:3; font-size: 90% }
+.card.model .stats > div:last-child > div {border-bottom:none}
+.card.model .stats > div > div:last-child { flex-grow:0; width: 30%; border-right: none; color: #000; font-size: 110%}
+.card.model .stats > div.fight > div:last-child {background: #c67229}
+.card.model .stats > div.shoot > div:last-child {background: #bf452d}
+.card.model .stats > div.defence > div:last-child {background: #862419; color: white}
+.card.model .stats > div.mind > div:last-child {background: #78a2b2}
+.card.model .stats > div.body > div:last-child {background: #7f8d73}
+.card.model .stats > div.spirit > div:last-child {background: #c1912d}
+.card.model .stats.left  { top: 14%; left: 5% }
+.card.model .stats.right { top: 14%; right: 5% }
+.card.model .stats.right > div {flex-direction: row-reverse}
+.card.model .stats.right > div > div {border-right: 0.15em solid #fff;}
+.card.model .stats.right > div > div:first-child {border-right: none;}
+.card.model .pic {
   width: 36%; height: 25.5%; position:absolute; left: 30.5%; top:11%; display:block; border: 0.4em solid black; background: white; border-radius: 100%;
   background-size: contain; background-repeat:   no-repeat; background-position: center center;  
 
 }
 
-.card .sfxribbon { top: 42%; left: 5%; width: 90%; font-size: 90%; margin:0  }
+.card.model .sfxribbon { top: 42%; left: 5%; width: 90%; font-size: 90%; margin:0  }
+.card.model .sfxribbon dl {margin:0; display:flex; flex-direction: row; width: 100%; align-content: flex-start; font-size: 90%;}
+.card.model .sfxribbon dt { line-height: 150%; white-space: nowrap; font-weight: bold; width: 35%; text-transform: uppercase}
+.card.model .sfxribbon dd { margin:0; width: 70%;  color: #862419; }; 
+.card.model .sfxribbon dd span {display:inline-block}
+.card.model .sfxribbon dd span:after {content:", "}
+.card.model .sfxribbon dd span:last-child:after {content:"."}
+.card.model .sfxribbon dd .icon-star_icon:before { font-size: 90%}
 
-.card .sfxribbon dl {margin:0; display:flex; flex-direction: row; width: 100%; align-content: flex-start; font-size: 90%;}
-.card .sfxribbon dt { line-height: 150%; white-space: nowrap; font-weight: bold; width: 35%; text-transform: uppercase}
+.card.model .weapons {width: 90%; left: 5%; font-size: 82.5%; top: 60%; background: #3a3b3d; border: none; border-collapse:collapse; box-shadow: 0 0 10px rgba(0,0,0,0.5);}
+.card.model .weapons td {padding: 1% 2% 1% 2%; vertical-align: middle; font-size: 80% }
+.card.model .weapons thead {background: #3a3b3d; color: white; text-transform: uppercase}
+.card.model .weapons tbody {background: white }
+.card.model .weapons tbody tr:nth-child(even) { background: #d0d3d5}
+.card.model .weapons tbody td.strike { background: black; color: white; text-align: center; width: 10%}
+.card.model .weapons tbody td.range {text-align: center; ; width: 10%}
+.card.model .weapons tbody td.range:after {content:'"'}
+.card.model .weapons tbody td.attack {padding-left:5%; ; width: 30%; position: relative}
 
-.card .sfxribbon dd { margin:0; width: 70%;  color: #862419; }; 
-
-.card .sfxribbon dd span {display:inline-block}
-.card .sfxribbon dd span:after {content:", "}
-.card .sfxribbon dd span:last-child:after {content:"."}
-
-.card .sfxribbon dd .icon-star_icon:before { font-size: 90%}
-
-.card .weapons {width: 90%; left: 5%; font-size: 82.5%; top: 60%; background: #3a3b3d; border: none; border-collapse:collapse; box-shadow: 0 0 10px rgba(0,0,0,0.5);}
-.card .weapons td {padding: 1% 2% 1% 2%; vertical-align: middle; font-size: 80% }
-.card .weapons thead {background: #3a3b3d; color: white; text-transform: uppercase}
-.card .weapons tbody {background: white }
-.card .weapons tbody tr:nth-child(even) { background: #d0d3d5}
-.card .weapons tbody td.strike { background: black; color: white; text-align: center; width: 10%}
-.card .weapons tbody td.range {text-align: center; ; width: 10%}
-.card .weapons tbody td.range:after {content:'"'}
-.card .weapons tbody td.attack {padding-left:5%; ; width: 30%; position: relative}
-
-.card .weapons tbody tr.melee td.attack:before,
-.card .weapons tbody tr.range td.attack:before  {
+.card.model .weapons tbody tr.melee td.attack:before,
+.card.model .weapons tbody tr.range td.attack:before  {
   font-family: 'icomoon'; content: "\e909"; position:absolute; left: -2.5%;  background: white; border-radius: 100%; font-size: 110%; box-shadow: 0 0 10px rgba(0,0,0,0.5); line-height: 100%; 
 }
-.card .weapons tbody tr.range td.attack:before {content: "\e908";}
+.card.model .weapons tbody tr.range td.attack:before {content: "\e908";}
+
+/* /MODEL */
+
+/* COMMON  */
+
+
+.card .background:after {
+  content: '';
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  top: 0;
+  left: 0;
+  background: attr(data-tint);
+} 
 .card .title {color: white; line-height: 225%; margin-left: 2% }
 .card .title {text-transform: uppercase}
 .card .title span {font-size:70%}
@@ -102,34 +114,51 @@
 .card section p {margin: 0 0 1em 0; break-inside: avoid; widows: 3; }
 .card section p em { color: #862419; font-weight: bold; font-style: normal}
 
+/* /COMMON */
 
-.ProfileSelector .panel-body {padding:0 !important}
-.ProfileSelector .listing { overflow: auto; height:400px; }
-.ProfileSelector .listing .miniCard {margin: 5px}
-.ProfileSelector .listing .miniCard+.miniCard {border-top: 1px solid #eee}
-.ProfileSelector .listing .miniCard dd {font-size: smaller}
-.ProfileSelector .listing .miniCard.selected { background: #C1DFEA}
+/* VEHICLE */
+.card.vehicle .title .vehicle:before {content: "\2726"; font-style:normal} 
+.card.vehicle .pic {
+  width: 60%; height: 43%; position:absolute; left: 19%; top:11%; display:block; border: 0.4em solid black; background: white; border-radius: 100%;
+  background-size: contain; background-repeat:   no-repeat; background-position: center center;  
+}
+.card.vehicle .stats {
+  display:flex; flex-direction: row; top:50%; width:90%; left: 4%; border:none; background:none; box-shadow: none;
+}
+.card.vehicle .stats > div {
+  display:flex; flex-direction: row; margin: 0 1% 0 1%; flex-grow:1;
+  background: #3a3b3d; border: 0.15em solid #fff; width: 28%; border-collapse: collapse; 
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.card.vehicle .stats > div > div {flex-grow:1; font-weight: normal; font-size:90%}
+.card.vehicle .stats > div > div:last-child {font-size: 110%; width:20%; border-left: 0.10em solid #fff}
+
+.card.vehicle .stats > div.capacity > div:last-child {background: #c67229}
+.card.vehicle .stats > div.armour > div:last-child {background: #862419;}
+.card.vehicle .stats > div.defence > div:last-child {background: #78a2b2}
+.card.vehicle .description { width:90%; left: 4%; top:54%; font-size: 80%}
+.card.vehicle .sfxribbon { top: 77%; left: 5%; width: 90%; font-size: 90%; margin:0  }
+.card.vehicle .sfxribbon dl {margin:0; display:flex; flex-direction: row; width: 100%; align-content: flex-start; font-size: 90%;}
+.card.vehicle .sfxribbon dt { line-height: 150%; white-space: nowrap; font-weight: bold; width: 35%; text-transform: uppercase}
+.card.vehicle .sfxribbon dd { margin:0; width: 70%;  color: #862419; }; 
+.card.vehicle .sfxribbon dd span {display:inline-block}
+.card.vehicle .sfxribbon dd span:after {content:", "}
+.card.vehicle .sfxribbon dd span:last-child:after {content:"."}
+.card.vehicle .sfxribbon dd .icon-star_icon:before { font-size: 90%}
+
+
+
+/* /VEHICLE */
 
 .viewport {display:inline-flex; flex-direction: row}
 .viewport.portrait {flex-direction: column; }
 .viewport.portrait .card.back { transform: rotate(180deg); }
 
-#root {width: 100%; height:100%}
-
-
-
-
 
 @media screen {
-  .App { display:flex; flex-direction: row; height:100%}
-  
-  .App .sidebar {flex-grow:1; background: white; box-shadow: 0 0 10px #000; width: 100%; height:100%; display:flex; flex-direction: column}
-  .App .canvas {flex-grow:1; height:100%; width:100%; overflow: auto}
-
   .viewport {  margin: 2mm;  padding: 10px; position: relative}
   .viewport.selected {     background: rgba(0,255,255,0.2);}
   /*transform: scale(1.5); transform-origin: left top*/
-
 }
 
 @media print {
@@ -141,7 +170,7 @@
     width: 63.5mm; height: 88mm; position:relative;
   }
   
-  #root, .App, .canvas, html, body {height: auto; width: auto}
+
 
   .canvas {
     overflow:visible; margin: 6mm; 
@@ -173,7 +202,7 @@
   
   /*.card.back { transform: rotate(180deg)}*/
   
-  .Pane2 {margin-bottom: 6mm}
+
 
 }
 

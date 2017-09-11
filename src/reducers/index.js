@@ -44,11 +44,15 @@ const INITIALSTATE = {
     cast: []
 }
 
-const TEMPLATE_CHARACTER_NEW = require('../data/model-blank.json')
+const getTemplateCharacterNew=(payload, templatename='model')=>{
+    if (payload && payload.__card)
+        templatename=payload.__card;
+    return require('../data/'+templatename.toLowerCase()+'-blank.json')
+}
 
 const reducer = (state = INITIALSTATE, action) => {
     state = Object.assign( {}, state)
-    
+    const TEMPLATE_CHARACTER_NEW = getTemplateCharacterNew(action.payload)
     switch (action.type) {
         case "CHARACTER_NEW":
             let uid=uuid.v4();

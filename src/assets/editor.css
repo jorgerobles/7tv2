@@ -12,3 +12,13 @@
     clear: both;}
 
 .characterEditor select {border-top: 1px solid #eee !important} 
+
+.profileSelector .panel-body {padding:0 !important}
+.profileSelector .listing { overflow: auto; height:400px; }
+.profileSelector .listing .miniCard {margin: 5px}
+.profileSelector .listing .miniCard+.miniCard {border-top: 1px solid #eee}
+.profileSelector .listing .miniCard dd {font-size: smaller}
+.profileSelector .listing .miniCard.selected { background: #C1DFEA}
+
+.editorToolBar .dropdown ,
+.editorToolBar .dropdown > button { width:100% !important}

@@ -3,12 +3,13 @@ import React from 'react';
 import PropTypes from "prop-types";
 import { DescriptionField } from "react-jsonschema-form";
 import TextAreaWidget from "react-jsonschema-form/lib/components/widgets/TextareaWidget";
+import ColorWidget from "react-jsonschema-form/lib/components/widgets/ColorWidget";
 import FileWidget from "react-jsonschema-form/lib/components/widgets/FileWidget";
 import TitleField  from "react-jsonschema-form/lib/components/fields/TitleField";
 import ObjectField  from "react-jsonschema-form/lib/components/fields/ObjectField";
 import ArrayField  from "react-jsonschema-form/lib/components/fields/ArrayField";
 
-import { ButtonGroup, Button, Glyphicon, Collapse } from "react-bootstrap";
+import { ButtonGroup, Button, Glyphicon, Collapse, Checkbox,  FormGroup, InputGroup, FormControl } from "react-bootstrap";
 import { insertAtCaret } from '../lib/helpers'
 import format from 'string-template'
 import { sendAsFile, parseDataUri } from '../lib/helpers'

@@ -10,7 +10,7 @@ import '../assets/editor.css'
 
 
 import { dataURItoBlob } from '../lib/helpers'
-import { ToolTextareaWidget , ToolArrayField, CollapseObjectField, PictureWidget} from './FormWidgets'
+import { ToolTextareaWidget , ToolArrayField, CollapseObjectField, PictureWidget, PickColorWidget} from './FormWidgets'
 import { SFXSelect, ProfileSelector, MiniCard} from './CharacterWidgets'
 
 const getCharacterById=(id, cast)=>{
@@ -18,15 +18,8 @@ const getCharacterById=(id, cast)=>{
 }
    
 
-const uiSchema = require('../data/model-uischema.json');
-const schema = require('../data/model-schema.json');
-
-
 
 const log = (type) => console.log.bind(console, type);
-
-
-
 
 
 const SfxArrayField=ToolArrayField(
@@ -47,9 +40,15 @@ export class CharacterEditor extends React.Component {
 
     render(){
         let character=getCharacterById(this.props.characterId, this.props.cast);
+
+        if (!character) return <div/>;
+
+        const uiSchema = require('../data/'+character.__card.toLowerCase()+'-uischema.json');
+        const schema = require('../data/'+character.__card.toLowerCase()+'-schema.json');
+
         const widgets={
             toolTextareaWidget:ToolTextareaWidget,
-            pictureWidget:PictureWidget
+            pictureWidget:PictureWidget,
         }
         const fields={
             collapseObjectField:CollapseObjectField,

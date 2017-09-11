@@ -1,0 +1,12 @@
+{
+  "__version": "0.0.1",
+  "__card": "vehicle",
+  "health":1,
+  "genres":[],
+  "stats":{
+      "capacity":1,
+      "defence":0,
+      "armour":0
+  },
+  "type":"Vehicle"
+}
