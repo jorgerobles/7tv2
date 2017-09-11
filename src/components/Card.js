@@ -94,9 +94,10 @@ export class CardFront extends React.Component {
 
     renderVehicle(card)
     {
-        let { health=0, ratings=0,name, type, photo, capacity=0, armour=0, defence=0, description="",__tint } = this.props.character
+        let { health=0, ratings=0,name, type, photo, description="",__tint } = this.props.character
         let tags = this.props.character.genres||[]
         let sfx = this.props.character.special_effects || [];
+        let { capacity=0, armour=0, defence=0 } = this.props.character.stats;
 
         return <div className="cellophan"><div className={"card "+card+" front"}>
         <div className="background" style={{filter:`hue-rotate(${__tint}deg)`}}></div>
