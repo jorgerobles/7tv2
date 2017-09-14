@@ -41,10 +41,12 @@ export class CharacterEditor extends React.Component {
     render(){
         let character=getCharacterById(this.props.characterId, this.props.cast);
 
-        if (!character) return <div className="paper characterEditor"><div style={{margin:20}}><ProfileSelector/></div></div>;
+        if (!character) 
+            return <div className="paper characterEditor"><div style={{margin:20}}><ProfileSelector/></div></div>;
 
-        const uiSchema = require('../data/'+character.__card.toLowerCase()+'-uischema.json');
-        const schema = require('../data/'+character.__card.toLowerCase()+'-schema.json');
+        const card=character.__card.toLowerCase();
+        const uiSchema = require('../data/'+card+'-uischema.json');
+        const schema = require('../data/'+card+'-schema.json');
 
         const widgets={
             toolTextareaWidget:ToolTextareaWidget,
