@@ -60,21 +60,7 @@
 .card.model .sfxribbon dd span:last-child:after {content:"."}
 .card.model .sfxribbon dd .icon-star_icon:before { font-size: 90%}
 
-.card.model .weapons {width: 90%; left: 5%; font-size: 82.5%; top: 60%; background: #3a3b3d; border: none; border-collapse:collapse; box-shadow: 0 0 10px rgba(0,0,0,0.5);}
-.card.model .weapons td {padding: 1% 2% 1% 2%; vertical-align: middle; font-size: 80% }
-.card.model .weapons thead {background: #3a3b3d; color: white; text-transform: uppercase}
-.card.model .weapons tbody {background: white }
-.card.model .weapons tbody tr:nth-child(even) { background: #d0d3d5}
-.card.model .weapons tbody td.strike { background: black; color: white; text-align: center; width: 10%}
-.card.model .weapons tbody td.range {text-align: center; ; width: 10%}
-.card.model .weapons tbody td.range:after {content:'"'}
-.card.model .weapons tbody td.attack {padding-left:5%; ; width: 30%; position: relative}
 
-.card.model .weapons tbody tr.melee td.attack:before,
-.card.model .weapons tbody tr.range td.attack:before  {
-  font-family: 'icomoon'; content: "\e909"; position:absolute; left: -2.5%;  background: white; border-radius: 100%; font-size: 110%; box-shadow: 0 0 10px rgba(0,0,0,0.5); line-height: 100%; 
-}
-.card.model .weapons tbody tr.range td.attack:before {content: "\e908";}
 
 /* /MODEL */
 
@@ -97,6 +83,22 @@
 .card .title .co-star:before {content: "\2729"; font-style:normal}
 .card .title .extra:before {content: "\2726"; font-style:normal}
 
+.card .weapons {width: 90%; left: 5%; font-size: 82.5%; top: 60%; background: #3a3b3d; border: none; border-collapse:collapse; box-shadow: 0 0 10px rgba(0,0,0,0.5);}
+.card .weapons td {padding: 1% 2% 1% 2%; vertical-align: middle; font-size: 80% }
+.card .weapons thead {background: #3a3b3d; color: white; text-transform: uppercase}
+.card .weapons tbody {background: white }
+.card .weapons tbody tr:nth-child(even) { background: #d0d3d5}
+.card .weapons tbody td.strike { background: black; color: white; text-align: center; width: 10%}
+.card .weapons tbody td.range {text-align: center; ; width: 10%}
+.card .weapons tbody td.range:after {content:'"'}
+.card .weapons tbody td.attack {padding-left:5%; ; width: 30%; position: relative}
+
+.card .weapons tbody tr.melee td.attack:before,
+.card .weapons tbody tr.range td.attack:before  {
+  font-family: 'icomoon'; content: "\e909"; position:absolute; left: -2.5%;  background: white; border-radius: 100%; font-size: 110%; box-shadow: 0 0 10px rgba(0,0,0,0.5); line-height: 100%; 
+}
+.card .weapons tbody tr.range td.attack:before {content: "\e908";}
+ 
 .card .ratings {bottom: 1%; color: white; left: 5%; text-align: center; line-height: 90%; font-size: 90%}
 .card .ratings val {display:block;}
 .card .health {width: 100%; bottom:5.5%; text-align:center }
@@ -137,7 +139,7 @@
 .card.vehicle .stats > div.armour > div:last-child {background: #862419;}
 .card.vehicle .stats > div.defence > div:last-child {background: #78a2b2}
 .card.vehicle .description { width:90%; left: 4%; top:54%; font-size: 80%}
-.card.vehicle .sfxribbon { top: 77%; left: 5%; width: 90%; font-size: 90%; margin:0  }
+.card.vehicle .sfxribbon { top: 78%; left: 5%; width: 90%; font-size: 90%; margin:0  }
 .card.vehicle .sfxribbon dl {margin:0; display:flex; flex-direction: row; width: 100%; align-content: flex-start; font-size: 90%;}
 .card.vehicle .sfxribbon dt { line-height: 150%; white-space: nowrap; font-weight: bold; width: 35%; text-transform: uppercase}
 .card.vehicle .sfxribbon dd { margin:0; width: 70%;  color: #862419; }; 

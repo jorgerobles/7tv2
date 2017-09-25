@@ -8,5 +8,6 @@
       "defence":0,
       "armour":0
   },
+  "special_effects":[],
   "type":"Vehicle"
 }

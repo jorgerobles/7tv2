@@ -77,6 +77,7 @@ Traits:
   Soft: This model cannot add extra dice when making a defence roll. Gain ✪ immediately each time this model successfully defends against a strike.
   Thick: If you pass a Mind statistic test you must reroll all dice rolled. If you fail this second Mind test you gain ✪ immediately.
   Unique: You can only have one model with this profile name in your cast. Named models from the Programme Guides (General Gordon for example) are also automatically Unique even if this special effect isn’t listed on their profile.
+  Vehicle: Vehicles can never gain the Dominated, Stunned, or Weakened status be knocked down or suffer damage for being drowned or lack of oxygen.
 
 Unexplained:
   Energy Blast:

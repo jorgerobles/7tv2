@@ -94,7 +94,7 @@ export class CardFront extends React.Component {
 
     renderVehicle(card)
     {
-        let { health=0, ratings=0,name, type, photo, description="",__tint } = this.props.character
+        let { health=0, ratings=0,name, type, photo, description="",weapons=[], __tint } = this.props.character
         let tags = this.props.character.genres||[]
         let sfx = this.props.character.special_effects || [];
         let { capacity=0, armour=0, defence=0 } = this.props.character.stats;
@@ -105,7 +105,7 @@ export class CardFront extends React.Component {
             <Title name={name} type={type} />
             <Pic photo={photo}/>
             <StatBlock stats={{ capacity, armour, defence }} />
-            <Description text={description}/>
+            {weapons.length? <Weapons items={weapons} />:<Description text={description}/>}
             <div className="sfxribbon">
                 <dl><dt>Special effects</dt><dd>{sfx.map((s, i) => (<Trait key={i} object={s} />))}</dd></dl>
             </div>
@@ -174,15 +174,17 @@ export class CardBack extends React.Component {
     }
     renderVehicle(card){
         let sfx = this.props.character.special_effects||[];
-        let {name, type="",notes="",__tint} = this.props.character
+        let {name, type="",notes="",weapons=[], description="", __tint} = this.props.character
         return <div className="cellophan"><div className={"card "+card+" back"}>
         <div className="background" style={{filter:`hue-rotate(${__tint}deg)`}}></div>
         <div className="foreground">
             <Title name={name} type={type} />
             <section>
-                {sfx.length? <heading>Special effects</heading> : undefined}
+                {weapons.length && description? (<heading>Description</heading>):undefined}
+                {weapons.length && description? (<Description text={description}/>):undefined}
+                {sfx.length? (<heading>Special effects</heading>):undefined}
                 {sfx.map((v, i) => (<Trait key={i} object={v} full />))}
-                {notes && (<heading>Notes</heading>)}
+                {notes? (<heading>Notes</heading>):undefined}
                 {notes}
             </section>
         </div>
