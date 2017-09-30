@@ -1,3 +1,32 @@
 {
-    
+    "genres": {
+        "ui:widget": "checkboxes"
+    },
+    "description":{
+        "ui:widget": "toolTextareaWidget",
+        "ui:options": {
+            "rows": 15,
+            "textTools":{
+                "ToolInsertText":["✪"]
+            }
+        }
+    },
+    "photo":{
+        "ui:widget": "pictureWidget"
+    },
+    "ui:order": [
+        "name",
+        "description",
+        "profile",
+        "type",
+        "role",
+        "photo",
+        "models",
+        "genres",
+        "notes",
+        "__tint"
+    ],
+    "__tint": {
+        "ui:widget":"range"
+    }
 }

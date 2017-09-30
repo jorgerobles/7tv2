@@ -118,11 +118,10 @@ export class CardFront extends React.Component {
 
     renderUnit(card)
     {
+        let {__tint} = this.props.character;
         return <div className="cellophan"><div className={"card "+card+" front"}>
-        <div className="background"></div>
-        <div className="foreground">
-        
-        </div>
+        <div className="background" style={{filter:`hue-rotate(${__tint}deg)`}}></div>
+        <div className="foreground"></div>
         </div></div>
     }
 
@@ -192,9 +191,18 @@ export class CardBack extends React.Component {
     }
 
     renderUnit(card) {
+        let {name, role, type="",notes="",models=[], description="", photo, __tint} = this.props.character
+        let tags = this.props.character.genres || []
         return <div className="cellophan"><div className={"card "+card+" back"}>
-            <div className="background"></div>
+            <div className="background" style={{filter:`hue-rotate(${__tint}deg)`}}></div>
             <div className="foreground">
+            <Title name={name} alignment={role} type={type} />
+            <Tags values={tags} />
+            <div className="content">
+                <Description text={description}/>
+                {models.map((m,i)=>{return <dl className="model" key={i}><dt>{m.qty}</dt><dd>{m.model}</dd></dl>})}
+                <Pic photo={photo}/>
+            </div>
             </div>
         </div></div>
     }

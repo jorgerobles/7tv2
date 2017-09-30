@@ -67,7 +67,7 @@ export class CharacterEditor extends React.Component {
                 formData = {character}
                 widgets={widgets}
                 fields={fields}
-                ><Button bsStyle="danger" block type="submit">Validate</Button></Form>}
+                ><Button bsStyle="danger" block type="submit">Validate</Button></Form>
                 </div>
         </div>
     }

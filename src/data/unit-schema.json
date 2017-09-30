@@ -3,6 +3,14 @@
     "id": "http://crooked-dice.co.uk/unit.json",
     
     "properties": {
+      "__tint":{
+        "title":"Card tint",
+        "id": "/properties/__tint",
+        "type": "integer",
+        "minimum": 0,
+        "maximum": 360,
+        "description":"Change card hue"
+      },
       "genres": {
         "title":"Genre/s",
         "description": "The genre of each model determines if it can join your cast or not. Models from a Programme Guide will have their cast’s symbol here instead.",
@@ -24,12 +32,17 @@
         },
         "uniqueItems": true
       },
-      
-     
       "name": {
         "description": "The name of the model",
         "id": "/properties/name",
         "title": "Name",
+        "type": "string"
+      },
+      "description": {
+        "default": "",
+        "description": "Some description about the unit",
+        "id": "/properties/description",
+        "title": "Description",
         "type": "string"
       },
       "notes": {

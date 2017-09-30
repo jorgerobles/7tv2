@@ -119,7 +119,9 @@
 /* /COMMON */
 
 /* VEHICLE */
-.card.vehicle .title .vehicle:before {content: "\2726"; font-style:normal} 
+.card.vehicle .title .vehicle:before,
+.card.unit .title .unit:before
+  {content: "\2726"; font-style:normal} 
 .card.vehicle .pic {
   width: 60%; height: 43%; position:absolute; left: 19%; top:11%; display:block; border: 0.4em solid black; background: white; border-radius: 100%;
   background-size: contain; background-repeat:   no-repeat; background-position: center center;  
@@ -148,10 +150,24 @@
 .card.vehicle .sfxribbon dd span:last-child:after {content:"."}
 .card.vehicle .sfxribbon dd .icon-star_icon:before { font-size: 90%}
 
-
-
 /* /VEHICLE */
-
+/* UNIT */
+.card.front.unit .background {background: url(images/2e_unit_back.jpg) ; background-size: contain;}
+.card.unit .tags {bottom:auto; top:2%; right:2%}
+.card.unit.back .content { width:90%; left: 4%; top:12%; height:80%; position:relative; font-size:80% }
+.card.unit.back .content .model {display: flex;margin-left:10%; width:80%}
+.card.unit.back .content .model dt {font-size: 130%; color: #862419; font-weight:bold; flex-grow:1}
+.card.unit.back .content .model dd {flex-grow:6; margin:0}
+.card.unit.back .content .pic {
+   position:absolute; bottom:5%; right:0; z-index: -1;
+   width: 50%;
+   height: 50%;
+   position: absolute;
+   background-size: contain;
+   background-repeat: no-repeat;
+   background-position: right;
+  }
+/* /UNIT */
 .viewport {display:inline-flex; flex-direction: row}
 .viewport.portrait {flex-direction: column; }
 .viewport.portrait .card.back { transform: rotate(180deg); }
