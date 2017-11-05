@@ -72,7 +72,7 @@ const Title = ({ name="", alignment="", type="" }) => {
 const Tags = ({ values, additional=[] }) => {
     return <div className="tags">{values.map((v, i) => { 
         return <i key={i} className={"icon-" + slug(v||"").toLowerCase()}></i> 
-    })}{additional.map((v,i)=>{
+    })}{(additional||[]).map((v,i)=>{
         return <img key={i+values.length} src={v} /> 
     })}</div>
 }
