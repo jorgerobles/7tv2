@@ -2,6 +2,10 @@
 import uuid from 'uuid';
 import Yaml from 'js-yaml';
 import { first, middle, last} from 'random-name'
+import {actionTypes} from 'redux-localstorage'
+import Ajv from 'ajv';
+const ajv = new Ajv();
+      ajv.addMetaSchema(require('ajv/lib/refs/json-schema-draft-04.json'));
 
 const randomName=()=>{
     return (Math.round(Math.random())?first():middle())+" "+last();
@@ -54,6 +58,9 @@ const reducer = (state = INITIALSTATE, action) => {
     state = Object.assign( {}, state)
     const TEMPLATE_CHARACTER_NEW = getTemplateCharacterNew(action.payload)
     switch (action.type) {
+        case actionTypes.INIT:
+            return validateState(state);
+            break;
         case "CHARACTER_NEW":
             let uid=uuid.v4();
             state.cast = [...state.cast, Object.assign({},TEMPLATE_CHARACTER_NEW, { id: uid, name: randomName() }, action.payload || {})];
@@ -97,3 +104,20 @@ const reducer = (state = INITIALSTATE, action) => {
 }
 
 export default reducer;
+
+
+const validateState=(state)=>{
+    
+    state.cast= state.cast.slice().map((item)=>{
+        const schema = require('../data/'+item.__card.toLowerCase()+'-schema.json');
+        let validate = ajv.compile(schema);
+        if (validate(item)){
+            return item
+        } else {
+            alert(validate.errors)
+            return item;
+            
+        };
+    })
+    return state;
+}
