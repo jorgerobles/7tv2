@@ -1,4 +1,5 @@
 {
+
     "genres": {
         "ui:widget": "checkboxes"
     },
@@ -24,9 +25,16 @@
         "models",
         "genres",
         "notes",
-        "__tint"
+        "__custom"
     ],
-    "__tint": {
-        "ui:widget":"range"
+   "__custom": {
+        "tint":{
+            "ui:widget":"range"
+        },
+        "genres":{
+            "items":{
+                "ui:widget": "pictureWidget"
+            }
+        }
     }
 }

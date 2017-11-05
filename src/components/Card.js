@@ -69,9 +69,11 @@ const Title = ({ name="", alignment="", type="" }) => {
     return <div className="title"><strong>{name}</strong> <i className={type.toLowerCase()} /> <span>{alignment} {type}</span></div>
 }
 
-const Tags = ({ values }) => {
+const Tags = ({ values, additional=[] }) => {
     return <div className="tags">{values.map((v, i) => { 
         return <i key={i} className={"icon-" + slug(v||"").toLowerCase()}></i> 
+    })}{additional.map((v,i)=>{
+        return <img key={i+values.length} src={v} /> 
     })}</div>
 }
 
@@ -94,7 +96,9 @@ export class CardFront extends React.Component {
 
     renderVehicle(card)
     {
-        let { health=0, ratings=0,name, type, photo, description="",weapons=[], __tint } = this.props.character
+        let { health=0, ratings=0,name, type, photo, description="",weapons=[], __custom } = this.props.character
+        let __tint = __custom? __custom.tint : 0
+        let __genres= __custom ? __custom.genres: null
         let tags = this.props.character.genres||[]
         let sfx = this.props.character.special_effects || [];
         let { capacity=0, armour=0, defence=0 } = this.props.character.stats;
@@ -111,14 +115,15 @@ export class CardFront extends React.Component {
             </div>
             <Ratings value={ratings} />
             <Health value={health} />
-            <Tags values={tags} />
+            <Tags values={tags} additional={__genres} />
         </div>
         </div></div>
     }
 
     renderUnit(card)
     {
-        let {__tint} = this.props.character;
+        let {__custom} = this.props.character;
+        let __tint = __custom? __custom.tint : 0
         return <div className="cellophan"><div className={"card "+card+" front"}>
         <div className="background" style={{filter:`hue-rotate(${__tint}deg)`}}></div>
         <div className="foreground"></div>
@@ -127,11 +132,12 @@ export class CardFront extends React.Component {
 
     renderModel(card) {
         let { fight = 0, shoot = 0, defence = 0, mind = 0, body = 0, spirit = 0 } = this.props.character.stats;
-        let { health, ratings, weapons, name, role, type, photo, __tint } = this.props.character
-
+        let { health, ratings, weapons, name, role, type, photo, __custom } = this.props.character
+        let __tint = __custom? __custom.tint : 0
         let qlty = this.props.character.star_quality
         let sfx = this.props.character.special_effects;
-        let tags = this.props.character.genres
+        let tags = this.props.character.genres || []
+        let __genres= __custom ? __custom.genres: null
         
         
         return <div className="cellophan"><div className={"card "+card+" front"}>
@@ -148,7 +154,7 @@ export class CardFront extends React.Component {
             <Weapons items={weapons} />
             <Ratings value={ratings} />
             <Health value={health} />
-            <Tags values={tags} />
+            <Tags values={tags} additional={__genres} />
             </div>
         </div></div>
     }
@@ -173,7 +179,8 @@ export class CardBack extends React.Component {
     }
     renderVehicle(card){
         let sfx = this.props.character.special_effects||[];
-        let {name, type="",notes="",weapons=[], description="", __tint} = this.props.character
+        let {name, type="",notes="",weapons=[], description="", __custom} = this.props.character
+        let __tint = __custom? __custom.tint : 0
         return <div className="cellophan"><div className={"card "+card+" back"}>
         <div className="background" style={{filter:`hue-rotate(${__tint}deg)`}}></div>
         <div className="foreground">
@@ -191,13 +198,15 @@ export class CardBack extends React.Component {
     }
 
     renderUnit(card) {
-        let {name, role, type="",notes="",models=[], description="", photo, __tint} = this.props.character
+        let {name, role, type="",notes="",models=[], description="", photo, __custom} = this.props.character
+        let __tint = __custom? __custom.tint : 0
         let tags = this.props.character.genres || []
+        let __genres= __custom ? __custom.genres: null
         return <div className="cellophan"><div className={"card "+card+" back"}>
             <div className="background" style={{filter:`hue-rotate(${__tint}deg)`}}></div>
             <div className="foreground">
             <Title name={name} alignment={role} type={type} />
-            <Tags values={tags} />
+            <Tags values={tags} additional={__genres} />
             <div className="content">
                 <Description text={description}/>
                 {models.map((m,i)=>{return <dl className="model" key={i}><dt>{m.qty}</dt><dd>{m.model}</dd></dl>})}
@@ -210,7 +219,8 @@ export class CardBack extends React.Component {
     renderModel(card) {
         let qlty = this.props.character.star_quality
         let sfx = this.props.character.special_effects;
-        let { health, ratings, weapons, name, role, type, notes='',__tint } = this.props.character
+        let { health, ratings, weapons, name, role, type, notes='',__custom } = this.props.character
+        let __tint = __custom? __custom.tint : 0
 
        
         return <div className="cellophan"><div className={"card "+card+" back"}>

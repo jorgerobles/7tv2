@@ -1,6 +1,7 @@
 {
   "__version": "0.0.1",
   "__card": "Model",
+  "__custom":{},
   "name": null,
   "profile": "",
   "role": "",

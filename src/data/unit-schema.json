@@ -3,13 +3,30 @@
     "id": "http://crooked-dice.co.uk/unit.json",
     
     "properties": {
-      "__tint":{
-        "title":"Card tint",
-        "id": "/properties/__tint",
-        "type": "integer",
-        "minimum": 0,
-        "maximum": 360,
-        "description":"Change card hue"
+      "__custom":{
+        "title":"Custom",
+        "id": "/properties/__custom",
+        "type":"object",
+        "properties":{
+          "genres":{
+            "id": "/properties/__custom/genres",
+             "title":"Custom Genres",
+             "type": "array",
+             "items": {
+                "id": "/properties/__custom/genres/items",
+                "title": "Custom Icon",
+                "type": "string"
+             }
+          },
+          "tint": {
+            "title":"Card tint",
+            "id": "/properties/__custom/tint",
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 360,
+            "description":"Change card hue"
+          }
+        }
       },
       "genres": {
         "title":"Genre/s",

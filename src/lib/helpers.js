@@ -101,7 +101,7 @@ export function insertAtCaret(txtarea, text) {
     var front = (txtarea.value).substring(0, strPos);
     var back = (txtarea.value).substring(strPos, txtarea.value.length);
     txtarea.value = front + text + back;
-    strPos = strPos + text.length;
+    strPos += text.length;
     if (br === "ie") {
         txtarea.focus();
         var ieRange = document.selection.createRange();
