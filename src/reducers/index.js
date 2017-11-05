@@ -107,7 +107,7 @@ export default reducer;
 
 
 const validateState=(state)=>{
-    
+    return state;
     state.cast= state.cast.slice().map((item)=>{
         const schema = require('../data/'+item.__card.toLowerCase()+'-schema.json');
         let validate = ajv.compile(schema);

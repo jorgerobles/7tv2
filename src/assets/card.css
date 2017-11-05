@@ -92,7 +92,8 @@
 .card .weapons tbody td.range {text-align: center; ; width: 10%}
 .card .weapons tbody td.range:after {content:'"'}
 .card .weapons tbody td.attack {padding-left:5%; ; width: 30%; position: relative}
-
+.card .weapons tbody td.effects p {margin:0; padding:0}
+.card .weapons tbody td.effects em {color: #862419; font-weight: bold; font-style: normal}
 .card .weapons tbody tr.melee td.attack:before,
 .card .weapons tbody tr.range td.attack:before  {
   font-family: 'icomoon'; content: "\e909"; position:absolute; left: -2.5%;  background: white; border-radius: 100%; font-size: 110%; box-shadow: 0 0 10px rgba(0,0,0,0.5); line-height: 100%; 
@@ -114,7 +115,7 @@
 .card section > * {width:50%; padding-right: 3%;}
 .card section heading {text-transform: uppercase; font-weight: bold; font-size: 110%; color: #862419; margin: 0em 0 0.5em 0; display:block}
 .card section .icon-star_icon:before { font-size: 90%; color: #862419;}
-.card section p {margin: 0 0 0.5em 0; break-inside: avoid; widows: 3; }
+.card section p {margin: 0 0 0.5em 0; break-inside: avoid; widows: 3; white-space:pre-line; }
 .card section p em { color: #862419; font-weight: bold; font-style: normal}
 
 /* /COMMON */
@@ -145,7 +146,7 @@
 .card.vehicle .sfxribbon { top: 78%; left: 5%; width: 90%; font-size: 90%; margin:0  }
 .card.vehicle .sfxribbon dl {margin:0; display:flex; flex-direction: row; width: 100%; align-content: flex-start; font-size: 90%;}
 .card.vehicle .sfxribbon dt { line-height: 150%; white-space: nowrap; font-weight: bold; width: 35%; text-transform: uppercase}
-.card.vehicle .sfxribbon dd { margin:0; width: 70%;  color: #862419; }; 
+.card.vehicle .sfxribbon dd { margin:0; width: 70%;  color: #862419;  }; 
 .card.vehicle .sfxribbon dd span {display:inline-block}
 .card.vehicle .sfxribbon dd span:after {content:", "}
 .card.vehicle .sfxribbon dd span:last-child:after {content:"."}
@@ -158,7 +159,7 @@
 .card.unit.back .content { width:90%; left: 4%; top:12%; height:80%; position:relative; font-size:80% }
 .card.unit.back .content .model {display: flex;margin-left:10%; width:80%}
 .card.unit.back .content .model dt {font-size: 130%; color: #862419; font-weight:bold; flex-grow:1}
-.card.unit.back .content .model dd {flex-grow:6; margin:0}
+.card.unit.back .content .model dd {flex-grow:6; margin:0; white-space: pre-line}
 .card.unit.back .content .pic {
    position:absolute; bottom:5%; right:0; z-index: -1;
    width: 50%;

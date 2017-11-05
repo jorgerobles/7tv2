@@ -12,6 +12,13 @@
             }
         }
     },
+    "models":{
+        "items":{
+            "model": {
+                "ui:widget":"textarea"
+            }
+        }
+    },
     "photo":{
         "ui:widget": "pictureWidget"
     },
