@@ -31,7 +31,7 @@ Knowledge:
   Unit Leader: >
       (specify unit type)
       Some models operate well in tightly defined groups led by particularly commanding individuals. These groups of models are known as units, and they sacrifice tactical flexibility for increased presence on the battlefield.
-      Choose any number of models in this unit within 6” who have not activated this turn. You must include the Unit Leader. Pay 1/2✪ for each model (round up). All these models can activate this turn.
+      Choose any number of models in this unit within 6” who have not activated this turn. You must include the Unit Leader. Pay 1✪. All these models can activate this turn. You can choose this special effect only once per turn.
 
 Physical:
   Aquatic: This model can move through water as if it was clear ground.
@@ -66,6 +66,10 @@ Traits:
   Four Eyes: This model has impaired vision. This model cannot add extra dice when making a shoot attack. If this model makes a successful shoot attack you gain ✪ immediately.
   Loner: This model can activate for free if it is more than 6” from any other model. This model can never have the Leader or Unit Leader special effects.
   Lucky: This model can reroll any one dice they roll, once per turn.
+  Pack Mentality: >
+      Place the 5” blast template anywhere on the table.
+      Count the number of models of the indicated type whose bases are at least partially under the template who have not activated this turn. Pay ✪.
+      All these models can activate this turn. You can use this special effect only once per turn.
   Robot: This model is never affected by Fearsome models. This model never loses Health due to being underwater or in a vacuum.
   Screamer: This model can activate without ✪ if there are one or more opposing models within 6”. This model can never have the Leader orUnit Leader special effects.
   Seduce: Free action. Choose any non-Robot Extra with no more than 1 Health within 4” of this model. That model gains the Weakened status immediately if they don’t already have it.
