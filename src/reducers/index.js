@@ -36,7 +36,15 @@ export const loadYamlFile = (file,asSingleFile=false) => {
 
 export const saveYamlFile=(docs,asSingleFile=false, options={})=>{
     if (asSingleFile && Array.isArray(docs)){
-        return docs.map((doc)=>Yaml.safeDump(doc, options)).join("\n---\n")
+        
+        return docs.map((doc)=>{
+            try {
+                return Yaml.safeDump(doc, options)
+            } catch(e) {
+                console.error(doc)
+            }
+        }).join("\n---\n")
+        
     } else {
         return Yaml.safeDump(docs, options);
     }

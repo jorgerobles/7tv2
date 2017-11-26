@@ -46,7 +46,7 @@
 .card.model .stats.right > div > div {border-right: 0.15em solid #fff;}
 .card.model .stats.right > div > div:first-child {border-right: none;}
 .card.model .pic {
-  width: 36%; height: 25.5%; position:absolute; left: 30.5%; top:11%; display:block; border: 0.4em solid black; background: white; border-radius: 100%;
+  width: 36%; height: 25.5%; position:absolute; left: 30.5%; top:11%; display:block; border: 0.41em solid black; background: white; border-radius: 100%;
   background-size: contain; background-repeat:   no-repeat; background-position: center center;  
 
 }
@@ -125,7 +125,7 @@
 .card.unit .title .unit:before
   {content: "\2726"; font-style:normal} 
 .card.vehicle .pic {
-  width: 60%; height: 43%; position:absolute; left: 19%; top:11%; display:block; border: 0.4em solid black; background: white; border-radius: 100%;
+  width: 60%; height: 43%; position:absolute; left: 19%; top:11%; display:block; border: 0.41em solid black; background: white; border-radius: 100%;
   background-size: contain; background-repeat:   no-repeat; background-position: center center;  
 }
 .card.vehicle .stats {
@@ -154,7 +154,7 @@
 
 /* /VEHICLE */
 /* UNIT */
-.card.front.unit .background {background: url(images/2e_unit_back.jpg) ; background-size: contain;}
+.card.front.unit .background {background: url(images/2e_unit_back.jpg) ; background-size: cover;}
 .card.unit .tags {bottom:auto; top:2%; right:2%}
 .card.unit.back .content { width:90%; left: 4%; top:12%; height:80%; position:relative; font-size:80% }
 .card.unit.back .content .model {display: flex;margin-left:10%; width:80%}

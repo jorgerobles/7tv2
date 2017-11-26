@@ -2,11 +2,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Card } from './Card'
-import { Toolbar } from './Ui'
+import { Toolbar, Help } from './Ui'
 import { CharacterEditor } from './CharacterEditor'
 import chunk from 'chunk';
 import SplitPane from 'react-split-pane'
 import '../assets/resizer.css'
+
 
 class App extends Component {
   render() {
@@ -18,6 +19,7 @@ class App extends Component {
           
           <div className="sidebar ui " >
             <Toolbar/>
+            <Help/>
             <CharacterEditor 
               characterId={this.props.currentCharacter} 
               cast={this.props.cast}

@@ -2,9 +2,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import Queue from 'promise-queue';
+import ReactDOM from 'react-dom';
+import marked from 'marked'
+
 
 import { loadYamlFile, saveYamlFile } from '../reducers/index';
-import { SplitButton, MenuItem, Button, ButtonToolbar, Glyphicon, DropdownButton} from 'react-bootstrap';
+import { SplitButton, MenuItem, Button, ButtonToolbar, Glyphicon, DropdownButton, Collapse} from 'react-bootstrap';
 import { sendAsFile, sendAsImage } from '../lib/helpers'
 import slug from 'slug';
 
@@ -101,3 +104,25 @@ export class Toolbar extends React.Component {
 Toolbar = connect(
     (state)=>{return {cast: state.cast}}
 )(Toolbar);
+
+
+export class Help extends React.Component {
+
+    constructor(...args) {
+        super(...args);
+        this.state = {
+          open: false,
+        };
+    }
+
+    render(){
+        return <div className="ui paper" style={{margin:5}} >
+
+       
+        <Button block bsSize="small" onClick={() => this.setState({ open: !this.state.open })} bsStyle="default">Help</Button>
+        <Collapse in={this.state.open}><div className="help" dangerouslySetInnerHTML={{__html:marked(require("!raw-loader!../HELP.md"))}} ></div></Collapse>
+
+
+      </div>
+    }
+}
