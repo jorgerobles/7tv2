@@ -31,11 +31,12 @@ Knowledge:
   - Unit Leader: >
       (specify unit type)
       Some models operate well in tightly defined groups led by particularly commanding individuals. These groups of models are known as units, and they sacrifice tactical flexibility for increased presence on the battlefield.
-      Choose any number of models in this unit within 6” who have not activated this turn. You must include the Unit Leader. Pay 1/2✪ for each model (round up). All these models can activate this turn.
+      Choose any number of models in this unit within 6” who have not activated this turn. You must include the Unit Leader. Pay 1✪. All these models can activate this turn. You use this special effect only once per turn.
 
 Physical:
   - Aquatic: This model can move through water as if it was clear ground.
   - Block: Opposing non-vehicle models moving to within 1” of this model must either end their movement or move into base contact with the blocking model. Models cannot block if they are knocked down, or are Stunned or On Fire.
+  - Blown Clear : If this model finds itself under a weapon template for any reason, move this model out from under the template so thats it's base is touching the template. This model suffers no effects from the strike.
   - Climb: This model can climb any surface as though it is on a ladder. If it falls, count the fall as though it was from two levels less. If this model falls two levels or less it can continue its activation after the fall.
   - Fly: When this model makes a move action it never incurs movement penalties for rough ground or obstacles. Flyers can move over other models but must end each move action clear of the bases of any other models.
   - Hard: Roll 1D6 if this model receives the Stunned or Weakened statuses. On a roll of 4+ this model does not gain that status. You can add extra dice to this roll roll using ✪.
