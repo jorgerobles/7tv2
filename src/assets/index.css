@@ -1,0 +1,37 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+   width: 100%; height: 100%;
+   background-attachment: fixed;
+   background-color:#666;
+   background-image: url(./images/canvas.svg);
+   background-repeat:no-repeat; background-position: bottom right
+   
+}
+
+@media print {
+  html, body {background:none; box-shadow: none}
+  .ui, .SplitPane .Pane1, .Resizer { display: none !important}
+  .SplitPane {height: auto !important}
+  #root, .App, .canvas, html, body {height: auto; width: auto}
+  .Pane2 {margin-bottom: 6mm}
+}
+
+
+@media screen {
+  .App { display:flex; flex-direction: row; height:100%}
+  .App .sidebar {flex-grow:1; background: white; box-shadow: 0 0 10px #000; width: 100%; height:100%; display:flex; flex-direction: column}
+  .App .canvas {flex-grow:1; height:100%; width:100%; overflow: auto}
+  #root {width: 100%; height:100%}
+}
+
+.help {
+  margin: 2em 1em 2em 1em; padding: 0.2em 1em 0.2em 1em; border-radius: 0.5em; background: #ffd;
+  font-family: Courier New, Courier, monospace; 
+  box-shadow: 3px 3px 12px rgba(0,0,0,0.5);
+  transform: rotate(-1deg);
+  height: 400px; overflow: auto; 
+  font-size: 0.8em
+}
+
