@@ -1,87 +1,87 @@
 Action Hero:
-  role: STAR
-  type: Heroic
+  type: Star
+  role: Heroic
   ratings: 10
   genres: []
   description: >
       A perfect physical specimen, you think nothing of leaping from a tall building, jumping from a moving car or charging an enemy position. You are gung-ho, hit first and ask question later!
 FLAMBOYANT AGENT:
-  role: STAR
-  type: Heroic
+  type: Star
+  role: Heroic
   ratings: 10
   genres: []
   description: >
       You find it easy to protect the world while retaining an air of iconic cool. It is only the arsenal of gadgets ruining the lines of your Saville Row suit that puts a crimp in your day.
 MILITARY MIND:
-  role: STAR
-  type: Heroic
+  type: Star
+  role: Heroic
   ratings: 10
   genres: []
   description: >
     The armed forces are in your blood – possibly as an ex- officer or a member of some other military organisation.
     You’re perfectly at home with giving orders and getting the heavy hardware out when things get a bit sticky.
 Tomorrow Person:
-  role: STAR
-  type: Heroic
+  type: Star
+  role: Heroic
   ratings: 10
   genres: []
   description: >
       A genetic anomaly, you have been born with mental gifts a thousand years before their time, psychic abilities that mark you out as an evolutionary freak
       of nature. Whether a fragile loner in blood-drenched clothes or the arrogant herald of a new mutant master race, the power within you cannot be denied.
 Tough Detective: 
-  role: STAR
-  type: Heroic
+  type: Star
+  role: Heroic
   ratings: 10
   genres: []
   description: >
       You may be a maverick police detective, a resourceful private eye, a government agent, or maybe just a fugitive trying to clear his name. 
       Whoever you are, one thing is certain – the possibility of someone getting a dry slap is never far away.
 Unearthly Traveller:
-  role: STAR
-  type: Heroic
+  type: Star
+  role: Heroic
   ratings: 9
   genres: []
   description: >
       You have travelled further than anyone else on Earth – in person or using your amazing powers – indeed you are probably not human at all. 
       But whether the threat comes from back-street crime lords or villainous Venusians, as an agent of order you will always be there to set things right before teatime.
 Angel of Justice:
-  role: CO-STAR
-  type: Heroic
+  type: Co-Star
+  role: Heroic
   ratings: 6
   genres: []
   description: >
       As a fit and feisty fighter, you combine all-round athleticism with a mean roundhouse kick. When not demolishing opponents you can be found at the sharp end of investigations, a task for which you are ideally (cat) suited.
 Crackpot Inventor:
-  role: CO-STAR
-  type: Heroic
+  type: Co-Star
+  role: Heroic
   ratings: 5
   genres: []
   description: >
       Too little time and too many ideas! Locked away in a military lab, cutting-edge foundation or dusty attic, you are always tinkering with madcap devices. Some are mundane, but some can swing a battle and save the world!
 Dependable Deputy:
-  role: CO-STAR
-  type: Heroic
+  type: Co-Star
+  role: Heroic
   ratings: 6
   genres: []
   description: >
       A right hand man or a dedicated Girl Friday. Loyal and brave, you might be a stalwart sergeant or an unflappable physician. But you are always at your leader’s side - and often thinking one step ahead.
 Investigative Academic:
-  role: CO-STAR
-  type: Heroic
+  type: Co-Star
+  role: Heroic
   ratings: 5
   genres: []
   description: >
       Will you be stalking the night for supernatural secrets, solving unexplained cases for the government or hunting for relics in ancient ruins? Armed with knowledge, you will not stop until you uncover the truth.
 Plucky Assistant:
-  role: CO-STAR
-  type: Heroic
+  type: Co-Star
+  role: Heroic
   ratings: 5
   genres: []
   description: >
       You are a constant companion and confidante. While not always the brightest, strongest or most talented, you find that heart and soul and good old-fashioned common sense will often win out when the chips are down.
 Strongarm:
-  role: CO-STAR
-  type: Heroic
+  type: Co-Star
+  role: Heroic
   ratings: 5
   genres: []
   description: >
