@@ -18,6 +18,7 @@ Combat:
   - Snap Shot: > 
         This model can make one shoot attack each turn as a free action with –2 to the strike roll. Snap shots cannot be aimed. 
         A snap shot counts as this model’s shoot attack for the turn, so unless the model has a weapon with the 2 Shots effect, this model cannot make another shoot attack this turn.
+  - You're Knicked: *Special Action.* This model can remove one opposing model in base contact from play if that model currently has one or more stauses, 1 Health and there's a Police Car or Police Van within 6". Immediately place this model adjacant to that vehicle.      
 
 Knowledge:
   - Gadget: This model adds one additional gadget card to the player's gadgets pool.
@@ -28,12 +29,14 @@ Knowledge:
   - Repair: Special Action. If this model passes a Mind test one friendly Robot or Vehicle model in base contact can recover 1 lost Health.
   - Spy: This model can be set up anywhere on the table, as long as it is no further than 12” from another friendly non-Spy model. Spies are placed after all other models (see the rules about cast start locations (see page 51). Opposing models cannot make strikes against a model with this special effect in their first turn of an episode.
   - Tactics: When this model is activated, choose up to two friendly Extra models within 6”. Each of these models can immediately move up to 2” as free actions.
+  - Trainer: You can choose to include 0-3 Attack Dogs for each Dog Handler in your cast. When this model is activated, you can also activate up to 3 friendly Attack Dogs within 6" who have not already activated this turn.
   - Unit Leader: >
       (specify unit type)
       Some models operate well in tightly defined groups led by particularly commanding individuals. These groups of models are known as units, and they sacrifice tactical flexibility for increased presence on the battlefield.
       Choose any number of models in this unit within 6” who have not activated this turn. You must include the Unit Leader. Pay 1/2✪ for each model (round up). All these models can activate this turn.
 
 Physical:
+  - 2 Man Team: This profile can be represented with both models on a large base, or on two medium bases. If on two bases, both models must remain in base contact with each other at all times. This profile counts as one model for gaining ✪ and determining if your cast is axed, but two models if being carried by a vehicle.
   - Aquatic: This model can move through water as if it was clear ground.
   - Block: Opposing non-vehicle models moving to within 1” of this model must either end their movement or move into base contact with the blocking model. Models cannot block if they are knocked down, or are Stunned or On Fire.
   - Climb: This model can climb any surface as though it is on a ladder. If it falls, count the fall as though it was from two levels less. If this model falls two levels or less it can continue its activation after the fall.
@@ -62,6 +65,7 @@ Traits:
   - Brave: This model is never affected by Fearsome models and counts its strike rolls as +1 against these models.
   - Clumsy: This model cannot add extra dice when making a fight attack. If this model makes a successful fight attack you gain ✪ immediately.
   - Coward: If this model passes a Spirit statistic test you must reroll all dice rolled. If you fail this second Spirit test you gain ✪ immediately. You cannot choose this special effect for models who also have the Brave special effect.
+  - Crowd Control: This model can move trough other models. Move these models the minimum distance to move their bases out of the way of this model. All such movements are considered to be pushes.
   - Fearsome: Models making a fight attack against this model must pass a Spirit test or must count their Strike number as half (round up) against this model until the end of the turn.
   - Four Eyes: This model has impaired vision. This model cannot add extra dice when making a shoot attack. If this model makes a successful shoot attack you gain ✪ immediately.
   - Loner: This model can activate for free if it is more than 6” from any other model. This model can never have the Leader or Unit Leader special effects.
