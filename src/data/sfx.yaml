@@ -75,7 +75,7 @@ Traits:
   Alien: This model cannot recover Health using the Medic special effect. In the player’s end phase, this model can automatically remove one of its statuses.
   Bodyguard: When a model within 2” of this model is targetted by any strike, you can choose to have this model targetted instead if this model is a legal target.
   Brave: This model is never affected by Fearsome models and counts its strike rolls as +1 against these models.
-  Choosen one: This model can be selected for a cast without acces to the unknown genre. If it is, it counts as Unique. This model must select one friendly Star or Co-Star model as its chosen one - this model must be placed within 2" of the Chosen One at the start of this players activation phase unless ✪ is paid. 
+  Chosen one: This model can be selected for a cast without acces to the unknown genre. If it is, it counts as Unique. This model must select one friendly Star or Co-Star model as its chosen one - this model must be placed within 2" of the Chosen One at the start of this players activation phase unless ✪ is paid. 
   Clumsy: This model cannot add extra dice when making a fight attack. If this model makes a successful fight attack you gain ✪ immediately.
   Coward: If this model passes a Spirit statistic test you must reroll all dice rolled. If you fail this second Spirit test you gain ✪ immediately. You cannot choose this special effect for models who also have the Brave special effect.
   Commander: when this model activates you can choose any one friendly Minion unit. This model can activatie this unit as if they had the Unit Leader special effect. Count any existing leader model of this unit as a normal member of the unit.
@@ -107,7 +107,7 @@ Traits:
      When specifiying the boss, Sidekick Stars must choose a friendly Star, Sidekick Co-Stars must choose a friendly Star or Co-Star, and Sidekick Extras may choose any friendly model.
   Slow: This model cannot spend more than one action moving in any turn.
   Soft: This model cannot add extra dice when making a defence roll. Gain ✪ immediately each time this model successfully defends against a strike.
-  Superstitous: This model cannot make strikes against models with the Alien special effect. If any model uses an Unexplained special effect within 6" of this model, this model must pass a Spirit test or it will make an immediate full move away from the model using the Unexplained special effect.
+  Superstitious: This model cannot make strikes against models with the Alien special effect. If any model uses an Unexplained special effect within 6" of this model, this model must pass a Spirit test or it will make an immediate full move away from the model using the Unexplained special effect.
   Thick: If you pass a Mind statistic test you must reroll all dice rolled. If you fail this second Mind test you gain ✪ immediately.
   Unique: You can only have one model with this profile name in your cast. Named models from the Programme Guides (General Gordon for example) are also automatically Unique even if this special effect isn’t listed on their profile.
   Vehicle: Vehicles can never gain the Dominated, Stunned, or Weakened status be knocked down or suffer damage for being drowned or lack of oxygen.
