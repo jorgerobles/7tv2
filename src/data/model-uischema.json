@@ -60,6 +60,7 @@
         }
     },
     "star_quality":{
+        "ui:field":"sqArrayField",
         "items":{
             "ui:order":["name","cost","description"],
             "ui:field":"collapseObjectField",

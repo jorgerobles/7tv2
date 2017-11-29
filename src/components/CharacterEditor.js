@@ -11,7 +11,7 @@ import '../assets/editor.css'
 
 import { dataURItoBlob } from '../lib/helpers'
 import { ToolTextareaWidget , ToolArrayField, CollapseObjectField, PictureWidget, PickColorWidget} from './FormWidgets'
-import { SFXSelect, ProfileSelector, MiniCard} from './CharacterWidgets'
+import { SFXSelect, SQSelect, ProfileSelector, MiniCard} from './CharacterWidgets'
 
 const getCharacterById=(id, cast)=>{
     return cast.find(item=>{return item.id == id})
@@ -22,9 +22,8 @@ const getCharacterById=(id, cast)=>{
 const log = (type) => console.log.bind(console, type);
 
 
-const SfxArrayField=ToolArrayField(
-    [<SFXSelect/>]
-)
+const SfxArrayField=ToolArrayField([<SFXSelect/>])
+const SQArrayField=ToolArrayField([<SQSelect/>])
 
 export class CharacterEditor extends React.Component {
     
@@ -54,7 +53,8 @@ export class CharacterEditor extends React.Component {
         }
         const fields={
             collapseObjectField:CollapseObjectField,
-            sfxArrayField:SfxArrayField
+            sfxArrayField:SfxArrayField,
+            sqArrayField:SQArrayField
         }
         return <div className="paper characterEditor">
             <div style={{margin:20}}>

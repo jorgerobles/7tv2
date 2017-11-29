@@ -56,6 +56,46 @@ export class SFXSelect extends React.Component {
 
 SFXSelect=connect((state)=>({currentCharacter: state.currentCharacter}))(SFXSelect)
 
+export class SQSelect extends React.Component {
+    
+    constructor(props){
+        super(props)
+        this.handleClick=this.handleClick.bind(this)
+        this.state={
+            data: {},
+            value:null
+        }
+    }
+
+    handleClick(e){
+        if (!this.state.value) return;
+        let formData=this.props.widget.formData;
+        this.props.widget.onChange([...formData,this.state.value],{ validate: false })
+    }
+
+    componentDidMount()
+    {
+        fetch(require('../data/sfx-sq.yaml')).then((response)=>{
+            response.text().then(function(txt){this.setState({data:Yaml.safeLoad(txt)})}.bind(this))
+        })
+    }
+    render(){
+        return <FormGroup>
+                <InputGroup><FormControl componentClass="select" placeholder="Select SFX to add" defaultValue="" onChange={e=>{this.setState(Object.assign(this.state,{value:JSON.parse(e.target.value)}))}}>
+            <option>Select SFX to append</option>
+            {Object.entries(this.state.data).map((entry,i)=>{
+                let [group,item]=entry;
+                return <optgroup key={i} label={group}>{Object.entries(item).map((sfx_entry,j)=>{
+                    let [label,value]=sfx_entry;
+                    return <option key={j} value={JSON.stringify(parseTrait(label, value))}>{label}</option>
+                })}</optgroup>
+            })}
+        </FormControl><InputGroup.Button><Button bsStyle="success" onClick={e=>{this.handleClick(e)}}>Add SFX</Button></InputGroup.Button></InputGroup></FormGroup>
+    }
+}
+
+SQSelect=connect((state)=>({currentCharacter: state.currentCharacter}))(SQSelect)
+
 export class ProfileSelector extends React.Component {
     
     constructor(props){
