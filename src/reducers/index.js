@@ -1,6 +1,7 @@
 
 import uuid from 'uuid';
 import Yaml from 'js-yaml';
+import cleanDeep from 'clean-deep';
 import { first, middle, last} from 'random-name'
 import {actionTypes} from 'redux-localstorage'
 import Ajv from 'ajv';
@@ -36,10 +37,9 @@ export const loadYamlFile = (file,asSingleFile=false) => {
 
 export const saveYamlFile=(docs,asSingleFile=false, options={})=>{
     if (asSingleFile && Array.isArray(docs)){
-        
         return docs.map((doc)=>{
             try {
-                return Yaml.safeDump(doc, options)
+                return Yaml.safeDump(cleanDeep(doc,{emptyArrays:false, emptyObjects:false, emptyStrings:false, nullValues:false}), options)
             } catch(e) {
                 console.error(doc)
             }
