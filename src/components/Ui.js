@@ -126,3 +126,21 @@ export class Help extends React.Component {
       </div>
     }
 }
+
+const downloadSnapshot=function(state)
+{
+    let d=new Date();
+    sendAsFile("7TV-debug-"+d+".json",JSON.stringify(state),'application/json');
+}
+
+
+export class Rescue extends React.Component {
+    render(){
+        console.log(this.props.state)
+        return <div className="ui paper"> <DropdownButton bsStyle="primary" bsSize="xsmall" title="Debug"  id="new_model" dropup >
+            <MenuItem eventKey="1" onClick={e=>downloadSnapshot(this.props.state)}>Download data snapshot</MenuItem>
+       </DropdownButton></div>
+    }
+}
+
+Rescue = connect((state)=>({state}))(Rescue);

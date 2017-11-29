@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { Card } from './Card'
-import { Toolbar, Help } from './Ui'
+import { Toolbar, Help, Rescue } from './Ui'
 import { CharacterEditor } from './CharacterEditor'
 import chunk from 'chunk';
 import SplitPane from 'react-split-pane'
@@ -25,6 +25,7 @@ class App extends Component {
               cast={this.props.cast}
               onChange={this.props.updateCharacter}
             />
+            <Rescue/>
           </div>
           <div className="canvas" onClick={e=>this.props.deselectCharacter(e)}>{
             this.props.cast.map((character,j)=>{return <Card character={character} key={j}/>})
