@@ -136,7 +136,6 @@ const downloadSnapshot=function(state)
 
 export class Rescue extends React.Component {
     render(){
-        console.log(this.props.state)
         return <div className="ui paper"> <DropdownButton bsStyle="primary" bsSize="xsmall" title="Debug"  id="new_model" dropup >
             <MenuItem eventKey="1" onClick={e=>downloadSnapshot(this.props.state)}>Download data snapshot</MenuItem>
        </DropdownButton></div>
