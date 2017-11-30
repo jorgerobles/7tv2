@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React from 'react'
 import { connect } from 'react-redux'
-import {Accordion, Panel,Button, FormControl, FormGroup, InputGroup } from 'react-bootstrap'
+import {Accordion, Panel,Button, FormControl, FormGroup, InputGroup, Label } from 'react-bootstrap'
 import Yaml from 'js-yaml';
 
 const parseTrait=(label,text)=>{
@@ -167,7 +167,7 @@ export class MiniCard extends React.Component {
     render(){
         let [name, item] = this.props.character;
         return <dl className={"miniCard "+((this.props.selected)?'selected':'')} onClick={this.props.onClick}>
-            <dt>{name} ({item.ratings})</dt>
+            <dt>{name} ({item.ratings}) {item.__card? '':<Label>Incomplete</Label>}</dt>
             <dd>{item.description}</dd>
         </dl>
     }
