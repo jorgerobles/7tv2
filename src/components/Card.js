@@ -13,7 +13,7 @@ import { downloadSingleCharacter } from './Ui'
 
 const stats = { fight: 10, shoot: 10, defence: 10, mind: 10, body: 10, spirit: 10 };
 
-const Marked = ({md, Component="span", Options={},...rest})=>{
+const Marked = ({md="", Component="span", Options={},...rest})=>{
     let __html=marked(md,Options);
         if (Options.inline) __html=__html.replace(/^<p>/gi,'').replace(/<\/p>[\r\n]*$/gi,'').replace(/[\r\n]/gi,'')
     return <Component {...{...rest}} dangerouslySetInnerHTML={{__html}}/>
