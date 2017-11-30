@@ -13,6 +13,12 @@ import { downloadSingleCharacter } from './Ui'
 
 const stats = { fight: 10, shoot: 10, defence: 10, mind: 10, body: 10, spirit: 10 };
 
+const Marked = ({md, Component="span", Options={},...rest})=>{
+    let __html=marked(md,Options);
+        if (Options.inline) __html=__html.replace(/^<p>/gi,'').replace(/<\/p>[\r\n]*$/gi,'').replace(/[\r\n]/gi,'')
+    return <Component {...{...rest}} dangerouslySetInnerHTML={{__html}}/>
+}
+
 const StatBlock = ({ stats, className, ...rest }) => {
     return <div className={"stats " + className}>
         {Object.entries(stats).map((entry, i) => {
@@ -34,7 +40,7 @@ const Weapons = ({ items }) => {
         <tbody>
             {items.map((item, i) => {
                 return <tr className={slug(item.type||"").toLowerCase()} key={i}>
-                    <td className="attack">{item.attack}</td><td className="range">{item.range}</td><td className="strike">+{item.strike}</td><td className="effects" dangerouslySetInnerHTML={{__html:marked(item.effects)}}/>
+                    <td className="attack">{item.attack}</td><td className="range">{item.range}</td><td className="strike">+{item.strike}</td><Marked Component='td' className="effects" md={item.effects} Options={{inline:true}}/>
                 </tr>
             })}
         </tbody>
@@ -55,14 +61,14 @@ const Trait = ({ object, full }) => {
     let { cost, name, level, description } = object
     let stars = cost ? Array(cost).fill("").map((v, i) => { return <i key={i} className="icon-star_icon"></i> }) : undefined
     if (full) {
-        return <p><strong>{name}{level ? ` (${level})` : ''}{stars ? " " : ""}{stars}</strong><br /><span dangerouslySetInnerHTML={{__html:marked(description)}}/></p>
+        return <p><strong><Marked md={name} Options={{inline:true}}/>{level ? ` (${level})` : ''}{stars ? " " : ""}{stars}</strong><br /><Marked md={description}/></p>
         
     }
     return <span>{name}{level ? ` (${level})` : ''}{stars ? " " : ""}{stars}</span>
 }
 
 const Description = ({text}) =>{
-    return <p className="description"><span dangerouslySetInnerHTML={{__html:marked(text)}}/></p>
+    return <p className="description"><Marked md={text}/></p>
 }
 
 const Title = ({ name="", alignment="", type="" }) => {
