@@ -1,0 +1,277 @@
+Action Hero:
+  genres:
+    - Civilian
+    - Military
+    - Secret
+  health: 3
+  name: Action Hero
+  notes: ''
+  profile: Action Hero
+  ratings: 10
+  role: Heroic
+  special_effects:
+    - description: >-
+        Once per turn, after this model has been the target of a fight attack, it
+        can make a fight attack against that model, if that model is in range of
+        that attack.
+      cost: 0
+      name: Fight Back
+    - description: >-
+        Roll 1D6 if this model receives the Stunned or Weakened statuses. On a
+        roll of 4+ this model does not gain that status. You can add extra dice to
+        this roll roll using ✪.
+      cost: 0
+      name: Hard
+    - description: 'This model can reroll any one dice they roll, once per turn.'
+      cost: 0
+      name: Lucky
+  star_quality:
+    - cost: 2
+      description: >-
+        This model can make one immediate fight or shoot attack, regardless of
+        what else they have done in this turn. This attack gains 1 extra die.
+      name: Burst of Action
+  stats:
+    body: 4
+    defence: 10
+    fight: 5
+    mind: 3
+    shoot: 5
+    spirit: 4
+  type: Star
+  weapons:
+    - type: Melee
+      attack: Martial Arts
+      effects: ''
+      range: 0
+      strike: 10
+    - type: Range
+      attack: Pistol
+      effects: 2 Shots
+      range: 12
+      strike: 8
+  __card: Model
+  description: >
+    A perfect physical specimen, you think nothing of leaping from a tall
+    building, jumping from a moving car or charging an enemy position. You are
+    gung-ho, hit first and ask question later!
+Flamboyant Agent:
+  genres:
+    - Law & Order
+    - Secret
+  health: 3
+  name: FLAMBOYANT AGENT
+  notes: ''
+  profile: FLAMBOYANT AGENT
+  ratings: 10
+  role: Heroic
+  special_effects:
+    - description: This model adds one additional gadget card to the player's gadgets pool.
+      cost: 0
+      name: Gadget
+    - description: >-
+        Free action. Choose any non-Robot Extra with no more than 1 Health within
+        4” of this model. That model gains the Weakened status immediately if they
+        don’t already have it.
+      cost: 0
+      name: Seduce
+    - description: >-
+        This model can be set up anywhere on the table, as long as it is no
+        further than 12” from another friendly non-Spy model. Spies are placed
+        after all other models (see the rules about cast start locations (see page
+        51). Opposing models cannot make strikes against a model with this special
+        effect in their first turn of an episode.
+      cost: 0
+      name: Spy
+  star_quality: []
+  stats:
+    body: 3
+    defence: 10
+    fight: 5
+    mind: 4
+    shoot: 5
+    spirit: 5
+  type: Star
+  weapons:
+    - type: Melee
+      attack: Brawl
+      effects: 0 Health + Weakened
+      range: 0
+      strike: 8
+    - type: Range
+      attack: Pistol
+      effects: 2 Shots
+      range: 12
+      strike: 8
+  __card: Model
+
+  description: >
+    You find it easy to protect the world while retaining an air of iconic cool.
+    It is only the arsenal of gadgets ruining the lines of your Saville Row suit
+    that puts a crimp in your day.
+Military Mind:
+  genres:
+    - Civilian
+    - Military
+  health: 3
+  name: MILITARY MIND
+  notes: ''
+  profile: MILITARY MIND
+  ratings: 10
+  role: Heroic
+  special_effects:
+    - description: >-
+        When this model activates choose {#} friendly models within 6” who have
+        not activated this turn. Chosen models can activate this turn for free but
+        cannot use their own Leader or Unit Leader special effects this turn.
+      cost: 0
+      name: Leader 2
+    - description: >-
+        When this model makes a strike, it can choose to add +1 to its strike roll
+        for every ✪ spent on extra dice, instead of getting the extra dice.
+      cost: 0
+      name: Military Training
+  star_quality: []
+  stats:
+    body: 4
+    defence: 10
+    fight: 4
+    mind: 4
+    shoot: 5
+    spirit: 5
+  type: Star
+  weapons:
+    - type: Melee
+      attack: Swagger Stick
+      effects: 0 Health + Weakened
+      range: 0
+      strike: 9
+    - type: Range
+      attack: High Calibre Pistol
+      effects: 2 Shots
+      range: 12
+      strike: 9
+  __card: Model
+
+  description: >
+    The armed forces are in your blood – possibly as an ex- officer or a member of
+    some other military organisation. You’re perfectly at home with giving orders
+    and getting the heavy hardware out when things get a bit sticky.
+Tomorrow Person:
+  genres:
+    - Secret
+    - Science
+    - Unknown
+  health: 3
+  name: Tomorrow Person
+  notes: ''
+  profile: Tomorrow Person
+  ratings: 10
+  role: Heroic
+  special_effects:
+    - description: >-
+        This model can make fight attacks all round (360o) and never counts as
+        having been attacked in the rear. The model loses this special effect
+        while Stunned.
+      cost: 0
+      name: Aware
+    - cost: 1
+      description: >
+        This model can ignore any strike it has just suffered if it can roll 4+ on
+        1D6. This special effect can be used during an opponent’s turn. You can
+        add extra dice to this roll.
+      name: Invulnerable
+    - cost: 1
+      description: >
+        This model can change the result of up to two dice just rolled to either a
+        1 or a 6. These dice need to relate to an action the model performs or an
+        action another model performs on it. This special effect can be used
+        during an opponent’s turn.
+      name: Psychic
+  star_quality: []
+  stats:
+    body: 4
+    defence: 10
+    fight: 4
+    mind: 5
+    shoot: 4
+    spirit: 4
+  type: Star
+  weapons:
+    - type: Melee
+      attack: Brawl
+      effects: 0 Health + Weakened
+      range: 0
+      strike: 8
+    - type: Range
+      attack: Stun Pistol
+      effects: '0 Health + Stunned, 2 Shots'
+      range: 12
+      strike: 8
+  __version: 0.0.1
+  __card: Model
+
+  description: >
+    A genetic anomaly, you have been born with mental gifts a thousand years
+    before their time, psychic abilities that mark you out as an evolutionary
+    freak of nature. Whether a fragile loner in blood-drenched clothes or the
+    arrogant herald of a new mutant master race, the power within you cannot be
+    denied.
+Tough Detective: 
+  type: Star
+  role: Heroic
+  ratings: 10
+  genres: []
+  description: >
+      You may be a maverick police detective, a resourceful private eye, a government agent, or maybe just a fugitive trying to clear his name. 
+      Whoever you are, one thing is certain – the possibility of someone getting a dry slap is never far away.
+Unearthly Traveller:
+  type: Star
+  role: Heroic
+  ratings: 9
+  genres: []
+  description: >
+      You have travelled further than anyone else on Earth – in person or using your amazing powers – indeed you are probably not human at all. 
+      But whether the threat comes from back-street crime lords or villainous Venusians, as an agent of order you will always be there to set things right before teatime.
+Angel of Justice:
+  type: Co-Star
+  role: Heroic
+  ratings: 6
+  genres: []
+  description: >
+      As a fit and feisty fighter, you combine all-round athleticism with a mean roundhouse kick. When not demolishing opponents you can be found at the sharp end of investigations, a task for which you are ideally (cat) suited.
+Crackpot Inventor:
+  type: Co-Star
+  role: Heroic
+  ratings: 5
+  genres: []
+  description: >
+      Too little time and too many ideas! Locked away in a military lab, cutting-edge foundation or dusty attic, you are always tinkering with madcap devices. Some are mundane, but some can swing a battle and save the world!
+Dependable Deputy:
+  type: Co-Star
+  role: Heroic
+  ratings: 6
+  genres: []
+  description: >
+      A right hand man or a dedicated Girl Friday. Loyal and brave, you might be a stalwart sergeant or an unflappable physician. But you are always at your leader’s side - and often thinking one step ahead.
+Investigative Academic:
+  type: Co-Star
+  role: Heroic
+  ratings: 5
+  genres: []
+  description: >
+      Will you be stalking the night for supernatural secrets, solving unexplained cases for the government or hunting for relics in ancient ruins? Armed with knowledge, you will not stop until you uncover the truth.
+Plucky Assistant:
+  type: Co-Star
+  role: Heroic
+  ratings: 5
+  genres: []
+  description: >
+      You are a constant companion and confidante. While not always the brightest, strongest or most talented, you find that heart and soul and good old-fashioned common sense will often win out when the chips are down.
+Strongarm:
+  type: Co-Star
+  role: Heroic
+  ratings: 5
+  genres: []
+  description: >
+      As a Strongarm you may be a hulking giant with a heart of gold, a scrappy street fighter, a martial arts maestro or perhaps a burly police sergeant. Whatever your background, you will fight your corner using wits and muscles to overcome the enemy.
