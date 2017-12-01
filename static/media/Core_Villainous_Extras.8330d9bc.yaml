@@ -1,0 +1,1126 @@
+__custom: {}
+genres:
+  - Civilian
+  - Crime
+  - Military
+  - Secret
+  - Science
+  - Unknown
+health: 2
+name: MINION COMMANDER
+notes: ''
+profile: MINION COMMANDER
+ratings: 3
+role: Villain
+special_effects:
+  - description: >-
+      Opposing non-vehicle models moving to within 1” of this model must either
+      end their movement or move into base contact with the blocking model.
+      Models cannot block if they are knocked down, or are Stunned or On Fire.
+    cost: 0
+    name: Block
+  - description: >-
+      Choose any number of models in this unit within 6” who have not activated
+      this turn. You must include the Unit Leader. Pay 1✪. All these models can
+      activate this turn. You can choose this special effect only once per turn.
+    cost: 0
+    name: Unit Leader (Minion Squad)
+star_quality: []
+stats:
+  body: 3
+  defence: 8
+  fight: 3
+  mind: 3
+  shoot: 3
+  spirit: 3
+type: Extra
+weapons:
+  - type: Melee
+    attack: Cosh
+    effects: 0 Health + Stunned
+    range: 0
+    strike: 7
+  - type: Range
+    attack: Pistol
+    effects: 2 Shots
+    range: 12
+    strike: 6
+__version: 0.0.1
+__card: Model
+customization: []
+id: 821eedd5-2db5-45c7-8fe9-7e2a07e282f1
+description: >
+  Guarding volcanic lairs for a megalomaniac is not suited to everyone. Pay is
+  good, but the prospect of ending up in the shark tank or being dispatched by a
+  super-spy are tragically high.
+
+---
+__custom: {}
+genres:
+  - Civilian
+  - Crime
+  - Military
+  - Secret
+  - Science
+  - Unknown
+health: 1
+name: MINION
+notes: >-
+  Ratings : 2 ratings or 5 for 3 models
+
+  Ranged Weapon : Before the game you have to choose between Pistol, Rifle or
+  SMG to use. You cannot change this ranged weapon during the game.
+profile: MINION
+ratings: 2
+role: Villain
+special_effects:
+  - description: >-
+      Opposing non-vehicle models moving to within 1” of this model must either
+      end their movement or move into base contact with the blocking model.
+      Models cannot block if they are knocked down, or are Stunned or On Fire.
+    cost: 0
+    name: Block
+star_quality: []
+stats:
+  body: 3
+  defence: 8
+  fight: 3
+  mind: 3
+  shoot: 3
+  spirit: 2
+type: Extra
+weapons:
+  - type: Melee
+    attack: Cosh
+    effects: 0 Health + Stunned
+    range: 0
+    strike: 7
+  - type: Range
+    attack: Pistol
+    effects: 2 Shots
+    range: 12
+    strike: 6
+  - type: Range
+    attack: Rifle
+    effects: ''
+    range: 24
+    strike: 6
+  - type: Range
+    attack: SMG
+    effects: 'Blast 3", Cannot aim'
+    range: 16
+    strike: 6
+__version: 0.0.1
+__card: Model
+customization: []
+id: 3ac3966e-5138-4a57-8a1e-b593ac0b7351
+description: >
+  In boiler suit and hard hat, these faceless guards seem to come in an endless
+  supply; handy to get thrown from gantries or propelled into the air by
+  explosions.
+
+---
+__custom: {}
+genres:
+  - Civilian
+  - Crime
+  - Military
+  - Secret
+  - Science
+  - Unknown
+health: 1
+name: MINION DOG HANDLER
+notes: ''
+profile: MINION DOG HANDLER
+ratings: 2
+role: Villain
+special_effects:
+  - description: >-
+      Opposing non-vehicle models moving to within 1” of this model must either
+      end their movement or move into base contact with the blocking model.
+      Models cannot block if they are knocked down, or are Stunned or On Fire.
+    cost: 0
+    name: Block
+  - description: >-
+      You can choose to include 0-3 Attack Dogs for each Dog Handler in your
+      cast. When this model is activated, you can also activate up to 3 friendly
+      Attack Dogs within 6" who have not already activated this turn.
+    cost: 0
+    name: Trainer
+star_quality: []
+stats:
+  body: 3
+  defence: 8
+  fight: 3
+  mind: 3
+  shoot: 3
+  spirit: 2
+type: Extra
+weapons:
+  - type: Melee
+    attack: Cosh
+    effects: 0 Health + Stunned
+    range: 0
+    strike: 7
+  - type: Range
+    attack: Pistol
+    effects: 2 Shots
+    range: 12
+    strike: 6
+__version: 0.0.1
+__card: Model
+customization: []
+id: e7a75114-c1bc-4f7c-b5c8-53dcf4718a2b
+description: >
+  Call on your canine-friendly guard to help keep snoopers away from your secret
+  bases and guard your missile silos.
+
+---
+__custom: {}
+genres:
+  - Civilian
+  - Crime
+  - Military
+  - Secret
+  - Science
+  - Unknown
+health: 2
+name: MINION HEAVY WEAPON TEAM
+notes: >-
+  Ranged Weapon : Before the game you have to choose between Bazooka or HMG to
+  use. You cannot change this ranged weapon during the game.
+profile: MINION HEAVY WEAPON TEAM
+ratings: 6
+role: Villain
+special_effects:
+  - description: >-
+      Opposing non-vehicle models moving to within 1” of this model must either
+      end their movement or move into base contact with the blocking model.
+      Models cannot block if they are knocked down, or are Stunned or On Fire.
+    cost: 0
+    name: Block
+  - description: >-
+      This profile can be represented with both models on a large base, or on
+      two medium bases. If on two bases, both models must remain in base contact
+      with each other at all times. This profile counts as one model for gaining
+      ✪ and determining if your cast is axed, but for two models if being
+      carried by a vehicle.
+    cost: 0
+    name: 2 Man Team
+star_quality: []
+stats:
+  body: 3
+  defence: 8
+  fight: 3
+  mind: 3
+  shoot: 3
+  spirit: 2
+type: Extra
+weapons:
+  - type: Melee
+    attack: Cosh
+    effects: 0 Health + Stunned
+    range: 0
+    strike: 7
+  - type: Range
+    attack: Bazooka
+    effects: '-1D6 Health + Blast 3" vs Robot/Vehicle models, Unwieldy'
+    range: 24
+    strike: 9
+  - type: Range
+    attack: Heavy Machine Gun
+    effects: 'Blast 5", Unwieldy, Cannot aim'
+    range: 24
+    strike: 7
+__version: 0.0.1
+__card: Model
+customization: []
+id: 26660cb3-8a07-4562-9a42-54ddc9474b00
+description: >
+  The presence of heavy support can make the difference to both assault and
+  defence operations for your trigger- happy minions.
+
+---
+__custom: {}
+genres:
+  - Civilian
+  - Crime
+  - Military
+  - Secret
+  - Science
+  - Unknown
+health: 1
+name: MINION FLAMETHROWER
+notes: ''
+profile: MINION FLAMETHROWER
+ratings: 3
+role: Villain
+special_effects:
+  - description: >-
+      Opposing non-vehicle models moving to within 1” of this model must either
+      end their movement or move into base contact with the blocking model.
+      Models cannot block if they are knocked down, or are Stunned or On Fire.
+    cost: 0
+    name: Block
+star_quality: []
+stats:
+  body: 3
+  defence: 8
+  fight: 3
+  mind: 3
+  shoot: 3
+  spirit: 2
+type: Extra
+weapons:
+  - type: Melee
+    attack: Cosh
+    effects: 0 Health + Stunned
+    range: 0
+    strike: 7
+  - type: Range
+    attack: Flamethrower
+    effects: Flamethrower Template + On Fire
+    range: 5" Flame
+    strike: 7
+__version: 0.0.1
+__card: Model
+customization: []
+id: 8e44e636-1f5d-4715-87b2-bbf11b50ae4c
+description: >
+  When things heat up, blaze away with this fiery heavy weapon to clear your
+  enemies. Also popular at team barbecues.
+
+---
+__custom: {}
+genres:
+  - Secret
+health: 2
+name: CULTIST LEADER
+notes: ''
+profile: CULTIST LEADER
+ratings: 3
+role: Villain
+special_effects:
+  - cost: 1
+    description: >
+      This model can ignore any strike it has just suffered if it can roll 4+ on
+      1D6. This special effect can be used during an opponent’s turn. You can
+      add extra dice to this roll.
+    name: Invulnerable
+  - description: >-
+      Choose any number of models in this unit within 6” who have not activated
+      this turn. You must include the Unit Leader. Pay 1✪. All these models can
+      activate this turn. You can choose this special effect only once per turn.
+    cost: 0
+    name: Unit Leader (Cultist Coven)
+star_quality: []
+stats:
+  body: 3
+  defence: 8
+  fight: 4
+  mind: 3
+  shoot: 3
+  spirit: 5
+type: Extra
+weapons:
+  - type: Melee
+    attack: Occult Knife
+    effects: ''
+    range: 0
+    strike: 7
+  - type: Range
+    attack: Pistol
+    effects: 2 Shots
+    range: 12
+    strike: 6
+__version: 0.0.1
+__card: Model
+customization: []
+id: 7b0839f1-5339-4942-ae70-7a8168d61a4e
+description: >
+  This charismatic leader holds sway over his fervant followers through
+  willpower, brainwashing or a cocktail of dubious narcotics.
+
+---
+__custom: {}
+genres:
+  - Secret
+health: 1
+name: CULTIST
+notes: ''
+profile: CULTIST
+ratings: 2
+role: Villain
+special_effects:
+  - cost: 1
+    description: >
+      This model can ignore any strike it has just suffered if it can roll 4+ on
+      1D6. This special effect can be used during an opponent’s turn. You can
+      add extra dice to this roll.
+    name: Invulnerable
+star_quality: []
+stats:
+  body: 3
+  defence: 8
+  fight: 3
+  mind: 3
+  shoot: 3
+  spirit: 5
+type: Extra
+weapons:
+  - type: Melee
+    attack: Occult Knife
+    effects: ''
+    range: 0
+    strike: 6
+  - type: Range
+    attack: Pistol
+    effects: 2 Shots
+    range: 12
+    strike: 6
+  - type: Range
+    attack: Rifle
+    effects: ''
+    range: 24
+    strike: 6
+__version: 0.0.1
+__card: Model
+customization: []
+id: 32a633ee-60e6-49a9-8e0c-f0156736d0ab
+description: >
+  Cultists are hard-line followers of some exotic religion or mesmeric
+  figurehead. Usually drugged or indoctrinated, their fanaticism is difficult to
+  break.
+
+---
+__custom: {}
+genres:
+  - Secret
+health: 1
+name: CULTIST DOG HANDLER
+notes: ''
+profile: CULTIST DOG HANDLER
+ratings: 2
+role: Villain
+special_effects:
+  - cost: 1
+    description: >
+      This model can ignore any strike it has just suffered if it can roll 4+ on
+      1D6. This special effect can be used during an opponent’s turn. You can
+      add extra dice to this roll.
+    name: Invulnerable
+  - description: >-
+      You can choose to include 0-3 Attack Dogs for each Dog Handler in your
+      cast. When this model is activated, you can also activate up to 3 friendly
+      Attack Dogs within 6" who have not already activated this turn.
+    cost: 0
+    name: Trainer
+star_quality: []
+stats:
+  body: 3
+  defence: 8
+  fight: 3
+  mind: 3
+  shoot: 3
+  spirit: 5
+type: Extra
+weapons:
+  - type: Melee
+    attack: Cosh
+    effects: 0 Health + Stunned
+    range: 0
+    strike: 7
+__version: 0.0.1
+__card: Model
+customization: []
+id: 557ba62a-d3c7-4123-9bec-3cb50e2350bd
+description: >
+  Seen patrolling the cult’s compound with their snarling canines, the dog
+  handler is tasked with deterring unwelcome visitors from uncovering the truth
+  behind the esoteric secrets.
+
+---
+__custom: {}
+genres:
+  - Civilian
+  - Crime
+health: 2
+name: CRIMINAL BOSS
+notes: ''
+profile: CRIMINAL BOSS
+ratings: 3
+role: Villain
+special_effects:
+  - description: >-
+      *Special Action.* This model can move through any door or window in base
+      contact. Place the model on the other side of the door or window.
+    cost: 0
+    name: Break In
+  - description: >-
+      Choose any number of models in this unit within 6” who have not activated
+      this turn. You must include the Unit Leader. Pay 1✪. All these models can
+      activate this turn. You can choose this special effect only once per turn.
+    cost: 0
+    name: Unit Leader (Criminal Firm)
+  - description: >-
+      If this model has a cover bonus from soft cover, hard cover or obstacles,
+      then models making shoot attacks against this model automatically miss if
+      the distance to the target is more than half the attack’s range.
+    cost: 0
+    name: Hide
+star_quality: []
+stats:
+  body: 3
+  defence: 8
+  fight: 3
+  mind: 3
+  shoot: 4
+  spirit: 2
+type: Extra
+weapons:
+  - type: Melee
+    attack: Cosh
+    effects: 0 Health + Stunned
+    range: 0
+    strike: 7
+  - type: Range
+    attack: Pistol
+    effects: 2 Shots
+    range: 12
+    strike: 7
+__version: 0.0.1
+__card: Model
+customization: []
+id: a56e0653-a278-4b81-9d42-355e85184537
+description: >
+  Specialising in low-level robbery and violence, the Criminal Boss menaces
+  their manor looking for the next big score for their motley crew of career
+  villains.
+
+---
+__custom: {}
+genres:
+  - Civilian
+  - Crime
+health: 1
+name: CRIMINAL
+notes: ''
+profile: CRIMINAL
+ratings: 2
+role: Villain
+special_effects:
+  - description: >-
+      Special Action. This model can move through any door or window in base
+      contact. Place the model on the other side of the door or window.
+    cost: 0
+    name: Break In
+  - description: >-
+      If this model has a cover bonus from soft cover, hard cover or obstacles,
+      then models making shoot attacks against this model automatically miss if
+      the distance to the target is more than half the attack’s range.
+    cost: 0
+    name: Hide
+star_quality: []
+stats:
+  body: 3
+  defence: 8
+  fight: 3
+  mind: 3
+  shoot: 3
+  spirit: 2
+type: Extra
+weapons:
+  - type: Melee
+    attack: Cosh
+    effects: 0 Health + Stunned
+    range: 0
+    strike: 7
+  - type: Range
+    attack: Sawn-Off Shotgun
+    effects: Blast 3"
+    range: 6
+    strike: 7
+__version: 0.0.1
+__card: Model
+customization: []
+id: b79dde25-2933-438d-b6bb-bbd3e9ab47d1
+description: >
+  A cut above your common leg-breaker, these professional criminals dream of a
+  day when their finally pull one big heist and retire to the Costa Patata.
+
+---
+__custom: {}
+genres:
+  - Civilian
+  - Crime
+health: 1
+name: CRIMINAL DOG HANDLER
+notes: ''
+profile: CRIMINAL DOG HANDLER
+ratings: 2
+role: Villainous
+special_effects:
+  - description: >-
+      If this model has a cover bonus from soft cover, hard cover or obstacles,
+      then models making shoot attacks against this model automatically miss if
+      the distance to the target is more than half the attack’s range.
+    cost: 0
+    name: Hide
+star_quality: []
+stats:
+  body: 3
+  defence: 8
+  fight: 3
+  mind: 3
+  shoot: 3
+  spirit: 2
+type: Extra
+weapons:
+  - type: Melee
+    attack: Cosh
+    effects: 0 Health + Stunned
+    range: 0
+    strike: 7
+__version: 0.0.1
+__card: Model
+customization: []
+id: 7422b666-6488-404a-b084-e607b30e8529
+description: >
+  As rough and vicious as the beasts they use to guard their lock-ups, boozers
+  and mock-tudor mansions.
+
+---
+__custom: {}
+genres:
+  - Crime
+health: 2
+name: THUG BRUISER
+notes: ''
+profile: THUG BRUISER
+ratings: 4
+role: Villain
+special_effects:
+  - description: >-
+      Opposing non-vehicle models moving to within 1” of this model must either
+      end their movement or move into base contact with the blocking model.
+      Models cannot block if they are knocked down, or are Stunned or On Fire.
+    cost: 0
+    name: Block
+  - description: >-
+      After this model makes a fight attack, they can move up to 2” as a free
+      action if no opposing models have this model in their fight range. Models
+      can only make Follow Up moves in your turn.
+    cost: 0
+    name: Follow Up
+  - description: >-
+      Roll 1D6 if this model receives the Stunned or Weakened statuses. On a
+      roll of 4+ this model does not gain that status. You can add extra dice to
+      this roll roll using ✪.
+    cost: 0
+    name: Hard
+  - description: >-
+      Choose any number of models in this unit within 6” who have not activated
+      this turn. You must include the Unit Leader. Pay 1✪. All these models can
+      activate this turn. You can choose this special effect only once per turn.
+    cost: 0
+    name: Unit Leader (Gang of Thugs)
+star_quality: []
+stats:
+  body: 4
+  defence: 9
+  fight: 4
+  mind: 2
+  shoot: 4
+  spirit: 3
+type: Extra
+weapons:
+  - type: Melee
+    attack: Brawl
+    effects: 0 Health + Weakened
+    range: 0
+    strike: 8
+  - type: Range
+    attack: Pistol
+    effects: 2 Shots
+    range: 12
+    strike: 7
+__version: 0.0.1
+__card: Model
+customization: []
+id: 805d636d-3742-4215-bca0-9c62e47bab10
+description: >
+  Only slightly less mindless than his leg-breaking brothers, the Thug Bruiser
+  is wily as well as destructive - always looking for new opportunities to
+  engage the gang in a bit of wanton violence.
+
+---
+__custom: {}
+genres:
+  - Crime
+health: 1
+name: THUG
+notes: ''
+profile: THUG
+ratings: 3
+role: Villain
+special_effects:
+  - description: >-
+      Opposing non-vehicle models moving to within 1” of this model must either
+      end their movement or move into base contact with the blocking model.
+      Models cannot block if they are knocked down, or are Stunned or On Fire.
+    cost: 0
+    name: Block
+  - description: >-
+      After this model makes a fight attack, they can move up to 2” as a free
+      action if no opposing models have this model in their fight range. Models
+      can only make Follow Up moves in your turn.
+    cost: 0
+    name: Follow Up
+  - description: >-
+      Roll 1D6 if this model receives the Stunned or Weakened statuses. On a
+      roll of 4+ this model does not gain that status. You can add extra dice to
+      this roll roll using ✪.
+    cost: 0
+    name: Hard
+star_quality: []
+stats:
+  body: 4
+  defence: 9
+  fight: 4
+  mind: 2
+  shoot: 4
+  spirit: 3
+type: Extra
+weapons:
+  - type: Melee
+    attack: Brawl
+    effects: 0 Health + Weakened
+    range: 0
+    strike: 8
+  - type: Range
+    attack: Pistol
+    effects: 2 Shots
+    range: 12
+    strike: 7
+__version: 0.0.1
+__card: Model
+customization: []
+id: 4eaf7417-91e9-42b5-b138-a2b69bb7d980
+description: >
+  Getting up close and personal and leaving some kind of broken face calling
+  card is what Thugs are good at. The simpler and more violent the job at hand
+  the better for these beauties.
+
+---
+__custom: {}
+genres:
+  - Science
+health: 2
+name: METALNAUT
+notes: ''
+profile: METALNAUT
+ratings: 5
+role: Villain
+special_effects:
+  - cost: 1
+    description: >
+      This model can ignore any strike it has just suffered if it can roll 4+ on
+      1D6. This special effect can be used during an opponent’s turn. You can
+      add extra dice to this roll.
+    name: Invulnerable
+  - description: >-
+      This model can activate for free if it is more than 6” from any other
+      model. This model can never have the Leader or Unit Leader special
+      effects.
+    cost: 0
+    name: Loner
+  - description: >-
+      This model is never affected by Fearsome models. This model never loses
+      Health due to being underwater or in a vacuum.
+    cost: 0
+    name: Robot
+  - description: This model cannot spend more than one action moving in any turn.
+    cost: 0
+    name: Slow
+star_quality: []
+stats:
+  body: 5
+  defence: 10
+  fight: 3
+  mind: 2
+  shoot: 1
+  spirit: 6
+type: Extra
+weapons:
+  - type: Melee
+    attack: Crushing Blow
+    effects: +Stunned
+    range: 0
+    strike: 8
+__version: 0.0.1
+__card: Model
+customization: []
+id: df76dc99-df3c-4ca1-bcc8-f04ae331b204
+description: >
+  Silver-skinned hulking metal figures, Metalnauts are often crudely disguised
+  as humans using coats, hats and dark glasses. They excel at using their
+  terrifying strength to kill and destroy.
+
+---
+__custom: {}
+genres:
+  - Secret
+  - Science
+health: 1
+name: ROBO-RODENT
+notes: ''
+profile: ROBO-RODENT
+ratings: 1
+role: Villain
+special_effects:
+  - description: >-
+      Special Action. A Robo-Rodent can relocate to any point on the table no
+      closer than 6" to an opposing model, as long as the Robo-Rodent is placed
+      in base contact with an item of cover or scenery.
+    cost: 0
+    name: Hardly Noticed
+  - description: This model travels 4” with a single move action.
+    cost: 0
+    name: Move 4”
+  - description: >-
+      This model is never affected by Fearsome models. This model never loses
+      Health due to being underwater or in a vacuum.
+    cost: 0
+    name: Robot
+  - description: This model cannot spend more than one action moving in any turn.
+    cost: 0
+    name: Slow
+  - description: >
+      Models on bases less than 25mm and less than 20mm or more high (or long)
+      automatically gain this special effect for free – it is not optional. This
+      model is small and hard to see and/or target. This model gains +1 Defence
+      – this is already factored into the provided 7TV profiles. This model can
+      move through the bases of opposing models.
+    cost: 0
+    name: Small
+star_quality: []
+stats:
+  body: 1
+  defence: 8
+  fight: 3
+  mind: 2
+  shoot: 0
+  spirit: 6
+type: Extra
+weapons:
+  - type: Melee
+    attack: Poisonous Bite
+    effects: Deadly vs non-Robot/Vehicle models
+    range: 0
+    strike: 6
+__version: 0.0.1
+__card: Model
+customization: []
+id: 2d3fd55e-8906-4209-9fdf-6382ba5331b0
+description: >
+  These mechanical menaces look like foot-and-a-half-long silverfish. They are
+  used to infiltrate enemy locations and to perform covert surveillance and
+  assassination missions, often prior to a main attack.
+
+---
+__custom: {}
+genres:
+  - Science
+health: 2
+name: FEMDROID
+notes: ''
+profile: FEMDROID
+ratings: 3
+role: Villain
+special_effects:
+  - description: >-
+      Each time this model makes a move action, you can move one opposing
+      non-Robot / non-Vehicle model within 8" up to 1".
+    cost: 0
+    name: Deadly Allure
+  - description: >-
+      This model is never affected by Fearsome models. This model never loses
+      Health due to being underwater or in a vacuum.
+    cost: 0
+    name: Robot
+  - description: >-
+      Free action. Choose any non-Robot Extra with no more than 1 Health within
+      4” of this model. That model gains the Weakened status immediately if they
+      don’t already have it.
+    cost: 0
+    name: Seduce
+  - description: This model cannot spend more than one action moving in any turn.
+    cost: 0
+    name: Slow
+  - description: >-
+      This model can be set up anywhere on the table, as long as it is no
+      further than 12” from another friendly non-Spy model. Spies are placed
+      after all other models (see the rules about cast start locations (see page
+      51). Opposing models cannot make strikes against a model with this special
+      effect in their first turn of an episode.
+    cost: 0
+    name: Spy
+star_quality: []
+stats:
+  body: 4
+  defence: 9
+  fight: 4
+  mind: 3
+  shoot: 3
+  spirit: 4
+type: Extra
+weapons:
+  - type: Melee
+    attack: Girl Grapple
+    effects: 0 Health + Weakened
+    range: 0
+    strike: 8
+  - type: Range
+    attack: Nipple Weapons
+    effects: 'Blast 3", Cannot aim'
+    range: 16
+    strike: 5
+__version: 0.0.1
+__card: Model
+customization: []
+id: 58a44200-819a-43f2-a7b7-20ba75880dd1
+description: >
+  These alluring aluminium killer robots are a new threat on the international
+  criminal scene. They specialise in surprise attacks against soft targets.
+
+---
+__custom: {}
+genres:
+  - Secret
+  - Science
+  - Unknown
+health: 1
+name: PLASTON
+notes: ''
+profile: PLASTON
+ratings: 4
+role: Villain
+special_effects:
+  - cost: 1
+    description: >
+      This model can ignore any strike it has just suffered if it can roll 4+ on
+      1D6. This special effect can be used during an opponent’s turn. You can
+      add extra dice to this roll.
+    name: Invulnerable
+  - description: >-
+      This model is never affected by Fearsome models. This model never loses
+      Health due to being underwater or in a vacuum.
+    cost: 0
+    name: Robot
+  - description: This model cannot spend more than one action moving in any turn.
+    cost: 0
+    name: Slow
+  - description: >-
+      This model can be set up anywhere on the table, as long as it is no
+      further than 12” from another friendly non-Spy model. Spies are placed
+      after all other models (see the rules about cast start locations (see page
+      51). Opposing models cannot make strikes against a model with this special
+      effect in their first turn of an episode.
+    cost: 0
+    name: Spy
+star_quality: []
+stats:
+  body: 4
+  defence: 7
+  fight: 4
+  mind: 3
+  shoot: 3
+  spirit: 4
+type: Extra
+weapons:
+  - type: Melee
+    attack: Plastic Strangle
+    effects: ''
+    range: 0
+    strike: 8
+  - type: Range
+    attack: Hand Blaster
+    effects: ''
+    range: 12
+    strike: 7
+__version: 0.0.1
+__card: Model
+customization: []
+id: c24b48a3-84e4-4d35-9698-b7892043e5d9
+description: >
+  Until they begin moving, Plastons look exactly like shop window dummies. Their
+  blank expressions and silent unnatural movement can be quite terrifying.
+
+---
+__custom: {}
+genres:
+  - Unknown
+health: 1
+name: ANIMATED CONSTRUCT
+notes: ''
+profile: ANIMATED CONSTRUCT
+ratings: 3
+role: Villain
+special_effects:
+  - description: >-
+      Roll 1D6 if this model receives the Stunned or Weakened statuses. On a
+      roll of 4+ this model does not gain that status. You can add extra dice to
+      this roll roll using ✪.
+    cost: 0
+    name: Hard
+  - cost: 1
+    description: >
+      This model can ignore any strike it has just suffered if it can roll 4+ on
+      1D6. This special effect can be used during an opponent’s turn. You can
+      add extra dice to this roll.
+    name: Invulnerable
+  - description: This model cannot spend more than one action moving in any turn.
+    cost: 0
+    name: Slow
+  - description: >-
+      This model can be set up anywhere on the table, as long as it is no
+      further than 12” from another friendly non-Spy model. Spies are placed
+      after all other models (see the rules about cast start locations (see page
+      51). Opposing models cannot make strikes against a model with this special
+      effect in their first turn of an episode.
+    cost: 0
+    name: Spy
+star_quality: []
+stats:
+  body: 3
+  defence: 9
+  fight: 3
+  mind: 1
+  shoot: 3
+  spirit: 5
+type: Extra
+weapons:
+  - type: Melee
+    attack: Relentless Grasp
+    effects: ''
+    range: 0
+    strike: 6
+__version: 0.0.1
+__card: Model
+customization: []
+id: 1a1b3005-f190-4829-adb1-8b2c085a64ac
+description: >
+  Did that statue move in the corner of your eye? Has that scarecrow been
+  following you? Dark powers have conjured everyday objects into deadly weapons
+  – ones that cannot be reasoned with and are out for blood.
+
+---
+__custom: {}
+genres:
+  - Crime
+  - Secret
+health: 1
+name: HITMAN
+notes: >-
+  Ranged Weapon : Before the game you have to choose between Pistol or High
+  Calibre Rifle to use. You cannot change this ranged weapon during the game.
+profile: HITMAN
+ratings: 4
+role: Villain
+special_effects:
+  - description: >-
+      If this model has a cover bonus from soft cover, hard cover or obstacles,
+      then models making shoot attacks against this model automatically miss if
+      the distance to the target is more than half the attack’s range.
+    cost: 0
+    name: Hide
+  - description: >-
+      This model can be set up anywhere on the table, as long as it is no
+      further than 12” from another friendly non-Spy model. Spies are placed
+      after all other models (see the rules about cast start locations (see page
+      51). Opposing models cannot make strikes against a model with this special
+      effect in their first turn of an episode.
+    cost: 0
+    name: Spy
+  - description: >-
+      You can only have one model with this profile name in your cast. Named
+      models from the Programme Guides (General Gordon for example) are also
+      automatically Unique even if this special effect isn’t listed on their
+      profile.
+    cost: 0
+    name: Unique
+star_quality: []
+stats:
+  body: 3
+  defence: 8
+  fight: 3
+  mind: 3
+  shoot: 5
+  spirit: 2
+type: Extra
+weapons:
+  - type: Melee
+    attack: Brawl
+    effects: 0 Health + Weakened
+    range: 0
+    strike: 6
+  - type: Range
+    attack: Pistol
+    effects: 2 Shots
+    range: 12
+    strike: 8
+  - type: Range
+    attack: High Calibre Rifle
+    effects: ''
+    range: 24
+    strike: 9
+__version: 0.0.1
+__card: Model
+customization: []
+id: 2d9df02e-2385-496b-9f12-05eaa58f5684
+description: >
+  Hitmen cultivate few friendships but if you need someone taken out without
+  getting your hands dirty, they are the masters of the long-range sniper shot.
+
+---
+__custom: {}
+genres:
+  - Science
+  - Unknown
+health: 1
+name: SPAWN
+notes: ''
+profile: SPAWN
+ratings: 3
+role: Villain
+special_effects:
+  - cost: 0
+    description: >-
+      When a Spawn is reduced to 0 Health, roll 1D6. On the roll of 5+ return
+      this model to 1 Health and place a new Spawn model in base contact.
+    name: Divide
+  - description: This model cannot spend more than one action moving in any turn.
+    cost: 0
+    name: Slow
+star_quality: []
+stats:
+  body: 4
+  defence: 8
+  fight: 3
+  mind: 1
+  shoot: 0
+  spirit: 6
+type: Extra
+weapons:
+  - type: Melee
+    attack: Engulf
+    effects: ''
+    range: 0
+    strike: 7
+__version: 0.0.1
+__card: Model
+customization: []
+id: 7dcfcf28-aa39-4e4d-bdbc-d7d1f2f4bb48
+description: >
+  These near mindless amorphous cross-dimensional monstrosities are created to
+  serve unspeakable elder gods as unstoppable titans of destruction.
