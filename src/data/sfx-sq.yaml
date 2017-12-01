@@ -25,11 +25,11 @@ Star Quality:
       Discard one gadget card, if you have any, from your gadgets pool. Draw one gadget cad.
   Cutting Edge:
     cost: 2
-    decription: >
+    description: >
       Immediately play one gadget card from your pool without paying its listed ✪ cost. Do not discard this gadget card after playing it.
   Danger Magnet:
     cost: 1
-    description:
+    description: >
       Until the start of your next turn all opposing models within 6" of this model can only make strikes against this model. This model gains +1 Defence against these strikes.
   Five Pounds Rapid:
     cost: 2

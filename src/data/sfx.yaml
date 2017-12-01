@@ -24,7 +24,7 @@ Combat:
   Snap Shot: > 
         This model can make one shoot attack each turn as a free action with –2 to the strike roll. Snap shots cannot be aimed. 
         A snap shot counts as this model’s shoot attack for the turn, so unless the model has a weapon with the 2 Shots effect, this model cannot make another shoot attack this turn.
-  You're Knicked: >
+  You're Knicked!: >
         *Special Action.* This model can remove one opposing model in base contact from play if that model currently has one or more stauses, 1 Health and there's a Police Car or Police Van within 6". Immediately place this model adjacant to that vehicle.
 
 Knowledge:
@@ -83,6 +83,9 @@ Traits:
   Crowd Control: This model can move trough other models. Move these models the minimum distance to move their bases out of the way of this model. All such movements are considered to be pushes.
   Fall Guy: Once per turn, the effects of a succesfull strike against this model can be redirected to one friendly model within 2".
   Fearsome: Models making a fight attack against this model must pass a Spirit test or must count their Strike number as half (round up) against this model until the end of the turn.
+  Fetch Head:
+    cost: 1
+    description: Friendly Primitive models within 6" of this model count as passing all Spirit tests until the start of your next turn.
   Four Eyes: This model has impaired vision. This model cannot add extra dice when making a shoot attack. If this model makes a successful shoot attack you gain ✪ immediately.
   Get into Place: All models in your cast can take a single free move action before you make the first turn's initiative roll.
   Good To Have Around: When this model activates choose one friendly model within 6". That model can reroll one die this turn.
@@ -121,6 +124,8 @@ Traits:
   Questionable Ally: An opponent can pay ✪✪ during their turn to take one action with this model, once per turn. If this model is part of a unit, this action cannot be used to make a strike roll against another model from the same unit.
 
 Unexplained:
+  Divide:
+      description: When a Spawn is reduced to 0 Health, roll 1D6. On the roll of 5+ return this model to 1 Health and place a new Spawn model in base contact.
   Energy Blast:
       cost: 1
       description: >
