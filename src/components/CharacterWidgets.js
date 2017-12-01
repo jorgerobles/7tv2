@@ -3,6 +3,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import {Accordion, Panel,Button, FormControl, FormGroup, InputGroup, Label } from 'react-bootstrap'
 import Yaml from 'js-yaml';
+import { readContext } from '../lib/helpers'
 
 const parseTrait=(label,text)=>{
     let trait={}
@@ -96,6 +97,10 @@ export class SQSelect extends React.Component {
 
 SQSelect=connect((state)=>({currentCharacter: state.currentCharacter}))(SQSelect)
 
+
+
+export const PROFILES=readContext(require.context('../data/casts', true))
+
 export class ProfileSelector extends React.Component {
     
     constructor(props){
@@ -109,15 +114,20 @@ export class ProfileSelector extends React.Component {
 
     componentDidMount()
     {
-        fetch(require('../data/casting-heroes.yaml')).then((response)=>{
-            response.text().then(function(txt){ this.setState({...this.state, casting: {...this.state.casting, Heroes: Yaml.safeLoad(txt)}})}.bind(this))
+        Object.entries(PROFILES).forEach(([file,path])=>{
+
+        fetch(path).then((response)=>{
+                response.text().then(function(txt){ 
+                    let data={}
+                    Yaml.safeLoadAll(txt).forEach(item=>{
+                        data[item.name]=item;
+                    })
+                    this.setState({...this.state, casting: {...this.state.casting,[file.replace(/(^\.\/)|(\.yaml$)/gi,'').replace(/_/gi," ")]:data}})
+                }.bind(this))
+            })
         })
-        fetch(require('../data/casting-villains.yaml')).then((response)=>{
-            response.text().then(function(txt){ this.setState({...this.state, casting: {...this.state.casting, Villains: Yaml.safeLoad(txt)}})}.bind(this))
-        })
-        fetch(require('../data/casting-extras.yaml')).then((response)=>{
-            response.text().then(function(txt){ this.setState({...this.state, casting: {...this.state.casting, Extras: Yaml.safeLoad(txt)}})}.bind(this))
-        })
+
+     
     }
     /*  */
     render(){

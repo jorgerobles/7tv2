@@ -117,3 +117,9 @@ export function insertAtCaret(txtarea, text) {
 
     txtarea.scrollTop = scrollPos;
 }
+
+export const readContext=(ctx)=>{
+    let keys = ctx.keys();
+    let values = keys.map(ctx);
+    return keys.reduce((obj, k, i) => ({...obj, [k]: values[i] }), {})
+}
