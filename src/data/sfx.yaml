@@ -121,6 +121,8 @@ Traits:
   Questionable Ally: An opponent can pay ✪✪ during their turn to take one action with this model, once per turn. If this model is part of a unit, this action cannot be used to make a strike roll against another model from the same unit.
 
 Unexplained:
+  Divide:
+      description: When a Spawn is reduced to 0 Health, roll 1D6. On the roll of 5+ return this model to 1 Health and place a new Spawn model in base contact.
   Energy Blast:
       cost: 1
       description: >
