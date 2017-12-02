@@ -1,3 +1,6 @@
+Attacks:
+  High Explosive/Placed: When this attack is made, do not make a strike roll. Instead place a marker in base contact with the attacking model to show where the attack has been positioned. Make a strike roll as soon as any opposing model moves within 1" of the centre of the marker, then remove the marker.
+  Timer: The player controlling this model can trigger this attack at the start of any of their action phases.
 Combat:
   Aware: This model can make fight attacks all round (360o) and never counts as having been attacked in the rear. The model loses this special effect while Stunned.
   Blown Clear: if this model finds itself under a weapon template for any reason, move this model out from under the template so that its base is touching the template. This model suffers no effects from the strike.
@@ -61,6 +64,7 @@ Physical:
      Massive models are truly huge. Massive models gain +2 Health – this is already factored into our profiles. Opponents gain two extra dice when making a strike against a Massive model.
   Mounted: This vehicle is allocated to a single specified medium-based model and replaces that model on the table while that model is mounted on it. The driver of this vehicle counts towards its capacity. The driver can use a special action to dismount - immediately replace the vehicle with the specified model and place any passenger in base contact. Models cannot remount once dismounted.
   Move X”: This model travels X” with a single move action.
+  Move 0": This model cannot move along the ground using a move action.
   Open: If this vehicle is hit by a strike roll 1D6. On a 1-3 apply the effects against the vehicle, on 4-6 apply the effects against the driver or passenger. Template weapons apply their effects to the vehicle AND driver AND passenger.
   Roar: Special Action. Centre the 5” blast template over this model. Opposing models under this template failing a Spirit test are pushed away from this model the minimum distance required to move them clear of the template.
   Small: >
