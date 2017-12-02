@@ -1,0 +1,1445 @@
+__custom: {}
+genres:
+  - Civilian
+health: 2
+name: FIRST MATE
+notes: ''
+profile: FIRST MATE
+ratings: 3
+role: Neutral
+special_effects:
+  - description: >-
+      This model never suffers from free strikes. You can also make your
+      opponent reroll one die when you are the target of a fight attack.
+    cost: 0
+    name: Parry
+  - description: >-
+      This model cannot be knocked down, unless they gain the Stunned status.
+      This model treats rough ground as clear ground.
+    cost: 0
+    name: Sure Footed
+  - description: >-
+      Choose any number of models in this unit within 6” who have not activated
+      this turn. You must include the Unit Leader. Pay 1✪. All these models can
+      activate this turn. You can choose this special effect only once per turn.
+    cost: 0
+    name: Unit Leader (Ship's Crew)
+star_quality: []
+stats:
+  body: 4
+  defence: 8
+  fight: 3
+  mind: 3
+  shoot: 3
+  spirit: 3
+type: Extra
+weapons:
+  - type: Melee
+    attack: Crowbar
+    effects: 0 Health + Stunned
+    range: 0
+    strike: 8
+  - type: Range
+    attack: Pistol
+    effects: 2 Shots
+    range: 12
+    strike: 6
+__version: 0.0.1
+__card: Model
+customization: []
+id: e7f4bf79-3023-483f-9947-67cafca22989
+description: >
+  Life on the ocean waves brings adventure, danger and a healthy respect for the
+  cruel sea. It is the First Mate’s role to keep their salty seamen in check.
+
+---
+__custom: {}
+genres:
+  - Civilian
+health: 1
+name: SAILOR
+notes: ''
+profile: SAILOR
+ratings: 2
+role: Neutral
+special_effects:
+  - description: >-
+      This model never suffers from free strikes. You can also make your
+      opponent reroll one die when you are the target of a fight attack.
+    cost: 0
+    name: Parry
+  - description: >-
+      This model cannot be knocked down, unless they gain the Stunned status.
+      This model treats rough ground as clear ground.
+    cost: 0
+    name: Sure Footed
+star_quality: []
+stats:
+  body: 3
+  defence: 8
+  fight: 3
+  mind: 3
+  shoot: 3
+  spirit: 2
+type: Extra
+weapons:
+  - type: Melee
+    attack: Crowbar
+    effects: 0 Health + Stunned
+    range: 0
+    strike: 7
+__version: 0.0.1
+__card: Model
+customization: []
+id: c3a6c926-06b5-4f8a-bd9a-5b26e5a34596
+description: >
+  Sailors may be merchant seamen, a secret submarine crew, modern-day pirates or
+  even the crew of an experimental deep-sea mining rig.
+
+---
+__custom: {}
+genres:
+  - Secret
+  - Unknown
+health: 2
+name: PRIMITIVE CHIEFTAIN
+notes: ''
+profile: PRIMITIVE CHIEFTAIN
+ratings: 3
+role: Neutral
+special_effects:
+  - description: >-
+      If this model has a cover bonus from soft cover, hard cover or obstacles,
+      then models making shoot attacks against this model automatically miss if
+      the distance to the target is more than half the attack’s range.
+    cost: 0
+    name: Hide
+  - description: This model travels 7” with a single move action.
+    cost: 0
+    name: Move 7”
+  - description: >-
+      This model cannot make strikes against models with the Alien special
+      effect. If any model uses an Unexplained special effect within 6" of this
+      model, this model must pass a Spirit test or it will make an immediate
+      full move away from the model using the Unexplained special effect.
+    cost: 0
+    name: Superstitious
+  - description: >-
+      Choose any number of models in this unit within 6” who have not activated
+      this turn. You must include the Unit Leader. Pay 1✪. All these models can
+      activate this turn. You can choose this special effect only once per turn.
+    cost: 0
+    name: Unit Leader (Primitive Tribe)
+star_quality: []
+stats:
+  body: 3
+  defence: 8
+  fight: 3
+  mind: 2
+  shoot: 3
+  spirit: 3
+type: Extra
+weapons:
+  - type: Melee
+    attack: Knife
+    effects: ''
+    range: 0
+    strike: 6
+  - type: Range
+    attack: Blowpipe
+    effects: Deadly. 0 Health vs Robot/Vehicle models
+    range: 8
+    strike: 5
+__version: 0.0.1
+__card: Model
+customization: []
+id: 654fa69d-af24-4ab5-b230-329003e9bbd1
+description: >
+  The strongest, wisest or cruellest of his people, a chieftain must show
+  strength in all things or lose the respect of his tribe.
+
+---
+__custom: {}
+genres:
+  - Secret
+  - Unknown
+health: 1
+name: PRIMITIVE HUNTER
+notes: ''
+profile: PRIMITIVE HUNTER
+ratings: 2
+role: Neutral
+special_effects:
+  - description: >-
+      If this model has a cover bonus from soft cover, hard cover or obstacles,
+      then models making shoot attacks against this model automatically miss if
+      the distance to the target is more than half the attack’s range.
+    cost: 0
+    name: Hide
+  - description: This model travels 7” with a single move action.
+    cost: 0
+    name: Move 7”
+  - description: >-
+      This model cannot make strikes against models with the Alien special
+      effect. If any model uses an Unexplained special effect within 6" of this
+      model, this model must pass a Spirit test or it will make an immediate
+      full move away from the model using the Unexplained special effect.
+    cost: 0
+    name: Superstitious
+star_quality: []
+stats:
+  body: 3
+  defence: 8
+  fight: 3
+  mind: 2
+  shoot: 3
+  spirit: 2
+type: Extra
+weapons:
+  - type: Melee
+    attack: Knife
+    effects: ''
+    range: 0
+    strike: 6
+  - type: Range
+    attack: Blowpipe
+    effects: Deadly. 0 Health vs Robot/Vehicle models
+    range: 8
+    strike: 5
+__version: 0.0.1
+__card: Model
+customization: []
+id: 312a2d47-0726-4ff5-ac16-d810d23d8a94
+description: >
+  Primitives may be forgotten island dwellers or undiscovered peoples from the
+  deepest jungles. Perhaps they are more exotic and are a primitive alien race
+  on a new world or even a lost race of ancient creatures slumbering beneath the
+  earth.
+
+---
+__custom: {}
+genres:
+  - Secret
+  - Unknown
+health: 1
+name: PRIMITIVE SHAMAN
+notes: ''
+profile: PRIMITIVE SHAMAN
+ratings: 2
+role: Neutral
+special_effects:
+  - description: >-
+      If this model has a cover bonus from soft cover, hard cover or obstacles,
+      then models making shoot attacks against this model automatically miss if
+      the distance to the target is more than half the attack’s range.
+    cost: 0
+    name: Hide
+  - description: This model travels 7” with a single move action.
+    cost: 0
+    name: Move 7”
+  - description: >-
+      This model cannot make strikes against models with the Alien special
+      effect. If any model uses an Unexplained special effect within 6" of this
+      model, this model must pass a Spirit test or it will make an immediate
+      full move away from the model using the Unexplained special effect.
+    cost: 0
+    name: Superstitious
+  - cost: 1
+    description: >-
+      Friendly Primitive models within 6" of this model count as passing all
+      Spirit tests until the start of your next turn.
+    name: Fetch Head
+star_quality: []
+stats:
+  body: 3
+  defence: 8
+  fight: 2
+  mind: 3
+  shoot: 3
+  spirit: 3
+type: Extra
+weapons:
+  - type: Melee
+    attack: Ancient Staff
+    effects: 0 Health + Knockdown
+    range: 1
+    strike: 6
+  - type: Range
+    attack: Ancestral Curse
+    effects: 0 Health + Weakened
+    range: 6
+    strike: 6
+__version: 0.0.1
+__card: Model
+customization: []
+id: 0f33ee07-1a5a-4818-b493-07fb784bbcd9
+description: >
+  A Shaman may help or hinder, depending on the relations their forefathers have
+  had with humanity or the deference you show to their bizarre customs and
+  strange gods.
+
+---
+__custom: {}
+genres:
+  - Secret
+  - Unknown
+health: 2
+name: ALIEN WAR LEADER
+notes: ''
+profile: ALIEN WAR LEADER
+ratings: 3
+role: Neutral
+special_effects:
+  - description: >-
+      This model cannot recover Health using the Medic special effect. In the
+      player’s end phase, this model can automatically remove one of its
+      statuses.
+    cost: 0
+    name: Alien
+  - description: >-
+      An opponent can pay ✪✪ during their turn to take one action with this
+      model, once per turn. If this model is part of a unit, this action cannot
+      be used to make a strike roll against another model from the same unit.
+    cost: 0
+    name: Questionable Ally
+  - description: >-
+      Choose any number of models in this unit within 6” who have not activated
+      this turn. You must include the Unit Leader. Pay 1✪. All these models can
+      activate this turn. You can choose this special effect only once per turn.
+    cost: 0
+    name: Unit Leader (Alien Spearhad)
+star_quality: []
+stats:
+  body: 2
+  defence: 5
+  fight: 3
+  mind: 3
+  shoot: 4
+  spirit: 3
+type: Extra
+weapons:
+  - type: Melee
+    attack: Brawl
+    effects: 0 Health + Weakened
+    range: 0
+    strike: 5
+  - type: Range
+    attack: Alien Pistol
+    effects: '2 Shots, Deadly'
+    range: 12
+    strike: 7
+__version: 0.0.1
+__card: Model
+customization: []
+id: 72f1fe1a-caca-4f52-976c-a28240bb9aa7
+description: >
+  At the head of an otherworldly visitation is often a wise leader or brutal
+  warlord. They may be galactic explorers or have designs on Earth’s women, cows
+  or simply on hollowing out the planet and fitting it with motors.
+
+---
+__custom: {}
+genres:
+  - Secret
+  - Unknown
+health: 2
+name: ALIEN WAR PRIEST
+notes: ''
+profile: ALIEN WAR PRIEST
+ratings: 3
+role: Neutral
+special_effects:
+  - description: >-
+      This model cannot recover Health using the Medic special effect. In the
+      player’s end phase, this model can automatically remove one of its
+      statuses.
+    cost: 0
+    name: Alien
+  - cost: 1
+    description: >
+      *Special Action.* This model can make one Energy Blast attack. It can make
+      up to two such attacks each turn by paying the action and ✪ cost twice.
+      This attack is subject to the normal strike roll modifiers.
+    weapon:
+      Type: Special
+      Weapon: Energy Blast
+      Range: 12”
+      Strike: Mind +5
+      Special: Knockdown
+    name: Energy Blast
+  - description: >-
+      An opponent can pay ✪✪ during their turn to take one action with this
+      model, once per turn. If this model is part of a unit, this action cannot
+      be used to make a strike roll against another model from the same unit.
+    cost: 0
+    name: Questionable Ally
+  - description: >-
+      Choose any number of models in this unit within 6” who have not activated
+      this turn. You must include the Unit Leader. Pay 1✪. All these models can
+      activate this turn. You can choose this special effect only once per turn.
+    cost: 0
+    name: Unit Leader (Alien Spearhead)
+star_quality: []
+stats:
+  body: 2
+  defence: 8
+  fight: 3
+  mind: 4
+  shoot: 3
+  spirit: 3
+type: Extra
+weapons:
+  - type: Melee
+    attack: Staff Strike
+    effects: 0 Health + Knockdown
+    range: 1
+    strike: 5
+  - type: Range
+    attack: Energy Blast
+    effects: Knockdown
+    range: 12
+    strike: 9
+__version: 0.0.1
+__card: Model
+customization: []
+id: 712c5ec6-a31e-4f79-9d53-3bf9e4d5791c
+description: >
+  Armed with hokey religions and ancient weapons, these interstellar zealots
+  help drive their troops into a spiritual fervour during battle.
+
+---
+__custom: {}
+genres:
+  - Secret
+  - Unknown
+health: 1
+name: ALIEN WARRIOR
+notes: ''
+profile: ALIEN WARRIOR
+ratings: 2
+role: Neutral
+special_effects:
+  - description: >-
+      This model cannot recover Health using the Medic special effect. In the
+      player’s end phase, this model can automatically remove one of its
+      statuses.
+    cost: 0
+    name: Alien
+  - description: >-
+      An opponent can pay ✪✪ during their turn to take one action with this
+      model, once per turn. If this model is part of a unit, this action cannot
+      be used to make a strike roll against another model from the same unit.
+    cost: 0
+    name: Questionable Ally
+star_quality: []
+stats:
+  body: 2
+  defence: 8
+  fight: 3
+  mind: 3
+  shoot: 4
+  spirit: 3
+type: Extra
+weapons:
+  - type: Melee
+    attack: Brawl
+    effects: 0 Health + Weakened
+    range: 0
+    strike: 5
+  - type: Range
+    attack: Alien Rifle
+    effects: Deadly
+    range: 24
+    strike: 7
+__version: 0.0.1
+__card: Model
+customization: []
+id: f3634fc0-08cf-4407-949d-0feef81d9ad2
+description: >
+  Be they inquisitive greys, martial brutes or emotionally challenged war
+  machines, aliens come in many and varied forms.
+
+---
+__custom: {}
+genres:
+  - Secret
+  - Unknown
+health: 1
+name: ALIEN HEAVY
+notes: ''
+profile: ALIEN HEAVY
+ratings: 4
+role: Neutral
+special_effects:
+  - description: >-
+      This model cannot recover Health using the Medic special effect. In the
+      player’s end phase, this model can automatically remove one of its
+      statuses.
+    cost: 0
+    name: Alien
+  - description: >-
+      An opponent can pay ✪✪ during their turn to take one action with this
+      model, once per turn. If this model is part of a unit, this action cannot
+      be used to make a strike roll against another model from the same unit.
+    cost: 0
+    name: Questionable Ally
+star_quality: []
+stats:
+  body: 2
+  defence: 8
+  fight: 3
+  mind: 3
+  shoot: 4
+  spirit: 3
+type: Extra
+weapons:
+  - type: Melee
+    attack: Brawl
+    effects: 0 Health + Weakened
+    range: 0
+    strike: 5
+  - type: Range
+    attack: Disintegrator Gun
+    effects: '-1D3 Health'
+    range: 12
+    strike: 12
+__version: 0.0.1
+__card: Model
+customization: []
+id: 4bfce1bb-3a62-498d-a352-9191962c2a81
+description: >
+  A special weapons alien is always a fan favourite - just add a parabolic dish
+  or oily cannon and get blasting!
+
+---
+__custom: {}
+genres:
+  - Secret
+  - Unknown
+health: 1
+name: ALIEN MERCENARY
+notes: ''
+profile: ALIEN MERCENARY
+ratings: 4
+role: Neutral
+special_effects:
+  - description: >-
+      This model cannot recover Health using the Medic special effect. In the
+      player’s end phase, this model can automatically remove one of its
+      statuses.
+    cost: 0
+    name: Alien
+  - description: >-
+      When a model within 2” of this model is targetted by any strike, you can
+      choose to have this model targetted instead if this model is a legal
+      target.
+    cost: 0
+    name: Bodyguard
+  - description: >-
+      This model can activate for free if it is more than 6” from any other
+      model. This model can never have the Leader or Unit Leader special
+      effects.
+    cost: 0
+    name: Loner
+  - description: This model travels 5” with a single move action.
+    cost: 0
+    name: Move 5”
+star_quality: []
+stats:
+  body: 4
+  defence: 10
+  fight: 4
+  mind: 3
+  shoot: 4
+  spirit: 4
+type: Extra
+weapons: []
+__version: 0.0.1
+__card: Model
+customization: []
+id: 872bf589-cae5-4bf3-a129-58227d7a4ac4
+description: >
+  Battling from beyond the stars, these visitors may be bounty hunters, freedom
+  fighters or laser guns for hire that can add some sci-fi to your spy-fi... for
+  a price.
+
+---
+__custom: {}
+genres:
+  - Science
+health: 1
+name: ASTRONAUT
+notes: ''
+profile: ASTRONAUT
+ratings: 3
+role: Neutral
+special_effects:
+  - description: >-
+      *Special Action.* If this model passes a Mind test one friendly Robot or
+      Vehicle model in base contact can recover 1 lost Health.
+    cost: 0
+    name: Repair
+  - description: >-
+      At the start of any of your turns, you can choose to give this model both
+      the Immune (Vacuum) and Slow special effects. I all your extras have he
+      Spae Suit special effect, any or all Stars and Co-Stars in your cast can
+      be given it for free.
+    cost: 0
+    name: Space Suit
+star_quality: []
+stats:
+  body: 4
+  defence: 8
+  fight: 2
+  mind: 4
+  shoot: 2
+  spirit: 4
+type: Extra
+weapons:
+  - type: Melee
+    attack: Brawl
+    effects: 0 Health + Weakened
+    range: .
+    strike: 6
+__version: 0.0.1
+__card: Model
+customization: []
+id: a75a258c-6da3-4293-a84e-3662cd79c46a
+description: >
+  Whether in orbit or on the moon, the fight never stops, no matter the gravity
+  of the situation.
+
+---
+__custom: {}
+genres:
+  - Military
+  - Science
+health: 1
+name: ARMED ASTRONAUT
+notes: >-
+  Before the start of the game you have to choose between Laser Pistol or Laser
+  Rifle to use. You cannot swith ranged weapons during the game.
+profile: ARMED ASTRONAUT
+ratings: 4
+role: Neutral
+special_effects:
+  - description: >-
+      *Special Action.* If this model passes a Mind test one friendly Robot or
+      Vehicle model in base contact can recover 1 lost Health.
+    cost: 0
+    name: Repair
+  - description: >-
+      At the start of any of your turns, you can choose to give this model both
+      the Immune (Vacuum) and Slow special effects. I all your extras have he
+      Spae Suit special effect, any or all Stars and Co-Stars in your cast can
+      be given it for free.
+    cost: 0
+    name: Space Suit
+star_quality: []
+stats:
+  body: 4
+  defence: 8
+  fight: 3
+  mind: 4
+  shoot: 4
+  spirit: 4
+type: Extra
+weapons:
+  - type: Melee
+    attack: Brawl
+    effects: 0 Health + Weakened
+    range: 0
+    strike: 7
+  - type: Range
+    attack: Laser Pistol
+    effects: '2 Shots, Deadly'
+    range: 12
+    strike: 7
+  - type: Range
+    attack: Laser Rifle
+    effects: Deadly
+    range: 24
+    strike: 7
+__version: 0.0.1
+__card: Model
+customization: []
+id: 1c138cae-14a3-4a3a-9446-68a089355d5f
+description: >
+  Space is the new frontier, and one that needs protecting. Armed Astronauts
+  represent the pinnacle of training and bravery - true defenders of the earth.
+
+---
+__custom: {}
+genres:
+  - Military
+  - Science
+health: 1
+name: ARMED ASTRONAUT HEAVY
+notes: ''
+profile: ARMED ASTRONAUT
+ratings: 6
+role: Neutral
+special_effects:
+  - description: >-
+      *Special Action.* If this model passes a Mind test one friendly Robot or
+      Vehicle model in base contact can recover 1 lost Health.
+    cost: 0
+    name: Repair
+  - description: >-
+      At the start of any of your turns, you can choose to give this model both
+      the Immune (Vacuum) and Slow special effects. I all your extras have he
+      Spae Suit special effect, any or all Stars and Co-Stars in your cast can
+      be given it for free.
+    cost: 0
+    name: Space Suit
+star_quality: []
+stats:
+  body: 4
+  defence: 8
+  fight: 3
+  mind: 4
+  shoot: 4
+  spirit: 4
+type: Extra
+weapons:
+  - type: Melee
+    attack: Brawl
+    effects: 0 Health + Weakened
+    range: 0
+    strike: 7
+  - type: Range
+    attack: Zero-G Bazooka
+    effects: 'Blast 3", -1D3 Health, Unwieldy'
+    range: 24
+    strike: 9
+__version: 0.0.1
+__card: Model
+customization: []
+id: 2d9c7aa3-7f9e-4221-ad93-05e32e0e4d4f
+description: >
+  Space is the new frontier, and one that needs protecting. Armed Astronauts
+  represent the pinnacle of training and bravery - true defenders of the earth.
+
+---
+__custom: {}
+genres:
+  - Civilian
+  - Crime
+  - Law & Order
+  - Military
+health: 1
+name: ATTACK DOG
+notes: ''
+profile: ATTACK DOG
+ratings: 1
+role: Neutral
+special_effects:
+  - description: >-
+      Once per turn, after this model has been the target of a fight attack, it
+      can make a fight attack against that model, if that model is in range of
+      that attack.
+    cost: 0
+    name: Fight Back
+  - description: This model travels X” with a single move action.
+    cost: 0
+    name: Move 8”
+  - description: >
+      Models on bases less than 25mm and less than 20mm or more high (or long)
+      automatically gain this special effect for free – it is not optional. This
+      model is small and hard to see and/or target. This model gains +1 Defence
+      – this is already factored into the provided 7TV profiles. This model can
+      move through the bases of opposing models.
+    cost: 0
+    name: Small
+star_quality: []
+stats:
+  body: 3
+  defence: 8
+  fight: 4
+  mind: 1
+  shoot: 0
+  spirit: 4
+type: Extra
+weapons:
+  - type: Melee
+    attack: Frenzied Bite
+    effects: 0 Health + Knockdown
+    range: 0
+    strike: 8
+__version: 0.0.1
+__card: Model
+customization: []
+id: eb24769e-d807-4f3b-a4eb-5c31538818b7
+description: >
+  Sometimes dogs are not man’s best friends – especially if that man is pointing
+  a gun at you from behind a wall. Quick and with one end very full of sharp
+  teeth, dogs can bring down the hardest of foes.
+
+---
+__custom: {}
+genres:
+  - Civilian
+  - Science
+health: 1
+name: ADMINISTRATOR
+notes: ''
+profile: ADMINISTRATOR
+ratings: 2
+role: Neutral
+special_effects:
+  - description: >-
+      When this model activates choose 2 friendly models within 6” who have not
+      activated this turn. Chosen models can activate this turn for free but
+      cannot use their own Leader or Unit Leader special effects this turn.
+    cost: 0
+    name: Leader 2
+star_quality: []
+stats:
+  body: 2
+  defence: 7
+  fight: 1
+  mind: 3
+  shoot: 1
+  spirit: 2
+type: Extra
+weapons:
+  - type: Melee
+    attack: Brawl
+    effects: 0 Health + Weakened
+    range: 0
+    strike: 3
+__version: 0.0.1
+__card: Model
+customization: []
+id: 26790a7a-96d7-4a6d-afff-5bde0ab2e397
+description: >
+  Administrators are great within the narrow confines of their environment but
+  throw them into an unexpected situation and watch them go to pieces.
+
+---
+__custom: {}
+genres:
+  - Civilian
+health: 1
+name: BYSTANDER
+notes: 'Ratings : 1 rating or 2 for 3 models'
+profile: BYSTANDER
+ratings: 1
+role: Neutral
+special_effects:
+  - description: >-
+      Opposing non-vehicle models moving to within 1” of this model must either
+      end their movement or move into base contact with the blocking model.
+      Models cannot block if they are knocked down, or are Stunned or On Fire.
+    cost: 0
+    name: Block
+star_quality: []
+stats:
+  body: 2
+  defence: 7
+  fight: 1
+  mind: 3
+  shoot: 1
+  spirit: 2
+type: Extra
+weapons:
+  - type: Melee
+    attack: Brawl
+    effects: 0 Health + Weakened
+    range: 0
+    strike: 3
+__version: 0.0.1
+__card: Model
+customization: []
+id: 941a1afa-5f90-4d6a-bcee-7978e9177ebf
+description: >
+  Civilians can get mixed up in 7TV affairs, although they are invariably more
+  of a hindrance than a benefit to whoever has to deal with them.
+
+---
+__custom: {}
+genres:
+  - Crime
+  - Military
+health: 1
+name: EXPLOSIVE EXPERT
+notes: ''
+profile: EXPLOSIVE EXPERT
+ratings: 3
+role: Neutral
+special_effects:
+  - description: >-
+      *Special Action.* This model can move through any door or window in base
+      contact. Place the model on the other side of the door or window.
+    cost: 0
+    name: Break In
+  - description: >-
+      If this model has a cover bonus from soft cover, hard cover or obstacles,
+      then models making shoot attacks against this model automatically miss if
+      the distance to the target is more than half the attack’s range.
+    cost: 0
+    name: Hide
+  - cost: 0
+    description: >-
+      When this attack is made, do not make a strike roll. Instead place a
+      marker in base contact with the attacking model to show where the attack
+      has been positioned. Make a strike roll as soon as any opposing model
+      moves within 1" of the centre of the marker, then remove the marker.
+    name: High Explosive/Placed
+  - cost: 0
+    description: >-
+      The player controlling this model can trigger this attack at the start of
+      any of their action phases.
+    name: Timer
+star_quality: []
+stats:
+  body: 3
+  defence: 8
+  fight: 3
+  mind: 3
+  shoot: 3
+  spirit: 2
+type: Extra
+weapons:
+  - type: Melee
+    attack: Spanner
+    effects: 0 Health + Stunned
+    range: 0
+    strike: 7
+  - type: Range
+    attack: High Explosive
+    effects: '-1D6 health, Blast 5" + Knockdown, Timer'
+    range: Placed
+    strike: 10
+__version: 0.0.1
+__card: Model
+customization: []
+id: 9a6613c4-b409-4e40-85ef-9eb6f03b9bb0
+description: >
+  Safecracker, bomb disposal or demolitions crew? This expert has been trained
+  to defuse or destroy.
+
+---
+__custom: {}
+genres:
+  - Civilian
+health: 1
+name: Doctor
+notes: ''
+profile: Doctor
+ratings: 1
+role: Neutral
+special_effects:
+  - description: >-
+      *Special Action.* If this model passes a Mind test one friendly model in
+      base contact can recover 1 lost Health up to its starting value. This
+      effect does not work on Alien, Robot or Vehicle models.
+    cost: 0
+    name: Medic
+star_quality: []
+stats:
+  body: 2
+  defence: 7
+  fight: 1
+  mind: 3
+  shoot: 1
+  spirit: 2
+type: Extra
+weapons:
+  - type: Melee
+    attack: Brawl
+    effects: 0 Health + Weakened
+    range: 0
+    strike: 3
+__version: 0.0.1
+__card: Model
+customization: []
+id: aa6204f2-c996-43df-9151-e516d1d0b4f0
+
+---
+__custom: {}
+genres:
+  - Science
+health: 1
+name: Failed Experiment
+notes: ''
+profile: Failed Experiment
+ratings: 2
+role: Neutral
+special_effects:
+  - description: >-
+      Models making a fight attack against this model must pass a Spirit test or
+      must count their Strike number as half (round up) against this model until
+      the end of the turn.
+    cost: 0
+    name: Fearsome
+  - cost: 1
+    description: >
+      This model can ignore any strike it has just suffered if it can roll 4+ on
+      1D6. This special effect can be used during an opponent’s turn. You can
+      add extra dice to this roll.
+    name: Invulnerable
+  - description: >-
+      An opponent can pay ✪✪ during their turn to take one action with this
+      model, once per turn. If this model is part of a unit, this action cannot
+      be used to make a strike roll against another model from the same unit.
+    cost: 0
+    name: Questionable Ally
+star_quality: []
+stats:
+  body: 4
+  defence: 8
+  fight: 3
+  mind: 2
+  shoot: 2
+  spirit: 3
+type: Extra
+weapons:
+  - type: Melee
+    attack: Giant Claw
+    effects: ''
+    range: 0
+    strike: 8
+__version: 0.0.1
+__card: Model
+customization: []
+id: 9c0d7001-3d22-409c-9a30-bd6001e1ffef
+
+---
+__custom: {}
+genres:
+  - Unknown
+health: 1
+name: Ghost
+notes: ''
+profile: Ghost
+ratings: 3
+role: Neutral
+special_effects:
+  - description: >-
+      This model can be selected for a cast without acces to the unknown genre.
+      If it is, it counts as Unique. This model must select one friendly Star or
+      Co-Star model as its chosen one - this model must be placed within 2" of
+      the Chosen One at the start of this players activation phase unless ✪ is
+      paid.
+    cost: 0
+    name: Chosen one
+  - cost: 1
+    description: >
+      This model cannot make strikes if it uses this special effect this turn.
+      This model ignores terrain, obstacles scenery and models with the Block
+      special effect when it moves this turn.
+    name: Ghost
+  - cost: 1
+    description: >
+      A model can teleport if it has not used any actions this turn. Immediately
+      move this model up to 12” in any direction. Models do not suffer free
+      strikes when they teleport. Once a model has teleported its activation
+      ends.
+    name: Teleport
+star_quality: []
+stats:
+  body: 0
+  defence: 10
+  fight: 3
+  mind: 4
+  shoot: 3
+  spirit: 4
+type: Extra
+weapons:
+  - type: Melee
+    attack: Scare
+    effects: 0 Health + Weakened
+    range: 0
+    strike: 7
+  - type: Range
+    attack: Spirit Strike
+    effects: 0 Health. Target mdel can be moved up to 3"
+    range: 6
+    strike: 6
+__version: 0.0.1
+__card: Model
+customization: []
+id: 0e54fa59-750b-4a82-8b01-14113ac33694
+
+---
+__custom: {}
+genres:
+  - Secret
+health: 1
+name: Ninja
+notes: ''
+profile: Ninja
+ratings: 4
+role: Neutral
+special_effects:
+  - description: >-
+      This model can make fight attacks all round (360o) and never counts as
+      having been attacked in the rear. The model loses this special effect
+      while Stunned.
+    cost: 0
+    name: Aware
+  - description: >-
+      Once per turn, after this model has been the target of a fight attack, it
+      can make a fight attack against that model, if that model is in range of
+      that attack.
+    cost: 0
+    name: Fight Back
+  - description: >-
+      If this model has a cover bonus from soft cover, hard cover or obstacles,
+      then models making shoot attacks against this model automatically miss if
+      the distance to the target is more than half the attack’s range.
+    cost: 0
+    name: Hide
+  - description: >-
+      This model can be set up anywhere on the table, as long as it is no
+      further than 12” from another friendly non-Spy model. Spies are placed
+      after all other models (see the rules about cast start locations (see page
+      51). Opposing models cannot make strikes against a model with this special
+      effect in their first turn of an episode.
+    cost: 0
+    name: Spy
+star_quality: []
+stats:
+  body: 3
+  defence: 10
+  fight: 5
+  mind: 3
+  shoot: 5
+  spirit: 3
+type: Extra
+weapons:
+  - type: Melee
+    attack: Martial Arts
+    effects: ''
+    range: 0
+    strike: 9
+  - type: Melee
+    attack: Shuriken
+    effects: 2 Shots
+    range: 6
+    strike: 8
+__version: 0.0.1
+__card: Model
+customization: []
+id: b1aa15b4-ef8b-4cfe-8141-736bcce25481
+
+---
+__custom: {}
+genres:
+  - Science
+health: 1
+name: Scientist
+notes: ''
+profile: Scientist
+ratings: 2
+role: Neutral
+special_effects:
+  - description: This model adds one additional gadget card to the player's gadgets pool.
+    cost: 0
+    name: Gadget
+  - description: >-
+      *Special Action.* If this model passes a Mind test one friendly Robot or
+      Vehicle model in base contact can recover 1 lost Health.
+    cost: 0
+    name: Repair
+star_quality: []
+stats:
+  body: 2
+  defence: 7
+  fight: 1
+  mind: 4
+  shoot: 2
+  spirit: 2
+type: Extra
+weapons:
+  - type: Melee
+    attack: Brawl
+    effects: 0 Health + Weakened
+    range: 0
+    strike: 3
+__version: 0.0.1
+__card: Model
+customization: []
+id: cf3b5305-ee89-4b30-9794-39135c569283
+
+---
+__custom: {}
+genres:
+  - Military
+  - Secret
+health: 1
+name: Scuba Diver
+notes: ''
+profile: Scuba Diver
+ratings: 4
+role: Neutral
+special_effects:
+  - description: >-
+      When this model makes a strike, it can choose to add +1 to its strike roll
+      for every ✪ spent on extra dice, instead of getting the extra dice.
+    cost: 0
+    name: Military Training
+  - description: >-
+      This model can be set up anywhere on the table, as long as it is no
+      further than 12” from another friendly non-Spy model. Spies are placed
+      after all other models (see the rules about cast start locations (see page
+      51). Opposing models cannot make strikes against a model with this special
+      effect in their first turn of an episode.
+    cost: 0
+    name: Spy
+  - cost: 0
+    description: >-
+      The player controlling this model can trigger this attack at the start of
+      any of their action phases.
+    name: Timer
+  - description: >-
+      When moving thrue or under water this model suffers no movement penalties.
+      This model never loses health due to being underwater. If all extras in
+      your cast have the Wetsuit special effect, any or all Stars and Co-Stars
+      in your cast can be given it for free.
+    cost: 0
+    name: Wetsuit
+  - cost: 0
+    description: >-
+      When this attack is made, do not make a strike roll. Instead place a
+      marker in base contact with the attacking model to show where the attack
+      has been positioned. Make a strike roll as soon as any opposing model
+      moves within 1" of the centre of the marker, then remove the marker.
+    name: High Explosive/Placed
+star_quality: []
+stats:
+  body: 4
+  defence: 8
+  fight: 3
+  mind: 3
+  shoot: 3
+  spirit: 4
+type: Extra
+weapons:
+  - type: Melee
+    attack: Knife
+    effects: ''
+    range: 0
+    strike: 7
+  - type: Range
+    attack: Self Loading Rifle
+    effects: 2 Shots
+    range: 24
+    strike: 6
+  - type: Melee
+    attack: Harpoon Gun
+    effects: Deadly when used under water
+    range: 12
+    strike: 6
+  - type: Melee
+    attack: High Explosive
+    effects: '-1D6 Health, Blast 5" + Knockdown, Timer'
+    range: Placed
+    strike: 10
+__version: 0.0.1
+__card: Model
+customization: []
+id: c4735d79-a5d1-4cac-b3e9-a13547d97528
+
+---
+__custom: {}
+genres:
+  - Secret
+health: 2
+name: Spy
+notes: ''
+profile: Spy
+ratings: 4
+role: Neutral
+special_effects:
+  - description: >-
+      If this model has a cover bonus from soft cover, hard cover or obstacles,
+      then models making shoot attacks against this model automatically miss if
+      the distance to the target is more than half the attack’s range.
+    cost: 0
+    name: Hide
+  - description: >-
+      This model can activate for free if it is more than 6” from any other
+      model. This model can never have the Leader or Unit Leader special
+      effects.
+    cost: 0
+    name: Loner
+  - description: >-
+      This model can be set up anywhere on the table, as long as it is no
+      further than 12” from another friendly non-Spy model. Spies are placed
+      after all other models (see the rules about cast start locations (see page
+      51). Opposing models cannot make strikes against a model with this special
+      effect in their first turn of an episode.
+    cost: 0
+    name: Spy
+star_quality: []
+stats:
+  body: 3
+  defence: 8
+  fight: 4
+  mind: 4
+  shoot: 4
+  spirit: 4
+type: Extra
+weapons:
+  - type: Melee
+    attack: Brawl
+    effects: 0 Health + Weakened
+    range: 0
+    strike: 7
+  - type: Range
+    attack: Pistol
+    effects: 2 Shots
+    range: 12
+    strike: 7
+__version: 0.0.1
+__card: Model
+customization: []
+id: b1c94d41-b55f-4917-bea3-60c3118b9a9c
+
+---
+__custom: {}
+genres:
+  - Civilian
+health: 1
+name: Survivalist
+notes: ''
+profile: Survivalist
+ratings: 4
+role: Neutral
+special_effects:
+  - description: >-
+      If this model has a cover bonus from soft cover, hard cover or obstacles,
+      then models making shoot attacks against this model automatically miss if
+      the distance to the target is more than half the attack’s range.
+    cost: 0
+    name: Hide
+  - description: >-
+      This model can activate for free if it is more than 6” from any other
+      model. This model can never have the Leader or Unit Leader special
+      effects.
+    cost: 0
+    name: Loner
+  - description: >-
+      *Special Action.* If this model passes a Mind test one friendly Robot or
+      Vehicle model in base contact can recover 1 lost Health.
+    cost: 0
+    name: Repair
+  - description: >-
+      This model cannot be knocked down, unless they gain the Stunned status.
+      This model treats rough ground as clear ground.
+    cost: 0
+    name: Sure Footed
+  - description: >-
+      You can only have one model with this profile name in your cast. Named
+      models from the Programme Guides (General Gordon for example) are also
+      automatically Unique even if this special effect isn’t listed on their
+      profile.
+    cost: 0
+    name: Unique
+star_quality: []
+stats:
+  body: 4
+  defence: 8
+  fight: 4
+  mind: 3
+  shoot: 4
+  spirit: 4
+type: Extra
+weapons:
+  - type: Melee
+    attack: Hunting Knife
+    effects: ''
+    range: 0
+    strike: 8
+  - type: Range
+    attack: Hunting Rifle
+    effects: +2 to Strike roll for an aimed shot
+    range: 24
+    strike: 7
+__version: 0.0.1
+__card: Model
+customization: []
+id: 5c8837b3-111c-4a6f-b2ac-be694f21da3e
+
+---
+__custom: {}
+genres:
+  - Military
+  - Science
+health: 1
+name: Technician
+notes: ''
+profile: Technician
+ratings: 0
+role: Neutral
+special_effects:
+  - description: >-
+      *Special Action.* If this model passes a Mind test one friendly Robot or
+      Vehicle model in base contact can recover 1 lost Health.
+    cost: 0
+    name: Repair
+star_quality: []
+stats:
+  body: 2
+  defence: 8
+  fight: 2
+  mind: 3
+  shoot: 2
+  spirit: 2
+type: Extra
+weapons:
+  - type: Melee
+    attack: Spanner
+    effects: 0 Health + Stunned
+    range: 0
+    strike: 5
+__version: 0.0.1
+__card: Model
+customization: []
+id: a814890c-c7ba-408c-b112-839fecc29a93
+
+---
+__custom: {}
+genres:
+  - Civilian
+health: 1
+name: VIP
+notes: ''
+profile: VIP
+ratings: 0
+role: Neutral
+special_effects:
+  - description: >-
+      If this model is within 4" of any other cast memebers in the countdown
+      face you gain ✪ immediatly. If this model is removed from play for any
+      reason immediatly lose half your ✪ (round up)
+    cost: 0
+    name: Irreplaceable
+  - description: >-
+      You can only have one model with this profile name in your cast. Named
+      models from the Programme Guides (General Gordon for example) are also
+      automatically Unique even if this special effect isn’t listed on their
+      profile.
+    cost: 0
+    name: Unique
+star_quality: []
+stats:
+  body: 2
+  defence: 7
+  fight: 1
+  mind: 4
+  shoot: 1
+  spirit: 2
+type: Extra
+weapons:
+  - type: Melee
+    attack: Brawl
+    effects: 0 Health + Weakened
+    range: 0
+    strike: 3
+__version: 0.0.1
+__card: Model
+customization: []
+id: 54262eb5-b51f-43c8-8f64-9a2375d89e00
