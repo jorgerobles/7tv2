@@ -156,10 +156,12 @@ export class ProfileSelector extends React.Component {
             
         }
 
-        const fromTemplate=()=>{
+        const fromTemplate=(item=null)=>{
+            if (!item) 
+                item=this.state.character
             this.props.dispatch({
                 type:'CHARACTER_NEW', 
-                payload: Object.assign({},this.state.character,{name: this.state.selected, profile: this.state.selected})
+                payload: Object.assign({},item,{name: item.name, profile: item})
             });
         }
 
