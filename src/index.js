@@ -13,7 +13,7 @@ import mergePersistedState from 'redux-localstorage/lib/mergePersistedState'
 import adapter from 'redux-localstorage/lib/adapters/localStorage';
 import filter from 'redux-localstorage-filter';
 
-import Locale from 'simple-locale'
+import Locale from './lib/simple-locale'
 
 export const LOCALSTORAGE_KEY = 'Studios7TV'
 export const locale = new Locale({ gb_EN: 'gb_EN'});
