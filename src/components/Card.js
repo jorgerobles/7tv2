@@ -9,6 +9,8 @@ import '../assets/card.css'
 import { sendAsFile, sendAsImage } from '../lib/helpers'
 import marked from 'marked'
 
+import {T} from '../index'
+
 import { downloadSingleCharacter } from './Ui'
 
 const stats = { fight: 10, shoot: 10, defence: 10, mind: 10, body: 10, spirit: 10 };
@@ -149,7 +151,7 @@ export class CardFront extends React.Component {
         return <div className="cellophan"><div className={"card "+card+" front"}>
              <div className="background" style={{filter:`hue-rotate(${__tint}deg)`}}></div>
             <div className="foreground" >
-            <Title name={name} alignment={role} type={type} />
+            <Title name={name} alignment={T(role)} type={type} />
             <Pic photo={photo}/>
             <StatBlock className="left" stats={{ fight, shoot, defence }} />
             <StatBlock className="right" stats={{ mind, body, spirit }} />
