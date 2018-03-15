@@ -213,7 +213,7 @@ export class CardBack extends React.Component {
         return <div className="cellophan"><div className={"card "+card+" back"}>
             <div className="background" style={{filter:`hue-rotate(${__tint}deg)`}}></div>
             <div className="foreground">
-            <Title name={name} alignment={role} type={type} />
+            <Title name={name} alignment={T(role)} type={type} />
             <Tags values={tags} additional={__genres} />
             <div className="content">
                 <Description text={description}/>
@@ -234,7 +234,7 @@ export class CardBack extends React.Component {
         return <div className="cellophan"><div className={"card "+card+" back"}>
             <div className="background" style={{filter:`hue-rotate(${__tint}deg)`}}></div>
             <div className="foreground">
-            <Title name={name} alignment={role} type={type} />
+            <Title name={name} alignment={T(role)} type={type} />
 
             <section>
                 {qlty.length? <heading>Star quality</heading> :undefined} 
