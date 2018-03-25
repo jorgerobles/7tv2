@@ -94,7 +94,7 @@ export class PictureWidget extends React.Component {
 
   uploadHandler(value,errorSchema){
     
-    this.setState({value, errorSchema, crop:{aspect:1}})
+    this.setState({value, errorSchema})
     this.props.onChange(value,errorSchema);
   }
   cropHandler(crop,pixelCrop,fileName){
@@ -104,13 +104,13 @@ export class PictureWidget extends React.Component {
     if (confirm("No Way Back!")){
       getCroppedImg(this.props.value, this.state.pixelCrop, this.state.fileName ).then((src)=>{
         this.props.onChange(src,this.state.errorSchema);
-        this.setState({crop:null})
+        this.setState({crop:{aspect:1}})
       })
     }
   }
 
   render(){
-    console.log(this.props.value)
+    
     const {name, data, mime} = parseDataUri(this.props.value);
     let fileprops={...this.props, onChange: this.uploadHandler}
     return <div className="pictureWidget">
