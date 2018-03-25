@@ -5,11 +5,12 @@
 
 .characterEditor .array-item { display:flex; background: rgba(0,0,0, 0.05); margin: 1%; padding: 1%}
 .characterEditor .array-item textarea {background-color: rgba(255,255,255,0.5) !important; padding: 1%; border-top: 1px solid rgba(0,0,0, 0.1); margin-top: 1%}
-.characterEditor .pictureWidget img {width:200px; float:right;}
+.characterEditor .pictureWidget img {width:300px}
+/* .characterEditor .pictureWidget img {width:200px; float:right;}
 .characterEditor .pictureWidget {display:block}
 .characterEditor .pictureWidget:after {content: "";
     display: table;
-    clear: both;}
+    clear: both;} */
 
 .characterEditor select {border-top: 1px solid #eee !important} 
 

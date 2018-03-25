@@ -14,6 +14,43 @@ import { insertAtCaret } from '../lib/helpers'
 import format from 'string-template'
 import { sendAsFile, parseDataUri } from '../lib/helpers'
 
+import ReactCrop, { makeAspectCrop } from 'react-image-crop';
+import 'react-image-crop/dist/ReactCrop.css';
+
+const addNameToDataURL=(dataURL, name) => {
+  return dataURL.replace(";base64", `;name=${name};base64`);
+}
+
+const getCroppedImg = (src, pixelCrop, fileName) => {
+ 
+  return new Promise((resolve,reject)=>{
+    const canvas = document.createElement('canvas');
+        canvas.width = pixelCrop.width;
+        canvas.height = pixelCrop.height;
+    const ctx = canvas.getContext('2d');
+    const image=new Image();
+          image.onload=function(){
+            
+            ctx.drawImage(
+              image,
+              pixelCrop.x,
+              pixelCrop.y,
+              pixelCrop.width,
+              pixelCrop.height,
+              0,
+              0,
+              pixelCrop.width,
+              pixelCrop.height
+            );
+            
+            resolve(addNameToDataURL(canvas.toDataURL('image/jpeg'),fileName))
+          }
+
+          image.src=src
+      })
+        
+}
+
 const textToolsWidgets={
   ToolInsertText:function(options,widget){
     let insert=(text)=>{
@@ -46,15 +83,41 @@ export function ToolTextareaWidget(props) {
     </div>)
 }
 
-export function PictureWidget(props) {
-  let image;
-  
-  if ((props.value||"").search(/^data:image\/\w+/gi)!==false) 
-    image=<img className="preview" src={props.value}/>
-  
-  const {name, data, mime} = parseDataUri(props.value);
+export class PictureWidget extends React.Component {
+  constructor(props){
+    super(props);
+    this.state={value:"", errorSchema:undefined, crop:{aspect:1}};
+    this.uploadHandler=this.uploadHandler.bind(this)
+    this.cropHandler=this.cropHandler.bind(this)
+    this.updateHandler=this.updateHandler.bind(this)
+  }
 
-  return <div className="pictureWidget">{image}<FileWidget {...props}/><Button onClick={e=>{sendAsFile(name,data,mime)}} bsStyle="info"><Glyphicon glyph="download"/> Download</Button></div>
+  uploadHandler(value,errorSchema){
+    
+    this.setState({value, errorSchema, crop:{aspect:1}})
+    this.props.onChange(value,errorSchema);
+  }
+  cropHandler(crop,pixelCrop){
+    this.setState({crop})
+    
+  }
+  updateHandler(crop,pixelCrop,fileName){
+    getCroppedImg(this.state.value, pixelCrop, fileName ).then((src)=>{
+      this.props.onChange(src,this.state.errorSchema);
+    })
+  }
+
+  render(){
+    const {name, data, mime} = parseDataUri(this.props.value);
+    let fileprops={...this.props, onChange: this.uploadHandler}
+    return <div className="pictureWidget">
+    
+    <ReactCrop src={this.state.value || ""} crop={this.state.crop} onChange={this.cropHandler} onComplete={(crop,pixelCrop)=>{this.updateHandler(crop, pixelCrop, name)}}/>
+    
+    <FileWidget {...fileprops}/>
+    
+    <Button onClick={e=>{sendAsFile(name,data,mime)}} bsStyle="info"><Glyphicon glyph="download"/> Download</Button></div>
+  }
 }
 
 const parseTools=(options,props)=>{
