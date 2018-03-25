@@ -110,14 +110,15 @@ export class PictureWidget extends React.Component {
   }
 
   render(){
+    console.log(this.props.value)
     const {name, data, mime} = parseDataUri(this.props.value);
     let fileprops={...this.props, onChange: this.uploadHandler}
     return <div className="pictureWidget">
     <small>Drag to make a crop Marquee</small><br/>
-    <ReactCrop src={this.props.value} crop={this.state.crop} onChange={(crop, pixelCrop)=>this.cropHandler(crop, pixelCrop,name)}/>
+    <ReactCrop src={this.props.value||""} crop={this.state.crop} onChange={(crop, pixelCrop)=>this.cropHandler(crop, pixelCrop,name)}/>
     <br/>
-    <Button onClick={this.updateHandler} bsSize="xsmall" bsStyle="danger"><Glyphicon glyph="pencil"/> Crop</Button>
-    <Button onClick={e=>{sendAsFile(name,data,mime)}} bsSize="xsmall"  bsStyle="info"><Glyphicon glyph="download"/> Download</Button>
+    <Button onClick={this.updateHandler} bsSize="xsmall" bsStyle="danger" disabled={!!!this.props.value}><Glyphicon glyph="pencil"/> Crop</Button>
+    <Button onClick={e=>{sendAsFile(name,data,mime)}} bsSize="xsmall"  bsStyle="info" disabled={!!!this.props.value}><Glyphicon glyph="download"/> Download</Button>
     <hr/>
     <FileWidget {...fileprops}/>
     </div>
