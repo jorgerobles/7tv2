@@ -97,26 +97,30 @@ export class PictureWidget extends React.Component {
     this.setState({value, errorSchema, crop:{aspect:1}})
     this.props.onChange(value,errorSchema);
   }
-  cropHandler(crop,pixelCrop){
-    this.setState({crop})
-    
+  cropHandler(crop,pixelCrop,fileName){
+    this.setState({crop, pixelCrop,fileName})
   }
-  updateHandler(crop,pixelCrop,fileName){
-    getCroppedImg(this.state.value, pixelCrop, fileName ).then((src)=>{
-      this.props.onChange(src,this.state.errorSchema);
-    })
+  updateHandler(){
+    if (confirm("No Way Back!")){
+      getCroppedImg(this.props.value, this.state.pixelCrop, this.state.fileName ).then((src)=>{
+        this.props.onChange(src,this.state.errorSchema);
+        this.setState({crop:null})
+      })
+    }
   }
 
   render(){
     const {name, data, mime} = parseDataUri(this.props.value);
     let fileprops={...this.props, onChange: this.uploadHandler}
     return <div className="pictureWidget">
-    
-    <ReactCrop src={this.state.value || ""} crop={this.state.crop} onChange={this.cropHandler} onComplete={(crop,pixelCrop)=>{this.updateHandler(crop, pixelCrop, name)}}/>
-    
+    <small>Drag to make a crop Marquee</small><br/>
+    <ReactCrop src={this.props.value} crop={this.state.crop} onChange={(crop, pixelCrop)=>this.cropHandler(crop, pixelCrop,name)}/>
+    <br/>
+    <Button onClick={this.updateHandler} bsSize="xsmall" bsStyle="danger"><Glyphicon glyph="pencil"/> Crop</Button>
+    <Button onClick={e=>{sendAsFile(name,data,mime)}} bsSize="xsmall"  bsStyle="info"><Glyphicon glyph="download"/> Download</Button>
+    <hr/>
     <FileWidget {...fileprops}/>
-    
-    <Button onClick={e=>{sendAsFile(name,data,mime)}} bsStyle="info"><Glyphicon glyph="download"/> Download</Button></div>
+    </div>
   }
 }
 
