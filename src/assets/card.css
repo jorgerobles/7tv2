@@ -221,8 +221,8 @@
   .viewport { page-break-after: always; height: 88mm;  display:block; float:left; position: relative; top:3mm }
   
   /*.card.back { transform: rotate(180deg)}*/
-  
-
+  .card section p {margin: 0 0 0.2em 0; white-space: unset; font-size: 0.98em}
+  .card .sfxribbon dl span{font-size:95% !important}
 
 }
 
