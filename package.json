@@ -1,7 +1,7 @@
 {
   "name": "7tv2",
   "homepage": "http://agency.crooked-dice.co.uk",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "private": true,
   "devDependencies": {
     "ajv": "^5.3.0",
