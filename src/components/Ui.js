@@ -8,8 +8,10 @@ import marked from 'marked'
 
 import { loadYamlFile, saveYamlFile } from '../reducers/index';
 import { SplitButton, MenuItem, Button, ButtonToolbar, Glyphicon, DropdownButton, Collapse} from 'react-bootstrap';
-import { sendAsFile, sendAsImage } from '../lib/helpers'
+import { sendAsFile, sendAsImage, getAsImage } from '../lib/helpers'
 import slug from 'slug';
+import jsPDF from 'jspdf';
+import chunk from 'chunk';
 
 export class FileField extends React.Component {
 
@@ -70,11 +72,73 @@ export const downloadSingleCharacter=(character)=>{
 
 export const downloadCharactersAsImages=(cast)=>{
     cast.forEach(item=>{
-        sendAsImage(item.id, "7TV_cast-"+slug(item.name||item.id)+".png",{scale:2});
+        getAsImage(item.id, "7TV_cast-"+slug(item.name||item.id)+".png",{scale:2});
     })
-    
 }
-/* <MenuItem eventKey="3" onClick={e=>this.props.dispatch({ type: 'CHARACTER_NEW', payload:{ __card:'unit'} })}>Unit</MenuItem> */
+
+const dottedLine=function(doc, xFrom, yFrom, xTo, yTo, segmentLength)
+{
+    // Calculate line length (c)
+    var a = Math.abs(xTo - xFrom);
+    var b = Math.abs(yTo - yFrom);
+    var c = Math.sqrt(Math.pow(a,2) + Math.pow(b,2));
+
+    // Make sure we have an odd number of line segments (drawn or blank)
+    // to fit it nicely
+    var fractions = c / segmentLength;
+    var adjustedSegmentLength = (Math.floor(fractions) % 2 === 0) ? (c / Math.ceil(fractions)) : (c / Math.floor(fractions));
+
+    // Calculate x, y deltas per segment
+    var deltaX = adjustedSegmentLength * (a / c);
+    var deltaY = adjustedSegmentLength * (b / c);
+
+    var curX = xFrom, curY = yFrom;
+    while (curX <= xTo && curY <= yTo)
+    {
+        doc.line(curX, curY, curX + deltaX, curY + deltaY);
+        curX += 2*deltaX;
+        curY += 2*deltaY;
+    }
+}
+
+export const downloadCharactersAsPDF=(cast,fileName='7TVcast')=>{
+
+    const PAGE_WIDTH=10.55;
+    const PAGE_HEIGHT=7.55;
+    const MARGIN_X=0.3;
+    const MARGIN_Y=0.3;
+    const CARD_WIDTH=5;
+    const CARD_HEIGHT=3.5;
+    const CARD_OFFSETX=0;
+    const CARD_OFFSETY=-0.3
+
+    let doc = new jsPDF({orientation: 'landscape',format:[PAGE_WIDTH,PAGE_HEIGHT],unit:'in'});
+        
+    let promises=cast.map((item)=>{
+        return getAsImage(document.getElementById(item.id),{scale:2})
+    })
+    const positions=[{x:0,y:0},{x:CARD_WIDTH+CARD_OFFSETX,y:0},{x:0,y:CARD_HEIGHT+CARD_OFFSETY},{x:CARD_WIDTH+CARD_OFFSETX,y:CARD_HEIGHT+CARD_OFFSETY}];
+    const margins={x:MARGIN_X, y:MARGIN_Y}
+
+    Promise.all(promises).then((dataurls,i)=>{
+        chunk(dataurls,positions.length).forEach((c,page)=>{
+            if (page) doc.addPage();
+            doc.setDrawColor(255,255,255);
+            doc.setLineWidth(0.01)
+            c.forEach((dataURL,j)=>{
+                doc.addImage(dataURL,'JPEG',margins.x+positions[j].x,margins.y+positions[j].y,CARD_WIDTH,CARD_HEIGHT)
+            })
+            dottedLine(doc,margins.x+CARD_WIDTH/2,0,margins.x+CARD_WIDTH/2,PAGE_HEIGHT,0.05)
+            dottedLine(doc,margins.x+CARD_WIDTH,0,margins.x+CARD_WIDTH,PAGE_HEIGHT,0.01)
+            dottedLine(doc,margins.x+CARD_WIDTH/2*3,0,margins.x+CARD_WIDTH/2*3,PAGE_HEIGHT,0.05)
+            dottedLine(doc,0,margins.y+CARD_HEIGHT+CARD_OFFSETY,PAGE_WIDTH,margins.y+CARD_HEIGHT+CARD_OFFSETY,0.01)
+        })
+        doc.save(fileName+'.pdf')
+    })
+
+}
+
+
 export class Toolbar extends React.Component {
     render(){
         return <div className="ui paper editorToolBar">
@@ -91,9 +155,8 @@ export class Toolbar extends React.Component {
                 <FileField style={{display:"block",margin: "5px 0 5px 0"}} accept=".yaml" onChange={e => loadCharacter(e, (file) => this.props.dispatch({ type: 'CHARACTER_LOAD', payload: file }))}><Button block  bsSize="small" bsStyle="success"><Glyphicon glyph="upload" /> Load .Yaml</Button></FileField>
                 
                 <Button block bsSize="small" onClick={e=>downloadCharacters(this.props.cast)} bsStyle="warning"><Glyphicon glyph="download" /> Download as .Yaml</Button>
-                
-                <Button block bsSize="small" onClick={e=>downloadCharactersAsImages(this.props.cast)} bsStyle="danger"><Glyphicon glyph="download" /> Download as Images</Button>
-                
+                <Button block bsSize="small" onClick={e=>downloadCharactersAsImages(this.props.cast)} bsStyle="danger"><Glyphicon glyph="download" /> Download as Single Images</Button>
+                <Button block bsSize="small" onClick={e=>downloadCharactersAsPDF(this.props.cast)} bsStyle="danger"><Glyphicon glyph="download" /> Download as PDF</Button>
                 <Button block bsSize="small" onClick={e=> {if (confirm('Are you sure? This will wipe all the current cards! It is a bloody nuke!')) this.props.dispatch({type: 'CAST_CLEAR'});}} bsStyle="info"><Glyphicon glyph="trash" /> Reset all</Button>
                </div>
             

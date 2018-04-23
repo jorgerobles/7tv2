@@ -64,6 +64,18 @@ export function dataURItoBlob(dataURI) {
 
     
     nodes.forEach(function(node,index){
+        index = (nodes.length>1) ? index:''
+        getAsImage(node,opts)
+            .then(function (dataUrl) {
+                var link = document.createElement('a');
+                    link.download = filename.replace('{n}',index) || ("7tv_cast-"+domId+".png");
+                    link.href = dataUrl;
+                    link.click();
+            }); 
+    })
+  }
+
+  export function getAsImage(node, opts={}){
         if (opts.scale){
             let rect=node.getBoundingClientRect();
             opts=Object.assign(opts,{
@@ -75,15 +87,8 @@ export function dataURItoBlob(dataURI) {
                 height: rect.height*opts.scale
             })
         }
-        index = (nodes.length>1) ? index:''
-        domtoimage.toPng(node,opts)
-            .then(function (dataUrl) {
-                var link = document.createElement('a');
-                    link.download = filename.replace('{n}',index) || ("7tv_cast-"+domId+".png");
-                    link.href = dataUrl;
-                    link.click();
-            }); 
-    })
+        
+        return domtoimage.toPng(node,opts);
   }
 
 export function insertAtCaret(txtarea, text) {
