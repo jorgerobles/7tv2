@@ -1,5 +1,5 @@
-import domtoimage from 'dom-to-image';
-
+//import domtoimage from 'dom-to-image';
+import html2canvas from 'html2canvas';
 
 export function sendAsFile(filename, data, mimetype) {
     
@@ -76,19 +76,25 @@ export function dataURItoBlob(dataURI) {
   }
 
   export function getAsImage(node, opts={}){
-        if (opts.scale){
+        /*if (opts.scale){
             let rect=node.getBoundingClientRect();
-            opts=Object.assign(opts,{
+                opts=Object.assign(opts,{
                 style: {
                     transform:`scale(${opts.scale})`,
                     transformOrigin:"left top",
                 },
                 width: rect.width*opts.scale,
                 height: rect.height*opts.scale
-            })
+            }) 
         }
-        
         return domtoimage.toPng(node,opts);
+        */
+        
+        return new Promise((resolve)=>{
+            html2canvas(node,opts).then(function(canvas) {
+                resolve(canvas.toDataURL("image/png"));
+            })
+        });
   }
 
 export function insertAtCaret(txtarea, text) {

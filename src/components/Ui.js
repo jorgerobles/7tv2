@@ -72,7 +72,7 @@ export const downloadSingleCharacter=(character)=>{
 
 export const downloadCharactersAsImages=(cast)=>{
     cast.forEach(item=>{
-        getAsImage(item.id, "7TV_cast-"+slug(item.name||item.id)+".png",{scale:2});
+        sendAsImage(item.id,"7TV_cast-"+slug(item.name||item.id)+".png",{scale:2});
     })
 }
 
@@ -118,7 +118,7 @@ export const downloadCharactersAsPDF=(cast,fileName='7TVcast')=>{
         return getAsImage(document.getElementById(item.id),{scale:2})
     })
     const positions=[{x:0,y:0},{x:CARD_WIDTH+CARD_OFFSETX,y:0},{x:0,y:CARD_HEIGHT+CARD_OFFSETY},{x:CARD_WIDTH+CARD_OFFSETX,y:CARD_HEIGHT+CARD_OFFSETY}];
-    const margins={x:MARGIN_X, y:MARGIN_Y}
+    
 
     Promise.all(promises).then((dataurls,i)=>{
         chunk(dataurls,positions.length).forEach((c,page)=>{
@@ -126,12 +126,12 @@ export const downloadCharactersAsPDF=(cast,fileName='7TVcast')=>{
             doc.setDrawColor(255,255,255);
             doc.setLineWidth(0.01)
             c.forEach((dataURL,j)=>{
-                doc.addImage(dataURL,'JPEG',margins.x+positions[j].x,margins.y+positions[j].y,CARD_WIDTH,CARD_HEIGHT)
+                doc.addImage(dataURL,'JPEG',MARGIN_X+positions[j].x,MARGIN_Y+positions[j].y,CARD_WIDTH,CARD_HEIGHT)
             })
-            dottedLine(doc,margins.x+CARD_WIDTH/2,0,margins.x+CARD_WIDTH/2,PAGE_HEIGHT,0.05)
-            dottedLine(doc,margins.x+CARD_WIDTH,0,margins.x+CARD_WIDTH,PAGE_HEIGHT,0.01)
-            dottedLine(doc,margins.x+CARD_WIDTH/2*3,0,margins.x+CARD_WIDTH/2*3,PAGE_HEIGHT,0.05)
-            dottedLine(doc,0,margins.y+CARD_HEIGHT+CARD_OFFSETY,PAGE_WIDTH,margins.y+CARD_HEIGHT+CARD_OFFSETY,0.01)
+            dottedLine(doc,MARGIN_X+CARD_WIDTH/2,0,MARGIN_X+CARD_WIDTH/2,PAGE_HEIGHT,0.05)
+            dottedLine(doc,MARGIN_X+CARD_WIDTH,0,MARGIN_X+CARD_WIDTH,PAGE_HEIGHT,0.01)
+            dottedLine(doc,MARGIN_X+CARD_WIDTH/2*3,0,MARGIN_X+CARD_WIDTH/2*3,PAGE_HEIGHT,0.05)
+            dottedLine(doc,0,MARGIN_Y+CARD_HEIGHT+CARD_OFFSETY,PAGE_WIDTH,MARGIN_Y+CARD_HEIGHT+CARD_OFFSETY,0.01)
         })
         doc.save(fileName+'.pdf')
     })
