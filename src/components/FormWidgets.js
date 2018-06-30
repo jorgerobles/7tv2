@@ -93,7 +93,7 @@ export class PictureWidget extends React.Component {
   }
 
   uploadHandler(value,errorSchema){
-    
+    value=value.replace(/name=([^;]+);/gi,(str,p1)=>{return 'name='+encodeURIComponent(p1)+";"})
     this.setState({value, errorSchema})
     this.props.onChange(value,errorSchema);
   }
@@ -118,7 +118,7 @@ export class PictureWidget extends React.Component {
     <ReactCrop src={this.props.value||""} crop={this.state.crop} onChange={(crop, pixelCrop)=>this.cropHandler(crop, pixelCrop,name)}/>
     <br/>
     <Button onClick={this.updateHandler} bsSize="xsmall" bsStyle="danger" disabled={!!!this.props.value}><Glyphicon glyph="pencil"/> Crop</Button>
-    <Button onClick={e=>{sendAsFile(name,data,mime)}} bsSize="xsmall"  bsStyle="info" disabled={!!!this.props.value}><Glyphicon glyph="download"/> Download</Button>
+    <Button onClick={e=>{sendAsFile(decodeURIComponent(name),data,mime)}} bsSize="xsmall"  bsStyle="info" disabled={!!!this.props.value}><Glyphicon glyph="download"/> Download</Button>
     <hr/>
     <FileWidget {...fileprops}/>
     </div>
