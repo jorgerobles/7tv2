@@ -8,7 +8,10 @@ export function sendAsFile(filename, data, mimetype) {
     let tempLink = document.createElement('a');
         tempLink.href = window.URL.createObjectURL(blob);
         tempLink.setAttribute('download', filename);
+        tempLink.style.display='none'
+        document.body.appendChild(tempLink);
         tempLink.click();
+        tempLink.remove();
 }
 
 export function parseDataUri(data) {
@@ -69,8 +72,12 @@ export function dataURItoBlob(dataURI) {
             .then(function (dataUrl) {
                 var link = document.createElement('a');
                     link.download = filename.replace('{n}',index) || ("7tv_cast-"+domId+".png");
+                    link.style='display:none'
                     link.href = dataUrl;
+                    document.body.appendChild(link)
                     link.click();
+                    link.remove();
+
             }); 
     })
   }
