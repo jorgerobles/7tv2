@@ -10,10 +10,10 @@
 .din {font-family: "DINCond" !important}
 
 .card {
-    width: 288px; height: 400px; position:relative; font-family: "DINCond"; color: black;
+    position:relative; font-family: "DINCond"; color: black;
 }
 
-
+var  {font-style: normal}
 
 .card .background, .card .foreground {display:block; position:absolute; width: 100%; height:100%; left:0; top:0; z-index: 0;}
 .card .background > *, .card .foreground > * {position:absolute}
@@ -21,7 +21,7 @@
 .card.back .background {background: url(images/2e_back_vanilla.jpg) ; background-size: contain;}
 .card .foreground {z-index: 1}
 
-.card.model  .stats, .card.vehicle .stats {
+.card.model  .stats {
     position: absolute;  color: white; text-transform: uppercase; 
     background: #3a3b3d; border: 0.15em solid #fff; width: 28%; border-collapse: collapse; 
     text-align: center; font-size: 100%; line-height: 170%; font-weight: bold;
@@ -33,6 +33,7 @@
 .card.model .stats > div {display:flex; flex-direction: row; width:100%} 
 .card.model .stats > div > div {border-right: 0.15em solid #fff; border-bottom: 0.15em solid #fff; font-weight: normal; flex-grow:3; font-size: 90% }
 .card.model .stats > div:last-child > div {border-bottom:none}
+
 .card.model .stats > div > div:last-child { flex-grow:0; width: 30%; border-right: none; color: #000; font-size: 110%}
 .card.model .stats > div.fight > div:last-child {background: #c67229}
 .card.model .stats > div.shoot > div:last-child {background: #bf452d}
@@ -96,14 +97,23 @@
 .card .weapons tbody td.effects em {color: #862419; font-weight: bold; font-style: normal}
 .card .weapons tbody tr.melee td.attack:before,
 .card .weapons tbody tr.range td.attack:before  {
-  font-family: 'icomoon'; content: "\e909"; position:absolute; left: -2.5%;  background: white; border-radius: 100%; font-size: 110%; box-shadow: 0 0 10px rgba(0,0,0,0.5); line-height: 100%; 
+  font-family: 'icomoon'; content: "\e909"; position:absolute; left: -0.5em;  background: white; border-radius: 100%; font-size: 110%; box-shadow: 0 0 10px rgba(0,0,0,0.5); line-height: 100%; 
 }
 .card .weapons tbody tr.range td.attack:before {content: "\e908";}
  
 .card .ratings {bottom: 1%; color: white; left: 5%; text-align: center; line-height: 90%; font-size: 90%}
 .card .ratings val {display:block;}
-.card .health {width: 100%; bottom:5.5%; text-align:center }
-.card .health div { width: 1.4em; height: 1.4em; margin:0.1em; background: white; border: 0.1em solid black; display:inline-block;border-radius: 100% }
+
+.card .checkribbon div {  width: 1.2em; height: 1.2em; margin:0.1em; background: white;  display:inline-block; }
+.core.card .checkribbon.health {
+  width: 100%; bottom:5.5%; text-align: center;
+  div {
+    
+    border-radius: 100%;border: 0.1em solid black; width: 1.4em; height: 1.4em; text-align:center
+  }
+
+
+}
 
 .card .tags {color: white; bottom: 1.5%; right: 1%; font-size:130%; }
 .card .tags i {margin-left: 0.2em; vertical-align: bottom}
@@ -121,39 +131,159 @@
 /* /COMMON */
 
 /* VEHICLE */
-.card.vehicle .title .vehicle:before,
-.card.unit .title .unit:before
-  {content: "\2726"; font-style:normal} 
-.card.vehicle .pic {
-  width: 60%; height: 43%; position:absolute; left: 19%; top:11%; display:block; border: 0.41em solid black; background: white; border-radius: 100%;
-  background-size: contain; background-repeat:   no-repeat; background-position: center center;  
-}
-.card.vehicle .stats {
-  display:flex; flex-direction: row; top:50%; width:90%; left: 4%; border:none; background:none; box-shadow: none;
-}
-.card.vehicle .stats > div {
-  display:flex; flex-direction: row; margin: 0 1% 0 1%; flex-grow:1;
-  background: #3a3b3d; border: 0.15em solid #fff; width: 28%; border-collapse: collapse; 
-  box-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
-.card.vehicle .stats > div > div {flex-grow:1; font-weight: normal; font-size:90%}
-.card.vehicle .stats > div > div:last-child {font-size: 110%; width:20%; border-left: 0.10em solid #fff}
+.card.vehicle  {
+    .title .vehicle:before {content: "\2726"; font-style:normal} 
+    .pic {
+      width: 60%; height: 43%; position:absolute; left: 19%; top:11%; display:block; border: 0.41em solid black; background: white; border-radius: 100%;
+      background-size: contain; background-repeat:   no-repeat; background-position: center center;  
+    }
+    .stats {     
+      position: absolute;  color: white; text-transform: uppercase; 
+      background: #3a3b3d; border: 0.15em solid #fff; width: 28%; border-collapse: collapse; 
+      text-align: center; font-size: 100%; line-height: 170%; font-weight: bold;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      display:flex; flex-direction: row; top:50%; width:90%; left: 4%; border:none; background:none; box-shadow: none;
+ 
+    }
 
-.card.vehicle .stats > div.capacity > div:last-child {background: #c67229}
-.card.vehicle .stats > div.armour > div:last-child {background: #862419;}
-.card.vehicle .stats > div.defence > div:last-child {background: #78a2b2}
-.card.vehicle .description { width:90%; left: 4%; top:54%; font-size: 80%}
-.card.vehicle .sfxribbon { top: 78%; left: 5%; width: 90%; font-size: 90%; margin:0  }
-.card.vehicle .sfxribbon dl {margin:0; display:flex; flex-direction: row; width: 100%; align-content: flex-start; font-size: 90%;}
-.card.vehicle .sfxribbon dt { line-height: 150%; white-space: nowrap; font-weight: bold; width: 35%; text-transform: uppercase}
-.card.vehicle .sfxribbon dd { margin:0; width: 70%;  color: #862419;  }; 
-.card.vehicle .sfxribbon dd span {display:inline-block}
-.card.vehicle .sfxribbon dd span:after {content:", "}
-.card.vehicle .sfxribbon dd span:last-child:after {content:"."}
-.card.vehicle .sfxribbon dd .icon-star_icon:before { font-size: 90%}
+    
+
+    .stats > div {
+      display:flex; flex-direction: row; margin: 0 1% 0 1%; flex-grow:1;
+      background: #3a3b3d; border: 0.15em solid #fff; width: 28%; border-collapse: collapse; 
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+    .stats > div > div {flex-grow:1; font-weight: normal; font-size:90%}
+    .stats > div > div:last-child {font-size: 110%; width:20%; border-left: 0.10em solid #fff}
+
+    .stats > div.capacity > div:last-child {background: #c67229}
+    .stats > div.armour > div:last-child {background: #862419;}
+    .stats > div.defence > div:last-child {background: #78a2b2}
+    .description { width:90%; left: 4%; top:54%; font-size: 80%}
+    .sfxribbon { top: 78%; left: 5%; width: 90%; font-size: 90%; margin:0  }
+    .sfxribbon dl {margin:0; display:flex; flex-direction: row; width: 100%; align-content: flex-start; font-size: 90%;}
+    .sfxribbon dt { line-height: 150%; white-space: nowrap; font-weight: bold; width: 35%; text-transform: uppercase}
+    .sfxribbon dd { margin:0; width: 70%;  color: #862419;  }; 
+    .sfxribbon dd span {display:inline-block}
+    .sfxribbon dd span:after {content:", "}
+    .sfxribbon dd span:last-child:after {content:"."}
+    .sfxribbon dd .icon-star_icon:before { font-size: 90%}
+}
+
+
+.apocalypse.card.vehicle_large {
+  .checkribbon div {
+    margin: 0 0.5em 0 0.5em; width: 1em; height: 1em
+  }
+}
+
+.card.vehicle_large {
+  .title .vehicle:before {content: "\2726"; font-style:normal} 
+  .pic {
+    width: 88%; height: 52%; border: 1px solid #f0f; left: 6%; top: 8%;
+    background-size: contain; background-repeat:   no-repeat; background-position: center center;  
+  }
+
+  .contentblock {
+      width: 86%; left: 7%; top:60%; height: 28%; display:flex; flex-direction: row;
+
+      .stats {
+        display:flex; flex-direction: column; width: 26%; border:none; background:none; box-shadow: none;
+      }
+      .stats > div {
+        display:flex; flex-direction: column; margin: 2%; flex-grow:1; 
+        background: #fff; border: 0.15em solid #fff;  border-collapse: collapse; 
+        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+
+        > div {
+          background:#343432; flex-grow:1; color: white; text-align: center; text-transform: uppercase;
+
+          var {background: #b86c30; border-radius: 100%; width: 1.5em; height:1.5em; display:inline-block; line-height: 1.75em; font-size: 1.5em; font-weight: bold}
+        }
+
+      }
+
+
+      .stats:first-child > div {padding-left: 40%}
+      .stats:last-child > div  {padding-right: 40%;}
+
+      .weapons {
+        margin: 0.5% 1% 0.5% 1%;
+        thead .effects {background: #222; text-align: center}
+        tbody tr {height: 1.5em; font-size: 1.5em}
+      }
+
+  }
+
+  
+  .description { width:90%; left: 4%; top:54%; font-size: 80%}
+  .sfxribbon { 
+    top: 78%; left: 5%; width: 90%; font-size: 90%; margin:0 ;
+  
+    dl {
+      margin:0; display:flex; flex-direction: row; width: 100%; align-content: flex-start; font-size: 90%;
+      dt { line-height: 150%; white-space: nowrap; font-weight: bold; width: 35%; text-transform: uppercase}
+      dd { 
+        margin:0; width: 70%;  color: #862419;
+        span {display:inline-block}
+        span:after {content:", "}
+        span:last-child:after {content:"."}
+        .icon-star_icon:before { font-size: 90%}
+      };
+    }
+  }
+
+  .checkribbon.health {
+    bottom:3.6%; right:0; width:42%; left:auto;
+  }
+  .checkribbon.engine {
+    bottom:3.6%; left:0; width:42%;  left:auto; text-align: right
+  }
+
+  .checkribbon.body {
+    top:3.6%; left:5%;  width:42%; right:auto; text-align: left
+  }
+  .checkribbon.chassis {
+    top:3.6%; right:5%; width:42%;  left:auto; text-align: right
+  }
+
+  .checkribbon.trunk {
+   top: 0; right:3%;  ; left:auto; text-align: left; height:55%; transform: rotate(180deg);
+   div {display:block; flex-grow: 0; height: 1em; width: 1em; margin:0 0 1em 0}
+  }
+
+  .checkribbon.hood {
+    top: 0; left:3%;  ; right:auto; text-align: left; height:55%; transform: rotate(180deg);
+    div {display:block; flex-grow: 0; height: 1em; width: 1em; margin:0 0 1em 0}
+   }
+  
+}
+
+.viewport.standard {
+  .card {
+    width: 288px; height: 400px; 
+  }
+}
+
+.viewport.large > div {
+  display:inline-flex; flex-direction: column;
+  .card {
+    width: 671px; height: 477px;
+  }
+  .card.vehicle_large {
+    &.apocalypse {
+      &.front .background {background: url(images/2e_apoc_vehicle_front_fade.jpg) ; background-size: contain;}
+      &.back .background {background: url(images/2e_apoc_vehicle_back_fade.jpg) ; background-size: contain;}
+    }
+  }
+}
+
 
 /* /VEHICLE */
+
 /* UNIT */
+.card.unit .title .unit:before
+  {content: "\2726"; font-style:normal} 
 .card.front.unit .background {background: url(images/2e_unit_back.jpg) ; background-size: cover;}
 .card.unit .tags {bottom:auto; top:2%; right:2%}
 .card.unit.back .content { width:90%; left: 4%; top:12%; height:80%; position:relative; font-size:80% }

@@ -183,9 +183,10 @@ export class Toolbar extends React.Component {
                <DropdownButton bsStyle="primary" bsSize="small" title="New"  id="new_model" >
                 <MenuItem eventKey="1" onClick={e=>this.props.dispatch({ type: 'CHARACTER_NEW' })}>Character</MenuItem>
                 <MenuItem eventKey="2" onClick={e=>this.props.dispatch({ type: 'CHARACTER_NEW', payload:{ __card:'vehicle'} })}>Vehicle</MenuItem>
-                <MenuItem eventKey="3" onClick={e=>this.props.dispatch({ type: 'CHARACTER_NEW', payload:{ __card:'unit'} })}>Unit</MenuItem>
+                <MenuItem eventKey="3" onClick={e=>this.props.dispatch({ type: 'CHARACTER_NEW', payload:{ __card:'vehicle_large'} })}>Extended Vehicle</MenuItem>
+                <MenuItem eventKey="4" onClick={e=>this.props.dispatch({ type: 'CHARACTER_NEW', payload:{ __card:'unit'} })}>Unit</MenuItem>
                 <hr/>
-                <MenuItem eventKey="4" onClick={e=>this.props.dispatch({ type: 'CHARACTER_NEW', payload:{ __card:'gadget'} })}>Gadget</MenuItem>
+                <MenuItem eventKey="5" onClick={e=>this.props.dispatch({ type: 'CHARACTER_NEW', payload:{ __card:'gadget'} })}>Gadget</MenuItem>
                </DropdownButton>
               
                 

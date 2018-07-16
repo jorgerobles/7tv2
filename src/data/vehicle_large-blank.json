@@ -1,0 +1,29 @@
+{
+  "__version": "0.0.1",
+  "__card": "vehicle_large",
+  "__theme":"core",
+  "__custom":{},
+  "health":1,
+  "genres":[],
+  "stats":{
+      "capacity":1,
+      "defence":0,
+      "armour":0,
+      "move":0,
+      "hood":0,
+      "body":0,
+      "chassis":0,
+      "trunk":0,
+      "engine":0
+  },
+  "special_effects":[],
+  "type":"Extended Vehicle",
+  "profile":"",
+  "slots":{
+    "hood":[],
+    "body":[],
+    "chassis":[],
+    "trunk":[],
+    "engine":[]
+  }
+}

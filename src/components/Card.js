@@ -13,6 +13,7 @@ import {T,zip} from '../index'
 
 
 import { downloadSingleCharacter, Marked } from './Ui'
+import { isString } from 'util';
 
 
 
@@ -24,7 +25,7 @@ const StatBlock = ({ stats, className="", ...rest }) => {
     return <div className={"stats " + className}>
         {Object.entries(stats).map((entry, i) => {
             let [key, value] = entry;
-            return <div key={i} className={key}><div>{key}</div><div>{value}</div></div>
+            return <div key={i} className={key}><div>{key}</div><div><var>{value}</var></div></div>
         })}
     </div>
 }
@@ -36,12 +37,24 @@ const Pic = ({ photo, ...rest }) => {
 
 
 const Weapons = ({ items }) => {
+
+    let colspan=items.length? Object.keys(items[0].effects).length : 1
+
     return <table className="weapons">
-        <thead><tr><td>Attack</td><td>Range</td><td>Strike</td><td>Effects</td></tr></thead>
+        <thead><tr><td rowSpan="2" className="attack">Attack</td><td  className="range" rowSpan="2">Range</td><td rowSpan="2" className="strike">Strike</td><td className="effects" colSpan={colspan}>Effects</td></tr>
+                { (items.length && typeof items[0].effects =='object') ? (<tr>{ Object.keys(items[0].effects).map((key,i)=>{ return <td key={i} className={key}>{key}</td>})}</tr>) : undefined }
+            </thead>
         <tbody>
             {items.map((item, i) => {
+                let effects=isString(item.effects)? {effects: item.effects} : item.effects;
                 return <tr className={slug(item.type||"").toLowerCase()} key={i}>
-                    <td className="attack">{item.attack}</td><td className="range">{item.range}</td><td className="strike">+{item.strike}</td><Marked Component='td' className="effects" md={item.effects} Options={{inline:true}}/>
+                    <td className="attack">{item.attack}</td><td className="range">{item.range}</td><td className="strike">+{item.strike}</td>
+                    { Object.entries(effects).map((entry,i)=>{
+                        let [key,value] = entry;
+                        return <Marked key={i} Component='td' className={key} md={value} Options={{inline:true}}/>
+
+                    }) }
+                    
                 </tr>
             })}
         </tbody>
@@ -53,10 +66,7 @@ const Ratings = ({ value }) => {
 }
 
 
-const Health = ({ value }) => {
-    let health = Array(Number(value)).fill("").map((v, i) => { return <div key={i}></div> })
-    return <div className="health">{health}</div>
-}
+
 
 const Trait = ({ object, full }) => {
     let { cost, name, level, description } = object
@@ -84,6 +94,10 @@ const Tags = ({ values, additional=[] }) => {
     })}</div>
 }
 
+const CheckRibbon = ({stat, className})=>{
+    let slots = Array(Number(stat)).fill("").map((v, i) => { return <div key={i}></div> })
+    return <div className={["checkribbon",className].join(' ')}>{slots}</div>
+}
 
 export class CardFront extends React.Component {
     render() {
@@ -92,6 +106,9 @@ export class CardFront extends React.Component {
         switch(card) {
             case "vehicle":
                 return this.renderVehicle(card,theme)
+            break;
+            case "vehicle_large":
+                return this.renderVehicleLarge(card,theme)
             break;
             case "unit":
                 return this.renderUnit(card,theme)
@@ -125,8 +142,39 @@ export class CardFront extends React.Component {
                 <dl><dt>Special effects</dt><dd>{sfx.map((s, i) => (<Trait key={i} object={s} />))}</dd></dl>
             </div>
             <Ratings value={ratings} />
-            <Health value={health} />
+            <CheckRibbon stat={health} className="health" />
             <Tags values={tags} additional={__genres} />
+        </div>
+        </div></div>
+    }
+
+    renderVehicleLarge(card,theme)
+    {
+        let { health=0,  name,   photo, description="",weapons=[], __custom } = this.props.character
+        let __tint = __custom? __custom.tint : 0
+        let __genres= __custom ? __custom.genres: null
+        let tags = this.props.character.genres||[]
+        let sfx = this.props.character.special_effects || [];
+        let { move=0, defence=0, armour=0, capacity=0, hood=0, body=0, engine=0, trunk=0, chassis=0 } = this.props.character.stats;
+        
+
+        return <div className="cellophan"><div className={[theme,"card",card,"front",].join(' ')}>
+        <div className="background" style={{filter:`hue-rotate(${__tint}deg)`}}></div>
+        <div className="foreground">
+            <Title name={name}/>
+            <Pic photo={photo}/>
+            <div className="contentblock">
+            <StatBlock stats={{move, defence }} />
+            {weapons.length? <Weapons items={weapons} />:<Description text={description}/>}
+            <StatBlock stats={{ armour, capacity }} />
+            </div>
+            <CheckRibbon className="hood"   stat={hood}/>
+            <CheckRibbon className="body"   stat={body}/>
+            <CheckRibbon className="chassis"  stat={chassis}/>
+            <CheckRibbon className="trunk"   stat={trunk}/>
+            <CheckRibbon className="engine"  stat={engine}/>
+            <CheckRibbon className="health"   stat={health}/>
+
         </div>
         </div></div>
     }
@@ -164,7 +212,7 @@ export class CardFront extends React.Component {
             </div>
             <Weapons items={weapons} />
             <Ratings value={ratings} />
-            <Health value={health} />
+            <CheckRibbon stat={health} className="health" />
             <Tags values={tags} additional={__genres} />
             </div>
         </div></div>
@@ -189,6 +237,9 @@ export class CardBack extends React.Component {
         const card = (this.props.character.__card||"Model").toLowerCase()
         const theme = (this.props.character.__theme||"core").toLowerCase()
         switch(card) {
+            case "vehicle_large":
+                return this.renderVehicleLarge(card,theme);
+            break;
             case "vehicle":
                 return this.renderVehicle(card,theme)
             break;
@@ -204,6 +255,26 @@ export class CardBack extends React.Component {
         }
     }
     renderVehicle(card,theme){
+        let sfx = this.props.character.special_effects||[];
+        let {name, type="",notes="",weapons=[], description="", __custom} = this.props.character
+        let __tint = __custom? __custom.tint : 0
+        return <div className="cellophan"><div className={[theme,"card",card,"back",].join(' ')}>
+        <div className="background" style={{filter:`hue-rotate(${__tint}deg)`}}></div>
+        <div className="foreground">
+            <Title name={name} type={type} />
+            <section>
+                {weapons.length && description? (<heading>Description</heading>):undefined}
+                {weapons.length && description? (<Description text={description}/>):undefined}
+                {sfx.length? (<heading>Special effects</heading>):undefined}
+                {sfx.map((v, i) => (<Trait key={i} object={v} full />))}
+                {notes? (<heading>Notes</heading>):undefined}
+                <p>{notes}</p>
+            </section>
+        </div>
+        </div></div>
+    }
+
+    renderVehicleLarge(card,theme){
         let sfx = this.props.character.special_effects||[];
         let {name, type="",notes="",weapons=[], description="", __custom} = this.props.character
         let __tint = __custom? __custom.tint : 0
@@ -299,11 +370,13 @@ export class CardBack extends React.Component {
 export class Card extends React.Component {
     render() {
         let id = this.props.character.id;
+        let r = /_(large|small)$/gi.exec(this.props.character.__card);
+        let cardsize = r? r[1]:'standard'
         return (<div 
-            className={"viewport "+((id == this.props.currentCharacter)?"selected":"")}
+            className={["viewport",((id == this.props.currentCharacter)?"selected":null),cardsize].join(" ")}
             onClick={e =>  {e.stopPropagation(); this.props.dispatch({ type: 'CHARACTER_SELECT', payload: { id } })}}
          >
-            <div  id={id} >
+            <div  id={id}  >
             <CardFront character={this.props.character} />
             <CardBack character={this.props.character} />
             </div>

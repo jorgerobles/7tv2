@@ -11,7 +11,8 @@
         "ratings",
         "genres",
         "notes",
-        "__custom"
+        "__custom",
+        "__theme"
     ],
 
     "__custom": {
@@ -24,11 +25,12 @@
             }
         }
     },
+
+    "__theme": {
+        "ui:widget":"select"
+    },
     "genres": {
         "ui:widget": "checkboxes"
-    },
-    "type": {
-        "ui:readonly": true
     },
     "photo":{
         "ui:widget": "pictureWidget"
@@ -75,6 +77,12 @@
     "weapons":{
         "items":{
             "ui:order":["type","attack","range","strike","effects"]
+        }
+    },
+
+    "slots":{
+        "items":{
+            "ui:field": "table"
         }
     }
 }
