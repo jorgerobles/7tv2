@@ -35,7 +35,7 @@ export const loadYamlFile = (file,asSingleFile=false) => {
     }
 }
 
-export const saveYamlFile=(docs,asSingleFile=false, options={})=>{
+export const saveYamlFile=(docs,asSingleFile=false, options={skipInvalid:true})=>{
     if (asSingleFile && Array.isArray(docs)){
         return docs.map((doc)=>{
             try {

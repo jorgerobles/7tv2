@@ -63,11 +63,11 @@ export const loadCharacter = (e, action) => {
 }
 
 export const downloadCharacters=(characters)=>{
-    sendAsFile("7TV_cast.yaml",saveYamlFile(characters,true,'application/x-yaml'))
+    sendAsFile("7TV_cast.yaml",saveYamlFile(characters,true),'application/x-yaml')
 }
 
 export const downloadSingleCharacter=(character)=>{
-    sendAsFile("7TV_cast-"+slug(character.name||character.id)+".yaml",saveYamlFile(character,false,'application/x-yaml'));
+    sendAsFile("7TV_cast-"+slug(character.name||character.id)+".yaml",saveYamlFile(character,false),'application/x-yaml');
 }
 
 export const downloadCharactersAsImages=(cast)=>{
