@@ -42,13 +42,15 @@
     "react": "^15.6.2",
     "react-dom": "^15.6.2",
     "react-jsonschema-form": "^1.0.3",
-    "simple-locale": "^1.0.0"
+    "simple-locale": "^1.0.0",
+    "source-map-explorer": "^1.6.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy": "yarn run build && echo 'agency.crooked-dice.co.uk' > ./build/CNAME && gh-pages -d build"
+    "deploy": "yarn run build && echo 'agency.crooked-dice.co.uk' > ./build/CNAME && gh-pages -d build",
+    "analyze": "source-map-explorer build/static/js/main.*"
   }
 }

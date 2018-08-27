@@ -22,8 +22,8 @@ locale.load(locale.gb_EN, require('./i18n/gb_EN.json'));
 locale.set(locale.gb_EN)
 
 
-export const T=(str=null,params={})=>{
-  return (str===null)?locale:locale.get(str,params);
+export const T=(str="",params={})=>{
+  return locale.get(str,params);
 }
 
 const storeReducer = compose(
