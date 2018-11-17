@@ -1,0 +1,11 @@
+{
+    "__version": "0.0.1",
+    "__card": "Gadget",
+    "__custom":{},
+    "name": null,
+    "cost": 0,
+    "play": "",
+    "weapon":[],
+    "description": "",
+    "profile":""
+  }

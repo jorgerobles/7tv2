@@ -1,7 +1,7 @@
 /* eslint-disable */
 import React from 'react'
 import { connect } from 'react-redux'
-import {Accordion, Panel,Button } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 
 import Form, {DescriptionField} from "react-jsonschema-form";
 
@@ -16,8 +16,16 @@ import { SFXSelect, SQSelect, ProfileSelector, MiniCard} from './CharacterWidget
 const getCharacterById=(id, cast)=>{
     return cast.find(item=>{return item.id == id})
 }
-   
 
+const applyToProps=(dict,props,value)=>{
+    return Object.assign(dict,
+        props.reduce((obj,item)=>{obj[item]=value;return obj;},{})
+    );
+}
+
+const diff=(arr1,arr2)=>{
+    return arr2.filter(function(i) {return arr1.indexOf(i) < 0;});
+}
 
 const log = (type) => console.log.bind(console, type);
 
@@ -44,7 +52,8 @@ export class CharacterEditor extends React.Component {
             return <div className="paper characterEditor"><div style={{margin:20}}><ProfileSelector/></div></div>;
 
         const card=character.__card.toLowerCase();
-        const uiSchema = require('../data/'+card+'-uischema.json');
+        const sch=require('../data/'+card+'-uischema.json')
+        const uiSchema=applyToProps(sch,[...diff(sch['ui:order'],Object.keys(character)),'__card','__version','id'],{'ui:widget':'hidden'})
         const schema = require('../data/'+card+'-schema.json');
 
         const widgets={

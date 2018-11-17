@@ -32,7 +32,8 @@
         "models",
         "genres",
         "notes",
-        "__custom"
+        "__custom",
+        "*"
     ],
    "__custom": {
         "tint":{

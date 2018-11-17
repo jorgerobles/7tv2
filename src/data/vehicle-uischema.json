@@ -67,6 +67,8 @@
             }
         }
     },
+
+
     "weapons":{
         "items":{
             "ui:order":["type","attack","range","strike","effects"]

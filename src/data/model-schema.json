@@ -308,6 +308,9 @@
         "type": "object"
       },
       "type": "array"
+    },
+    "customization":{
+      
     }
   },
   "required": [

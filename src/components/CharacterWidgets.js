@@ -4,6 +4,10 @@ import { connect } from 'react-redux'
 import {Accordion, Panel,Button, FormControl, FormGroup, InputGroup, Label } from 'react-bootstrap'
 import Yaml from 'js-yaml';
 import { readContext } from '../lib/helpers'
+import { Marked } from './Ui'
+import Holdable from 'react-holdable'
+import UnsupportedField from '../../node_modules/react-jsonschema-form/lib/components/fields/UnsupportedField';
+import uuid from 'uuid';
 
 const parseTrait=(label,text)=>{
     let trait={}
@@ -141,6 +145,12 @@ export class ProfileSelector extends React.Component {
             
             this.setState(Object.assign(this.state,{selected,character}))
         }
+
+        let create = (item) =>{
+            let [selected, character] = item;
+            fromTemplate(character)
+        }
+
         if (this.state.casting){
             cast=(<Accordion>{Object.entries(this.state.casting).map((entry, i)=>{
                 let [key, chr] = entry;
@@ -148,7 +158,10 @@ export class ProfileSelector extends React.Component {
                     {Object.entries(chr).map(
                         (item,j)=>{
                             let [name,char] = item;
-                            return <MiniCard character={item} key={j} onClick={e=>{select(item)}} selected={this.state.selected && (this.state.selected===name)}/>
+                            return <Holdable key={uuid.v4()} 
+                                onHoldComplete={e=>{create(item)}} 
+                                onClickComplete={e=>{select(item)}} 
+                            ><MiniCard character={item} key={j} selected={this.state.selected && (this.state.selected===name)} /></Holdable>
                         }
                     )}
                 </div></Panel>
@@ -161,7 +174,7 @@ export class ProfileSelector extends React.Component {
                 item=this.state.character
             this.props.dispatch({
                 type:'CHARACTER_NEW', 
-                payload: Object.assign({},item,{name: item.name, profile: item})
+                payload: Object.assign({},item,{name: item.name, profile: item.name})
             });
         }
 
@@ -179,8 +192,8 @@ export class MiniCard extends React.Component {
     render(){
         let [name, item] = this.props.character;
         return <dl className={"miniCard "+((this.props.selected)?'selected':'')} onClick={this.props.onClick}>
-            <dt>{name} ({item.ratings}) {item.__card? '':<Label>Incomplete</Label>}</dt>
-            <dd>{item.description}</dd>
+            <dt>{name} {item.ratings? `(${item.ratings})`:''} {item.__card? '':<Label>Incomplete</Label>}</dt>
+            <dd><Marked md={item.description}/></dd>
         </dl>
     }
 }

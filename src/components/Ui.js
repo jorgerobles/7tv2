@@ -4,14 +4,13 @@ import { connect } from 'react-redux'
 import Queue from 'promise-queue';
 import ReactDOM from 'react-dom';
 import marked from 'marked'
-
-
 import { loadYamlFile, saveYamlFile } from '../reducers/index';
 import { SplitButton, MenuItem, Button, ButtonToolbar, Glyphicon, DropdownButton, Collapse} from 'react-bootstrap';
 import { sendAsFile, sendAsImage, getAsImage } from '../lib/helpers'
 import slug from 'slug';
 import jsPDF from 'jspdf';
 import chunk from 'chunk';
+import { resolve } from 'path';
 
 export class FileField extends React.Component {
 
@@ -101,7 +100,17 @@ const dottedLine=function(doc, xFrom, yFrom, xTo, yTo, segmentLength)
     }
 }
 
-export const downloadCharactersAsPDF=(cast,fileName='7TVcast')=>{
+const getImageDimensions= (file) => {
+    return new Promise (function (resolved, rejected) {
+      var i = new Image()
+      i.onload = function(){
+        resolved({w: i.width, h: i.height})
+      };
+      i.src = file
+    })
+  }
+
+export const downloadCharactersAsPDF=(cast,fileName='7TVcast',status=console.warn)=>{
 
     const PAGE_WIDTH=10.55;
     const PAGE_HEIGHT=7.55;
@@ -110,23 +119,29 @@ export const downloadCharactersAsPDF=(cast,fileName='7TVcast')=>{
     const CARD_WIDTH=5;
     const CARD_HEIGHT=3.5;
     const CARD_OFFSETX=0;
-    const CARD_OFFSETY=-0.3
+    const CARD_OFFSETY=-0.03
 
     let doc = new jsPDF({orientation: 'landscape',format:[PAGE_WIDTH,PAGE_HEIGHT],unit:'in'});
-        
+    var i=0;
     let promises=cast.map((item)=>{
-        return getAsImage(document.getElementById(item.id),{scale:2})
-    })
+        return new Promise((rs,rj)=>{
+            getAsImage(document.getElementById(item.id),{scale:2}).then((img)=>{
+                status("Processing image "+(++i)+"/"+cast.length);
+                rs({dataURL: img,type:item.__card})
+            });
+    })});
     const positions=[{x:0,y:0},{x:CARD_WIDTH+CARD_OFFSETX,y:0},{x:0,y:CARD_HEIGHT+CARD_OFFSETY},{x:CARD_WIDTH+CARD_OFFSETX,y:CARD_HEIGHT+CARD_OFFSETY}];
     
 
-    Promise.all(promises).then((dataurls,i)=>{
-        chunk(dataurls,positions.length).forEach((c,page)=>{
+    Promise.all(promises).then((items)=>{
+        chunk(items,positions.length).forEach((c,page)=>{
+            status("Generating page "+(page+1))
             if (page) doc.addPage();
             doc.setDrawColor(255,255,255);
             doc.setLineWidth(0.01)
-            c.forEach((dataURL,j)=>{
-                doc.addImage(dataURL,'JPEG',MARGIN_X+positions[j].x,MARGIN_Y+positions[j].y,CARD_WIDTH,CARD_HEIGHT)
+            c.forEach((item,j)=>{
+                let {dataURL,type} = item;
+                doc.addImage(dataURL,'JPEG',MARGIN_X+positions[j].x,MARGIN_Y+positions[j].y,CARD_WIDTH,type.toLowerCase()!='gadget'?CARD_HEIGHT:CARD_HEIGHT/2)
             })
             dottedLine(doc,MARGIN_X+CARD_WIDTH/2,0,MARGIN_X+CARD_WIDTH/2,PAGE_HEIGHT,0.05)
             dottedLine(doc,MARGIN_X+CARD_WIDTH,0,MARGIN_X+CARD_WIDTH,PAGE_HEIGHT,0.01)
@@ -134,13 +149,33 @@ export const downloadCharactersAsPDF=(cast,fileName='7TVcast')=>{
             dottedLine(doc,0,MARGIN_Y+CARD_HEIGHT+CARD_OFFSETY,PAGE_WIDTH,MARGIN_Y+CARD_HEIGHT+CARD_OFFSETY,0.01)
         })
         doc.save(fileName+'.pdf')
+        status(null)
     })
 
 }
 
+export const Marked = ({md="", Component="span", Options={},...rest})=>{
+    let __html=marked(md,Options);
+        if (Options.inline) __html=__html.replace(/^<p>/gi,'').replace(/<\/p>[\r\n]*$/gi,'').replace(/[\r\n]/gi,'')
+    return <Component {...{...rest}} dangerouslySetInnerHTML={{__html}}/>
+}
+
 
 export class Toolbar extends React.Component {
+    constructor(...args) {
+        super(...args);
+        this.state = {
+          status: null,
+        };
+    }
+
+    status(status){
+        this.setState({status: status? "("+status+")":''}); 
+        this.forceUpdate();
+    }
+
     render(){
+
         return <div className="ui paper editorToolBar">
                 <h2 className="din" style={{textAlign:"center", marginBottom:0}}>7TV Studios</h2>
                 <h5 className="din" style={{textAlign:"center", marginTop:0}}> casting agency</h5>
@@ -149,6 +184,8 @@ export class Toolbar extends React.Component {
                 <MenuItem eventKey="1" onClick={e=>this.props.dispatch({ type: 'CHARACTER_NEW' })}>Character</MenuItem>
                 <MenuItem eventKey="2" onClick={e=>this.props.dispatch({ type: 'CHARACTER_NEW', payload:{ __card:'vehicle'} })}>Vehicle</MenuItem>
                 <MenuItem eventKey="3" onClick={e=>this.props.dispatch({ type: 'CHARACTER_NEW', payload:{ __card:'unit'} })}>Unit</MenuItem>
+                <hr/>
+                <MenuItem eventKey="4" onClick={e=>this.props.dispatch({ type: 'CHARACTER_NEW', payload:{ __card:'gadget'} })}>Gadget</MenuItem>
                </DropdownButton>
               
                 
@@ -156,7 +193,7 @@ export class Toolbar extends React.Component {
                 
                 <Button block bsSize="small" onClick={e=>downloadCharacters(this.props.cast)} bsStyle="warning"><Glyphicon glyph="download" /> Download as .Yaml</Button>
                 <Button block bsSize="small" onClick={e=>downloadCharactersAsImages(this.props.cast)} bsStyle="danger"><Glyphicon glyph="download" /> Download as Single Images</Button>
-                <Button block bsSize="small" onClick={e=>downloadCharactersAsPDF(this.props.cast)} bsStyle="danger"><Glyphicon glyph="download" /> Download as PDF</Button>
+                <Button block bsSize="small" onClick={e=>downloadCharactersAsPDF(this.props.cast, null,this.status.bind(this))} bsStyle="danger"><Glyphicon glyph="download" /> Download as PDF {this.state.status}</Button>
                 <Button block bsSize="small" onClick={e=> {if (confirm('Are you sure? This will wipe all the current cards! It is a bloody nuke!')) this.props.dispatch({type: 'CAST_CLEAR'});}} bsStyle="info"><Glyphicon glyph="trash" /> Reset all</Button>
                </div>
             

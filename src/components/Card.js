@@ -7,21 +7,20 @@ import slug from 'slug';
 import '../assets/fonts/din-cond/style.css';
 import '../assets/card.css'
 import { sendAsFile, sendAsImage } from '../lib/helpers'
-import marked from 'marked'
 
-import {T} from '../index'
+import {T,zip} from '../index'
 
-import { downloadSingleCharacter } from './Ui'
+
+
+import { downloadSingleCharacter, Marked } from './Ui'
+
+
 
 const stats = { fight: 10, shoot: 10, defence: 10, mind: 10, body: 10, spirit: 10 };
 
-const Marked = ({md="", Component="span", Options={},...rest})=>{
-    let __html=marked(md,Options);
-        if (Options.inline) __html=__html.replace(/^<p>/gi,'').replace(/<\/p>[\r\n]*$/gi,'').replace(/[\r\n]/gi,'')
-    return <Component {...{...rest}} dangerouslySetInnerHTML={{__html}}/>
-}
 
-const StatBlock = ({ stats, className, ...rest }) => {
+
+const StatBlock = ({ stats, className="", ...rest }) => {
     return <div className={"stats " + className}>
         {Object.entries(stats).map((entry, i) => {
             let [key, value] = entry;
@@ -96,6 +95,9 @@ export class CardFront extends React.Component {
             case "unit":
                 return this.renderUnit(card)
             break;
+            case "gadget":
+                return this.renderGadget(card)
+            break;
             default:
                 return this.renderModel(card)
             break;
@@ -166,6 +168,17 @@ export class CardFront extends React.Component {
             </div>
         </div></div>
     }
+
+    renderGadget(card){
+        let qlty = this.props.character.star_quality
+        let sfx = this.props.character.special_effects;
+        let { health, ratings, weapons, name, role, type, notes='',__custom } = this.props.character
+        let __tint = __custom? __custom.tint : 0
+        return <div className="cellophan"><div className={"card "+card+" front"}>
+            <div className="background" style={{filter:`hue-rotate(${__tint}deg)`}}></div>
+            <div className="foreground" ></div>
+        </div></div>
+    }
     
 }
 
@@ -179,6 +192,9 @@ export class CardBack extends React.Component {
             break;
             case "unit":
                 return this.renderUnit(card)
+            break;
+            case "gadget":
+                return this.renderGadget(card)
             break;
             default:
                 return this.renderModel(card)
@@ -243,6 +259,33 @@ export class CardBack extends React.Component {
                 {sfx.map((v, i) => (<Trait key={i} object={v} full />))}
                 {notes && (<heading>Notes</heading>)}
                 <p>{notes}</p>
+            </section>
+            </div>
+        </div></div>
+    }
+
+    renderGadget(card){
+        let { name, play, weapon, cost, description,__custom } = this.props.character
+        
+        let strike = (weapon.length)?weapon[0].strike:''
+        let range = (weapon.length)?weapon[0].range:''
+
+        let __tint = __custom? __custom.tint : 0
+
+        let stars = cost ? Array(cost).fill("").map((v, i) => { return <i key={i} className="icon-star_icon"></i> }) : "Free"
+
+        let stats = zip(Object.entries({play, cost:stars, range, strike}).filter((i)=>{ 
+            let [key,value] = i; 
+            return String(value!==undefined? value:"").length
+        }))
+
+        return <div className="cellophan"><div className={"card "+card+" back"}>
+            <div className="background" style={{filter:`hue-rotate(${__tint}deg)`}}></div>
+            <div className="foreground">
+            <Title name={name}  />
+            <section className="content">
+                <StatBlock stats={{ ...stats }} />
+                <Description text={description}/>
             </section>
             </div>
         </div></div>

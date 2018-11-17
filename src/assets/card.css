@@ -21,7 +21,7 @@
 .card.back .background {background: url(images/2e_back_vanilla.jpg) ; background-size: contain;}
 .card .foreground {z-index: 1}
 
-.card .stats {
+.card.model  .stats, .card.vehicle .stats {
     position: absolute;  color: white; text-transform: uppercase; 
     background: #3a3b3d; border: 0.15em solid #fff; width: 28%; border-collapse: collapse; 
     text-align: center; font-size: 100%; line-height: 170%; font-weight: bold;
@@ -170,6 +170,29 @@
    background-position: right;
   }
 /* /UNIT */
+/* GADGET */
+.card.gadget {
+  width: 288px; height: 200px; 
+}
+.card.front.gadget .background {background: url(images/2e_gadget_low.jpg) ; background-size: cover;}
+.card.back.gadget .background {background-size: 100%; background-position: top}
+.card.gadget .tags {bottom:auto; top:2%; right:2%}
+.card.gadget.back .content { width:100%; left: 0%; top:24%; height:76%; position:relative; font-size:85%; display:flex; flex-direction: row; margin:0; align-items: center }
+.card.gadget.back .content .description { padding-left:0.25em}
+
+.card.gadget.back .content > * {flex-grow: 1; max-width: 46%;}
+.card.gadget.back .stats {border-right: 1px solid black; height:90%  }
+.card.gadget.back .stats > div {display:flex; flex-direction: row; margin-bottom: 0.5em}
+.card.gadget.back .stats > div > div:first-child {padding: 0.25em; width: 40%; text-align: center; color: white; text-transform: uppercase; font-size:100%; height:1.25em}
+.card.gadget.back .stats > div > div:last-child {padding: 0.25em 0 0 0.25em}
+.card.gadget.back .stats > div.play > div:first-child {background:#862419;}
+.card.gadget.back .stats > div.cost > div:first-child {background:  #c67229}
+.card.gadget.back .stats > div.range > div:first-child {background: #78a2b2}
+.card.gadget.back .stats > div.strike > div:first-child {background: #7f8d73}
+
+/* /GADGET */
+
+
 .viewport {display:inline-flex; flex-direction: row}
 .viewport.portrait {flex-direction: column; }
 .viewport.portrait .card.back { transform: rotate(180deg); }
@@ -188,6 +211,10 @@
   }
   .card {
     width: 63.5mm; height: 88mm; position:relative;
+  }
+
+  .card.gadget {
+    width: 63.5mm; height: 44mm; position:relative;
   }
   
 

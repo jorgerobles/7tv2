@@ -26,6 +26,10 @@ export const T=(str="",params={})=>{
   return locale.get(str,params);
 }
 
+export const zip=function(arr){
+  return arr.reduce(function(obj, [k, v]){return { ...obj, [k]: v }}, {});
+}
+
 const storeReducer = compose(
   mergePersistedState()
 )(reducer);
