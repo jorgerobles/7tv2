@@ -1,6 +1,7 @@
 ---
 __version: 0.0.1
 __card: Model
+__theme: core
 name: Monty
 profile: Action Hero
 role: Heroic

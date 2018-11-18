@@ -1,4 +1,4 @@
-
+import {version} from '../../package.json';
 import uuid from 'uuid';
 import Yaml from 'js-yaml';
 import cleanDeep from 'clean-deep';
@@ -51,7 +51,6 @@ export const saveYamlFile=(docs,asSingleFile=false, options={skipInvalid:true})=
 }
 
 const INITIALSTATE = {
-    __version: "0.0.1",
     currentCharacter:null,
     cast: []
 }
@@ -71,7 +70,7 @@ const reducer = (state = INITIALSTATE, action) => {
             break;
         case "CHARACTER_NEW":
             let uid=uuid.v4();
-            state.cast = [...state.cast, Object.assign({},TEMPLATE_CHARACTER_NEW, { id: uid, name: randomName() }, action.payload || {})];
+            state.cast = [...state.cast, Object.assign({},TEMPLATE_CHARACTER_NEW, { id: uid, name: randomName(), __version: version }, action.payload || {})];
             state.currentCharacter=uid
             break;
         case "CHARACTER_LOAD":

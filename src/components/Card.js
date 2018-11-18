@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import { DropdownButton, MenuItem} from 'react-bootstrap';
 import slug from 'slug';
 import '../assets/fonts/din-cond/style.css';
-import '../assets/card.css'
+import '../assets/card.scss'
 import { sendAsFile, sendAsImage } from '../lib/helpers'
 
 import {T,zip} from '../index'
@@ -88,23 +88,24 @@ const Tags = ({ values, additional=[] }) => {
 export class CardFront extends React.Component {
     render() {
         const card = (this.props.character.__card||"Model").toLowerCase()
+        const theme = (this.props.character.__theme||"core").toLowerCase()
         switch(card) {
             case "vehicle":
-                return this.renderVehicle(card)
+                return this.renderVehicle(card,theme)
             break;
             case "unit":
-                return this.renderUnit(card)
+                return this.renderUnit(card,theme)
             break;
             case "gadget":
                 return this.renderGadget(card)
             break;
             default:
-                return this.renderModel(card)
+                return this.renderModel(card,theme)
             break;
         }
     }
 
-    renderVehicle(card)
+    renderVehicle(card,theme)
     {
         let { health=0, ratings=0,name, type, photo, description="",weapons=[], __custom } = this.props.character
         let __tint = __custom? __custom.tint : 0
@@ -113,7 +114,7 @@ export class CardFront extends React.Component {
         let sfx = this.props.character.special_effects || [];
         let { capacity=0, armour=0, defence=0 } = this.props.character.stats;
 
-        return <div className="cellophan"><div className={"card "+card+" front"}>
+        return <div className="cellophan"><div className={[theme,"card",card,"front",].join(' ')}>
         <div className="background" style={{filter:`hue-rotate(${__tint}deg)`}}></div>
         <div className="foreground">
             <Title name={name} type={type} />
@@ -130,17 +131,17 @@ export class CardFront extends React.Component {
         </div></div>
     }
 
-    renderUnit(card)
+    renderUnit(card,theme)
     {
         let {__custom} = this.props.character;
         let __tint = __custom? __custom.tint : 0
-        return <div className="cellophan"><div className={"card "+card+" front"}>
+        return <div className="cellophan"><div className={[theme,"card",card,"front",].join(' ')}>
         <div className="background" style={{filter:`hue-rotate(${__tint}deg)`}}></div>
         <div className="foreground"></div>
         </div></div>
     }
 
-    renderModel(card) {
+    renderModel(card,theme) {
         let { fight = 0, shoot = 0, defence = 0, mind = 0, body = 0, spirit = 0 } = this.props.character.stats;
         let { health, ratings, weapons, name, role, type, photo, __custom } = this.props.character
         let __tint = __custom? __custom.tint : 0
@@ -150,7 +151,7 @@ export class CardFront extends React.Component {
         let __genres= __custom ? __custom.genres: null
         
         
-        return <div className="cellophan"><div className={"card "+card+" front"}>
+        return <div className="cellophan"><div className={[theme,"card",card,"front",].join(' ')}>
              <div className="background" style={{filter:`hue-rotate(${__tint}deg)`}}></div>
             <div className="foreground" >
             <Title name={name} alignment={T(role)} type={type} />
@@ -186,26 +187,27 @@ export class CardBack extends React.Component {
 
     render() {
         const card = (this.props.character.__card||"Model").toLowerCase()
+        const theme = (this.props.character.__theme||"core").toLowerCase()
         switch(card) {
             case "vehicle":
-                return this.renderVehicle(card)
+                return this.renderVehicle(card,theme)
             break;
             case "unit":
-                return this.renderUnit(card)
+                return this.renderUnit(card,theme)
             break;
             case "gadget":
                 return this.renderGadget(card)
             break;
             default:
-                return this.renderModel(card)
+                return this.renderModel(card,theme)
             break;
         }
     }
-    renderVehicle(card){
+    renderVehicle(card,theme){
         let sfx = this.props.character.special_effects||[];
         let {name, type="",notes="",weapons=[], description="", __custom} = this.props.character
         let __tint = __custom? __custom.tint : 0
-        return <div className="cellophan"><div className={"card "+card+" back"}>
+        return <div className="cellophan"><div className={[theme,"card",card,"back",].join(' ')}>
         <div className="background" style={{filter:`hue-rotate(${__tint}deg)`}}></div>
         <div className="foreground">
             <Title name={name} type={type} />
@@ -221,12 +223,12 @@ export class CardBack extends React.Component {
         </div></div>
     }
 
-    renderUnit(card) {
+    renderUnit(card,theme) {
         let {name, role, type="",notes="",models=[], description="", photo, __custom} = this.props.character
         let __tint = __custom? __custom.tint : 0
         let tags = this.props.character.genres || []
         let __genres= __custom ? __custom.genres: null
-        return <div className="cellophan"><div className={"card "+card+" back"}>
+        return <div className="cellophan"><div className={[theme,"card",card,"back",].join(' ')}>
             <div className="background" style={{filter:`hue-rotate(${__tint}deg)`}}></div>
             <div className="foreground">
             <Title name={name} alignment={T(role)} type={type} />
@@ -240,14 +242,14 @@ export class CardBack extends React.Component {
         </div></div>
     }
 
-    renderModel(card) {
+    renderModel(card,theme) {
         let qlty = this.props.character.star_quality
         let sfx = this.props.character.special_effects;
         let { health, ratings, weapons, name, role, type, notes='',__custom } = this.props.character
         let __tint = __custom? __custom.tint : 0
 
        
-        return <div className="cellophan"><div className={"card "+card+" back"}>
+        return <div className="cellophan"><div className={[theme,"card",card,"back",].join(' ')}>
             <div className="background" style={{filter:`hue-rotate(${__tint}deg)`}}></div>
             <div className="foreground">
             <Title name={name} alignment={T(role)} type={type} />

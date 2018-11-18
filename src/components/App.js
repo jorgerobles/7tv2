@@ -4,7 +4,6 @@ import { connect } from 'react-redux'
 import { Card } from './Card'
 import { Toolbar, Help, Rescue } from './Ui'
 import { CharacterEditor } from './CharacterEditor'
-import chunk from 'chunk';
 import SplitPane from 'react-split-pane'
 import '../assets/resizer.css'
 

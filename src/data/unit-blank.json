@@ -1,6 +1,7 @@
 {
   "__version": "0.0.1",
   "__card": "unit",
+  "__theme":"core",
   "__custom":{},
   "models":[],
   "genres":[],
