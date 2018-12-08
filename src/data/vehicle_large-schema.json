@@ -4,27 +4,29 @@
           "type":"object",
           "required": [
             "name",
-            "ratings"
+            "ratings",
+            "location"
           ],
           "properties":{
             "name": {
-              "$id": "#/properties/slots/properties/hood/items/properties/name",
+              "$id": "#/properties/mods/item/name",
               "type": "string",
               "title": "Name",
               "default": "",
-              "examples": [
-                "mod1"
-              ],
               "pattern": "^(.*)$"
             },
             "ratings": {
-              "$id": "#/properties/slots/properties/hood/items/properties/ratings",
+              "$id": "#/properties/mods/item/ratings",
               "type": "integer",
               "title": "Ratings",
-              "default": 0,
-              "examples": [
-                0
-              ]
+              "default": 0
+            },
+            "location": {
+              "$id": "#/properties/mods/item/location",
+              "type": "string",
+              "title": "Location",
+              "default": "Engine",
+              "enum": ["Engine","Body","Chassis","Trunk","Hood"]
             }
           }
         }
@@ -335,69 +337,23 @@
         "type": "object"
       },
       "type": {
-        "default": "Vehicle",
+        "default": {"Bike":1},
         "description": "Type",
         "enum": [
-          "Extended Vehicle"
+          {"Bike":1},{"Buggy":3},{"Racer":4},{"Truck":5},{"Big Rig":6}
         ],
         "id": "/properties/type",
         "title": "Type",
-        "type": "string"
+        "type": "object"
       },
 
-      "slots": {
-        "$id": "#/properties/slots",
-        "type": "object",
-        "title": "Slots",
-        "description": "Available mods per vehicle class",
-        "default": null,
-        "properties": {
-          "hood": {
-            "$id": "#/properties/slots/properties/hood",
-            "type": "array",
-            "title": "The Hood",
-            "default": null,
-            "maxItems": 5,
-            "minItems": 0,
-            "items": { "$ref":"#/definitions/mod"}
-          },
-          "engine": {
-            "$id": "#/properties/slots/properties/hood",
-            "type": "array",
-            "title": "The Engine",
-            "default": null,
-            "maxItems": 5,
-            "minItems": 0,
-            "items": { "$ref":"#/definitions/mod"}
-          },
-          "body": {
-            "$id": "#/properties/slots/properties/body",
-            "type": "array",
-            "title": "The Body",
-            "default": null,
-            "maxItems": 5,
-            "minItems": 0,
-            "items": { "$ref":"#/definitions/mod"}
-          },
-          "chassis": {
-            "$id": "#/properties/slots/properties/chassis",
-            "type": "array",
-            "title": "The Chasis",
-            "default": null,
-            "maxItems": 5,
-            "minItems": 0,
-            "items": { "$ref":"#/definitions/mod"}
-          },
-          "trunk": {
-            "$id": "#/properties/slots/properties/trunk",
-            "type": "array",
-            "title": "The Trunk",
-            "default": null,
-            "maxItems": 5,
-            "minItems": 0,
-            "items": { "$ref":"#/definitions/mod"}
-          }
-        }
+      "mods": {
+        "$id": "#/properties/mod",
+        "type": "array",
+        "title": "Mods",
+        "description": "Vehicle mods",
+        "default": [],
+        "items": { "$ref":"#/definitions/mod" }
       }
     },
     "required": [

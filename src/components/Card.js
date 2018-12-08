@@ -66,8 +66,6 @@ const Ratings = ({ value }) => {
 }
 
 
-
-
 const Trait = ({ object, full }) => {
     let { cost, name, level, description } = object
     let stars = cost ? Array(cost).fill("").map((v, i) => { return <i key={i} className="icon-star_icon"></i> }) : undefined
@@ -83,7 +81,8 @@ const Description = ({text}) =>{
 }
 
 const Title = ({ name="", alignment="", type="" }) => {
-    return <div className="title"><strong>{name}</strong> <i className={type.toLowerCase()} /> <span>{alignment} {type}</span></div>
+    let _type = typeof type == 'object'? Object.keys(type)[0] : type;
+    return <div className="title"><strong>{name}</strong> <i className={_type.toLowerCase()} /> <span>{alignment} {_type}</span></div>
 }
 
 const Tags = ({ values, additional=[] }) => {

@@ -17,13 +17,7 @@
       "engine":0
   },
   "special_effects":[],
-  "type":"Extended Vehicle",
+  "type":{"Bike":1},
   "profile":"",
-  "slots":{
-    "hood":[],
-    "body":[],
-    "chassis":[],
-    "trunk":[],
-    "engine":[]
-  }
+  "mods":[]
 }

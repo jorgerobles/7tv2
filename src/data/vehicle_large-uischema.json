@@ -11,6 +11,8 @@
         "ratings",
         "genres",
         "notes",
+        "special_effects",
+        "mods",
         "__custom",
         "__theme"
     ],
@@ -28,6 +30,9 @@
 
     "__theme": {
         "ui:widget":"select"
+    },
+    "type":{
+        "ui:field": "objectSelectField"
     },
     "genres": {
         "ui:widget": "checkboxes"
@@ -80,9 +85,7 @@
         }
     },
 
-    "slots":{
-        "items":{
-            "ui:field": "table"
-        }
+    "mods":{
+        "ui:field":"modArrayField"
     }
 }

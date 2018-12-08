@@ -16,6 +16,7 @@ import { sendAsFile, parseDataUri } from '../lib/helpers'
 
 import ReactCrop, { makeAspectCrop } from 'react-image-crop';
 import 'react-image-crop/dist/ReactCrop.css';
+import { SelectField } from 'material-ui';
 
 const addNameToDataURL=(dataURL, name) => {
   return dataURL.replace(";base64", `;name=${name};base64`);
@@ -143,3 +144,56 @@ export const CollapseObjectField = function (props) {
             <ObjectField {...props}/>
           </details>
 };
+
+export class ObjectSelectField extends React.Component {
+  constructor(props) {
+    /*
+    schema: The JSON schema for this field;
+    uiSchema: The uiSchema for this field;
+    idSchema: The tree of unique ids for every child field;
+    formData: The data for this field;
+    errorSchema: The tree of errors for this field and its children;
+    registry: A registry object (read next).
+    formContext: A formContext object (read next next).
+    */
+    super(props);
+    this.state = {value: props.formData};
+    this.options = props.schema.enum;
+    
+  }
+
+  onChange(e) {
+    this.setState({value: JSON.parse(e.target.value)},()=>{this.props.onChange(this.state.value)})
+  }
+
+  render() {
+    let props=this.props
+
+     
+      let widget=<select onChange={(e)=>{this.onChange(e)}} className="form-control" id={props.idSchema.$id} value={JSON.stringify(this.state.value)}>
+        {this.options.map((option,i)=>{ return <option key={i} value={JSON.stringify(option)} >{Object.keys(option)[0]}</option> })}
+        </select>
+     
+
+    return (
+
+      <div>
+      {(props.uiSchema["ui:title"] || props.schema.title) && (
+        <label id={`${props.idSchema.$id}__title`}>
+          {props.schema.title || props.uiSchema["ui:title"]}
+        </label>
+      )}
+      {props.description && (
+        <DescriptionField
+          id={`${props.idSchema.$id}__description`}
+          description={props.schema.description}
+          formContext={props.formContext}
+        />
+      )}
+      {widget}
+    </div>
+      
+    );
+  }
+}
+  

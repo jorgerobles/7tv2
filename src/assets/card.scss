@@ -119,14 +119,18 @@ var  {font-style: normal}
 .card .tags i {margin-left: 0.2em; vertical-align: bottom}
 .card .tags img {margin-left: 0.2em; height: 1.05em; vertical-align: bottom; margin-bottom: 0.1em}
 
-.card section {
-  top: 12%; font-size: 70%; width: 90%; left: 5%; height: 82%; display:flex; flex-flow: column wrap; overflow: visible; overflow-wrap: break-word ; text-overflow: ellipsis;
- }
-.card section > * {width:50%; padding-right: 3%;}
-.card section heading {text-transform: uppercase; font-weight: bold; font-size: 110%; color: #862419; margin: 0em 0 0.5em 0; display:block}
-.card section .icon-star_icon:before { font-size: 90%; color: #862419;}
-.card section p {margin: 0 0 0.5em 0; break-inside: avoid; widows: 3; white-space:pre-line; }
-.card section p em { color: #862419; font-weight: bold; font-style: normal}
+.card.vehicle, .card.model, .card.unit {
+  section {
+    top: 12%; font-size: 70%; width: 90%; left: 5%; height: 82%; display:flex; flex-flow: column wrap; overflow: visible; overflow-wrap: break-word ; text-overflow: ellipsis;
+
+    > * {width:50%; padding-right: 3%;}
+    heading {text-transform: uppercase; font-weight: bold; font-size: 110%; color: #862419; margin: 0em 0 0.5em 0; display:block}
+    .icon-star_icon:before { font-size: 90%; color: #862419;}
+    p {margin: 0 0 0.5em 0; break-inside: avoid; widows: 3; white-space:pre-line; }
+    p em { color: #862419; font-weight: bold; font-style: normal}
+  }
+  
+}
 
 /* /COMMON */
 
@@ -234,28 +238,36 @@ var  {font-style: normal}
   }
 
   .checkribbon.health {
-    bottom:3.6%; right:0; width:42%; left:auto;
+    bottom:3.6%; right:0; width:41%; left:auto;
   }
   .checkribbon.engine {
-    bottom:3.6%; left:0; width:42%;  left:auto; text-align: right
+    bottom:3.6%; left:0; width:41%;  left:auto; text-align: right
   }
-
   .checkribbon.body {
-    top:3.6%; left:5%;  width:42%; right:auto; text-align: left
+    top:4.5%; left:6%;  width:41%; right:auto; text-align: left
   }
-  .checkribbon.chassis {
-    top:3.6%; right:5%; width:42%;  left:auto; text-align: right
+  .checkribbon.chassis { 
+    top:4.5%; right:6%; width:41%;  left:auto; text-align: right
   }
-
   .checkribbon.trunk {
-   top: 0; right:3%;  ; left:auto; text-align: left; height:55%; transform: rotate(180deg);
+   top: 0; right:3%;  ; left:auto; text-align: left; height:51%; transform: rotate(180deg);
    div {display:block; flex-grow: 0; height: 1em; width: 1em; margin:0 0 1em 0}
   }
-
   .checkribbon.hood {
-    top: 0; left:3%;  ; right:auto; text-align: left; height:55%; transform: rotate(180deg);
+    top: 0; left:3%;  ; right:auto; text-align: left; height:51%; transform: rotate(180deg);
     div {display:block; flex-grow: 0; height: 1em; width: 1em; margin:0 0 1em 0}
    }
+
+  &.back section {
+    top: 21%; font-size: 100%; width: 29%; left: 5.5%; height: 65%; display:flex; flex-flow: column wrap; overflow: visible; overflow-wrap: break-word ; text-overflow: ellipsis;
+
+    > * {width:100%; padding-right: 3%;}
+    heading {text-transform: uppercase; font-weight: bold; font-size: 110%; color: #862419; margin: 0em 0 0.2em 0; display:block; line-height: 0.8em}
+    .icon-star_icon:before { font-size: 90%; color: #862419;}
+    p {margin: 0 0 0.5em 0; break-inside: avoid; widows: 3; white-space:pre-line; font-size: 0.95em}
+    p em { color: #862419; font-weight: bold; font-style: normal}
+    i {font-size: 0.8em}
+  }
   
 }
 
