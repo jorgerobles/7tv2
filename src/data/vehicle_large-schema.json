@@ -27,6 +27,13 @@
               "title": "Location",
               "default": "Engine",
               "enum": ["Engine","Body","Chassis","Trunk","Hood"]
+            },
+            "mounted": {
+              "$id": "#/properties/mods/item/mounted",
+              "type": "boolean",
+              "title": "Mounted",
+              "default": false
+              
             }
           }
         }
@@ -155,7 +162,8 @@
               "enum": [
                 "",
                 "Melee",
-                "Range"
+                "Range",
+                "Drive"
               ]
             },
             "attack": {

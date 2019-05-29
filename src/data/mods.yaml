@@ -1,7 +1,11 @@
-Bike - Body:
-  Plating:
+Bike:
+  Plating - Body:
+    name: Plating
     cost: 1
+    location: Body
 
-Buggy - Body:
-  Plating:
+Buggy:
+  Plating - Body:
+    name: Plating
     cost: 1
+    location: Body

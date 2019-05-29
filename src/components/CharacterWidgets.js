@@ -18,7 +18,7 @@ const parseTrait=(label,text)=>{
         trait=Object.assign({},text)
     }
     trait.cost=trait.cost || 0
-    trait.name=label
+    if (!trait.name) trait.name=label
     return trait;
 } 
 
@@ -96,9 +96,7 @@ SQSelect=connect((state)=>({currentCharacter: state.currentCharacter}))(SQSelect
 export class ModSelect extends TraitSelect {
     componentDidMount()
     {
-
         this.placeholder="Select Mod to add"
-        
         fetch(require('../data/mods.yaml')).then((response)=>{
             response.text().then(function(txt){this.setState({data:Yaml.safeLoad(txt)})}.bind(this))
         })

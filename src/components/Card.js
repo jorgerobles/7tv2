@@ -7,6 +7,7 @@ import slug from 'slug';
 import '../assets/fonts/din-cond/style.css';
 import '../assets/card.scss'
 import { sendAsFile, sendAsImage } from '../lib/helpers'
+import Yaml from "js-yaml"
 
 import {T,zip} from '../index'
 
@@ -48,7 +49,7 @@ const Weapons = ({ items }) => {
             {items.map((item, i) => {
                 let effects=isString(item.effects)? {effects: item.effects} : item.effects;
                 return <tr className={slug(item.type||"").toLowerCase()} key={i}>
-                    <td className="attack">{item.attack}</td><td className="range">{item.range}</td><td className="strike">+{item.strike}</td>
+                    <td className="attack" dangerouslySetInnerHTML={item.attack.length? {__html:item.attack}:{__html:"&nbsp;"}}></td><td className="range">{item.range}</td><td className="strike">+{item.strike}</td>
                     { Object.entries(effects).map((entry,i)=>{
                         let [key,value] = entry;
                         return <Marked key={i} Component='td' className={key} md={value} Options={{inline:true}}/>
@@ -60,6 +61,50 @@ const Weapons = ({ items }) => {
         </tbody>
     </table>
 }
+
+class ModsTable extends React.Component {
+    
+    constructor(props){
+        super(props);
+        this.state={mods:{}}
+    }
+    componentDidMount()
+    {
+        fetch(require('../data/mods.yaml')).then((response)=>{
+            response.text().then(function(txt){
+                this.setState({mods: Yaml.safeLoad(txt)});
+            }.bind(this))
+        })
+    }
+
+    classify(){
+        let list = {}
+
+        if (typeof this.props.character.type=='object' ){
+            let [name,ratings] =  Object.entries(this.props.character.type)[0]
+            list['vehicle']=[{ratings, name}];
+        }
+        this.props.character.mods.forEach((item)=>{
+            if (list[item.location]==undefined)
+                list[item.location]=[];
+            list[item.location].push(item);
+        })
+        return list
+    }
+
+    render(){
+        return <div className="mods">{Object.entries(this.classify()).map((entry,i)=>{
+            return <table key={i}><thead><tr><th>{entry[0]}</th><td>Ratings</td></tr></thead><tbody>
+            {entry[1].map((mod,j)=>{
+                let indent=(/^([ ]+)/gi.exec(mod.name))
+                return <tr key={j} className={mod.mounted?"mounted":""}><td className={["name",indent?"indent":""].join(" ")}>{mod.name.replace(/^[ ]*/gi,'')}</td><td className="ratings">{mod.ratings}</td></tr>
+            })}
+            </tbody></table>
+        })}</div>
+    }
+}
+
+
 
 const Ratings = ({ value }) => {
     return <div className="ratings"><strong><val>{value}</val> RATINGS</strong></div>
@@ -112,7 +157,7 @@ export class CardFront extends React.Component {
             case "unit":
                 return this.renderUnit(card,theme)
             break;
-            case "gadget":
+            case "gadget_small":
                 return this.renderGadget(card)
             break;
             default:
@@ -149,7 +194,7 @@ export class CardFront extends React.Component {
 
     renderVehicleLarge(card,theme)
     {
-        let { health=0,  name,   photo, description="",weapons=[], __custom } = this.props.character
+        let { health=0,  name,   photo, description="",weapons=[], __custom,ratings } = this.props.character
         let __tint = __custom? __custom.tint : 0
         let __genres= __custom ? __custom.genres: null
         let tags = this.props.character.genres||[]
@@ -173,7 +218,7 @@ export class CardFront extends React.Component {
             <CheckRibbon className="trunk"   stat={trunk}/>
             <CheckRibbon className="engine"  stat={engine}/>
             <CheckRibbon className="health"   stat={health}/>
-
+            <Ratings value={ratings} />
         </div>
         </div></div>
     }
@@ -217,12 +262,12 @@ export class CardFront extends React.Component {
         </div></div>
     }
 
-    renderGadget(card){
+    renderGadget(card, theme){
         let qlty = this.props.character.star_quality
         let sfx = this.props.character.special_effects;
         let { health, ratings, weapons, name, role, type, notes='',__custom } = this.props.character
         let __tint = __custom? __custom.tint : 0
-        return <div className="cellophan"><div className={"card "+card+" front"}>
+        return <div className="cellophan"><div className={["card",card,"front",theme].join(' ')}>
             <div className="background" style={{filter:`hue-rotate(${__tint}deg)`}}></div>
             <div className="foreground" ></div>
         </div></div>
@@ -245,8 +290,8 @@ export class CardBack extends React.Component {
             case "unit":
                 return this.renderUnit(card,theme)
             break;
-            case "gadget":
-                return this.renderGadget(card)
+            case "gadget_small":
+                return this.renderGadget(card,theme)
             break;
             default:
                 return this.renderModel(card,theme)
@@ -269,18 +314,19 @@ export class CardBack extends React.Component {
                 {notes? (<heading>Notes</heading>):undefined}
                 <p>{notes}</p>
             </section>
+            
         </div>
         </div></div>
     }
 
     renderVehicleLarge(card,theme){
         let sfx = this.props.character.special_effects||[];
-        let {name, type="",notes="",weapons=[], description="", __custom} = this.props.character
+        let {name, type="",notes="",weapons=[], description="", __custom, ratings} = this.props.character
         let __tint = __custom? __custom.tint : 0
         return <div className="cellophan"><div className={[theme,"card",card,"back",].join(' ')}>
         <div className="background" style={{filter:`hue-rotate(${__tint}deg)`}}></div>
         <div className="foreground">
-            <Title name={name} type={type} />
+            <Title name={name}  />
             <section>
                 {weapons.length && description? (<heading>Description</heading>):undefined}
                 {weapons.length && description? (<Description text={description}/>):undefined}
@@ -289,6 +335,8 @@ export class CardBack extends React.Component {
                 {notes? (<heading>Notes</heading>):undefined}
                 <p>{notes}</p>
             </section>
+            <ModsTable character={this.props.character}/>
+            <div className="totalratings">{T('Total Vehicle Ratings')} <Ratings value={ratings} /></div>
         </div>
         </div></div>
     }
@@ -336,7 +384,7 @@ export class CardBack extends React.Component {
         </div></div>
     }
 
-    renderGadget(card){
+    renderGadget(card,theme){
         let { name, play, weapon, cost, description,__custom } = this.props.character
         
         let strike = (weapon.length)?weapon[0].strike:''
@@ -351,7 +399,7 @@ export class CardBack extends React.Component {
             return String(value!==undefined? value:"").length
         }))
 
-        return <div className="cellophan"><div className={"card "+card+" back"}>
+        return <div className="cellophan"><div className={["card",card,"back",theme].join(' ')}>
             <div className="background" style={{filter:`hue-rotate(${__tint}deg)`}}></div>
             <div className="foreground">
             <Title name={name}  />
