@@ -17,53 +17,11 @@ var  {font-style: normal}
 
 .card .background, .card .foreground {display:block; position:absolute; width: 100%; height:100%; left:0; top:0; z-index: 0;}
 .card .background > *, .card .foreground > * {position:absolute}
-.card.front .background {background: url(images/core/2e_front_vanilla.jpg) ; background-size: contain;}
-.card.back .background {background: url(images/core/2e_back_vanilla.jpg) ; background-size: contain;}
 .card .foreground {z-index: 1}
 
-.card.model  .stats {
-    position: absolute;  color: white; text-transform: uppercase; 
-    background: #3a3b3d; border: 0.15em solid #fff; width: 28%; border-collapse: collapse; 
-    text-align: center; font-size: 100%; line-height: 170%; font-weight: bold;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
-}
-
-
-/* MODEL  */
-.card.model .stats > div {display:flex; flex-direction: row; width:100%} 
-.card.model .stats > div > div {border-right: 0.15em solid #fff; border-bottom: 0.15em solid #fff; font-weight: normal; flex-grow:3; font-size: 90% }
-.card.model .stats > div:last-child > div {border-bottom:none}
-
-.card.model .stats > div > div:last-child { flex-grow:0; width: 30%; border-right: none; color: #000; font-size: 110%}
-.card.model .stats > div.fight > div:last-child {background: #c67229}
-.card.model .stats > div.shoot > div:last-child {background: #bf452d}
-.card.model .stats > div.defence > div:last-child {background: #862419; color: white}
-.card.model .stats > div.mind > div:last-child {background: #78a2b2}
-.card.model .stats > div.body > div:last-child {background: #7f8d73}
-.card.model .stats > div.spirit > div:last-child {background: #c1912d}
-.card.model .stats.left  { top: 14%; left: 5% }
-.card.model .stats.right { top: 14%; right: 5% }
-.card.model .stats.right > div {flex-direction: row-reverse}
-.card.model .stats.right > div > div {border-right: 0.15em solid #fff;}
-.card.model .stats.right > div > div:first-child {border-right: none;}
-.card.model .pic {
-  width: 36%; height: 25.5%; position:absolute; left: 30.5%; top:11%; display:block; border: 0.41em solid black; background: white; border-radius: 100%;
-  background-size: contain; background-repeat:   no-repeat; background-position: center center;  
-
-}
-
-.card.model .sfxribbon { top: 42%; left: 5%; width: 90%; font-size: 90%; margin:0  }
-.card.model .sfxribbon dl {margin:0; display:flex; flex-direction: row; width: 100%; align-content: flex-start; font-size: 90%;}
-.card.model .sfxribbon dt { line-height: 150%; white-space: nowrap; font-weight: bold; width: 35%; text-transform: uppercase}
-.card.model .sfxribbon dd { margin:0; width: 70%;  color: #862419; }; 
-.card.model .sfxribbon dd span {display:inline-block}
-.card.model .sfxribbon dd span:after {content:", "}
-.card.model .sfxribbon dd span:last-child:after {content:"."}
-.card.model .sfxribbon dd .icon-star_icon:before { font-size: 90%}
 
 
 
-/* /MODEL */
 
 /* COMMON  */
 
@@ -77,12 +35,9 @@ var  {font-style: normal}
   left: 0;
   background: attr(data-tint);
 } 
-.core.card .title {color: white; line-height: 225%; margin-left: 2% }
-.core.card .title {text-transform: uppercase}
-.core.card .title span {font-size:70%}
-.core.card .title .star:before {content: "\2605"; font-style:normal}
-.core.card .title .co-star:before {content: "\2729"; font-style:normal}
-.core.card .title .extra:before {content: "\2726"; font-style:normal}
+.card .title {color: white; line-height: 225%; margin-left: 2% }
+.card .title {text-transform: uppercase}
+.card .title span {font-size:70%}
 
 .card .weapons {width: 90%; left: 5%; font-size: 82.5%; top: 60%; background: #3a3b3d; border: none; border-collapse:collapse; box-shadow: 0 0 10px rgba(0,0,0,0.5);}
 .card .weapons td {padding: 1% 2% 1% 2%; vertical-align: middle; font-size: 80% }
@@ -101,11 +56,11 @@ var  {font-style: normal}
 }
 .card .weapons tbody tr.range td.attack:before {content: "\e908";}
  
-.core.card .ratings {bottom: 1%; color: white; left: 5%; text-align: center; line-height: 90%; font-size: 90%}
-.core.card .ratings val {display:block;}
+.card .ratings {bottom: 1%; color: white; left: 5%; text-align: center; line-height: 90%; font-size: 90%}
+.card .ratings val {display:block;}
 
 .card .checkribbon div {  width: 1.2em; height: 1.2em; margin:0.1em; background: white;  display:inline-block; }
-.core.card .checkribbon.health {
+.card .checkribbon.health {
   width: 100%; bottom:5.5%; text-align: center;
   div {
     
@@ -119,20 +74,106 @@ var  {font-style: normal}
 .card .tags i {margin-left: 0.2em; vertical-align: bottom}
 .card .tags img {margin-left: 0.2em; height: 1.05em; vertical-align: bottom; margin-bottom: 0.1em}
 
+
 .card.vehicle, .card.model, .card.unit {
   section {
     top: 12%; font-size: 70%; width: 90%; left: 5%; height: 82%; display:flex; flex-flow: column wrap; overflow: visible; overflow-wrap: break-word ; text-overflow: ellipsis;
 
     > * {width:50%; padding-right: 3%;}
-    heading {text-transform: uppercase; font-weight: bold; font-size: 110%; color: #862419; margin: 0em 0 0.5em 0; display:block}
-    .icon-star_icon:before { font-size: 90%; color: #862419;}
+    heading {text-transform: uppercase; font-weight: bold; font-size: 110%;  margin: 0em 0 0.5em 0; display:block}
+    .icon-star_icon:before { font-size: 90%; }
     p {margin: 0 0 0.5em 0; break-inside: avoid; widows: 3; white-space:pre-line; }
-    p em { color: #862419; font-weight: bold; font-style: normal}
+    p em {  font-weight: bold; font-style: normal}
   }
   
 }
 
+.core.card.vehicle, .core.card.model, .core.card.unit {
+  section {
+    heading {color: #862419; }
+    .icon-star_icon:before { color: #862419;}
+    p em { color: #862419;}
+  }
+}
+
+.apocalypse.card.vehicle, .apocalypse.card.model, .apocalypse.card.unit {
+  section {
+    heading {color: #cd9524; }
+    .icon-star_icon:before { color: #cd9524;}
+    p em { color: #cd9524;}
+  }
+}
+
+.core.card .title .star:before {content: "\2605"; font-style:normal}
+.core.card .title .co-star:before {content: "\2729"; font-style:normal}
+.core.card .title .extra:before {content: "\2726"; font-style:normal}
+
+
 /* /COMMON */
+
+
+/* MODEL  */
+.card.model  .stats {
+  position: absolute;  color: white; text-transform: uppercase; 
+  background: #3a3b3d; border: 0.15em solid #fff; width: 28%; border-collapse: collapse; 
+  text-align: center; font-size: 100%; line-height: 170%; font-weight: bold;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+.card.model .stats > div {display:flex; flex-direction: row; width:100%} 
+.card.model .stats > div > div {border-right: 0.15em solid #fff; border-bottom: 0.15em solid #fff; font-weight: normal; flex-grow:3; font-size: 90% }
+.card.model .stats > div:last-child > div {border-bottom:none}
+.card.model .stats.left  { top: 14%; left: 5% }
+.card.model .stats.right { top: 14%; right: 5% }
+.card.model .stats.right > div {flex-direction: row-reverse}
+.card.model .stats.right > div > div {border-right: 0.15em solid #fff;}
+.card.model .stats.right > div > div:first-child {border-right: none;}
+.card.model .pic {
+width: 36%; height: 25.5%; position:absolute; left: 30.5%; top:11%; display:block; border: 0.41em solid black; background: white; border-radius: 100%;
+background-size: contain; background-repeat:   no-repeat; background-position: center center;  
+
+}
+.card.model .sfxribbon { top: 42%; left: 5%; width: 90%; font-size: 90%; margin:0  }
+.card.model .sfxribbon dl {margin:0; display:flex; flex-direction: row; width: 100%; align-content: flex-start; font-size: 90%;}
+.card.model .sfxribbon dt { line-height: 150%; white-space: nowrap; font-weight: bold; width: 35%; text-transform: uppercase}
+.card.model .sfxribbon dd { margin:0; width: 70%;  }; 
+.card.model .sfxribbon dd span {display:inline-block}
+.card.model .sfxribbon dd span:after {content:", "}
+.card.model .sfxribbon dd span:last-child:after {content:"."}
+.card.model .sfxribbon dd .icon-star_icon:before { font-size: 90%}
+
+
+
+
+.core.card.front .background {background: url(images/core/2e_front_vanilla.jpg) ; background-size: contain;}
+.core.card.back .background {background: url(images/core/2e_back_vanilla.jpg) ; background-size: contain;}
+
+.core.card.model .stats > div > div:last-child { flex-grow:0; width: 30%; border-right: none; color: #000; font-size: 110%}
+.core.card.model .stats > div.fight > div:last-child {background: #c67229}
+.core.card.model .stats > div.shoot > div:last-child {background: #bf452d}
+.core.card.model .stats > div.defence > div:last-child {background: #862419; color: white}
+.core.card.model .stats > div.mind > div:last-child {background: #78a2b2}
+.core.card.model .stats > div.body > div:last-child {background: #7f8d73}
+.core.card.model .stats > div.spirit > div:last-child {background: #c1912d}
+.core.card.model .sfxribbon dd  {color: #862419; }
+
+
+
+.apocalypse.card.front .background {background: url(images/apoc/2e_apoc_model_front.jpg) ; background-size: contain;}
+.apocalypse.card.back .background {background: url(images/apoc/2e_apoc_model_back.jpg) ; background-size: contain;}
+.apocalypse.card.model .stats > div > div:last-child { flex-grow:0; width: 30%; border-right: none; color: #fff; font-weight: bold; font-size: 110%; background-color: #cd9524; }
+.apocalypse.card.model .stats  var {position:relative; top: 10%;}
+.apocalypse.card.model .sfxribbon dd  {color: #cd9524; }
+.apocalypse.card.model .stats.right { background: #3a3b3d url(images/apoc/2e_apoc_statbox.png) 120% bottom no-repeat; background-size: contain}
+.apocalypse.card.model .stats.left { background: #3a3b3d url(images/apoc/2e_apoc_statbox.png) -20% top no-repeat; background-size: contain;}
+
+.apocalypse.card .title {color: #cd9524; line-height: 125%; margin-left: 2%; display:block; width: 100%; text-align: center; font-size: 2em; transform:rotate(-1deg) }
+
+.apocalypse.card .title {text-transform: uppercase}
+.apocalypse.card .title span {font-size:50%; float:right; color: white}
+
+
+
+/* /MODEL */
 
 /* VEHICLE */
 .card.vehicle  {

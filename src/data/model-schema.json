@@ -29,6 +29,12 @@
       }
     
     },
+    "__theme":{
+      "title":"Theme",
+      "id": "/properties/__theme",
+      "type":"string",
+      "enum":["core","apocalypse"]
+    },
     "genres": {
       "title":"Genre/s",
       "description": "The genre of each model determines if it can join your cast or not. Models from a Programme Guide will have their cast’s symbol here instead.",
