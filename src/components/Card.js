@@ -208,9 +208,9 @@ export class CardFront extends React.Component {
             <Title name={name}/>
             <Pic photo={photo}/>
             <div className="contentblock">
-            <StatBlock stats={{move, defence }} />
+            <StatBlock stats={{move, armour, defence, capacity }} />
             {weapons.length? <Weapons items={weapons} />:<Description text={description}/>}
-            <StatBlock stats={{ armour, capacity }} />
+            <StatBlock className="gear" stats={{parked:"parked",slow:"slow",fast:"fast",reverse:"reverse"}} />
             </div>
             <CheckRibbon className="hood"   stat={hood}/>
             <CheckRibbon className="body"   stat={body}/>
@@ -321,12 +321,13 @@ export class CardBack extends React.Component {
 
     renderVehicleLarge(card,theme){
         let sfx = this.props.character.special_effects||[];
-        let {name, type="",notes="",weapons=[], description="", __custom, ratings} = this.props.character
+        let {name, type="",notes="",weapons=[], description="", __custom, ratings, photo} = this.props.character
         let __tint = __custom? __custom.tint : 0
         return <div className="cellophan"><div className={[theme,"card",card,"back",].join(' ')}>
         <div className="background" style={{filter:`hue-rotate(${__tint}deg)`}}></div>
         <div className="foreground">
             <Title name={name}  />
+            <Pic photo={photo}/>
             <section>
                 {weapons.length && description? (<heading>Description</heading>):undefined}
                 {weapons.length && description? (<Description text={description}/>):undefined}
