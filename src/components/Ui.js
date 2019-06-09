@@ -9,6 +9,7 @@ import { SplitButton, MenuItem, Button, ButtonToolbar, Glyphicon, DropdownButton
 import { sendAsFile, sendAsImage, getAsImage } from '../lib/helpers'
 import slug from 'slug';
 import jsPDF from 'jspdf';
+import '../assets/fonts/din-cond/style.css';
 
 import { resolve } from 'path';
 import sortBy from 'sort-by'

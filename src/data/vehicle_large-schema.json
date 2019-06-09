@@ -71,7 +71,7 @@
         "title":"Theme",
         "id": "/properties/__theme",
         "type":"string",
-        "enum":["core","apocalypse"]
+        "enum":["apocalypse"]
       },
       "genres": {
         "title":"Genre/s",

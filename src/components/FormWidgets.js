@@ -91,6 +91,7 @@ export class PictureWidget extends React.Component {
     this.uploadHandler=this.uploadHandler.bind(this)
     this.cropHandler=this.cropHandler.bind(this)
     this.updateHandler=this.updateHandler.bind(this)
+    this.removeHandler=this.removeHandler.bind(this)
   }
 
   uploadHandler(value,errorSchema){
@@ -110,6 +111,10 @@ export class PictureWidget extends React.Component {
     }
   }
 
+  removeHandler(){
+    this.props.onChange(undefined);
+  }
+
   render(){
     
     const {name, data, mime} = parseDataUri(this.props.value);
@@ -120,6 +125,7 @@ export class PictureWidget extends React.Component {
     <br/>
     <Button onClick={this.updateHandler} bsSize="xsmall" bsStyle="danger" disabled={!!!this.props.value}><Glyphicon glyph="pencil"/> Crop</Button>
     <Button onClick={e=>{sendAsFile(decodeURIComponent(name),data,mime)}} bsSize="xsmall"  bsStyle="info" disabled={!!!this.props.value}><Glyphicon glyph="download"/> Download</Button>
+    <Button onClick={this.removeHandler} bsSize="xsmall"  bsStyle="warning" disabled={!!!this.props.value}><Glyphicon glyph="remove"/> Remove</Button>
     <hr/>
     <FileWidget {...fileprops}/>
     </div>

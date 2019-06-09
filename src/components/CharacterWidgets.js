@@ -98,7 +98,7 @@ export class ModSelect extends TraitSelect {
     {
         this.placeholder="Select Mod to add"
         fetch(require('../data/mods.yaml')).then((response)=>{
-            response.text().then(function(txt){this.setState({data:Yaml.safeLoad(txt)})}.bind(this))
+            response.text().then(function(txt){this.setState({data:Yaml.safeLoad(txt)||{}})}.bind(this))
         })
     }
 

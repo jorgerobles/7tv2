@@ -1,0 +1,188 @@
+.apocalypse.card.vehicle_large.front {
+  .ratings {
+    top: 11%;
+    left: 45%;
+    width: 10%;
+    text-align: center;
+  }
+}
+
+.apocalypse.card   {
+  color: #58595b !important;
+  strong {
+    color: #58595b !important;
+  }
+}
+
+.apocalypse.card.vehicle,
+.apocalypse.card.model,
+.apocalypse.card.unit {
+  section {
+    heading {
+      color: #cd9524;
+    }
+    .icon-star_icon:before {
+      color: #cd9524;
+    }
+    p em {
+      color: #cd9524;
+    }
+  }
+}
+
+.apocalypse.card.vehicle_large {
+    &.front .background {
+      background: url(images/apoc/2e_apoc_vehicle_large_front.png);
+      background-size: contain;
+    }
+    &.back .background {
+      background: url(images/apoc/2e_apoc_vehicle_large_back.png);
+      background-size: contain;
+    }
+}
+
+.apocalypse.card.vehicle_large {
+  .pic.bike {background-image: url(images/apoc/type-bike.png);}
+  .pic.truck {background-image: url(images/apoc/type-truck.png);}
+  .pic.racer {background-image: url(images/apoc/type-racer.png);}
+  .pic.buggy {background-image: url(images/apoc/type-buggy.png);}
+  .pic.rig {background-image: url(images/apoc/type-rig.png);}
+}
+
+.apocalypse.card.vehicle_large {
+    &.front .title {
+      font-size: 2.3em;
+      text-transform: uppercase;
+      width: 100%;
+      text-align: center;
+      z-index:1000;
+    }
+    &.back .title {
+      font-size: 2.3em;
+      text-transform: uppercase;
+      width: 50%;
+      top: 9%;
+      left: 3.5%;
+      text-align: left;
+    }
+  }
+
+
+.apocalypse.card.front .background {
+    background: url(images/apoc/2e_apoc_model_front.jpg);
+    background-size: cover;
+  }
+  .apocalypse.card.back .background {
+    background: url(images/apoc/2e_apoc_model_back.jpg);
+    background-size: cover;
+  }
+
+ 
+  .apocalypse.card.model .stats > div > div:last-child {
+    flex-grow: 0;
+    width: 30%;
+    color: #fff;
+    font-weight: bold;
+    font-size: 110%;
+    background-color: #cd9524;
+  }
+  .apocalypse.card.model .stats var {
+    position: relative;
+    top: 10%;
+  }
+  .apocalypse.card.model .sfxribbon dd   {
+    color: #cd9524;
+  }
+  .apocalypse.card.model .stats:after {
+    content: "";
+    position: absolute;
+    left: 0%;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: block;
+    background: url(images/apoc/2e_apoc_statbox.png) no-repeat;
+  }
+  .apocalypse.card.model .stats.right:after {
+    background-position: -280%;
+  }
+  .apocalypse.card.model .stats.left:after {
+    background-position: 400%;
+  }
+  
+  .apocalypse.card .title {
+    line-height: 125%;
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-size: 2em;
+    text-transform: uppercase;
+    position: relative;
+  }
+  
+  .apocalypse.card .title strong {
+    position: absolute;
+    width: 100%;
+    top: 0.1em;
+    display: block;
+    transform: rotate(-1deg);
+  }
+  .apocalypse.card .title span {
+    position: absolute;
+    font-size: 50%;
+    right: 0;
+    color: white;
+    width: 20%;
+    line-height: 1em;
+    margin-top: 0.3em;
+  }
+  
+  .apocalypse.card.vehicle_large {
+    .title,
+    heading,
+    strong {
+      color: #58595b;
+      font-family: "Veneer3";
+      font-weight: normal;
+    }
+  }
+
+  .apocalypse.card.vehicle_large.front {
+    div > .ratings {
+      color: #000;
+    }
+  
+    val {
+      display: inline;
+    }
+  
+    .checkribbon.health {
+      display: flex;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      height: 6.7%;
+      width: 40%;
+      position: relative;
+      overflow: hidden;
+      align-items: flex-end;
+      justify-items: center;
+  
+      flex-direction: row-reverse;
+  
+      > div {
+        border-radius: 0;
+        border: none;
+        background: #e7e7e8;
+        margin: 0 0.5em 0 0.5em;
+        height: 1em;
+        width: 1em;
+      }
+      > div:first-child {
+        margin-right: 10%;
+      }
+  
+      -webkit-clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+      clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+    }
+  }

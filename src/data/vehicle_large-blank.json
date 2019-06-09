@@ -1,7 +1,7 @@
 {
   "__version": "0.0.1",
   "__card": "vehicle_large",
-  "__theme":"core",
+  "__theme":"apocalypse",
   "__custom":{},
   "health":1,
   "genres":[],

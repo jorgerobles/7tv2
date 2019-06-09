@@ -33,7 +33,7 @@
       "title":"Theme",
       "id": "/properties/__theme",
       "type":"string",
-      "enum":["core","apocalypse"]
+      "enum":["core","apocalypse","pulp"]
     },
     "genres": {
       "title":"Genre/s",
