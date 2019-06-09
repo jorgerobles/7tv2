@@ -1,336 +1,982 @@
-.cellophan {all:initial; display:inline-block;}
-.cellophan+.cellophan {border:none; border-left: 1px dashed rgba(255,255,255,0.5); margin-left: -1px}
+@import "card-theme-core";
+@import "card-theme-apocalypse";
+@import "card-theme-pulp";
 
-.viewport.portrait .cellophan+.cellophan {border:none; border-top: 1px dashed rgba(255,255,255,0.5) }
-
-.card strong {
-  font-weight: bold;  font-family: "DINCond";
+.cellophan {
+  all: initial;
+  display: inline-block;
 }
 
-.din {font-family: "DINCond" !important}
+.cellophan {
+  box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
+}
+.viewport.standard .cellophan + .cellophan {
+  border: none;
+  border-left: 1px dashed rgba(255, 255, 255, 0.5);
+  margin-left: -1px;
+}
+
+.viewport.portrait .cellophan + .cellophan {
+  border: none;
+  border-top: 1px dashed rgba(255, 255, 255, 0.5);
+}
+
+div[class*="large"] .cellophan + .cellophan {
+  border: none;
+}
 
 .card {
-    position:relative; font-family: "DINCond"; color: black;
+  position: relative;
+  color: black;
+  font-family: "DINCond";
+  strong {
+    font-family: "DINCond";
+  }
 }
 
-var  {font-style: normal}
-
-.card .background, .card .foreground {display:block; position:absolute; width: 100%; height:100%; left:0; top:0; z-index: 0;}
-.card .background > *, .card .foreground > * {position:absolute}
-.card.front .background {background: url(images/2e_front_vanilla.jpg) ; background-size: contain;}
-.card.back .background {background: url(images/2e_back_vanilla.jpg) ; background-size: contain;}
-.card .foreground {z-index: 1}
-
-.card.model  .stats {
-    position: absolute;  color: white; text-transform: uppercase; 
-    background: #3a3b3d; border: 0.15em solid #fff; width: 28%; border-collapse: collapse; 
-    text-align: center; font-size: 100%; line-height: 170%; font-weight: bold;
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+var {
+  font-style: normal;
 }
 
-
-/* MODEL  */
-.card.model .stats > div {display:flex; flex-direction: row; width:100%} 
-.card.model .stats > div > div {border-right: 0.15em solid #fff; border-bottom: 0.15em solid #fff; font-weight: normal; flex-grow:3; font-size: 90% }
-.card.model .stats > div:last-child > div {border-bottom:none}
-
-.card.model .stats > div > div:last-child { flex-grow:0; width: 30%; border-right: none; color: #000; font-size: 110%}
-.card.model .stats > div.fight > div:last-child {background: #c67229}
-.card.model .stats > div.shoot > div:last-child {background: #bf452d}
-.card.model .stats > div.defence > div:last-child {background: #862419; color: white}
-.card.model .stats > div.mind > div:last-child {background: #78a2b2}
-.card.model .stats > div.body > div:last-child {background: #7f8d73}
-.card.model .stats > div.spirit > div:last-child {background: #c1912d}
-.card.model .stats.left  { top: 14%; left: 5% }
-.card.model .stats.right { top: 14%; right: 5% }
-.card.model .stats.right > div {flex-direction: row-reverse}
-.card.model .stats.right > div > div {border-right: 0.15em solid #fff;}
-.card.model .stats.right > div > div:first-child {border-right: none;}
-.card.model .pic {
-  width: 36%; height: 25.5%; position:absolute; left: 30.5%; top:11%; display:block; border: 0.41em solid black; background: white; border-radius: 100%;
-  background-size: contain; background-repeat:   no-repeat; background-position: center center;  
-
+.card .background,
+.card .foreground {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 0;
 }
-
-.card.model .sfxribbon { top: 42%; left: 5%; width: 90%; font-size: 90%; margin:0  }
-.card.model .sfxribbon dl {margin:0; display:flex; flex-direction: row; width: 100%; align-content: flex-start; font-size: 90%;}
-.card.model .sfxribbon dt { line-height: 150%; white-space: nowrap; font-weight: bold; width: 35%; text-transform: uppercase}
-.card.model .sfxribbon dd { margin:0; width: 70%;  color: #862419; }; 
-.card.model .sfxribbon dd span {display:inline-block}
-.card.model .sfxribbon dd span:after {content:", "}
-.card.model .sfxribbon dd span:last-child:after {content:"."}
-.card.model .sfxribbon dd .icon-star_icon:before { font-size: 90%}
-
-
-
-/* /MODEL */
+.card .background > *,
+.card .foreground > * {
+  position: absolute;
+}
+.card .foreground {
+  z-index: 1;
+}
 
 /* COMMON  */
 
-
 .card .background:after {
-  content: '';
+  content: "";
   position: absolute;
   width: inherit;
   height: inherit;
   top: 0;
   left: 0;
   background: attr(data-tint);
-} 
-.card .title {color: white; line-height: 225%; margin-left: 2% }
-.card .title {text-transform: uppercase}
-.card .title span {font-size:70%}
-.card .title .star:before {content: "\2605"; font-style:normal}
-.card .title .co-star:before {content: "\2729"; font-style:normal}
-.card .title .extra:before {content: "\2726"; font-style:normal}
+}
+.card .title {
+  color: white;
+  line-height: 225%;
+}
+.card .title {
+  text-transform: uppercase;
+}
+.card .title span {
+  font-size: 70%;
+}
 
-.card .weapons {width: 90%; left: 5%; font-size: 82.5%; top: 60%; background: #3a3b3d; border: none; border-collapse:collapse; box-shadow: 0 0 10px rgba(0,0,0,0.5);}
-.card .weapons td {padding: 1% 2% 1% 2%; vertical-align: middle; font-size: 80% }
-.card .weapons thead {background: #3a3b3d; color: white; text-transform: uppercase}
-.card .weapons tbody {background: white }
-.card .weapons tbody tr:nth-child(even) { background: #d0d3d5}
-.card .weapons tbody td.strike { background: black; color: white; text-align: center; width: 10%}
-.card .weapons tbody td.range {text-align: center; ; width: 10%}
-.card .weapons tbody td.range:after {content:'"'}
-.card .weapons tbody td.attack {padding-left:5%; ; width: 30%; position: relative}
-.card .weapons tbody td.effects p {margin:0; padding:0}
-.card .weapons tbody td.effects em {color: #862419; font-weight: bold; font-style: normal}
+.card .weapons {
+  width: 90%;
+  left: 5%;
+  font-size: 82.5%;
+  top: 60%;
+  background: #3a3b3d;
+  border: none;
+  border-collapse: collapse;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.card .weapons td {
+  padding: 1% 2% 1% 2%;
+  vertical-align: middle;
+  font-size: 80%;
+}
+.card .weapons thead {
+  background: #3a3b3d;
+  color: white;
+  text-transform: uppercase;
+}
+.card .weapons tbody {
+  background: white;
+}
+.card .weapons tbody tr:nth-child(even) {
+  background: #d0d3d5;
+}
+.card .weapons tbody td.strike {
+  background: black;
+  color: white;
+  text-align: center;
+  width: 10%;
+}
+.card .weapons tbody td.range {
+  text-align: center;
+  width: 10%;
+}
+.card .weapons tbody td.range:after {
+  content: '"';
+}
+.card .weapons tbody td.attack {
+  padding-left: 5%;
+  width: 30%;
+  position: relative;
+}
+.card .weapons tbody td.effects p {
+  margin: 0;
+  padding: 0;
+}
+.card .weapons tbody td.effects em {
+  color: #862419;
+  font-weight: bold;
+  font-style: normal;
+}
+.card .weapons tbody tr.drive td.attack:before,
 .card .weapons tbody tr.melee td.attack:before,
-.card .weapons tbody tr.range td.attack:before  {
-  font-family: 'icomoon'; content: "\e909"; position:absolute; left: -0.5em;  background: white; border-radius: 100%; font-size: 110%; box-shadow: 0 0 10px rgba(0,0,0,0.5); line-height: 100%; 
+.card .weapons tbody tr.range td.attack:before {
+  font-family: "icomoon";
+  content: "\e909";
+  position: absolute;
+  left: -0.5em;
+  background: white;
+  border-radius: 100%;
+  font-size: 110%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  line-height: 100%;
 }
-.card .weapons tbody tr.range td.attack:before {content: "\e908";}
- 
-.card .ratings {bottom: 1%; color: white; left: 5%; text-align: center; line-height: 90%; font-size: 90%}
-.card .ratings val {display:block;}
+.card .weapons tbody tr.range td.attack:before {
+  content: "\e908";
+}
+.card .weapons tbody tr.drive td.attack:before {
+  content: "\e90a";
+}
 
-.card .checkribbon div {  width: 1.2em; height: 1.2em; margin:0.1em; background: white;  display:inline-block; }
-.core.card .checkribbon.health {
-  width: 100%; bottom:5.5%; text-align: center;
+.card .ratings {
+  bottom: 1%;
+  color: black;
+  left: 5%;
+  text-align: center;
+  line-height: 90%;
+  font-size: 90%;
+}
+.card .ratings val {
+  display: block;
+}
+
+.card .checkribbon {
+  display: inline-flex;
+}
+.card .checkribbon div {
+  width: 1.2em;
+  height: 1.2em;
+  margin: 0.1em;
+  background: white;
+  display: inline-block;
+  border-radius: 100%;
+  border: 0.1em solid black;
+  width: 1.4em;
+  height: 1.4em;
+  text-align: center;
+}
+.card .checkribbon.health {
+  display: inline-block;
+  width: 100%;
+  bottom: 5.5%;
+  text-align: center;
   div {
-    
-    border-radius: 100%;border: 0.1em solid black; width: 1.4em; height: 1.4em; text-align:center
+    width: 1.4em;
+    height: 1.4em;
   }
-
-
 }
 
-.card .tags {color: white; bottom: 1.5%; right: 1%; font-size:130%; }
-.card .tags i {margin-left: 0.2em; vertical-align: bottom}
-.card .tags img {margin-left: 0.2em; height: 1.05em; vertical-align: bottom; margin-bottom: 0.1em}
+.card .tags {
+  color: white;
+  bottom: 1.5%;
+  right: 1%;
+  font-size: 130%;
+}
+.card .tags i {
+  margin-left: 0.2em;
+  vertical-align: bottom;
+}
+.card .tags img {
+  margin-left: 0.2em;
+  height: 1.05em;
+  vertical-align: bottom;
+  margin-bottom: 0.1em;
+}
 
-.card section {
-  top: 12%; font-size: 70%; width: 90%; left: 5%; height: 82%; display:flex; flex-flow: column wrap; overflow: visible; overflow-wrap: break-word ; text-overflow: ellipsis;
- }
-.card section > * {width:50%; padding-right: 3%;}
-.card section heading {text-transform: uppercase; font-weight: bold; font-size: 110%; color: #862419; margin: 0em 0 0.5em 0; display:block}
-.card section .icon-star_icon:before { font-size: 90%; color: #862419;}
-.card section p {margin: 0 0 0.5em 0; break-inside: avoid; widows: 3; white-space:pre-line; }
-.card section p em { color: #862419; font-weight: bold; font-style: normal}
+.card.vehicle,
+.card.model,
+.card.unit {
+  section {
+    top: 12%;
+    font-size: 70%;
+    width: 90%;
+    left: 5%;
+    height: 82%;
+    display: flex;
+    flex-flow: column wrap;
+    overflow: visible;
+    overflow-wrap: break-word;
+    text-overflow: ellipsis;
+
+    > * {
+      width: 50%;
+      padding-right: 3%;
+    }
+    heading {
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 110%;
+      margin: 0em 0 0.5em 0;
+      display: block;
+    }
+    .icon-star_icon:before {
+      font-size: 90%;
+    }
+    p {
+      margin: 0 0 0.5em 0;
+      break-inside: avoid;
+      widows: 3;
+      white-space: pre-line;
+    }
+    p em {
+      font-weight: bold;
+      font-style: normal;
+    }
+  }
+}
+
+.card.front .ratings {
+  color: white;
+}
 
 /* /COMMON */
 
-/* VEHICLE */
-.card.vehicle  {
-    .title .vehicle:before {content: "\2726"; font-style:normal} 
-    .pic {
-      width: 60%; height: 43%; position:absolute; left: 19%; top:11%; display:block; border: 0.41em solid black; background: white; border-radius: 100%;
-      background-size: contain; background-repeat:   no-repeat; background-position: center center;  
-    }
-    .stats {     
-      position: absolute;  color: white; text-transform: uppercase; 
-      background: #3a3b3d; border: 0.15em solid #fff; width: 28%; border-collapse: collapse; 
-      text-align: center; font-size: 100%; line-height: 170%; font-weight: bold;
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
-      display:flex; flex-direction: row; top:50%; width:90%; left: 4%; border:none; background:none; box-shadow: none;
- 
-    }
+/* MODEL  */
+.card.model .stats {
+  position: absolute;
+  color: white;
+  text-transform: uppercase;
+  background: white;
+  border: 1px solid #fff;
+  width: 28%;
+  border-collapse: collapse;
+  text-align: center;
+  font-size: 100%;
+  line-height: 170%;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
 
-    
+.card.model .stats > div > div:last-child {
+  flex-grow: 0;
+  width: 30%;
+  
+  font-size: 110%;
+}
 
-    .stats > div {
-      display:flex; flex-direction: row; margin: 0 1% 0 1%; flex-grow:1;
-      background: #3a3b3d; border: 0.15em solid #fff; width: 28%; border-collapse: collapse; 
-      box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    }
-    .stats > div > div {flex-grow:1; font-weight: normal; font-size:90%}
-    .stats > div > div:last-child {font-size: 110%; width:20%; border-left: 0.10em solid #fff}
+.card.model .stats > div {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  line-height: 2em
+}
+.card.model .stats > div > div {
+  margin: 1px;
+  background: #3a3b3d;
 
-    .stats > div.capacity > div:last-child {background: #c67229}
-    .stats > div.armour > div:last-child {background: #862419;}
-    .stats > div.defence > div:last-child {background: #78a2b2}
-    .description { width:90%; left: 4%; top:54%; font-size: 80%}
-    .sfxribbon { top: 78%; left: 5%; width: 90%; font-size: 90%; margin:0  }
-    .sfxribbon dl {margin:0; display:flex; flex-direction: row; width: 100%; align-content: flex-start; font-size: 90%;}
-    .sfxribbon dt { line-height: 150%; white-space: nowrap; font-weight: bold; width: 35%; text-transform: uppercase}
-    .sfxribbon dd { margin:0; width: 70%;  color: #862419;  }; 
-    .sfxribbon dd span {display:inline-block}
-    .sfxribbon dd span:after {content:", "}
-    .sfxribbon dd span:last-child:after {content:"."}
-    .sfxribbon dd .icon-star_icon:before { font-size: 90%}
+  font-weight: normal;
+  flex-grow: 3;
+  font-size: 90%;
+}
+.card.model .stats > div:last-child > div {
+  border-bottom: none;
+}
+.card.model .stats.left {
+  left: 4%; top:12% 
+}
+.card.model .stats.right {
+  right: 4%; top:12% 
 }
 
 
-.apocalypse.card.vehicle_large {
-  .checkribbon div {
-    margin: 0 0.5em 0 0.5em; width: 1em; height: 1em
+.card.model .stats.right > div {
+  flex-direction: row-reverse;
+}
+.card.model .stats.right > div > div:first-child {
+  border-right: none;
+}
+.card.model .pic {
+  width: 36%;
+  height: 25.5%;
+  position: absolute;
+  left: 30.5%;
+  top: 11%;
+  display: block;
+  border: 0.41em solid black;
+  background: white;
+  border-radius: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.card.model .sfxribbon {
+  top: 42%;
+  left: 5%;
+  width: 90%;
+  font-size: 90%;
+  margin: 0;
+}
+.card.model .sfxribbon dl {
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-content: flex-start;
+  font-size: 90%;
+}
+.card.model .sfxribbon dt {
+  line-height: 150%;
+  white-space: nowrap;
+  font-weight: bold;
+  width: 35%;
+  text-transform: uppercase;
+}
+.card.model .sfxribbon dd {
+  margin: 0;
+  width: 70%;
+}
+.card.model .sfxribbon dd span {
+  display: inline-block;
+}
+.card.model .sfxribbon dd span:after {
+  content: ", ";
+}
+.card.model .sfxribbon dd span:last-child:after {
+  content: ".";
+}
+.card.model .sfxribbon dd .icon-star_icon:before {
+  font-size: 90%;
+}
+
+.card.vehicle_large.front .title {
+  font-size: 1.8em;
+  line-height: 1.8em;
+}
+
+.card.vehicle_large.front {
+  .checkribbon.health {
+    display: flex;
+    top: 0;
+    right: 10%;
+    bottom: 0;
+    height: 10%;
+    width: 40%;
+    overflow: hidden;
+    align-items: center;
+    justify-items: center;
+    flex-direction: row-reverse;
+  }
+}
+
+/* /MODEL */
+
+/* VEHICLE */
+.card.vehicle {
+  .title .vehicle:before {
+    content: "\2726";
+    font-style: normal;
+  }
+  .pic {
+    width: 60%;
+    height: 43%;
+    position: absolute;
+    left: 19%;
+    top: 11%;
+    display: block;
+    border: 0.41em solid black;
+    background: white;
+    border-radius: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  .stats {
+    position: absolute;
+    color: white;
+    text-transform: uppercase;
+    background: #3a3b3d;
+    border: 0.15em solid #fff;
+    width: 28%;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 100%;
+    line-height: 170%;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: row;
+    top: 50%;
+    width: 90%;
+    left: 4%;
+    border: none;
+    background: none;
+    box-shadow: none;
+  }
+
+  .stats > div {
+    display: flex;
+    flex-direction: row;
+    margin: 0 1% 0 1%;
+    flex-grow: 1;
+    background: #3a3b3d;
+    border: 0.15em solid #fff;
+    width: 28%;
+    border-collapse: collapse;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  .stats > div > div {
+    flex-grow: 1;
+    font-weight: normal;
+    font-size: 90%;
+  }
+  .stats > div > div:last-child {
+    font-size: 110%;
+    width: 20%;
+    border-left: 0.1em solid #fff;
+  }
+
+  .stats > div.capacity > div:last-child {
+    background: #c67229;
+  }
+  .stats > div.armour > div:last-child {
+    background: #862419;
+  }
+  .stats > div.defence > div:last-child {
+    background: #78a2b2;
+  }
+  .description {
+    width: 90%;
+    left: 4%;
+    top: 54%;
+    font-size: 80%;
+  }
+  .sfxribbon {
+    top: 78%;
+    left: 5%;
+    width: 90%;
+    font-size: 90%;
+    margin: 0;
+  }
+  .sfxribbon dl {
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-content: flex-start;
+    font-size: 90%;
+  }
+  .sfxribbon dt {
+    line-height: 150%;
+    white-space: nowrap;
+    font-weight: bold;
+    width: 35%;
+    text-transform: uppercase;
+  }
+  .sfxribbon dd {
+    margin: 0;
+    width: 70%;
+    color: #862419;
+  }
+  .sfxribbon dd span {
+    display: inline-block;
+  }
+  .sfxribbon dd span:after {
+    content: ", ";
+  }
+  .sfxribbon dd span:last-child:after {
+    content: ".";
+  }
+  .sfxribbon dd .icon-star_icon:before {
+    font-size: 90%;
   }
 }
 
 .card.vehicle_large {
-  .title .vehicle:before {content: "\2726"; font-style:normal} 
+  &.back {
+    .title {
+      margin-left: 2%;
+    }
+    .checkribbon {
+      display: inline-flex;
+      margin-left: 0.1em;
+      div {
+        height: 0.7em;
+        width: 0.7em;
+        line-height: 1em;
+        margin: 0.1em;
+        border: 0.1em #ddd;
+        box-shadow: 0px 0px 3px #000;
+      }
+    }
+  }
+}
+
+.card.vehicle_large {
+  .title .vehicle:before {
+    content: "\2726";
+    font-style: normal;
+  }
   .pic {
-    width: 88%; height: 52%; border: 1px solid #f0f; left: 6%; top: 8%;
-    background-size: contain; background-repeat:   no-repeat; background-position: center center;  
+    width: 88%;
+    height: 60%;
+    left: 6%;
+    top: 8%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
   }
 
   .contentblock {
-      width: 86%; left: 7%; top:60%; height: 28%; display:flex; flex-direction: row;
+    width: 96%;
+    left: 2%;
+    top: 68%;
+    height: 28%;
+    display: flex;
+    flex-direction: row;
 
-      .stats {
-        display:flex; flex-direction: column; width: 26%; border:none; background:none; box-shadow: none;
-      }
-      .stats > div {
-        display:flex; flex-direction: column; margin: 2%; flex-grow:1; 
-        background: #fff; border: 0.15em solid #fff;  border-collapse: collapse; 
-        box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    .stats {
+      display: grid;
+      grid-gap: 5%;
+      grid-template-columns: 1fr 1fr;
+      width: 28%;
+      border: none;
+      background: none;
+      box-shadow: none;
+    }
+    .stats > div {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      background: #fff;
+      border: 0.15em solid #fff;
+      border-collapse: collapse;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 
-        > div {
-          background:#343432; flex-grow:1; color: white; text-align: center; text-transform: uppercase;
+      > div {
+        background: #343432;
+        flex-grow: 1;
+        color: white;
+        text-align: center;
+        text-transform: uppercase;
 
-          var {background: #b86c30; border-radius: 100%; width: 1.5em; height:1.5em; display:inline-block; line-height: 1.75em; font-size: 1.5em; font-weight: bold}
+        var {
+          background: #b86c30;
+          border-radius: 100%;
+          width: 1.5em;
+          height: 1.5em;
+          display: inline-block;
+          line-height: 1.75em;
+          font-size: 1.5em;
+          font-weight: bold;
+          margin-bottom: 0.1em;
         }
+      }
+    }
 
+    .stats.gear > div {
+      div:first-child {
+        display: none;
+      }
+      &.parked div {
+        background: #78a2b2;
+      }
+      &.slow div {
+        background: #862419;
+      }
+      &.fast div {
+        background: #7f8d73;
       }
 
-
-      .stats:first-child > div {padding-left: 40%}
-      .stats:last-child > div  {padding-right: 40%;}
-
-      .weapons {
-        margin: 0.5% 1% 0.5% 1%;
-        thead .effects {background: #222; text-align: center}
-        tbody tr {height: 1.5em; font-size: 1.5em}
+      var {
+        background: none;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+        font-size: 1em;
       }
+    }
 
-  }
+    .stats.gear {
+      position: relative;
+      &:after {
+        content: "";
+        position: absolute;
+        background: url(images/apoc/logo.png) no-repeat center center;
+        display: block;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-size: 40%;
+      }
+    }
 
-  
-  .description { width:90%; left: 4%; top:54%; font-size: 80%}
-  .sfxribbon { 
-    top: 78%; left: 5%; width: 90%; font-size: 90%; margin:0 ;
-  
-    dl {
-      margin:0; display:flex; flex-direction: row; width: 100%; align-content: flex-start; font-size: 90%;
-      dt { line-height: 150%; white-space: nowrap; font-weight: bold; width: 35%; text-transform: uppercase}
-      dd { 
-        margin:0; width: 70%;  color: #862419;
-        span {display:inline-block}
-        span:after {content:", "}
-        span:last-child:after {content:"."}
-        .icon-star_icon:before { font-size: 90%}
-      };
+    .weapons {
+      margin: 0.5% 1% 0.5% 1%;
+      thead .effects {
+        background: #222;
+        text-align: center;
+      }
+      tbody tr {
+        height: 1.2em;
+        font-size: 1.4em;
+      }
     }
   }
 
-  .checkribbon.health {
-    bottom:3.6%; right:0; width:42%; left:auto;
+  .description {
+    width: 90%;
+    left: 4%;
+    top: 54%;
+    font-size: 80%;
   }
-  .checkribbon.engine {
-    bottom:3.6%; left:0; width:42%;  left:auto; text-align: right
+  .sfxribbon {
+    top: 78%;
+    left: 5%;
+    width: 90%;
+    font-size: 90%;
+    margin: 0;
+
+    dl {
+      margin: 0;
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      align-content: flex-start;
+      font-size: 90%;
+      dt {
+        line-height: 150%;
+        white-space: nowrap;
+        font-weight: bold;
+        width: 35%;
+        text-transform: uppercase;
+      }
+      dd {
+        margin: 0;
+        width: 70%;
+        color: #862419;
+        span {
+          display: inline-block;
+        }
+        span:after {
+          content: ", ";
+        }
+        span:last-child:after {
+          content: ".";
+        }
+        .icon-star_icon:before {
+          font-size: 90%;
+        }
+      }
+    }
   }
 
-  .checkribbon.body {
-    top:3.6%; left:5%;  width:42%; right:auto; text-align: left
-  }
-  .checkribbon.chassis {
-    top:3.6%; right:5%; width:42%;  left:auto; text-align: right
+  &.back section {
+    top: 20%;
+    font-size: 100%;
+    width: 29%;
+    left: 5.5%;
+    height: 75%;
+    display: flex;
+    flex-flow: column wrap;
+    overflow: visible;
+    overflow-wrap: break-word;
+    text-overflow: ellipsis;
+
+    > * {
+      width: 100%;
+      padding-right: 3%;
+    }
+    heading {
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 110%;
+      margin: 0em 0 0.2em 0;
+      display: block;
+      line-height: 0.8em;
+    }
+    .icon-star_icon:before {
+      font-size: 90%;
+      color: #862419;
+    }
+    p {
+      margin: 0 0 0.1em 0;
+      break-inside: avoid;
+      widows: 3;
+      font-size: 0.95em;
+    }
+    p em {
+      color: #862419;
+      font-weight: bold;
+      font-style: normal;
+    }
+    i {
+      font-size: 0.8em;
+    }
   }
 
-  .checkribbon.trunk {
-   top: 0; right:3%;  ; left:auto; text-align: left; height:55%; transform: rotate(180deg);
-   div {display:block; flex-grow: 0; height: 1em; width: 1em; margin:0 0 1em 0}
+  &.back .mods {
+    top: 20%;
+    font-size: 100%;
+    width: 47%;
+    left: 36%;
+    height: 52%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    table {
+      width: 48%;
+      margin-bottom: 0.5em;
+      margin-right: 2%;
+    }
+    thead {
+      text-transform: uppercase;
+      th {
+        text-align: left;
+      }
+      td {
+        font-size: 0.7em;
+      }
+    }
+    tbody {
+      font-size: 0.8em;
+      line-height: 0.65em;
+      .mounted .name:before {
+        background: black;
+      }
+      .name:before {
+        content: "";
+        display: inline-block;
+        width: 0.65em;
+        height: 0.65em;
+        margin-right: 0.2em;
+        background: white;
+        border: 1px solid #000;
+      }
+      .name {
+        white-space: pre;
+        &.indent {
+          padding-left: 1em;
+        }
+      }
+      .ratings {
+        width: 20%;
+        text-align: center;
+        color: #000;
+      }
+    }
   }
 
-  .checkribbon.hood {
-    top: 0; left:3%;  ; right:auto; text-align: left; height:55%; transform: rotate(180deg);
-    div {display:block; flex-grow: 0; height: 1em; width: 1em; margin:0 0 1em 0}
-   }
-  
+  &.back div > .totalratings {
+    top: 90%;
+    left: 36%;
+    width: 41%;
+    text-transform: uppercase;
+    font-size: 0.8em;
+    text-align: right;
+    .ratings {
+      display: inline-block;
+      background: white;
+      border: 1px solid #000;
+      padding: 0.1em 2em 0.1em 2em;
+      val {
+        display: inline;
+      }
+    }
+  }
 }
 
 .viewport.standard {
   .card {
-    width: 288px; height: 400px; 
+    width: 288px;
+    height: 400px;
   }
 }
 
 .viewport.large > div {
-  display:inline-flex; flex-direction: column;
+  display: inline-flex;
+  flex-direction: column;
   .card {
-    width: 671px; height: 477px;
+    width: 671px;
+    height: 474px;
   }
   .card.vehicle_large {
-    &.apocalypse {
-      &.front .background {background: url(images/2e_apoc_vehicle_front_fade.jpg) ; background-size: contain;}
-      &.back .background {background: url(images/2e_apoc_vehicle_back_fade.jpg) ; background-size: contain;}
+    &.back {
+      overflow: hidden;
+    }
+    &.back .pic {
+      transform: rotate(90deg);
+      transform-origin: left top;
+      left: 120%;
+      top: 0%;
+      width: 75%;
     }
   }
 }
 
-
 /* /VEHICLE */
 
 /* UNIT */
-.card.unit .title .unit:before
-  {content: "\2726"; font-style:normal} 
-.card.front.unit .background {background: url(images/2e_unit_back.jpg) ; background-size: cover;}
-.card.unit .tags {bottom:auto; top:2%; right:2%}
-.card.unit.back .content { width:90%; left: 4%; top:12%; height:80%; position:relative; font-size:80% }
-.card.unit.back .content .model {display: flex;margin-left:10%; width:80%}
-.card.unit.back .content .model dt {font-size: 130%; color: #862419; font-weight:bold; flex-grow:1}
-.card.unit.back .content .model dd {flex-grow:6; margin:0; white-space: pre-line}
+.card.unit .title .unit:before {
+  content: "\2726";
+  font-style: normal;
+}
+.card.front.unit .background {
+  background: url(images/core/2e_unit_back.jpg);
+  background-size: cover;
+}
+.card.unit .tags {
+  bottom: auto;
+  top: 2%;
+  right: 2%;
+}
+.card.unit.back .content {
+  width: 90%;
+  left: 4%;
+  top: 12%;
+  height: 80%;
+  position: relative;
+  font-size: 80%;
+}
+.card.unit.back .content .model {
+  display: flex;
+  margin-left: 10%;
+  width: 80%;
+}
+.card.unit.back .content .model dt {
+  font-size: 130%;
+  color: #862419;
+  font-weight: bold;
+  flex-grow: 1;
+}
+.card.unit.back .content .model dd {
+  flex-grow: 6;
+  margin: 0;
+  white-space: pre-line;
+}
 .card.unit.back .content .pic {
-   position:absolute; bottom:5%; right:0; z-index: -1;
-   width: 50%;
-   height: 50%;
-   position: absolute;
-   background-size: contain;
-   background-repeat: no-repeat;
-   background-position: right;
-  }
+  position: absolute;
+  bottom: 5%;
+  right: 0;
+  z-index: -1;
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
+}
 /* /UNIT */
 /* GADGET */
-.card.gadget {
-  width: 288px; height: 200px; 
+.card.gadget_small {
+  width: 288px;
+  height: 200px;
 }
-.card.front.gadget .background {background: url(images/2e_gadget_low.jpg) ; background-size: cover;}
-.card.back.gadget .background {background-size: 100%; background-position: top}
-.card.gadget .tags {bottom:auto; top:2%; right:2%}
-.card.gadget.back .content { width:100%; left: 0%; top:24%; height:76%; position:relative; font-size:85%; display:flex; flex-direction: row; margin:0; align-items: center }
-.card.gadget.back .content .description { padding-left:0.25em}
+.card.front.gadget_small .background {
+  background: url(images/core/2e_gadget_low.jpg);
+  background-size: cover;
+}
+.card.back.gadget_small .background {
+  background-size: 100%;
+  background-position: top;
+}
+.card.gadget_small .tags {
+  bottom: auto;
+  top: 2%;
+  right: 2%;
+}
+.card.gadget_small.back .content {
+  width: 100%;
+  left: 0%;
+  top: 24%;
+  height: 76%;
+  position: relative;
+  font-size: 85%;
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  align-items: center;
+}
+.card.gadget_small.back .content .description {
+  padding-left: 0.25em;
+}
 
-.card.gadget.back .content > * {flex-grow: 1; max-width: 46%;}
-.card.gadget.back .stats {border-right: 1px solid black; height:90%  }
-.card.gadget.back .stats > div {display:flex; flex-direction: row; margin-bottom: 0.5em}
-.card.gadget.back .stats > div > div:first-child {padding: 0.25em; width: 40%; text-align: center; color: white; text-transform: uppercase; font-size:100%; height:1.25em}
-.card.gadget.back .stats > div > div:last-child {padding: 0.25em 0 0 0.25em}
-.card.gadget.back .stats > div.play > div:first-child {background:#862419;}
-.card.gadget.back .stats > div.cost > div:first-child {background:  #c67229}
-.card.gadget.back .stats > div.range > div:first-child {background: #78a2b2}
-.card.gadget.back .stats > div.strike > div:first-child {background: #7f8d73}
+.card.gadget_small.back .content > * {
+  flex-grow: 1;
+  max-width: 46%;
+}
+.card.gadget_small.back .stats {
+  border-right: 1px solid black;
+  height: 90%;
+}
+.card.gadget_small.back .stats > div {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 0.5em;
+}
+.card.gadget_small.back .stats > div > div:first-child {
+  padding: 0.25em;
+  width: 40%;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  font-size: 100%;
+  height: 1.25em;
+}
+.card.gadget_small.back .stats > div > div:last-child {
+  padding: 0.25em 0 0 0.25em;
+}
+.card.gadget_small.back .stats > div.play > div:first-child {
+  background: #862419;
+}
+.card.gadget_small.back .stats > div.cost > div:first-child {
+  background: #c67229;
+}
+.card.gadget_small.back .stats > div.range > div:first-child {
+  background: #78a2b2;
+}
+.card.gadget_small.back .stats > div.strike > div:first-child {
+  background: #7f8d73;
+}
 
 /* /GADGET */
 
-
-.viewport {display:inline-flex; flex-direction: row}
-.viewport.portrait {flex-direction: column; }
-.viewport.portrait .card.back { transform: rotate(180deg); }
-
+.viewport {
+  display: inline-flex;
+  flex-direction: row;
+}
+.viewport.portrait {
+  flex-direction: column;
+}
+.viewport.portrait .card.back {
+  transform: rotate(180deg);
+}
 
 @media screen {
-  .viewport {  margin: 2mm;  padding: 10px; position: relative}
-  .viewport.selected {     background: rgba(0,255,255,0.2);}
+  .viewport {
+    margin: 2mm;
+    padding: 10px;
+    position: relative;
+  }
+  .viewport.selected {
+    background: rgba(0, 255, 255, 0.2);
+  }
   /*transform: scale(1.5); transform-origin: left top*/
 }
 
@@ -340,46 +986,69 @@ var  {font-style: normal}
     margin: 10mm;
   }
   .card {
-    width: 63.5mm; height: 88mm; position:relative;
+    width: 63.5mm;
+    height: 88mm;
+    position: relative;
   }
 
-  .card.gadget {
-    width: 63.5mm; height: 44mm; position:relative;
+  .card.gadget_small {
+    width: 63.5mm;
+    height: 44mm;
+    position: relative;
   }
-  
-
 
   .canvas {
-    overflow:visible; margin: 6mm; 
+    overflow: visible;
+    margin: 6mm;
   }
-  .cellophan+.cellophan { border-color: rgba(0,0,0,0.5); border-width: 0.25mm;}
+  .cellophan + .cellophan {
+    border-color: rgba(0, 0, 0, 0.5);
+    border-width: 0.25mm;
+  }
 
-  .cellophan {position: relative}
-  .cellophan:before, .cellophan:after {
+  .cellophan {
+    position: relative;
+  }
+  .cellophan:before,
+  .cellophan:after {
     position: absolute;
-    content: '';
+    content: "";
     border: solid black;
     z-index: -1;
-    
   }
   .cellophan:before {
-    top: -3mm; bottom: -3mm;
-    left: 0px; right: 0px;
+    top: -3mm;
+    bottom: -3mm;
+    left: 0px;
+    right: 0px;
     border-width: 0 1px 0 1px;
-    border-style: dotted
+    border-style: dotted;
   }
   .cellophan:after {
-    left: -3mm; right: -3mm;
-    top: 0px; bottom: 0px;
+    left: -3mm;
+    right: -3mm;
+    top: 0px;
+    bottom: 0px;
     border-width: 1px 0 1px 0;
-    border-style: dotted
+    border-style: dotted;
   }
 
-  .viewport { page-break-after: always; height: 88mm;  display:block; float:left; position: relative; top:3mm }
-  
+  .viewport {
+    page-break-after: always;
+    height: 88mm;
+    display: block;
+    float: left;
+    position: relative;
+    top: 3mm;
+  }
+
   /*.card.back { transform: rotate(180deg)}*/
-  .card section p {margin: 0 0 0.2em 0; white-space: unset; font-size: 0.98em}
-  .card .sfxribbon dl span{font-size:95% !important}
-
+  .card section p {
+    margin: 0 0 0.2em 0;
+    white-space: unset;
+    font-size: 0.98em;
+  }
+  .card .sfxribbon dl span {
+    font-size: 95% !important;
+  }
 }
-

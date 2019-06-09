@@ -1,7 +1,7 @@
 {
   "__version": "0.0.1",
   "__card": "vehicle_large",
-  "__theme":"core",
+  "__theme":"apocalypse",
   "__custom":{},
   "health":1,
   "genres":[],
@@ -17,13 +17,7 @@
       "engine":0
   },
   "special_effects":[],
-  "type":"Extended Vehicle",
+  "type":{"Bike":1},
   "profile":"",
-  "slots":{
-    "hood":[],
-    "body":[],
-    "chassis":[],
-    "trunk":[],
-    "engine":[]
-  }
+  "mods":[]
 }

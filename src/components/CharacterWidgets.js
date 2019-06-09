@@ -8,6 +8,7 @@ import { Marked } from './Ui'
 import Holdable from 'react-holdable'
 import UnsupportedField from '../../node_modules/react-jsonschema-form/lib/components/fields/UnsupportedField';
 import uuid from 'uuid';
+import dotProp from 'dot-prop';
 
 const parseTrait=(label,text)=>{
     let trait={}
@@ -17,12 +18,12 @@ const parseTrait=(label,text)=>{
         trait=Object.assign({},text)
     }
     trait.cost=trait.cost || 0
-    trait.name=label
+    if (!trait.name) trait.name=label
     return trait;
 } 
 
-export class SFXSelect extends React.Component {
-    
+class TraitSelect extends React.Component {
+
     constructor(props){
         super(props)
         this.handleClick=this.handleClick.bind(this)
@@ -30,6 +31,8 @@ export class SFXSelect extends React.Component {
             data: {},
             value:null
         }
+        this.placeholder="Select item to add"
+        
     }
 
     handleClick(e){
@@ -38,70 +41,80 @@ export class SFXSelect extends React.Component {
         this.props.widget.onChange([...formData,this.state.value],{ validate: false })
     }
 
-    componentDidMount()
-    {
-        fetch(require('../data/sfx.yaml')).then((response)=>{
-            response.text().then(function(txt){this.setState({data:Yaml.safeLoad(txt)})}.bind(this))
-        })
+    groupFilter(i){
+        return true;
     }
+    traitFilter(i){
+        return true;
+    }
+    
     render(){
         return <FormGroup>
-                <InputGroup><FormControl componentClass="select" placeholder="Select SFX to add" defaultValue="" onChange={e=>{this.setState(Object.assign(this.state,{value:JSON.parse(e.target.value)}))}}>
-            <option>Select SFX to append</option>
-            {Object.entries(this.state.data).map((entry,i)=>{
+                <InputGroup><FormControl componentClass="select" placeholder={this.placeholder} defaultValue="" onChange={e=>{this.setState(Object.assign(this.state,{value:JSON.parse(e.target.value)}))}}>
+            <option>{this.placeholder}</option>
+            {Object.entries(this.state.data).filter(this.groupFilter.bind(this)).map((entry,i)=>{
                 let [group,item]=entry;
-                return <optgroup key={i} label={group}>{Object.entries(item).map((sfx_entry,j)=>{
+                return <optgroup key={i} label={group}>{Object.entries(item).filter(this.traitFilter.bind(this)).map((sfx_entry,j)=>{
                     let [label,value]=sfx_entry;
                     return <option key={j} value={JSON.stringify(parseTrait(label, value))}>{label}</option>
                 })}</optgroup>
             })}
-        </FormControl><InputGroup.Button><Button bsStyle="success" onClick={e=>{this.handleClick(e)}}>Add SFX</Button></InputGroup.Button></InputGroup></FormGroup>
+        </FormControl><InputGroup.Button><Button bsStyle="success" onClick={e=>{this.handleClick(e)}}>Add</Button></InputGroup.Button></InputGroup></FormGroup>
+    }
+}
+
+export class SFXSelect extends TraitSelect {
+    
+    componentDidMount()
+    {
+        this.placeholder="Select SFX to add"
+
+        fetch(require('../data/sfx.yaml')).then((response)=>{
+            response.text().then(function(txt){this.setState({data:Yaml.safeLoad(txt)})}.bind(this))
+        })
     }
 }
 
 SFXSelect=connect((state)=>({currentCharacter: state.currentCharacter}))(SFXSelect)
 
-export class SQSelect extends React.Component {
-    
-    constructor(props){
-        super(props)
-        this.handleClick=this.handleClick.bind(this)
-        this.state={
-            data: {},
-            value:null
-        }
-    }
-
-    handleClick(e){
-        if (!this.state.value) return;
-        let formData=this.props.widget.formData;
-        this.props.widget.onChange([...formData,this.state.value],{ validate: false })
-    }
+export class SQSelect extends TraitSelect {
 
     componentDidMount()
     {
+
+        this.placeholder="Select Star quality to add"
+
         fetch(require('../data/sfx-sq.yaml')).then((response)=>{
             response.text().then(function(txt){this.setState({data:Yaml.safeLoad(txt)})}.bind(this))
         })
     }
-    render(){
-        return <FormGroup>
-                <InputGroup><FormControl componentClass="select" placeholder="Select SFX to add" defaultValue="" onChange={e=>{this.setState(Object.assign(this.state,{value:JSON.parse(e.target.value)}))}}>
-            <option>Select SFX to append</option>
-            {Object.entries(this.state.data).map((entry,i)=>{
-                let [group,item]=entry;
-                return <optgroup key={i} label={group}>{Object.entries(item).map((sfx_entry,j)=>{
-                    let [label,value]=sfx_entry;
-                    return <option key={j} value={JSON.stringify(parseTrait(label, value))}>{label}</option>
-                })}</optgroup>
-            })}
-        </FormControl><InputGroup.Button><Button bsStyle="success" onClick={e=>{this.handleClick(e)}}>Add SFX</Button></InputGroup.Button></InputGroup></FormGroup>
-    }
+    
 }
 
 SQSelect=connect((state)=>({currentCharacter: state.currentCharacter}))(SQSelect)
 
+export class ModSelect extends TraitSelect {
+    componentDidMount()
+    {
+        this.placeholder="Select Mod to add"
+        fetch(require('../data/mods.yaml')).then((response)=>{
+            response.text().then(function(txt){this.setState({data:Yaml.safeLoad(txt)||{}})}.bind(this))
+        })
+    }
 
+    groupFilter(i) {
+        let type=null
+        if (type=dotProp.get(this.props.widget.formContext,"type",null)){
+            type=Object.keys(type)[0];
+            return i[0].search(new RegExp("^"+type,"gi"))>-1;
+        }
+        return true;
+    }
+
+    
+}
+
+ModSelect=connect((state)=>({currentCharacter: state.currentCharacter }))(ModSelect)
 
 export const PROFILES=readContext(require.context('../data/casts', true))
 

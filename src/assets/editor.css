@@ -1,3 +1,5 @@
+
+
 .characterEditor { height: 100%; overflow: auto}
 .characterEditor .field-description {
     font-size: smaller; color: #666; margin-left: 1em; 
@@ -14,6 +16,12 @@
 
 .characterEditor select {border-top: 1px solid #eee !important} 
 
+.characterEditor fieldset .form-group {display:flex}
+
+.characterEditor fieldset .form-group .field-integer >* {flex-grow: 1}
+.characterEditor fieldset .form-group .field-integer p,
+.characterEditor fieldset .form-group .field-integer input  {width: 30%}
+
 .profileSelector .panel-body {padding:0 !important}
 .profileSelector .listing { overflow: auto; height:400px; }
 .profileSelector .listing .miniCard {margin: 5px}
@@ -23,3 +31,4 @@
 
 .editorToolBar .dropdown ,
 .editorToolBar .dropdown > button { width:100% !important}
+

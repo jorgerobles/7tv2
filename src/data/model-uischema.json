@@ -17,6 +17,7 @@
         "genres",
         "notes",
         "__custom",
+        "__theme",
         "*"
     ],
     "__custom": {
@@ -29,7 +30,9 @@
             }
         }
     },
-
+    "__theme": {
+        "ui:widget":"select"
+    },
 
     "genres": {
         "ui:widget": "checkboxes"

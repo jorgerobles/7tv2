@@ -9,8 +9,20 @@ import { SplitButton, MenuItem, Button, ButtonToolbar, Glyphicon, DropdownButton
 import { sendAsFile, sendAsImage, getAsImage } from '../lib/helpers'
 import slug from 'slug';
 import jsPDF from 'jspdf';
-import chunk from 'chunk';
+import '../assets/fonts/din-cond/style.css';
+
 import { resolve } from 'path';
+import sortBy from 'sort-by'
+import { range } from 'rxjs';
+
+const PAGE_WIDTH=10.55;
+const PAGE_HEIGHT=7.55;
+const MARGIN_X=0.3;
+const MARGIN_Y=0.3;
+const CARD_WIDTH=5;
+const CARD_HEIGHT=3.5;
+const CARD_OFFSETX=0;
+const CARD_OFFSETY=-0.03
 
 export class FileField extends React.Component {
 
@@ -112,47 +124,95 @@ const getImageDimensions= (file) => {
 
 export const downloadCharactersAsPDF=(cast,fileName='7TVcast',status=console.warn)=>{
 
-    const PAGE_WIDTH=10.55;
-    const PAGE_HEIGHT=7.55;
-    const MARGIN_X=0.3;
-    const MARGIN_Y=0.3;
-    const CARD_WIDTH=5;
-    const CARD_HEIGHT=3.5;
-    const CARD_OFFSETX=0;
-    const CARD_OFFSETY=-0.03
+    
 
     let doc = new jsPDF({orientation: 'landscape',format:[PAGE_WIDTH,PAGE_HEIGHT],unit:'in'});
+        
+        
+
     var i=0;
-    let promises=cast.map((item)=>{
+    let promises=cast.sort(sortBy('__card')).map((item)=>{
         return new Promise((rs,rj)=>{
             getAsImage(document.getElementById(item.id),{scale:2}).then((img)=>{
                 status("Processing image "+(++i)+"/"+cast.length);
-                rs({dataURL: img,type:item.__card})
+                rs({dataURL: img,type:item.__card.replace(/.*_(.*)$/,'$1')})
             });
     })});
-    const positions=[{x:0,y:0},{x:CARD_WIDTH+CARD_OFFSETX,y:0},{x:0,y:CARD_HEIGHT+CARD_OFFSETY},{x:CARD_WIDTH+CARD_OFFSETX,y:CARD_HEIGHT+CARD_OFFSETY}];
+    
     
 
     Promise.all(promises).then((items)=>{
-        chunk(items,positions.length).forEach((c,page)=>{
-            status("Generating page "+(page+1))
-            if (page) doc.addPage();
-            doc.setDrawColor(255,255,255);
-            doc.setLineWidth(0.01)
-            c.forEach((item,j)=>{
-                let {dataURL,type} = item;
-                doc.addImage(dataURL,'JPEG',MARGIN_X+positions[j].x,MARGIN_Y+positions[j].y,CARD_WIDTH,type.toLowerCase()!='gadget'?CARD_HEIGHT:CARD_HEIGHT/2)
-            })
+        chunk(items,0,(i,p)=>{return i.type!==p.type;}).forEach((c,cn)=>{ 
+            let positions = cardGrid(c[0].type);
+            chunk(c,positions.length).forEach((itemsperpage,page)=>{
+                
+                status("Generating page "+(page+1))
+                if (cn||page) doc.addPage();
+                itemsperpage.forEach((item,j)=>{
+                    let {dataURL,type} = item;
+                    let [fw,fh] = cardFactor(type);
+                    doc.addImage(dataURL,'JPEG',positions[j].x,positions[j].y,CARD_WIDTH*fw,CARD_HEIGHT*fh)
+                })
+                cardCuts(c[0].type,doc)
+            });
+
+
+        });
+        doc.save(fileName+'.pdf')
+        status(null)
+       
+    })
+
+}
+
+const chunk = (r,j,fn=(i)=>{return false;}) => r.reduce((a,b,i,g) => {
+    if (!i || j&&(!(a[a.length-1].length % j)) ||  (fn(b,g[!i?i:i-1]))) a.push([])
+        a[a.length-1].push(g[i])
+    return a;
+}, []);
+
+
+const cardGrid=function(type){
+
+    let [fw,fh] = cardFactor(type);
+
+    switch(type){
+        case 'small': 
+            return Array.from(Array(8).keys()).map((v)=>({x:(v%2)*CARD_WIDTH*fw+MARGIN_X, y: Math.floor(v/2)*CARD_HEIGHT*fh+MARGIN_Y}));
+        break;
+        case 'large': 
+            return Array.from(Array(2).keys()).map((v)=>({x:(v%2)*CARD_WIDTH*fw+MARGIN_X, y: Math.floor(v/2)*CARD_HEIGHT*fh+MARGIN_Y}));
+        break;
+        default: 
+            return Array.from(Array(4).keys()).map((v)=>({x:(v%2)*CARD_WIDTH*fw+MARGIN_X, y: Math.floor(v/2)*CARD_HEIGHT*fh+MARGIN_Y}));
+        break;
+    } 
+}
+
+const cardCuts=function(type,doc){
+    doc.setLineWidth(0.01)
+    doc.setDrawColor(255,255,255);
+    switch(type){
+        case 'large':
+            dottedLine(doc,0,MARGIN_Y+CARD_HEIGHT+CARD_OFFSETY,PAGE_WIDTH,MARGIN_Y+CARD_HEIGHT+CARD_OFFSETY,0.01)
+        break;
+        default:
             dottedLine(doc,MARGIN_X+CARD_WIDTH/2,0,MARGIN_X+CARD_WIDTH/2,PAGE_HEIGHT,0.05)
             dottedLine(doc,MARGIN_X+CARD_WIDTH,0,MARGIN_X+CARD_WIDTH,PAGE_HEIGHT,0.01)
             dottedLine(doc,MARGIN_X+CARD_WIDTH/2*3,0,MARGIN_X+CARD_WIDTH/2*3,PAGE_HEIGHT,0.05)
             dottedLine(doc,0,MARGIN_Y+CARD_HEIGHT+CARD_OFFSETY,PAGE_WIDTH,MARGIN_Y+CARD_HEIGHT+CARD_OFFSETY,0.01)
-        })
-        doc.save(fileName+'.pdf')
-        status(null)
-    })
-
+        break;
+    }
 }
+
+const cardFactor=function(type){
+    switch(type){
+        case 'small': return [1,0.5]; break;
+        case 'large': return [1,2]; break;
+        default: return [1,1];
+    } 
+}
+
 
 export const Marked = ({md="", Component="span", Options={},...rest})=>{
     let __html=marked(md,Options);
@@ -186,7 +246,7 @@ export class Toolbar extends React.Component {
                 <MenuItem eventKey="3" onClick={e=>this.props.dispatch({ type: 'CHARACTER_NEW', payload:{ __card:'vehicle_large'} })}>Extended Vehicle</MenuItem>
                 <MenuItem eventKey="4" onClick={e=>this.props.dispatch({ type: 'CHARACTER_NEW', payload:{ __card:'unit'} })}>Unit</MenuItem>
                 <hr/>
-                <MenuItem eventKey="5" onClick={e=>this.props.dispatch({ type: 'CHARACTER_NEW', payload:{ __card:'gadget'} })}>Gadget</MenuItem>
+                <MenuItem eventKey="5" onClick={e=>this.props.dispatch({ type: 'CHARACTER_NEW', payload:{ __card:'gadget_small'} })}>Gadget</MenuItem>
                </DropdownButton>
               
                 

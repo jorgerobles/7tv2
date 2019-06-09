@@ -10,8 +10,8 @@ import '../assets/editor.css'
 
 
 import { dataURItoBlob } from '../lib/helpers'
-import { ToolTextareaWidget , ToolArrayField, CollapseObjectField, PictureWidget, PickColorWidget} from './FormWidgets'
-import { SFXSelect, SQSelect, ProfileSelector, MiniCard} from './CharacterWidgets'
+import { ToolTextareaWidget , ToolArrayField, CollapseObjectField, PictureWidget, PickColorWidget, ObjectSelectField} from './FormWidgets'
+import { SFXSelect, SQSelect, ModSelect, ProfileSelector, MiniCard} from './CharacterWidgets'
 
 const getCharacterById=(id, cast)=>{
     return cast.find(item=>{return item.id == id})
@@ -32,6 +32,7 @@ const log = (type) => console.log.bind(console, type);
 
 const SfxArrayField=ToolArrayField([<SFXSelect/>])
 const SQArrayField=ToolArrayField([<SQSelect/>])
+const ModArrayField=ToolArrayField([<ModSelect/>])
 
 export class CharacterEditor extends React.Component {
     
@@ -63,7 +64,9 @@ export class CharacterEditor extends React.Component {
         const fields={
             collapseObjectField:CollapseObjectField,
             sfxArrayField:SfxArrayField,
-            sqArrayField:SQArrayField
+            sqArrayField:SQArrayField,
+            modArrayField:ModArrayField,
+            objectSelectField:ObjectSelectField
         }
         return <div className="paper characterEditor">
             <div style={{margin:20}}>
@@ -74,6 +77,7 @@ export class CharacterEditor extends React.Component {
                 uiSchema={uiSchema}
                 liveValidate
                 formData = {character}
+                formContext = {character}
                 widgets={widgets}
                 fields={fields}
                 ><Button bsStyle="danger" block type="submit">Validate</Button></Form>

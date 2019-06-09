@@ -1,0 +1,101 @@
+{
+    "definitions": {},
+    "id": "http://crooked-dice.co.uk/gadget.json",
+    "type": "object",
+    "required": [
+      "name",
+      "cost",
+      "play",
+      "description"
+    ],
+    "additionalProperties":true,
+    "properties": {
+      "name": {
+        "$id": "#/properties/name",
+        "type": "string",
+        "title": "Name of the gadget",
+        "default": ""
+      },
+      
+      "cost": {
+        "$id": "#/properties/cost",
+        "type": "integer",
+        "title": "Cost",
+        "default": 0
+        
+      },
+      "play": {
+        "$id": "#/properties/play",
+        "type": "string",
+        "title": "Way of play",
+        "default": ""
+        
+      },
+      "weapon": {
+        "$id": "#/properties/weapon",
+        "type": "array",
+        "title": "Behaves as weapon",
+        "maxItems":1,
+        "items":{
+          "type":"object",
+          "properties": {
+            "strike": {
+              "$id": "#/properties/weapon/strike",
+              "type": "integer",
+              "title": "Strike",
+              "default": null
+            },
+            "range": {
+              "$id": "#/properties/weapon/range",
+              "type": "integer",
+              "title": "Range",
+              "default": null
+              
+            }
+          }
+        }
+       
+      },
+      
+      "description": {
+        "$id": "#/properties/description",
+        "type": "string",
+        "title": "Effects and more",
+        "default": ""
+        
+      },
+      "profile": {
+        "default":"",
+        "description": "Reference to the base profile",
+        "id": "/properties/profile",
+        "title": "Profile",
+        "type": "string"
+      },
+      "__custom":{
+        "title":"Custom",
+        "id": "/properties/__custom",
+        "type":"object",
+        "properties":{
+          "genres":{
+            "id": "/properties/__custom/genres",
+             "title":"Custom Genres",
+             "type": "array",
+             "items": {
+                "id": "/properties/__custom/genres/items",
+                "title": "Custom Icon",
+                "type": "string"
+             }
+          },
+          "tint": {
+            "title":"Card tint",
+            "id": "/properties/__custom/tint",
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 360,
+            "description":"Change card hue"
+          }
+        }
+      
+      }
+    }
+  }
