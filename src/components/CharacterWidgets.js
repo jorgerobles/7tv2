@@ -5,7 +5,7 @@ import {Accordion, Panel,Button, FormControl, FormGroup, InputGroup, Label } fro
 import Yaml from 'js-yaml';
 import { readContext } from '../lib/helpers'
 import { Marked } from './Ui'
-import Holdable from 'react-holdable'
+//import Holdable from 'react-holdable'
 import UnsupportedField from '../../node_modules/react-jsonschema-form/lib/components/fields/UnsupportedField';
 import uuid from 'uuid';
 import dotProp from 'dot-prop';
@@ -171,10 +171,7 @@ export class ProfileSelector extends React.Component {
                     {Object.entries(chr).map(
                         (item,j)=>{
                             let [name,char] = item;
-                            return <Holdable key={uuid.v4()} 
-                                onHoldComplete={e=>{create(item)}} 
-                                onClickComplete={e=>{select(item)}} 
-                            ><MiniCard character={item} key={j} selected={this.state.selected && (this.state.selected===name)} /></Holdable>
+                            return <MiniCard character={item} key={j} selected={this.state.selected && (this.state.selected===name)} onClick={e=>{select(item)}} />
                         }
                     )}
                 </div></Panel>

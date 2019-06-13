@@ -44,5 +44,9 @@
                 "ui:widget": "pictureWidget"
             }
         }
+    },
+    "additionalProperties":{
+        "ui:widget":"hidden"
     }
+
 }

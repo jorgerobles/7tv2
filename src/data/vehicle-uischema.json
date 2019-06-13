@@ -76,5 +76,9 @@
         "items":{
             "ui:order":["type","attack","range","strike","effects"]
         }
+    },
+
+    "additionalProperties":{
+        "ui:widget":"hidden"
     }
 }
