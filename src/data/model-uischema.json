@@ -94,5 +94,9 @@
     },
     "stats":{
             "ui:order":["fight","shoot","defence","mind","body","spirit"]
+    },
+    "additionalProperties":{
+        "ui:widget":"hidden"
     }
+
 }

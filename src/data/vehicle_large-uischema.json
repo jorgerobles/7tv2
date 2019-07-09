@@ -87,5 +87,8 @@
 
     "mods":{
         "ui:field":"modArrayField"
+    },
+    "additionalProperties":{
+        "ui:widget":"hidden"
     }
 }

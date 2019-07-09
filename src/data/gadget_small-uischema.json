@@ -24,6 +24,10 @@
 
     "profile":{
         "ui:disabled": true
+    },
+
+    "additionalProperties":{
+        "ui:widget":"hidden"
     }
 
     

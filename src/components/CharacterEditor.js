@@ -54,7 +54,7 @@ export class CharacterEditor extends React.Component {
 
         const card=character.__card.toLowerCase();
         const sch=require('../data/'+card+'-uischema.json')
-        const uiSchema=applyToProps(sch,[...diff(sch['ui:order'],Object.keys(character)),'__card','__version','id'],{'ui:widget':'hidden'})
+        const uiSchema=sch//applyToProps(sch,[...diff(sch['ui:order'],Object.keys(character)),'__card','__version','id'],{'ui:widget':'hidden'})
         const schema = require('../data/'+card+'-schema.json');
 
         const widgets={
