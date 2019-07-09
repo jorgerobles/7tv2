@@ -31,7 +31,7 @@ Star Quality:
     cost: 1
     description: >
       Until the start of your next turn all opposing models within 6" of this model can only make strikes against this model. This model gains +1 Defence against these strikes.
-  Five Pounds Rapid:
+  Five Rounds Rapid:
     cost: 2
     description: >
       Friendly models with the Military Training special effect can choose to gain 1 extra die when making a shoot strike within 6" of this model this turn. If they choose to gain this extra die you cannot choose to add further extra dice to these strike roll.
