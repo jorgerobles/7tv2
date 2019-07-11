@@ -6,12 +6,19 @@ import { Toolbar, Help, Rescue } from './Ui'
 import { CharacterEditor } from './CharacterEditor'
 import SplitPane from 'react-split-pane'
 import '../assets/resizer.css'
+import { isChrome } from 'react-device-detect'
 
+const ChromeNag=function(){
+  if (!isChrome)
+    return <div className="chromeNag">Please use Chrome browser for a better experience</div>
+  return null
+}
 
 class App extends Component {
   render() {
     return (
       <div className="App">
+        
         <SplitPane split="vertical" minSize={300} 
               defaultSize={ parseInt(localStorage.getItem('splitPos')||300, 10) }
               onChange={ size => localStorage.setItem('splitPos', size) }>
@@ -26,7 +33,9 @@ class App extends Component {
             />
             <Rescue/>
           </div>
-          <div className="canvas" onClick={e=>this.props.deselectCharacter(e)}>{
+          <div className="canvas" onClick={e=>this.props.deselectCharacter(e)}>
+          <ChromeNag/>
+          {
             this.props.cast.map((character,j)=>{return <Card character={character} key={j}/>})
           }</div>
         </SplitPane>

@@ -10,12 +10,15 @@ html, body {
    
 }
 
+.chromeNag {position: static; z-index: 10000; background: rgb(170, 167, 153); height: auto; width: 99%; text-align: center; margin: 0.1em;  border-radius: 0.1em}
+
 @media print {
   html, body {background:none; box-shadow: none}
   .ui, .SplitPane .Pane1, .Resizer { display: none !important}
   .SplitPane {height: auto !important}
   #root, .App, .canvas, html, body {height: auto; width: auto}
   .Pane2 {margin-bottom: 6mm}
+  .chromeNag {display:none}
 }
 
 
