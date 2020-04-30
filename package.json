@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "html2canvas": "^1.0.0-alpha.12",
-    "jquery": "^3.2.1",
+    "jquery": "^3.5.0",
     "jspdf": "1.4.1",
     "material-ui": "^0.19.4",
     "react": "^15.6.2",
