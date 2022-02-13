@@ -1,0 +1,130 @@
+.fantasy.card   {
+  color: #58595b !important;
+  strong {
+    color: #58595b !important;
+  }
+}
+
+.fantasy.card.vehicle,
+.fantasy.card.model,
+.fantasy.card.unit {
+  section {
+    width: 85%;
+    left: 7%;
+    heading {
+      color: #318bbf;
+    }
+    .icon-star_icon:before {
+      color: #318bbf;
+    }
+    p em {
+      color: #318bbf;
+    }
+  }
+}
+
+.fantasy.card.front .background {
+  background: url(images/fantasy/2e_fantasy_model_front2.jpg);
+  background-size: cover;
+}
+.fantasy.card.back .background {
+  background: url(images/fantasy/2e_fantasy_model_back.jpg);
+  background-size: cover;
+}
+
+.fantasy.card.model .pic {
+    left: 28.5%; top: 10.3%;
+    width:44.2%; height: 32.5%; border:none;
+    border-radius: 0%;
+    clip-path: polygon(49% 5%, 38% 7%, 38% 10%, 34% 7%, 16% 22%, 17% 31%, 10% 32%, 9% 36%, 10% 63%, 8% 65%, 16% 68%, 16% 79%, 28% 89%, 50% 96%, 71% 90%, 83% 80%, 83% 69%, 90% 67%, 90% 32%, 84% 33%, 85% 24%, 80% 17%, 76% 17%, 76% 14%, 60% 7%);
+    
+}
+
+.fantasy.card.model .stats {
+    background: none; border: none; box-shadow: none; color: black; width: 26%; font-weight: bold; font-family: "DINCond"; 
+}
+.fantasy.card.model .stats > div > div {
+    background: none; font-weight: bold;
+}
+.fantasy.card.model .stats > div{
+ margin-bottom: 10%;
+}
+
+.fantasy.card.model .stats.left,
+.fantasy.card.model .stats.right {top: 12.5%}
+
+.fantasy.card.model .stats.left > div:nth-child(odd) {
+      margin-left: 10%;
+}
+.fantasy.card.model .stats.right > div:nth-child(odd){
+     margin-left: -10%
+}
+.fantasy.card.model .stats > div > div:last-child {
+  flex-grow: 0;
+  width: 20%;
+  
+  font-weight: bold;
+  font-size: 120%;
+  
+}
+
+
+
+.fantasy.card.model .stats var {
+  position: relative;
+  
+}
+
+.fantasy.card.model .sfxribbon { color: white; margin: 2%; width:85%}
+
+.fantasy.card.model .weapons {border: 2px solid black; left: 2%; width: 96%}
+.fantasy.card.model .weapons thead {background-color: black; font-weight: bold;}
+.fantasy.card.model .weapons tbody .strike {background-color: #333;}
+
+.fantasy.card.model .stats.right:after {
+  background-position: -280%;
+}
+.fantasy.card.model .stats.left:after {
+  background-position: 400%;
+}
+
+.fantasy.card .title {
+  line-height: 125%;
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 2em;
+  text-transform: uppercase;
+  position: relative;
+}
+
+.fantasy.card .title strong {
+  position: absolute;
+  width: 100%;
+  top: 0.1em;
+  display: block;
+  transform: rotate(-1deg);
+}
+.fantasy.card .title span {
+  position: absolute;
+  font-size: 50%;
+  right: 0;
+  color: white;
+  width: 20%;
+  line-height: 1em;
+  margin-top: 0.3em;
+}
+
+
+.fantasy.card.back .title {
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+.fantasy.card .title span {color: white; font-weight: bold; margin-top: 3%;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+
+
+.fantasy.card .ratings { font-size: 135%; line-height: 1.1em; width: 1.5em; left: 2.5%; text-align: center;}
+.fantasy.card .ratings caption {display:none}

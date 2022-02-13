@@ -33,7 +33,7 @@
       "title":"Theme",
       "id": "/properties/__theme",
       "type":"string",
-      "enum":["core","apocalypse","pulp"]
+      "enum":["core","apocalypse","pulp","fantasy"]
     },
     "genres": {
       "title":"Genre/s",
@@ -279,7 +279,8 @@
             "enum": [
               "",
               "Melee",
-              "Range"
+              "Range",
+              "Presence"
             ]
           },
           "attack": {
