@@ -32,7 +32,7 @@
     "redux-logger": "^3.0.6",
     "slug": "^0.9.2",
     "string-template": "^1.0.0",
-    "svg-url-loader": "^2.3.2",
+    "svg-url-loader": "^5.0.0",
     "uuid": "^3.3.2"
   },
   "dependencies": {
