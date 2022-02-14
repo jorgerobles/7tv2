@@ -109,7 +109,7 @@ class ModsTable extends React.Component {
 
 
 const Ratings = ({ value }) => {
-    return <div className="ratings"><val>{value}</val> <caption> RATINGS</caption></div>
+    return <div className="ratings"><val>{value}</val> <span> RATINGS</span></div>
 }
 
 

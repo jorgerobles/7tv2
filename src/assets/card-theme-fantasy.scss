@@ -127,4 +127,25 @@
 
 
 .fantasy.card .ratings { font-size: 135%; line-height: 1.1em; width: 1.5em; left: 2.5%; text-align: center;}
-.fantasy.card .ratings caption {display:none}
+.fantasy.card .ratings span {display:none}
+
+.fantasy.card .weapons tbody tr.drive td.attack:before,
+.fantasy.card .weapons tbody tr.melee td.attack:before,
+.fantasy.card .weapons tbody tr.presence td.attack:before,
+.fantasy.card .weapons tbody tr.range td.attack:before {
+  font-family: "7tv2-fantasy";
+  content: "\e900";
+  position: absolute;
+  left: -0.5em;
+  background: white;
+  border-radius: 100%;
+  font-size: 110%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  line-height: 100%;
+}
+.fantasy.card .weapons tbody tr.range td.attack:before {
+  content: "\e901";
+}
+.fantasy.card .weapons tbody tr.presence td.attack:before {
+  content: "\e902";
+}
