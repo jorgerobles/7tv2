@@ -43,6 +43,7 @@ export const saveYamlFile=(docs,asSingleFile=false, options={skipInvalid:true})=
             } catch(e) {
                 console.error(doc)
             }
+            return null;
         }).join("\n---\n")
         
     } else {

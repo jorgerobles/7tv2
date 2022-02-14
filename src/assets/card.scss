@@ -1,6 +1,7 @@
 @import "card-theme-core";
 @import "card-theme-apocalypse";
 @import "card-theme-pulp";
+@import "card-theme-fantasy";
 
 .cellophan {
   all: initial;
@@ -133,8 +134,9 @@ var {
 }
 .card .weapons tbody tr.drive td.attack:before,
 .card .weapons tbody tr.melee td.attack:before,
+.card .weapons tbody tr.presence td.attack:before,
 .card .weapons tbody tr.range td.attack:before {
-  font-family: "icomoon";
+  font-family: "7tv2-core";
   content: "\e909";
   position: absolute;
   left: -0.5em;
@@ -158,6 +160,7 @@ var {
   text-align: center;
   line-height: 90%;
   font-size: 90%;
+  font-weight: bold;
 }
 .card .ratings val {
   display: block;
