@@ -1,4 +1,4 @@
-.fantasy.card   {
+.fantasy.card   {
   color: #58595b !important;
   strong {
     color: #58595b !important;
@@ -33,15 +33,24 @@
 }
 
 .fantasy.card.model .pic {
-    left: 28.5%; top: 10.3%;
-    width:44.2%; height: 32.5%; border:none;
-    border-radius: 0%;
-    clip-path: polygon(49% 5%, 38% 7%, 38% 10%, 34% 7%, 16% 22%, 17% 31%, 10% 32%, 9% 36%, 10% 63%, 8% 65%, 16% 68%, 16% 79%, 28% 89%, 50% 96%, 71% 90%, 83% 80%, 83% 69%, 90% 67%, 90% 32%, 84% 33%, 85% 24%, 80% 17%, 76% 17%, 76% 14%, 60% 7%);
-    
+    left: 28.5%; top: 10.8%;
+    width:44.2%; height: 31.8%; border:none;
+    border-radius: 0;
+    position: absolute;
+    /*clip-path: polygon(49% 5%, 38% 7%, 38% 10%, 34% 7%, 16% 22%, 17% 31%, 10% 32%, 9% 36%, 10% 63%, 8% 65%, 16% 68%, 16% 79%, 28% 89%, 50% 96%, 71% 90%, 83% 80%, 83% 69%, 90% 67%, 90% 32%, 84% 33%, 85% 24%, 80% 17%, 76% 17%, 76% 14%, 60% 7%);*/
+
+}
+
+.fantasy.card.model .pic:before {
+  content:"";
+  display:block; position: absolute; left: 0; top:0; width:100%; height: 100%;
+  background: url(images/fantasy/2e_fantasy_model_front-pic_mask.png); z-index: 10000;
+  background-size: cover;
 }
 
 .fantasy.card.model .stats {
-    background: none; border: none; box-shadow: none; color: black; width: 26%; font-weight: bold; font-family: "DINCond"; 
+    background: none; border: none; box-shadow: none; color: black; width: 26%; font-weight: bold; font-family: "DINCond";
+    z-index: 10000;
 }
 .fantasy.card.model .stats > div > div {
     background: none; font-weight: bold;
@@ -103,7 +112,8 @@
   width: 100%;
   top: 0.1em;
   display: block;
-  transform: rotate(-1deg);
+  color: white !important
+
 }
 .fantasy.card .title span {
   position: absolute;
