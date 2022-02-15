@@ -83,7 +83,7 @@ export const downloadSingleCharacter=(character)=>{
 
 export const downloadCharactersAsImages=(cast)=>{
     cast.forEach(item=>{
-        sendAsImage(item.id,"7TV_cast-"+slug(item.name||item.id)+".png",{scale:2});
+        sendAsImage(item.id,"7TV_cast-"+slug(item.name||item.id)+".png");
     })
 }
 
@@ -133,10 +133,10 @@ export const downloadCharactersAsPDF=(cast,fileName='7TVcast',status=console.war
     var i=0;
     let promises=cast.sort(sortBy('__card')).map((item)=>{
         return new Promise((rs,rj)=>{
-            getAsImage(document.getElementById(item.id),{scale:2}).then((img)=>{
+            getAsImage(document.getElementById(item.id)).then((img)=>{
                 status("Processing image "+(++i)+"/"+cast.length);
                 rs({dataURL: img,type:item.__card.replace(/.*_(.*)$/,'$1')})
-            });
+            }).catch(console.log);
     })});
     
     

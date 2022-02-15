@@ -435,8 +435,8 @@ export class Card extends React.Component {
             <DropdownButton bsSize="xsmall" title="" bsStyle="warning" id={"ddb-"+id} >
             <MenuItem eventKey="1" onClick={e => {this.props.dispatch({ type: 'CHARACTER_REMOVE', payload: { id } })}}>Remove</MenuItem>
             <MenuItem eventKey="2" onClick={e => { downloadSingleCharacter(this.props.character)}}>Download</MenuItem>
-            <MenuItem eventKey="3" onClick={e => { sendAsImage(id, "7TV_cast-"+slug(this.props.character.name||this.props.character.id)+".png",{scale:2})}}>Download as Single Image</MenuItem>
-            <MenuItem eventKey="4" onClick={e => { sendAsImage(id, "7TV_cast-"+slug(this.props.character.name||this.props.character.id)+"_{n}.png",{scale:2, selector:'.cellophan'})}}>Download as Separate Images</MenuItem>
+            <MenuItem eventKey="3" onClick={e => { sendAsImage(id, "7TV_cast-"+slug(this.props.character.name||this.props.character.id)+".png")}}>Download as Single Image</MenuItem>
+            <MenuItem eventKey="4" onClick={e => { sendAsImage(id, "7TV_cast-"+slug(this.props.character.name||this.props.character.id)+"_{n}.png",{selector:'.cellophan'})}}>Download as Separate Images</MenuItem>
             </DropdownButton></div></div>)
     }
 }

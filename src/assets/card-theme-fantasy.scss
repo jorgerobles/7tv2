@@ -143,8 +143,8 @@
 .fantasy.card .weapons tbody tr.melee td.attack:before,
 .fantasy.card .weapons tbody tr.presence td.attack:before,
 .fantasy.card .weapons tbody tr.range td.attack:before {
-  font-family: "7tv2-fantasy";
-  content: "\e900";
+  font-family: '7tv2 fantasy';
+  content: '\0044';
   position: absolute;
   left: -0.5em;
   background: white;
@@ -154,8 +154,8 @@
   line-height: 100%;
 }
 .fantasy.card .weapons tbody tr.range td.attack:before {
-  content: "\e901";
+  content: '\0048';
 }
 .fantasy.card .weapons tbody tr.presence td.attack:before {
-  content: "\e902";
+  content: '\0047';
 }
