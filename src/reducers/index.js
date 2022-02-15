@@ -6,7 +6,6 @@ import { first, middle, last} from 'random-name'
 import {actionTypes} from 'redux-localstorage'
 import Ajv from 'ajv';
 const ajv = new Ajv();
-      ajv.addMetaSchema(require('ajv/lib/refs/json-schema-draft-04.json'));
 
 const randomName=()=>{
     return (Math.round(Math.random())?first():middle())+" "+last();
@@ -63,7 +62,7 @@ const getTemplateCharacterNew=(payload, templatename='model')=>{
 }
 
 const reducer = (state = INITIALSTATE, action) => {
-    state = Object.assign( {}, state)
+    state = Object.assign({}, state)
     const TEMPLATE_CHARACTER_NEW = getTemplateCharacterNew(action.payload)
     switch (action.type) {
         case actionTypes.INIT:

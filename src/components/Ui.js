@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import Queue from 'promise-queue';
 import ReactDOM from 'react-dom';
-import marked from 'marked'
+import { marked } from 'marked';
 import { loadYamlFile, saveYamlFile } from '../reducers/index';
 import { SplitButton, MenuItem, Button, ButtonToolbar, Glyphicon, DropdownButton, Collapse} from 'react-bootstrap';
 import { sendAsFile, sendAsImage, getAsImage } from '../lib/helpers'
@@ -28,7 +28,7 @@ export class FileField extends React.Component {
 
     constructor(props) {
         super(props);
-        this._domclick = function (ce)  {
+        this._domclick = function (ce) {
             ce.preventDefault();
             let modifiers = { ctrl: ce.ctrlKey, shift: ce.shiftKey, meta: ce.metaKey };
             if (this.input.__changeHandler) this.input.removeEventListener('change', this.input.__changeHandler)
@@ -83,7 +83,7 @@ export const downloadSingleCharacter=(character)=>{
 
 export const downloadCharactersAsImages=(cast)=>{
     cast.forEach(item=>{
-        sendAsImage(item.id,"7TV_cast-"+slug(item.name||item.id)+".png",{scale:2});
+        sendAsImage(item.id,"7TV_cast-"+slug(item.name||item.id)+".png");
     })
 }
 
@@ -133,10 +133,10 @@ export const downloadCharactersAsPDF=(cast,fileName='7TVcast',status=console.war
     var i=0;
     let promises=cast.sort(sortBy('__card')).map((item)=>{
         return new Promise((rs,rj)=>{
-            getAsImage(document.getElementById(item.id),{scale:2}).then((img)=>{
+            getAsImage(document.getElementById(item.id)).then((img)=>{
                 status("Processing image "+(++i)+"/"+cast.length);
                 rs({dataURL: img,type:item.__card.replace(/.*_(.*)$/,'$1')})
-            });
+            }).catch(console.log);
     })});
     
     
@@ -186,7 +186,7 @@ const cardGrid=function(type){
         default: 
             return Array.from(Array(4).keys()).map((v)=>({x:(v%2)*CARD_WIDTH*fw+MARGIN_X, y: Math.floor(v/2)*CARD_HEIGHT*fh+MARGIN_Y}));
         break;
-    } 
+    }
 }
 
 const cardCuts=function(type,doc){
@@ -210,7 +210,7 @@ const cardFactor=function(type){
         case 'small': return [1,0.5]; break;
         case 'large': return [1,2]; break;
         default: return [1,1];
-    } 
+    }
 }
 
 
