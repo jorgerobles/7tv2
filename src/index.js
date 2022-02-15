@@ -6,7 +6,8 @@ import { compose, createStore, applyMiddleware } from 'redux'
 import reducer from './reducers/index'
 import App from './components/App';
 import './assets/index.css';
-import './assets/fonts/icons/style.css'
+import './assets/icons-core.scss'
+import './assets/icons-fantasy.scss'
 
 import persistState from 'redux-localstorage';
 import mergePersistedState from 'redux-localstorage/lib/mergePersistedState'

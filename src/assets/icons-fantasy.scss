@@ -1,0 +1,55 @@
+@font-face {
+  font-family: '7tv2-fantasy';
+  src:  url('icons/7tv2-fantasy.eot?wq6gki');
+  src:  url('icons/7tv2-fantasy.eot?wq6gki#iefix') format('embedded-opentype'),
+    url('icons/7tv2-fantasy.ttf?wq6gki') format('truetype'),
+    url('icons/7tv2-fantasy.woff?wq6gki') format('woff'),
+    url('icons/7tv2-fantasy.svg?wq6gki#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+ 
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.fantasy.card .icon-melee:before {
+  font-family: '7tv2-fantasy' !important; content: "\e900";
+}
+.fantasy.card .icon-range:before {
+  font-family: '7tv2-fantasy' !important; content: "\e901";
+}
+.fantasy.card .icon-presence:before {
+  font-family: '7tv2-fantasy' !important; content: "\e902";
+}
+
+.icon-pen-n-paper:before {
+  font-family: '7tv2-fantasy' !important;content: "\e903";
+}
+.icon-sword-n-sorcery:before {
+  font-family: '7tv2-fantasy' !important;content: "\e904";
+}
+.icon-mythic:before {
+  font-family: '7tv2-fantasy' !important;content: "\e905";
+}
+.icon-epic:before {
+  font-family: '7tv2-fantasy' !important;content: "\e906";
+}
+.icon-historical:before {
+  font-family: '7tv2-fantasy' !important;content: "\e907";
+}
+.icon-folktale:before {
+  font-family: '7tv2-fantasy' !important;content: "\e908";
+}
