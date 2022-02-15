@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import Queue from 'promise-queue';
 import ReactDOM from 'react-dom';
-import marked from 'marked'
+import { marked } from 'marked';
 import { loadYamlFile, saveYamlFile } from '../reducers/index';
 import { SplitButton, MenuItem, Button, ButtonToolbar, Glyphicon, DropdownButton, Collapse} from 'react-bootstrap';
 import { sendAsFile, sendAsImage, getAsImage } from '../lib/helpers'
@@ -28,7 +28,7 @@ export class FileField extends React.Component {
 
     constructor(props) {
         super(props);
-        this._domclick = function (ce)  {
+        this._domclick = function (ce) {
             ce.preventDefault();
             let modifiers = { ctrl: ce.ctrlKey, shift: ce.shiftKey, meta: ce.metaKey };
             if (this.input.__changeHandler) this.input.removeEventListener('change', this.input.__changeHandler)
