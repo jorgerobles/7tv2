@@ -154,8 +154,8 @@ var {
 .card .weapons tbody tr.melee td.attack:before,
 .card .weapons tbody tr.presence td.attack:before,
 .card .weapons tbody tr.range td.attack:before {
-  font-family: "7tv2-core";
-  content: "\e909";
+  font-family: "7tv2 core";
+  content: "\0043";
   position: absolute;
   left: -0.5em;
   background: white;
@@ -166,11 +166,11 @@ var {
 }
 
 .card .weapons tbody tr.range td.attack:before {
-  content: "\e908";
+  content: "\0049";
 }
 
 .card .weapons tbody tr.drive td.attack:before {
-  content: "\e90a";
+  content: '\004b';
 }
 
 .card .ratings {
