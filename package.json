@@ -39,7 +39,7 @@
     "html2canvas": "^1.0.0-alpha.12",
     "jquery": "^3.5.0",
     "jspdf": "1.4.1",
-    "material-ui": "^0.19.4",
+    "material-ui": "^0.20.2",
     "react": "^15.6.2",
     "react-device-detect": "^2.1.2",
     "react-dom": "^15.6.2",
