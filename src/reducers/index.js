@@ -62,7 +62,7 @@ const getTemplateCharacterNew=(payload, templatename='model')=>{
 }
 
 const reducer = (state = INITIALSTATE, action) => {
-    state = Object.assign( {}, state)
+    state = Object.assign({}, state)
     const TEMPLATE_CHARACTER_NEW = getTemplateCharacterNew(action.payload)
     switch (action.type) {
         case actionTypes.INIT:

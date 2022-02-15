@@ -186,7 +186,7 @@ const cardGrid=function(type){
         default: 
             return Array.from(Array(4).keys()).map((v)=>({x:(v%2)*CARD_WIDTH*fw+MARGIN_X, y: Math.floor(v/2)*CARD_HEIGHT*fh+MARGIN_Y}));
         break;
-    } 
+    }
 }
 
 const cardCuts=function(type,doc){
@@ -210,7 +210,7 @@ const cardFactor=function(type){
         case 'small': return [1,0.5]; break;
         case 'large': return [1,2]; break;
         default: return [1,1];
-    } 
+    }
 }
 
 
