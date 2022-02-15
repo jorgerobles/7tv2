@@ -35,6 +35,8 @@
     "uuid": "^3.3.2"
   },
   "dependencies": {
+    "gh-pages-deploy": "^0.5.1",
+    "github-pages": "^3.0.2",
     "html2canvas": "^1.4.1",
     "jquery": "^3.5.0",
     "jspdf": "2.5.1",
@@ -61,5 +63,12 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "gh-pages-deploy": {
+    "staticpath": "build",
+    "cname": "agency.crooked-dice.co.uk",
+    "commit": "Deploy",
+    "post": [],
+    "noprompt": false
+  }
 }
