@@ -37,12 +37,12 @@
     width:44.2%; height: 31.8%; border:none;
     border-radius: 0;
     position: absolute;
-    /*clip-path: polygon(49% 5%, 38% 7%, 38% 10%, 34% 7%, 16% 22%, 17% 31%, 10% 32%, 9% 36%, 10% 63%, 8% 65%, 16% 68%, 16% 79%, 28% 89%, 50% 96%, 71% 90%, 83% 80%, 83% 69%, 90% 67%, 90% 32%, 84% 33%, 85% 24%, 80% 17%, 76% 17%, 76% 14%, 60% 7%);*/
+
 
 }
 
-.fantasy.card.model .pic:before {
-  content:"";
+.fantasy.card.model .pic>img {
+
   display:block; position: absolute; left: 0; top:0; width:100%; height: 100%;
   background: url(images/fantasy/2e_fantasy_model_front-pic_mask.png); z-index: 10000;
   background-size: cover;

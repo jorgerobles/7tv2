@@ -34,7 +34,7 @@ const StatBlock = ({ stats, className="", zero='0', ...rest }) => {
 
 const Pic = ({ photo, className, ...rest }) => {
     let style=photo? {backgroundImage: "url("+photo+")"}:{};
-    return <div className={['pic',className].join(" ")} style={style} />
+    return <div className={['pic',className].join(" ")} style={style}><img alt="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E" style={{filter:`hue-rotate(${rest.tint}deg)`}}/></div>
 }
 
 
@@ -181,7 +181,7 @@ export class CardFront extends React.Component {
         <div className="background" style={{filter:`hue-rotate(${__tint}deg)`}}></div>
         <div className="foreground">
             <Title name={name} type={type} />
-            <Pic photo={photo}/>
+            <Pic photo={photo} tint={__tint}/>
             <StatBlock stats={{ capacity, armour, defence }} />
             {weapons.length? <Weapons items={weapons} />:<Description text={description}/>}
             <div className="sfxribbon">
@@ -243,7 +243,7 @@ export class CardFront extends React.Component {
              <div className="background" style={{filter:`hue-rotate(${__tint}deg)`}}></div>
             <div className="foreground" >
             <Title name={name} alignment={T(role)} type={type} />
-            <Pic photo={photo}/>
+            <Pic photo={photo} tint={__tint}/>
             <StatBlock className="left" stats={{ fight, shoot, defence }} />
             <StatBlock className="right" stats={{ mind, body, spirit }} />
             <div className="sfxribbon">
@@ -328,7 +328,7 @@ export class CardBack extends React.Component {
         <div className="background" style={{filter:`hue-rotate(${__tint}deg)`}}></div>
         <div className="foreground">
             <Title name={name}  />
-            <Pic className={vehicle} photo={photo}/>
+            <Pic className={vehicle} photo={photo} tint={__tint}/>
             <section>
                 {weapons.length && description? (<heading>Description</heading>):undefined}
                 {weapons.length && description? (<Description text={description}/>):undefined}
@@ -357,7 +357,7 @@ export class CardBack extends React.Component {
             <div className="content">
                 <Description text={description}/>
                 {models.map((m,i)=>{return <dl className="model" key={i}><dt>{m.qty}</dt><dd>{m.model}</dd></dl>})}
-                <Pic photo={photo}/>
+                <Pic photo={photo} tint={__tint}/>
             </div>
             </div>
         </div></div>

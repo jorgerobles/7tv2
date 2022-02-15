@@ -11,6 +11,7 @@
 .cellophan {
   box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
 }
+
 .viewport.standard .cellophan + .cellophan {
   border: none;
   border-left: 1px dashed rgba(255, 255, 255, 0.5);
@@ -29,9 +30,10 @@ div[class*="large"] .cellophan + .cellophan {
 .card {
   position: relative;
   color: black;
-  font-family: "DINCond";
+  font-family: "DINCond", sans-serif;
+
   strong {
-    font-family: "DINCond";
+    font-family: "DINCond", sans-serif;
   }
 }
 
@@ -49,10 +51,12 @@ var {
   top: 0;
   z-index: 0;
 }
+
 .card .background > *,
 .card .foreground > * {
   position: absolute;
 }
+
 .card .foreground {
   z-index: 1;
 }
@@ -68,13 +72,16 @@ var {
   left: 0;
   background: attr(data-tint);
 }
+
 .card .title {
   color: white;
   line-height: 225%;
 }
+
 .card .title {
   text-transform: uppercase;
 }
+
 .card .title span {
   font-size: 70%;
 }
@@ -89,49 +96,60 @@ var {
   border-collapse: collapse;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+
 .card .weapons td {
   padding: 1% 2% 1% 2%;
   vertical-align: middle;
   font-size: 80%;
 }
+
 .card .weapons thead {
   background: #3a3b3d;
   color: white;
   text-transform: uppercase;
 }
+
 .card .weapons tbody {
   background: white;
 }
+
 .card .weapons tbody tr:nth-child(even) {
   background: #d0d3d5;
 }
+
 .card .weapons tbody td.strike {
   background: black;
   color: white;
   text-align: center;
   width: 10%;
 }
+
 .card .weapons tbody td.range {
   text-align: center;
   width: 10%;
 }
+
 .card .weapons tbody td.range:after {
   content: '"';
 }
+
 .card .weapons tbody td.attack {
   padding-left: 5%;
   width: 30%;
   position: relative;
 }
+
 .card .weapons tbody td.effects p {
   margin: 0;
   padding: 0;
 }
+
 .card .weapons tbody td.effects em {
   color: #862419;
   font-weight: bold;
   font-style: normal;
 }
+
 .card .weapons tbody tr.drive td.attack:before,
 .card .weapons tbody tr.melee td.attack:before,
 .card .weapons tbody tr.presence td.attack:before,
@@ -146,9 +164,11 @@ var {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   line-height: 100%;
 }
+
 .card .weapons tbody tr.range td.attack:before {
   content: "\e908";
 }
+
 .card .weapons tbody tr.drive td.attack:before {
   content: "\e90a";
 }
@@ -162,6 +182,7 @@ var {
   font-size: 90%;
   font-weight: bold;
 }
+
 .card .ratings val {
   display: block;
 }
@@ -169,6 +190,7 @@ var {
 .card .checkribbon {
   display: inline-flex;
 }
+
 .card .checkribbon div {
   width: 1.2em;
   height: 1.2em;
@@ -181,11 +203,13 @@ var {
   height: 1.4em;
   text-align: center;
 }
+
 .card .checkribbon.health {
   display: inline-block;
   width: 100%;
   bottom: 5.5%;
   text-align: center;
+
   div {
     width: 1.4em;
     height: 1.4em;
@@ -198,10 +222,12 @@ var {
   right: 1%;
   font-size: 130%;
 }
+
 .card .tags i {
   margin-left: 0.2em;
   vertical-align: bottom;
 }
+
 .card .tags img {
   margin-left: 0.2em;
   height: 1.05em;
@@ -228,6 +254,7 @@ var {
       width: 50%;
       padding-right: 3%;
     }
+
     heading {
       text-transform: uppercase;
       font-weight: bold;
@@ -235,15 +262,18 @@ var {
       margin: 0em 0 0.5em 0;
       display: block;
     }
+
     .icon-star_icon:before {
       font-size: 90%;
     }
+
     p {
       margin: 0 0 0.5em 0;
       break-inside: avoid;
       widows: 3;
       white-space: pre-line;
     }
+
     p em {
       font-weight: bold;
       font-style: normal;
@@ -276,7 +306,7 @@ var {
 .card.model .stats > div > div:last-child {
   flex-grow: 0;
   width: 30%;
-  
+
   font-size: 110%;
 }
 
@@ -286,6 +316,7 @@ var {
   width: 100%;
   line-height: 2em
 }
+
 .card.model .stats > div > div {
   margin: 1px;
   background: #3a3b3d;
@@ -294,23 +325,30 @@ var {
   flex-grow: 3;
   font-size: 90%;
 }
+
 .card.model .stats > div:last-child > div {
   border-bottom: none;
 }
+
 .card.model .stats.left {
-  left: 4%; top:12% 
+  left: 4%;
+  top: 12%
 }
+
 .card.model .stats.right {
-  right: 4%; top:12% 
+  right: 4%;
+  top: 12%
 }
 
 
 .card.model .stats.right > div {
   flex-direction: row-reverse;
 }
+
 .card.model .stats.right > div > div:first-child {
   border-right: none;
 }
+
 .card.model .pic {
   width: 36%;
   height: 25.5%;
@@ -324,7 +362,13 @@ var {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
+
 }
+
+.card.model .pic > img {
+  border: none
+}
+
 .card.model .sfxribbon {
   top: 42%;
   left: 5%;
@@ -332,6 +376,7 @@ var {
   font-size: 90%;
   margin: 0;
 }
+
 .card.model .sfxribbon dl {
   margin: 0;
   display: flex;
@@ -340,6 +385,7 @@ var {
   align-content: flex-start;
   font-size: 90%;
 }
+
 .card.model .sfxribbon dt {
   line-height: 150%;
   white-space: nowrap;
@@ -347,19 +393,24 @@ var {
   width: 35%;
   text-transform: uppercase;
 }
+
 .card.model .sfxribbon dd {
   margin: 0;
   width: 70%;
 }
+
 .card.model .sfxribbon dd span {
   display: inline-block;
 }
+
 .card.model .sfxribbon dd span:after {
   content: ", ";
 }
+
 .card.model .sfxribbon dd span:last-child:after {
   content: ".";
 }
+
 .card.model .sfxribbon dd .icon-star_icon:before {
   font-size: 90%;
 }
@@ -392,6 +443,7 @@ var {
     content: "\2726";
     font-style: normal;
   }
+
   .pic {
     width: 60%;
     height: 43%;
@@ -406,6 +458,7 @@ var {
     background-repeat: no-repeat;
     background-position: center center;
   }
+
   .stats {
     position: absolute;
     color: white;
@@ -440,11 +493,13 @@ var {
     border-collapse: collapse;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   }
+
   .stats > div > div {
     flex-grow: 1;
     font-weight: normal;
     font-size: 90%;
   }
+
   .stats > div > div:last-child {
     font-size: 110%;
     width: 20%;
@@ -454,18 +509,22 @@ var {
   .stats > div.capacity > div:last-child {
     background: #c67229;
   }
+
   .stats > div.armour > div:last-child {
     background: #862419;
   }
+
   .stats > div.defence > div:last-child {
     background: #78a2b2;
   }
+
   .description {
     width: 90%;
     left: 4%;
     top: 54%;
     font-size: 80%;
   }
+
   .sfxribbon {
     top: 78%;
     left: 5%;
@@ -473,6 +532,7 @@ var {
     font-size: 90%;
     margin: 0;
   }
+
   .sfxribbon dl {
     margin: 0;
     display: flex;
@@ -481,6 +541,7 @@ var {
     align-content: flex-start;
     font-size: 90%;
   }
+
   .sfxribbon dt {
     line-height: 150%;
     white-space: nowrap;
@@ -488,20 +549,25 @@ var {
     width: 35%;
     text-transform: uppercase;
   }
+
   .sfxribbon dd {
     margin: 0;
     width: 70%;
     color: #862419;
   }
+
   .sfxribbon dd span {
     display: inline-block;
   }
+
   .sfxribbon dd span:after {
     content: ", ";
   }
+
   .sfxribbon dd span:last-child:after {
     content: ".";
   }
+
   .sfxribbon dd .icon-star_icon:before {
     font-size: 90%;
   }
@@ -512,9 +578,11 @@ var {
     .title {
       margin-left: 2%;
     }
+
     .checkribbon {
       display: inline-flex;
       margin-left: 0.1em;
+
       div {
         height: 0.7em;
         width: 0.7em;
@@ -532,6 +600,7 @@ var {
     content: "\2726";
     font-style: normal;
   }
+
   .pic {
     width: 88%;
     height: 60%;
@@ -559,6 +628,7 @@ var {
       background: none;
       box-shadow: none;
     }
+
     .stats > div {
       display: flex;
       flex-direction: column;
@@ -593,12 +663,15 @@ var {
       div:first-child {
         display: none;
       }
+
       &.parked div {
         background: #78a2b2;
       }
+
       &.slow div {
         background: #862419;
       }
+
       &.fast div {
         background: #7f8d73;
       }
@@ -617,6 +690,7 @@ var {
 
     .stats.gear {
       position: relative;
+
       &:after {
         content: "";
         position: absolute;
@@ -632,10 +706,12 @@ var {
 
     .weapons {
       margin: 0.5% 1% 0.5% 1%;
+
       thead .effects {
         background: #222;
         text-align: center;
       }
+
       tbody tr {
         height: 1.2em;
         font-size: 1.4em;
@@ -649,6 +725,7 @@ var {
     top: 54%;
     font-size: 80%;
   }
+
   .sfxribbon {
     top: 78%;
     left: 5%;
@@ -663,6 +740,7 @@ var {
       width: 100%;
       align-content: flex-start;
       font-size: 90%;
+
       dt {
         line-height: 150%;
         white-space: nowrap;
@@ -670,19 +748,24 @@ var {
         width: 35%;
         text-transform: uppercase;
       }
+
       dd {
         margin: 0;
         width: 70%;
         color: #862419;
+
         span {
           display: inline-block;
         }
+
         span:after {
           content: ", ";
         }
+
         span:last-child:after {
           content: ".";
         }
+
         .icon-star_icon:before {
           font-size: 90%;
         }
@@ -706,6 +789,7 @@ var {
       width: 100%;
       padding-right: 3%;
     }
+
     heading {
       text-transform: uppercase;
       font-weight: bold;
@@ -714,21 +798,25 @@ var {
       display: block;
       line-height: 0.8em;
     }
+
     .icon-star_icon:before {
       font-size: 90%;
       color: #862419;
     }
+
     p {
       margin: 0 0 0.1em 0;
       break-inside: avoid;
       widows: 3;
       font-size: 0.95em;
     }
+
     p em {
       color: #862419;
       font-weight: bold;
       font-style: normal;
     }
+
     i {
       font-size: 0.8em;
     }
@@ -743,26 +831,33 @@ var {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+
     table {
       width: 48%;
       margin-bottom: 0.5em;
       margin-right: 2%;
     }
+
     thead {
       text-transform: uppercase;
+
       th {
         text-align: left;
       }
+
       td {
         font-size: 0.7em;
       }
     }
+
     tbody {
       font-size: 0.8em;
       line-height: 0.65em;
+
       .mounted .name:before {
         background: black;
       }
+
       .name:before {
         content: "";
         display: inline-block;
@@ -772,12 +867,15 @@ var {
         background: white;
         border: 1px solid #000;
       }
+
       .name {
         white-space: pre;
+
         &.indent {
           padding-left: 1em;
         }
       }
+
       .ratings {
         width: 20%;
         text-align: center;
@@ -793,11 +891,13 @@ var {
     text-transform: uppercase;
     font-size: 0.8em;
     text-align: right;
+
     .ratings {
       display: inline-block;
       background: white;
       border: 1px solid #000;
       padding: 0.1em 2em 0.1em 2em;
+
       val {
         display: inline;
       }
@@ -815,14 +915,17 @@ var {
 .viewport.large > div {
   display: inline-flex;
   flex-direction: column;
+
   .card {
     width: 671px;
     height: 474px;
   }
+
   .card.vehicle_large {
     &.back {
       overflow: hidden;
     }
+
     &.back .pic {
       transform: rotate(90deg);
       transform-origin: left top;
@@ -840,15 +943,18 @@ var {
   content: "\2726";
   font-style: normal;
 }
+
 .card.front.unit .background {
   background: url(images/core/2e_unit_back.jpg);
   background-size: cover;
 }
+
 .card.unit .tags {
   bottom: auto;
   top: 2%;
   right: 2%;
 }
+
 .card.unit.back .content {
   width: 90%;
   left: 4%;
@@ -857,22 +963,26 @@ var {
   position: relative;
   font-size: 80%;
 }
+
 .card.unit.back .content .model {
   display: flex;
   margin-left: 10%;
   width: 80%;
 }
+
 .card.unit.back .content .model dt {
   font-size: 130%;
   color: #862419;
   font-weight: bold;
   flex-grow: 1;
 }
+
 .card.unit.back .content .model dd {
   flex-grow: 6;
   margin: 0;
   white-space: pre-line;
 }
+
 .card.unit.back .content .pic {
   position: absolute;
   bottom: 5%;
@@ -885,25 +995,30 @@ var {
   background-repeat: no-repeat;
   background-position: right;
 }
+
 /* /UNIT */
 /* GADGET */
 .card.gadget_small {
   width: 288px;
   height: 200px;
 }
+
 .card.front.gadget_small .background {
   background: url(images/core/2e_gadget_low.jpg);
   background-size: cover;
 }
+
 .card.back.gadget_small .background {
   background-size: 100%;
   background-position: top;
 }
+
 .card.gadget_small .tags {
   bottom: auto;
   top: 2%;
   right: 2%;
 }
+
 .card.gadget_small.back .content {
   width: 100%;
   left: 0%;
@@ -916,6 +1031,7 @@ var {
   margin: 0;
   align-items: center;
 }
+
 .card.gadget_small.back .content .description {
   padding-left: 0.25em;
 }
@@ -924,15 +1040,18 @@ var {
   flex-grow: 1;
   max-width: 46%;
 }
+
 .card.gadget_small.back .stats {
   border-right: 1px solid black;
   height: 90%;
 }
+
 .card.gadget_small.back .stats > div {
   display: flex;
   flex-direction: row;
   margin-bottom: 0.5em;
 }
+
 .card.gadget_small.back .stats > div > div:first-child {
   padding: 0.25em;
   width: 40%;
@@ -942,18 +1061,23 @@ var {
   font-size: 100%;
   height: 1.25em;
 }
+
 .card.gadget_small.back .stats > div > div:last-child {
   padding: 0.25em 0 0 0.25em;
 }
+
 .card.gadget_small.back .stats > div.play > div:first-child {
   background: #862419;
 }
+
 .card.gadget_small.back .stats > div.cost > div:first-child {
   background: #c67229;
 }
+
 .card.gadget_small.back .stats > div.range > div:first-child {
   background: #78a2b2;
 }
+
 .card.gadget_small.back .stats > div.strike > div:first-child {
   background: #7f8d73;
 }
@@ -964,9 +1088,11 @@ var {
   display: inline-flex;
   flex-direction: row;
 }
+
 .viewport.portrait {
   flex-direction: column;
 }
+
 .viewport.portrait .card.back {
   transform: rotate(180deg);
 }

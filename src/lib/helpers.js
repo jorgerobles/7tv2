@@ -1,4 +1,3 @@
-//import domtoimage from 'dom-to-image';
 import html2canvas from 'html2canvas';
 
 export function sendAsFile(filename, data, mimetype) {
