@@ -18,7 +18,7 @@
     "random-name": "^0.1.2",
     "raw-loader": "^0.5.1",
     "react-bootstrap": "^0.31.5",
-    "react-image-crop": "^3.0.11",
+    "react-image-crop": "^8.6.5",
     "react-marked": "^0.3.1",
     "react-redux": "^5.1.1",
     "react-scripts": "^3.0.1",
