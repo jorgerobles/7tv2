@@ -5,7 +5,7 @@
   "private": true,
   "devDependencies": {
     "ajv": "^8.11.0",
-    "chunk": "0.0.2",
+    "chunk": "0.0.3",
     "clean-deep": "^3.0.2",
     "gh-pages": "^3.2.3",
     "is-data-url": "^1.0.1",
