@@ -4,7 +4,7 @@
   "version": "0.5.3",
   "private": true,
   "devDependencies": {
-    "ajv": "^8.10.0",
+    "ajv": "^8.11.0",
     "chunk": "0.0.2",
     "clean-deep": "^3.0.2",
     "gh-pages": "^3.2.3",
