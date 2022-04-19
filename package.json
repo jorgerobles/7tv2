@@ -25,7 +25,7 @@
     "react-select": "^2.4.4",
     "react-split-pane": "^0.1.84",
     "react-thunk": "^1.0.0",
-    "redux": "^3.7.2",
+    "redux": "^4.2.0",
     "redux-localstorage": "^1.0.0-rc5",
     "redux-localstorage-filter": "^0.1.1",
     "redux-logger": "^3.0.6",
