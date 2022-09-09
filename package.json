@@ -11,7 +11,7 @@
     "is-data-url": "^1.0.1",
     "js-yaml": "^4.1.0",
     "marked": "^4.0.12",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.3",
     "promise-queue": "^2.2.3",
     "prop-types": "^15.6.2",
     "queue": "^6.0.2",
