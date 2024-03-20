@@ -2,13 +2,13 @@ import pkg from '../../package.json';
 import uuid from 'uuid';
 import Yaml from 'js-yaml';
 import cleanDeep from 'clean-deep';
-import { uniqueNamesGenerator, names } from 'unique-names-generator';
+import { uniqueNamesGenerator, adjectives, names } from 'unique-names-generator';
 import {actionTypes} from 'redux-localstorage'
 import Ajv from 'ajv';
 const ajv = new Ajv();
 
 const randomName=()=>{
-    return uniqueNamesGenerator({dictionaries: [names]})
+    return uniqueNamesGenerator({dictionaries: [adjectives,names], separator: " "})
 }
 
 export const loadYamlFile = (file,asSingleFile=false) => {

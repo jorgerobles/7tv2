@@ -22,7 +22,7 @@ export function parseDataUri(data) {
     if (groups) {
         result.mime = groups[1]
     }
-    if (groups.length > 2) {
+    if (groups && groups.length > 2) {
         groups.slice(2, groups.length - 1).forEach((item) => {
             let [key, value] = item.split("=")
             result[key] = value
@@ -58,6 +58,14 @@ export function dataURItoBlob(dataURI) {
     return blob;
 
 }
+
+export function blobToDataURI(blob) {
+    return new Promise((resolve, _) => {
+      const reader = new FileReader();
+      reader.onloadend = () => resolve(reader.result);
+      reader.readAsDataURL(blob);
+    });
+  }
 
 export function sendAsImage(domId, filename, opts = {}) {
     let el = document.getElementById(domId)

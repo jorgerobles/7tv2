@@ -9,15 +9,15 @@ import TitleField  from "react-jsonschema-form/lib/components/fields/TitleField"
 import ObjectField  from "react-jsonschema-form/lib/components/fields/ObjectField";
 import ArrayField  from "react-jsonschema-form/lib/components/fields/ArrayField";
 
-import { ButtonGroup, Button, Glyphicon, Collapse, Checkbox,  FormGroup, InputGroup, FormControl } from "react-bootstrap";
-import { insertAtCaret } from '../lib/helpers'
+import { ButtonGroup, Button, Glyphicon, Collapse, Checkbox,  FormGroup, InputGroup, FormControl, ProgressBar } from "react-bootstrap";
+import { blobToDataURI, insertAtCaret } from '../lib/helpers'
 import format from 'string-template'
 import { sendAsFile, parseDataUri } from '../lib/helpers'
 
 import ReactCrop, { makeAspectCrop } from 'react-image-crop';
 import 'react-image-crop/dist/ReactCrop.css';
 
-
+import imglyRemoveBackground from "@imgly/background-removal"
 
 const addNameToDataURL=(dataURL, name) => {
   return dataURL.replace(";base64", `;name=${name};base64`);
@@ -77,6 +77,8 @@ const parseTextTools=(textTools,props)=>{
     })
 }
 
+const baseurl=()=>window.location.protocol+"//"+window.location.hostname+":"+window.location.port;
+
 export function ToolTextareaWidget(props) {
   const { options } =props
   return (
@@ -89,7 +91,7 @@ export function ToolTextareaWidget(props) {
 export class PictureWidget extends React.Component {
   constructor(props){
     super(props);
-    this.state={value:"", errorSchema:undefined, crop:{aspect:1}};
+    this.state={value:"", errorSchema:undefined, crop:{aspect:1}, progress: false};
     this.uploadHandler=this.uploadHandler.bind(this)
     this.cropHandler=this.cropHandler.bind(this)
     this.updateHandler=this.updateHandler.bind(this)
@@ -113,30 +115,52 @@ export class PictureWidget extends React.Component {
       })
     }
   }
+  bkgRemovalHandler(){
+    if (!this.props.value){
+      return;
+    }
+
+    try {
+    const config = {
+      publicPath: baseurl()+'/cdn-imgly/',
+      debug: true,
+      proxyToWorker: true,
+      progress: (key, current, total) => {
+        console.log(`Converting ${key}: ${current} of ${total}`)
+      }
+    }
+    this.setState({progress:true})
+    imglyRemoveBackground(this.props.value,config).then((blob) => {
+      blobToDataURI(blob).then((src)=>{
+        this.props.onChange(src,this.state.errorSchema)
+      }
+      )
+    })
+  } catch (error){
+    this.props.onChange(null,this.state.errorSchema)
+  } finally {
+    this.setState({progress:false})
+  }
+}
 
   removeHandler(){
     this.props.onChange(undefined);
   }
 
-  bkgRemovalHandler(value,errorSchema){
-    imglyRemoveBackground(value).then((blob) => {
-      // The result is a blob encoded as PNG. It can be converted to an URL to be used as HTMLImage.src
-      const url = URL.createObjectURL(blob);
-      this.props.onChange(url);
-    })
-  }
+  
 
   render(){
     
     const {name, data, mime} = parseDataUri(this.props.value);
     let fileprops={...this.props, onChange: this.uploadHandler}
     return <div className="pictureWidget">
-    <small>Drag to make a crop Marquee</small><br/>
+    <small>Drag to make a crop Marquee</small>
+    <br/>
     <ReactCrop src={this.props.value||""} crop={this.state.crop} onChange={(crop, pixelCrop)=>this.cropHandler(crop, pixelCrop,name)}/>
     <br/>
     <Button onClick={this.updateHandler} bsSize="xsmall" bsStyle="danger" disabled={!!!this.props.value}><Glyphicon glyph="pencil"/> Crop</Button>
     <Button onClick={e=>{sendAsFile(decodeURIComponent(name),data,mime)}} bsSize="xsmall"  bsStyle="info" disabled={!!!this.props.value}><Glyphicon glyph="download"/> Download</Button>
-    <Button onClick={this.bkgRemovalHandler} bsSize="xsmall" bsStyle="success"><Glyphicon glyph="scissors"/> Remove background</Button>
+    <Button onClick={this.bkgRemovalHandler} bsSize="xsmall" bsStyle="success" disabled={this.state.progress || !!!this.props.value}><Glyphicon glyph="scissors"/> Remove background {this.state.progress? <Glyphicon glyph='hourglass'/>:''}</Button>
     <Button onClick={this.removeHandler} bsSize="xsmall"  bsStyle="warning" disabled={!!!this.props.value}><Glyphicon glyph="remove"/> Remove</Button>
     <hr/>
     <FileWidget {...fileprops}/>
