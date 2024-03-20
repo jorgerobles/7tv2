@@ -1182,3 +1182,5 @@ var {
     font-size: 95% !important;
   }
 }
+
+.card .ratings var[data-extra]:after {content: attr(data-extra);   border-radius: 1em; margin-left: 0.5em; white-space: nowrap; color: #78a2b2 }

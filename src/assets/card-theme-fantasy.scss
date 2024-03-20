@@ -159,3 +159,5 @@
 .fantasy.card .weapons tbody tr.presence td.attack:before {
   content: '\0047';
 }
+
+.fantasy.card .ratings var[data-extra]:after {content: attr(data-extra);   border-radius: 1em; margin-left: 1em; white-space: nowrap; color: #78a2b2; position: absolute; font-size: 0.8em }

@@ -35,7 +35,7 @@
     },
 
     "genres": {
-        "ui:widget": "checkboxes"
+        "ui:widget": "iconCheckboxes"
     },
     "photo":{
         "ui:widget": "pictureWidget"

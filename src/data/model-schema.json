@@ -43,15 +43,48 @@
       "items": {
         "id": "/properties/genres/items",
         "title": "Genre",
-        "type": "string",
-        "enum": [
+        "type": ["object","string"],
+        "enumNames": [
           "Civilian",
           "Crime",
           "Law & Order",
           "Military",
           "Secret",
           "Science",
-          "Unknown"
+          "Unknown",
+          "Epic",
+          "Folktale",
+          "Historical",
+          "Mythic",
+          "Pen & Paper",
+          "Sword & Sorcery",
+          "Action",
+          "Adventure",
+          "Fantasy",
+          "Historical",
+          "Horror",
+          "Sci-Fi"
+        ],
+        "enum": [
+          {"name": "Civilian","category":"core", "chr": "A"},
+          {"name": "Crime","category":"core", "chr": "B"},
+          {"name": "Law & Order","category":"core", "chr": "D"},
+          {"name": "Military","category":"core", "chr": "E"},
+          {"name": "Secret","category":"core", "chr": "F"},
+          {"name": "Science","category":"core", "chr": "G"},
+          {"name": "Unknown","category":"core", "chr": "J"},
+          {"name": "Epic","category":"fantasy", "chr": "A"},
+          {"name": "Folktale","category":"fantasy", "chr": "B"},
+          {"name": "Historical","category":"fantasy", "chr": "C"},
+          {"name": "Mythic","category":"fantasy", "chr": "E"},
+          {"name": "Pen & Paper","category":"fantasy", "chr": "F"},
+          {"name": "Sword & Sorcery","category":"fantasy", "chr": "I"},
+          {"name": "Action","category":"eighties", "chr": "A"},
+          {"name": "Adventure","category":"eighties", "chr": "B"},
+          {"name": "Fantasy","category":"eighties", "chr": "C"},
+          {"name": "Historical","category":"eighties", "chr": "D"},
+          {"name": "Horror","category":"eighties", "chr": "E"},
+          {"name": "Sci-Fi","category":"eighties", "chr": "F"}
         ]
       },
       "uniqueItems": true
@@ -99,7 +132,7 @@
       "id": "/properties/ratings",
       "minimum": 0,
       "title": "Ratings",
-      "type": "number"
+      "type": ["string"]
     },
     "role": {
       "default": "Heroic",

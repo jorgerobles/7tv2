@@ -1,17 +1,20 @@
 /* eslint-disable */
 import React from 'react'
-import { connect } from 'react-redux'
-import { Button } from 'react-bootstrap'
+import {Button} from 'react-bootstrap'
 
-import Form, {DescriptionField} from "react-jsonschema-form";
+import Form from "react-jsonschema-form";
 
 import '../assets/bootstrap/css/paper.min.css'
 import '../assets/editor.css'
-
-
-import { dataURItoBlob } from '../lib/helpers'
-import { ToolTextareaWidget , ToolArrayField, CollapseObjectField, PictureWidget, PickColorWidget, ObjectSelectField} from './FormWidgets'
-import { SFXSelect, SQSelect, ModSelect, ProfileSelector, MiniCard} from './CharacterWidgets'
+import {
+    CollapseObjectField,
+    IconCheckboxes,
+    ObjectSelectField,
+    PictureWidget,
+    ToolArrayField,
+    ToolTextareaWidget
+} from './FormWidgets'
+import {ModSelect, ProfileSelector, SFXSelect, SQSelect} from './CharacterWidgets'
 
 const getCharacterById=(id, cast)=>{
     return cast.find(item=>{return item.id == id})
@@ -53,20 +56,21 @@ export class CharacterEditor extends React.Component {
             return <div className="paper characterEditor"><div style={{margin:20}}><ProfileSelector/></div></div>;
 
         const card=character.__card.toLowerCase();
-        const sch=require('../data/'+card+'-uischema.json')
-        const uiSchema=sch//applyToProps(sch,[...diff(sch['ui:order'],Object.keys(character)),'__card','__version','id'],{'ui:widget':'hidden'})
+        const uiSchema=require('../data/' + card + '-uischema.json')
         const schema = require('../data/'+card+'-schema.json');
 
         const widgets={
             toolTextareaWidget:ToolTextareaWidget,
             pictureWidget:PictureWidget,
+            iconCheckboxes:IconCheckboxes
         }
         const fields={
             collapseObjectField:CollapseObjectField,
             sfxArrayField:SfxArrayField,
             sqArrayField:SQArrayField,
             modArrayField:ModArrayField,
-            objectSelectField:ObjectSelectField
+            objectSelectField:ObjectSelectField,
+
         }
         return <div className="paper characterEditor">
             <div style={{margin:20}}>

@@ -8,6 +8,7 @@ import App from './components/App';
 import './assets/index.css';
 import './assets/icons/css/7tv2-core.css'
 import './assets/icons/css/7tv2-fantasy.css'
+import './assets/icons/css/7tv2-eighties.css'
 
 import persistState from 'redux-localstorage';
 import mergePersistedState from 'redux-localstorage/lib/mergePersistedState'

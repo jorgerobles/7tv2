@@ -1,5 +1,5 @@
 import pkg from '../../package.json';
-import uuid from 'uuid';
+import {v4 as uuid4} from 'uuid';
 import Yaml from 'js-yaml';
 import cleanDeep from 'clean-deep';
 import { uniqueNamesGenerator, adjectives, names } from 'unique-names-generator';
@@ -69,12 +69,12 @@ const reducer = (state = INITIALSTATE, action) => {
             state = validateState(state);
             break;
         case "CHARACTER_NEW":
-            let uid=uuid.v4();
+            let uid=uuid4();
             state.cast = [...state.cast, Object.assign({},TEMPLATE_CHARACTER_NEW, { id: uid, name: randomName(), __version: pkg.version }, action.payload || {})];
             state.currentCharacter=uid
             break;
         case "CHARACTER_LOAD":
-            state.cast = [...state.cast, Object.assign({},TEMPLATE_CHARACTER_NEW,action.payload, { id: uuid.v4() })];
+            state.cast = [...state.cast, Object.assign({},TEMPLATE_CHARACTER_NEW,action.payload, { id: uuid4() })];
             break;
         case "CHARACTER_REMOVE":
             state.cast = state.cast.slice().filter((item) => { return item.id !== action.payload.id; })

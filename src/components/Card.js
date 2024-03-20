@@ -109,6 +109,10 @@ class ModsTable extends React.Component {
 
 
 const Ratings = ({ value }) => {
+    let rx = /([0-9]+)\s\(([^)]*)\)/.exec(value);
+    if (rx!=null){
+        return <div className="ratings"><var data-extra={rx[2]}>{rx[1]}</var> <span> RATINGS</span></div>
+    }
     return <div className="ratings"><var>{value}</var> <span> RATINGS</span></div>
 }
 
@@ -133,10 +137,13 @@ const Title = ({ name="", alignment="", type="" }) => {
 }
 
 const Tags = ({ values, additional=[] }) => {
-    return <div className="tags">{values.map((v, i) => { 
-        return <i key={i} className={"icon-" + slug(v||"").toLowerCase()}></i> 
-    })}{(additional||[]).map((v,i)=>{
-        return <img key={i+values.length} src={v} /> 
+
+    return <div className="tags">{values.filter(i=>i).map((v, i) => {
+        if (typeof (v) == 'string')
+            return <i key={i} className={"icon-genre-core-" + slug(v||"").toLowerCase()}></i>
+        return <i key={i} className={`font-7tv2-${v.category}`}>{v.chr}</i>
+    })}{(additional || []).map((v, i) => {
+        return <img key={i +values.length} src={v.src} alt="" />
     })}</div>
 }
 

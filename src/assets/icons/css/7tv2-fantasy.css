@@ -10,6 +10,10 @@
     font-style: normal;
 }
 
+.font-7tv2-fantasy {
+    font-family: '7tv2 fantasy'; font-style: normal;
+}
+
 [class*='icon-']:before {
     display: inline-block;
     font-style: normal;
@@ -19,38 +23,13 @@
     -moz-osx-font-smoothing: grayscale
 }
 
-.icon-epic:before {
-    font-family: '7tv2 fantasy';content: '\0041';
-}
+/* A */.icon-genre-fantasy-epic:before { font-family: '7tv2 fantasy';content: '\0041';}
+/* B */.icon-genre-fantasy-folktale:before { font-family: '7tv2 fantasy';content: '\0042';}
+/* C */.icon-genre-fantasy-historical:before { font-family: '7tv2 fantasy';content: '\0043';}
+/* E */.icon-genre-fantasy-mythic:before { font-family: '7tv2 fantasy';content: '\0045';}
+/* F */.icon-genre-fantasy-pen-n-paper:before { font-family: '7tv2 fantasy';content: '\0046';}
+/* I */.icon-genre-fantasy-sword-n-sorcery:before { font-family: '7tv2 fantasy';content: '\0049'; }
 
-.icon-folktale:before {
-    font-family: '7tv2 fantasy';content: '\0042';
-}
-
-.icon-historical:before {
-    font-family: '7tv2 fantasy';content: '\0043';
-}
-
-.icon-melee:before {
-    font-family: '7tv2 fantasy';content: '\0044';
-}
-
-.icon-mythic:before {
-    font-family: '7tv2 fantasy';content: '\0045';
-}
-
-.icon-pen-n-paper:before {
-    font-family: '7tv2 fantasy';content: '\0046';
-}
-
-.icon-presence:before {
-    font-family: '7tv2 fantasy';content: '\0047';
-}
-
-.icon-range:before {
-    font-family: '7tv2 fantasy';content: '\0048';
-}
-
-.icon-sword-n-sorcery:before {
-    font-family: '7tv2 fantasy';content: '\0049';
-}
+/* D */.icon-melee:before { font-family: '7tv2 fantasy';content: '\0044';}
+/* G */.icon-presence:before { font-family: '7tv2 fantasy';content: '\0047'; }
+/* H */.icon-range:before { font-family: '7tv2 fantasy';content: '\0048'; }
