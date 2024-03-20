@@ -1,0 +1,52 @@
+{
+
+    "genres": {
+        "ui:widget": "checkboxes"
+    },
+    "description":{
+        "ui:widget": "toolTextareaWidget",
+        "ui:options": {
+            "rows": 15,
+            "textTools":{
+                "ToolInsertText":["✪"]
+            }
+        }
+    },
+    "models":{
+        "items":{
+            "model": {
+                "ui:widget":"textarea"
+            }
+        }
+    },
+    "photo":{
+        "ui:widget": "pictureWidget"
+    },
+    "ui:order": [
+        "name",
+        "description",
+        "profile",
+        "type",
+        "role",
+        "photo",
+        "models",
+        "genres",
+        "notes",
+        "__custom",
+        "*"
+    ],
+   "__custom": {
+        "tint":{
+            "ui:widget":"range"
+        },
+        "genres":{
+            "items":{
+                "ui:widget": "pictureWidget"
+            }
+        }
+    },
+    "additionalProperties":{
+        "ui:widget":"hidden"
+    }
+
+}

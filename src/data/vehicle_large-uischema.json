@@ -1,0 +1,94 @@
+{
+    "ui:order": [
+        "name",
+        "description",
+        "profile",
+        "type",
+        "photo",
+        "stats",
+        "*",
+        "health",
+        "ratings",
+        "genres",
+        "notes",
+        "special_effects",
+        "mods",
+        "__custom",
+        "__theme"
+    ],
+
+    "__custom": {
+        "tint":{
+            "ui:widget":"range"
+        },
+        "genres":{
+            "items":{
+                "ui:widget": "pictureWidget"
+            }
+        }
+    },
+
+    "__theme": {
+        "ui:widget":"select"
+    },
+    "type":{
+        "ui:field": "objectSelectField"
+    },
+    "genres": {
+        "ui:widget": "checkboxes"
+    },
+    "photo":{
+        "ui:widget": "pictureWidget"
+    },
+    "description":{
+        "ui:widget": "toolTextareaWidget",
+        "ui:options": {
+            "rows": 15,
+            "textTools":{
+                "ToolInsertText":["✪"]
+            }
+        }
+    },
+    "notes":{
+        "ui:widget": "toolTextareaWidget",
+        "ui:options": {
+            "rows": 15,
+            "textTools":{
+                "ToolInsertText":["✪"]
+            }
+        }
+    },
+    "special_effects":{
+        "ui:field":"sfxArrayField",
+        "items":{
+            "ui:order":["name","cost","description"],
+            "ui:field":"collapseObjectField",
+            "ui:options":{
+                "template":"{name} ({cost})"
+            },
+            "description": {
+                "ui:widget": "toolTextareaWidget",
+                "ui:options": {
+                    "rows": 15,
+                    "textTools":{
+                        "ToolInsertText":["✪"]
+                    }
+                }
+            }
+        }
+    },
+
+
+    "weapons":{
+        "items":{
+            "ui:order":["type","attack","range","strike","effects"]
+        }
+    },
+
+    "mods":{
+        "ui:field":"modArrayField"
+    },
+    "additionalProperties":{
+        "ui:widget":"hidden"
+    }
+}

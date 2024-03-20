@@ -1,0 +1,43 @@
+---
+__version: 0.0.1
+__card: Model
+__theme: core
+name: Monty
+profile: Action Hero
+role: Heroic
+type: Star
+stats:
+  fight: 5
+  shoot: 5
+  defence: 10
+  mind: 3
+  body: 4
+  spirit: 4
+health: 3
+ratings: 11
+genres: 
+  - civilian
+  - military
+  - occult
+star_quality:
+  - name: Burst of action
+    cost: 2
+    description: >
+      this model can do an immediately...
+special_effects:
+  - name: Blown clear
+    description: >
+      if this model finds itself under a weapon template...
+weapons:
+  - attack: Martial arts
+    range: 0
+    strike: 10
+    effects: >
+      Lorem Ipsum
+    type: melee
+notes: > 
+  Samuel L.Ipsum
+customization:
+  - type:
+    subject:
+    value: 

@@ -1,0 +1,71 @@
+.core.card {
+  color: black;
+}
+
+.core.card .title {
+  margin-left: 2%;
+}
+
+.core.card.vehicle,
+.core.card.model,
+.core.card.unit {
+  section {
+    heading {
+      color: #862419;
+    }
+    .icon-star_icon:before {
+      color: #862419;
+    }
+    p em {
+      color: #862419;
+    }
+  }
+}
+
+.core.card .title .star:before {
+  content: "\2605";
+  font-style: normal;
+}
+.core.card .title .co-star:before {
+  content: "\2729";
+  font-style: normal;
+}
+.core.card .title .extra:before {
+  content: "\2726";
+  font-style: normal;
+}
+
+.core.card.front .background {
+  background: url(images/core/2e_front_vanilla.jpg);
+  background-size: contain;
+}
+.core.card.back .background {
+  background: url(images/core/2e_back_vanilla.jpg);
+  background-size: contain;
+}
+
+.core.card.model .stats > div > div:last-child {
+  color: #000;
+}
+.core.card.model .stats > div.fight > div:last-child {
+  background: #c67229;
+}
+.core.card.model .stats > div.shoot > div:last-child {
+  background: #bf452d;
+}
+.core.card.model .stats > div.defence > div:last-child {
+  background: #862419;
+  color: white;
+}
+.core.card.model .stats > div.mind > div:last-child {
+  background: #78a2b2;
+}
+.core.card.model .stats > div.body > div:last-child {
+  background: #7f8d73;
+}
+.core.card.model .stats > div.spirit > div:last-child {
+  background: #c1912d;
+}
+.core.card.model .sfxribbon dd  {
+  color: #862419;
+}

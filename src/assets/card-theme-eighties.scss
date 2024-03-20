@@ -1,0 +1,159 @@
+.eighties.card  {
+  color: #000 !important;
+  strong {
+    color: #000 !important;
+  }
+}
+
+.eighties.card.vehicle,
+.eighties.card.model,
+.eighties.card.unit {
+  section {
+    heading {
+      color: #c07c31;
+    }
+    .icon-star_icon:before {
+      color: #c07c31;
+    }
+    p em {
+      color: #c07c31;
+    }
+  }
+}
+
+.eighties.card.front .background {
+    background: url(images/eighties/80s-heroic-star-front.png);
+    background-size: cover;
+  }
+.eighties.card.back .background {
+    background: url(images/eighties/80s-heroic-star-back.png);
+    background-size: cover;
+}
+
+.eighties.card.front.extra .background {
+    background: url(images/eighties/80s-extras-front.png);
+    background-size: cover;
+  }
+  .eighties.card.back.extra .background {
+    background: url(images/eighties/80s-extras-back.png);
+    background-size: cover;
+  }
+
+.eighties.card.front.co-star .background {
+    background: url(images/eighties/80s-heroic-costar-front.png);
+    background-size: cover;
+  }
+  .eighties.card.back.co-star .background {
+    background: url(images/eighties/80s-heroic-costar-back.png);
+    background-size: cover;
+  }
+
+.eighties.card.front.vehicle .background {
+  background: url(images/eighties/80s-vehicle-front.png);
+  background-size: cover;
+}
+.eighties.card.back.vehicle .background {
+  background: url(images/eighties/80s-vehicle-back.png);
+  background-size: cover;
+}
+
+.eighties.card.model .stats > div {
+    line-height: 1.9em;
+}
+
+.eighties.card.model .stats.left {
+    top: 21%; left: 0%; width:30%;
+}
+
+.eighties.card.model .stats.right {
+    top: 21%; right: 0%;width:30%
+}
+
+
+.eighties.card.model .stats {
+    box-shadow: none; background:none; border: none
+}
+
+.eighties.card.model .stats > div > div {
+    background:none
+}
+
+.eighties.card.model .stats > div > div:first-child {
+    font-weight: bold;
+    font-size: 110%;
+}
+.eighties.card.model .stats > div > div:last-child {
+  flex-grow: 0;
+  width: 30%;
+  color: #fff;
+  font-weight: bold;
+  font-size: 110%;
+  background: none;
+}
+.eighties.card.model .stats var {
+  position: relative;
+  top: 10%;
+}
+.eighties.card.model .sfxribbon   {
+  display:none
+}
+.eighties.card.model .stats:after {
+  content: "";
+  position: absolute;
+  left: 0%;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  display: block
+}
+.eighties.card.model .stats.right:after {
+  background-position: -280%;
+}
+.eighties.card.model .stats.left:after {
+  background-position: 400%;
+}
+
+.eighties.card .title {
+  line-height: 125%;
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: 2em;
+  text-transform: uppercase;
+  position: relative;
+  color: white
+}
+
+.eighties.card.back .title {
+    display: none
+}
+
+.eighties.card .title strong {
+  position: absolute;
+  width: 100%;
+  top: 0.1em;
+  display: block;
+  transform: rotate(-1deg);
+  color: white !important
+}
+.eighties.card .title span {
+position: absolute;
+  top: 2.6em;
+  left:0;
+  width: 100%;
+
+  font-size: 50%;
+  color: #000;
+  line-height: 1em;
+    padding:0
+}
+
+.eighties.card .ratings span {display:none}
+.eighties.card .ratings {
+    position: absolute;
+    top:3.2em; right: 2.1em; width: 2em; left: auto; height: 2em; color: #000 !important
+}
+
+.eighties.card.model .pic {
+    border-radius: 0; border:none; width: 90%; left: 5%; top: 15%; height: 45%
+}

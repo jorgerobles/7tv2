@@ -1,0 +1,376 @@
+{
+    "definitions": {
+        "mod": {
+          "type":"object",
+          "required": [
+            "name",
+            "ratings",
+            "location"
+          ],
+          "properties":{
+            "name": {
+              "$id": "#/properties/mods/item/name",
+              "type": "string",
+              "title": "Name",
+              "default": "",
+              "pattern": "^(.*)$"
+            },
+            "ratings": {
+              "$id": "#/properties/mods/item/ratings",
+              "type": "integer",
+              "title": "Ratings",
+              "default": 0
+            },
+            "location": {
+              "$id": "#/properties/mods/item/location",
+              "type": "string",
+              "title": "Location",
+              "default": "Engine",
+              "enum": ["Engine","Body","Chassis","Trunk","Hood"]
+            },
+            "mounted": {
+              "$id": "#/properties/mods/item/mounted",
+              "type": "boolean",
+              "title": "Mounted",
+              "default": false
+              
+            }
+          }
+        }
+
+    },
+    "id": "http://crooked-dice.co.uk/vehicle.json",
+    
+    "properties": {
+      "__custom":{
+        "title":"Custom",
+        "id": "/properties/__custom",
+        "type":"object",
+        "properties":{
+          "genres":{
+            "id": "/properties/__custom/genres",
+             "title":"Custom Genres",
+             "type": "array",
+             "items": {
+                "id": "/properties/__custom/genres/items",
+                "title": "Custom Icon",
+                "type": "string"
+             }
+          },
+          "tint": {
+            "title":"Card tint",
+            "id": "/properties/__custom/tint",
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 360,
+            "description":"Change card hue"
+          }
+        }
+      },
+      "__theme":{
+        "title":"Theme",
+        "id": "/properties/__theme",
+        "type":"string",
+        "enum":["apocalypse"]
+      },
+      "genres": {
+        "title":"Genre/s",
+        "description": "The genre of each model determines if it can join your cast or not. Models from a Programme Guide will have their cast’s symbol here instead.",
+        "id": "/properties/genres",
+        "type": "array",
+        "items": {
+          "id": "/properties/genres/items",
+          "title": "Genre",
+          "type": "string",
+          "enum": [
+            "Civilian",
+            "Crime",
+            "Law & Order",
+            "Military",
+            "Secret",
+            "Science",
+            "Unknown"
+          ]
+        },
+        "uniqueItems": true
+      },
+      
+      "health": {
+        "default": 1,
+        "description": "From 1 and up. Stars normally have 3, Co-Stars 2 and Extras 1. When a model’s Health is reduced to 0 it is removed from play.",
+        "id": "/properties/health",
+        "maximum": 5,
+        "minimum": 1,
+        "title": "Health",
+        "type": "integer"
+      },
+      "name": {
+        "description": "The name of the model",
+        "id": "/properties/name",
+        "title": "Name",
+        "type": "string"
+      },
+      "notes": {
+        "default": "",
+        "description": "Some notes about the model",
+        "id": "/properties/notes",
+        "title": "Notes",
+        "type": "string"
+      },
+      "description": {
+        "default": "",
+        "description": "Some description about the model",
+        "id": "/properties/description",
+        "title": "Description",
+        "type": "string"
+      },
+      "photo": {
+        "description": "Image depicting model",
+        "id": "/properties/photo",
+        "title": "Picture",
+        "type": "string",
+        "format": "data-url"
+      },
+      "profile": {
+        "default":"",
+        "description": "Reference to the base profile",
+        "id": "/properties/profile",
+        "title": "Profile",
+        "type": "string"
+      },
+      "ratings": {
+        "default": 0,
+        "description": "A number which represents the effectiveness and value of the model in the game.",
+        "id": "/properties/ratings",
+        "minimum": 0,
+        "title": "Ratings",
+        "type": "number"
+      },
+      "weapons": {
+        "title":"Weapons",
+        "id": "/properties/weapons",
+        "description":"Most models have at least one attack. This section details:",
+        "items": {
+          "id": "/properties/weapons/items",
+          "properties": {
+            "type": {
+              "default": "",
+              "description": "There will be one of two symbols here, depending on whether the attack is a fight attack (fist symbol) or shoot attack (target symbol).",
+              "id": "/properties/weapons/items/properties/attack",
+              "title": "Type",
+              "type": "string",
+              "enum": [
+                "",
+                "Melee",
+                "Range",
+                "Drive"
+              ]
+            },
+            "attack": {
+              "default": "",
+              "description": "The name of the attack (or weapon).",
+              "id": "/properties/weapons/items/properties/attack",
+              "title": "Attack",
+              "type": "string"
+            },
+            "effects": {
+              "default": "",
+              "description": "Any special rules the weapon may have.",
+              "id": "/properties/weapons/items/properties/effects",
+              "title": "Effects",
+              "type":"object",
+              "properties":{
+                "attacker":{
+                  "default": "",
+                  "description": "Effect to the attacker",
+                  "id": "/properties/weapons/items/properties/effects/attacker",
+                  "title": "Attacker",
+                  "type": "string"
+                },
+                "defender":{
+                  "default": "",
+                  "description": "Effect to the defender",
+                  "id": "/properties/weapons/items/properties/effects/defender",
+                  "title": "Defender",
+                  "type": "string"
+                }
+              }
+            },
+            "range": {
+              "default": 0,
+              "description": "The maximum range in inches you can make an attack with this weapon, measured from the attacker to the target model.",
+              "id": "/properties/weapons/items/properties/range",
+              "title": "Range",
+              "type": "integer"
+            },
+            "strike": {
+              "default": 0,
+              "description": "The number you add to your dice roll when you make an attack. The higher the better.",
+              "id": "/properties/weapons/items/properties/strike",
+              "title": "Strike",
+              "type": "integer"
+            }
+          },
+          "type": "object"
+        },
+        "type": "array"
+      },
+      "special_effects": {
+        "title": "Special Effects",
+        "description": "These allow the model to do all kinds of useful things during a game. Each special effect listed here is fully explained on the back of the card.",
+        "id": "/properties/special_effects",
+        "items": {
+          "id": "/properties/special_effects/items",
+          "properties": {
+            "cost": {
+              "default": 0, 
+              "description": "Cost in Plot Points", 
+              "id": "/properties/star_quality/items/properties/cost", 
+              "title": "Cost", 
+              "type": "integer"
+            }, 
+            "description": {
+              "default": "",
+              "description": "SFX explained",
+              "id": "/properties/special_effects/items/properties/description",
+              "title": "Description",
+              "type": "string"
+            },
+            "name": {
+              "default": "",
+              "description": "Name of the SFX",
+              "id": "/properties/special_effects/items/properties/name",
+              "title": "Name",
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "type": "array"
+      },
+      
+      
+
+      "stats": {
+        "description": "The overall model attributes",
+        "title":"Statistics",
+        "additionalProperties": false,
+        "id": "/properties/stats",
+        "properties": {
+          "capacity": {
+            "default": 1,
+            "description": "The maximum number of small and medium based models which can be transported with the vehicle when it makes its movement. Large models count as two medium models. Massive models cannot be transported in vehicles.",
+            "id": "/properties/stats/properties/capacity",
+            "title": "Capacity",
+            "type": "integer",
+            "minimum": 1 
+          },
+          "defence": {
+            "default": 0,
+            "maximum": 10,
+            "description": "A combination of handling, size and natural toughness.",
+            "id": "/properties/stats/properties/defence",
+            "title": "Defence",
+            "type": "integer"
+          },
+          "armour": {
+            "default": 0,
+            "description": "The chance that the natural structure of the vehicle can absorb a strike, negating the effects.",
+            "id": "/properties/stats/properties/armour",
+            "title": "Armour",
+            "type": "integer",
+            "minimum": 0 
+          },
+          "move": {
+            "default": 0,
+            "description": "Movement, in inches",
+            "id": "/properties/stats/properties/move",
+            "title": "Move",
+            "type": "integer",
+            "minimum": 0 
+          },
+          "hood":{
+            "default": 0,
+            "description": "Hood mod slots",
+            "id": "/properties/stats/properties/hood",
+            "title": "Hood",
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 5
+          },
+          "engine":{
+            "default": 0,
+            "description": "Engine mod slots",
+            "id": "/properties/stats/properties/engine",
+            "title": "Engine",
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 5
+          },
+          "body":{
+            "default": 0,
+            "description": "Body mod slots",
+            "id": "/properties/stats/properties/body",
+            "title": "Body",
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 5
+          },
+          "chassis":{
+            "default": 0,
+            "description": "Chasis mod slots",
+            "id": "/properties/stats/properties/chassis",
+            "title": "Chasis",
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 5
+          },
+          "trunk":{
+            "default": 0,
+            "description": "Trunk mod slots",
+            "id": "/properties/stats/properties/trunk",
+            "title": "Trunk",
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 5
+          }
+
+        },
+        "required": [
+          "capacity",
+          "defence",
+          "armour",
+          "move"
+        ],
+        "type": "object"
+      },
+      "type": {
+        "default": {"Bike":1},
+        "description": "Type",
+        "enum": [
+          {"Bike":1},{"Buggy":3},{"Racer":4},{"Truck":5},{"Big Rig":6}
+        ],
+        "id": "/properties/type",
+        "title": "Type",
+        "type": "object"
+      },
+
+      "mods": {
+        "$id": "#/properties/mod",
+        "type": "array",
+        "title": "Mods",
+        "description": "Vehicle mods",
+        "default": [],
+        "items": { "$ref":"#/definitions/mod" }
+      }
+    },
+    "required": [
+      "ratings",
+      "stats",
+      "name",
+      "health",
+      "type"
+    ],
+    "type": "object",
+    "additionalProperties":true
+  }

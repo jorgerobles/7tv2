@@ -1,0 +1,102 @@
+{
+    "ui:options":  {
+        "expandable": false
+    },
+    "ui:order": [
+        "name",
+        "profile",
+        "role",
+        "type",
+        "photo",
+        "stats",
+        "star_quality",
+        "special_effects",
+        "weapons",
+        "health",
+        "ratings",
+        "genres",
+        "notes",
+        "__custom",
+        "__theme",
+        "*"
+    ],
+    "__custom": {
+        "tint":{
+            "ui:widget":"range"
+        },
+        "genres":{
+            "items":{
+                "ui:widget": "pictureWidget"
+            }
+        }
+    },
+    "__theme": {
+        "ui:widget":"select"
+    },
+
+    "genres": {
+        "ui:widget": "checkboxes"
+    },
+    "photo":{
+        "ui:widget": "pictureWidget"
+    },
+    "notes":{
+        "ui:widget": "toolTextareaWidget",
+        "ui:options": {
+            "rows": 15,
+            "textTools":{
+                "ToolInsertText":["✪"]
+            }
+        }
+    },
+    "special_effects":{
+        "ui:field":"sfxArrayField",
+        "items":{
+            "ui:order":["name","cost","description"],
+            "ui:field":"collapseObjectField",
+            "ui:options":{
+                "template":"{name} ({cost})"
+            },
+            "description": {
+                "ui:widget": "toolTextareaWidget",
+                "ui:options": {
+                    "rows": 15,
+                    "textTools":{
+                        "ToolInsertText":["✪"]
+                    }
+                }
+            }
+        }
+    },
+    "star_quality":{
+        "ui:field":"sqArrayField",
+        "items":{
+            "ui:order":["name","cost","description"],
+            "ui:field":"collapseObjectField",
+            "ui:options":{
+                "template":"{name} ({cost})"
+            },
+            "description": {
+                "ui:widget": "toolTextareaWidget",
+                "ui:options": {
+                    "rows": 15,
+                    "textTools":{
+                        "ToolInsertText":["✪"]
+                    }
+                }
+            }
+        }
+    },
+    "weapons":{
+        "items":{
+            "ui:order":["type","attack","range","strike","effects"]
+        }
+    },
+    "stats":{
+            "ui:order":["fight","shoot","defence","mind","body","spirit"]
+    },
+    "additionalProperties":{
+        "ui:widget":"hidden"
+    }
+
+}

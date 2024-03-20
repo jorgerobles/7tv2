@@ -1,0 +1,8 @@
+@font-face {font-family: "Veneer3";
+    src: url("veneer3.eot"); /* IE9*/
+    src: url("veneer3.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("veneer3.woff2") format("woff2"), /* chrome、firefox */
+    url("veneer3.woff") format("woff"), /* chrome、firefox */
+    url("veneer3.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url("veneer3.svg#Veneer3") format("svg"); /* iOS 4.1- */
+  }

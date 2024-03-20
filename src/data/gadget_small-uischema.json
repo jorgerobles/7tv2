@@ -1,0 +1,34 @@
+{
+    "ui:options":  {
+        "expandable": false
+    },
+    "ui:order": [
+        "name",
+        "cost",
+        "play",
+        "weapon",
+        "description",
+        "__card",
+        "__custom",
+        "*"
+    ],
+    "description": {
+        "ui:widget": "toolTextareaWidget",
+        "ui:options": {
+            "rows": 15,
+            "textTools":{
+                "ToolInsertText":["✪"]
+            }
+        }
+    },
+
+    "profile":{
+        "ui:disabled": true
+    },
+
+    "additionalProperties":{
+        "ui:widget":"hidden"
+    }
+
+    
+}
