@@ -74,7 +74,7 @@ class TraitSelect extends React.Component {
                     return <optgroup key={i}
                                      label={group}>{Object.entries(item).filter(this.traitFilter.bind(this)).map((sfx_entry, j) => {
                         let [label, value] = sfx_entry;
-                        return <option key={j} value={JSON.stringify(parseTrait(label, value))}>{label}</option>
+                        return <option key={j} value={JSON.stringify(parseTrait(label, value))}>{value.category} - {label}</option>
                     })}</optgroup>
                 })}
             </FormControl><InputGroup.Button><Button bsStyle="success" onClick={e => {
@@ -88,8 +88,11 @@ export class SFXSelect extends TraitSelect {
 
     loadData() {
         return loadContext(SFX)
-            .then((data) => data.reduce((c, i) => Object.assign(c, {...i}), {}))
-
+            .then(data => data.reduce((c, i) => Object.assign(c, {...i}), {}))
+            .then(data => Object.entries(data).reduce((c,i)=>{
+                let [index,item] = i;
+                return Object.assign(c,{[index]: item.pop()})
+            },{}))
     }
 
     componentDidMount() {
@@ -105,7 +108,11 @@ export class SQSelect extends TraitSelect {
 
     loadData() {
         return loadContext(SQ)
-            .then((data) => data.reduce((c, i) => Object.assign(c, {...i}), {}))
+            .then(data => data.reduce((c, i) => Object.assign(c, {...i}), {}))
+            .then(data => Object.entries(data).reduce((c,i)=>{
+                let [index,item] = i;
+                return Object.assign(c,{[index]: item.pop()})
+            },{}))
     }
 
     componentDidMount() {
