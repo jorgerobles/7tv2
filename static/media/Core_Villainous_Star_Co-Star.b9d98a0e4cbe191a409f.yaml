@@ -1,0 +1,829 @@
+__custom: {}
+genres:
+  - Military
+  - Science
+health: 3
+name: Despotic Dictator
+notes: ''
+profile: Despotic Dictator
+ratings: 10
+role: Villain
+special_effects:
+  - description: >-
+      When this model activates choose 2 friendly models within 6” who have not
+      activated this turn. Chosen models can activate this turn for free but
+      cannot use their own Leader or Unit Leader special effects this turn.
+    cost: 0
+    name: Leader 2
+  - description: >-
+      When this model makes a strike, it can choose to add +1 to its strike roll
+      for every ✪ spent on extra dice, instead of getting the extra dice.
+    cost: 0
+    name: Military Training
+  - description: >-
+      All Minion models in your cast gain the Military Training special effect
+      (above). This model must have the Military Training special effect to use
+      ths one.
+    cost: 0
+    name: National Service
+star_quality:
+  - cost: 2
+    description: >
+      Any of this model's attacks which state '0 Health' cause target models to
+      lose 1 Health instead.
+    name: Severe Beating
+stats:
+  body: 4
+  defence: 10
+  fight: 4
+  mind: 3
+  shoot: 5
+  spirit: 5
+type: Star
+weapons:
+  - type: Melee
+    attack: Swagger Stick
+    effects: 0 Health + Weakened
+    range: 0
+    strike: 9
+  - type: Range
+    attack: High Calibre Pistol
+    effects: 2 Shots
+    range: 12
+    strike: 9
+__version: 0.0.1
+__card: Model
+customization: []
+id: 7a27ff8a-28ef-49f0-8642-089afc851ce6
+description: >
+  You may be the leader of a small country, alien battlefleet or rogue mercenary
+  force. But those under your command obey you without question, living in fear
+  of your merciless retribution, fragile sanity and bloody fists.
+
+---
+__custom: {}
+genres:
+  - Crime
+  - Military
+  - Secret
+health: 3
+name: Evil Mastermind
+notes: ''
+profile: Evil Mastermind
+ratings: 10
+role: Villain
+special_effects:
+  - description: This model adds one additional gadget card to the player's gadgets pool.
+    cost: 0
+    name: Gadget
+  - description: >-
+      All the models in your cast can count their Spirit as +1. If your cast
+      becomes axed, all of the models in your cast must count their Spirit as
+      -1.
+    cost: 0
+    name: Insane Confidence
+  - description: >-
+      When this model activates choose 2 friendly models within 6” who have not
+      activated this turn. Chosen models can activate this turn for free but
+      cannot use their own Leader or Unit Leader special effects this turn.
+    cost: 0
+    name: Leader 2
+star_quality:
+  - cost: 2
+    description: >
+      Choose a single friendly extra model with cost no greater then 2 ratings,
+      currently removed from play. your opponent must immediately plce this
+      model within 8" of any of your models. this model counts as having
+      returned to play.
+    name: Endless Subordinates
+stats:
+  body: 3
+  defence: 10
+  fight: 3
+  mind: 4
+  shoot: 4
+  spirit: 4
+type: Star
+weapons:
+  - type: Melee
+    attack: Brawl
+    effects: 0 Health + Weakened
+    range: 0
+    strike: 12
+  - type: Range
+    attack: Pistol
+    effects: 2 Shots
+    range: 12
+    strike: 7
+__version: 0.0.1
+__card: Model
+customization: []
+id: 6fce2134-7ddb-4617-9438-0827d87860bd
+description: >
+  You have risen through the ranks of ultra-secretive criminal organisations and
+  now intend to stop at nothing to achieve world domination. No scheme is too
+  insane - although those who question your grip on sanity will find themselves
+  at the wrong end of an industrial laser.
+
+---
+__custom: {}
+genres:
+  - Civilian
+  - Science
+health: 3
+name: Insidious Industrialist
+notes: ''
+profile: Insidious Industrialist
+ratings: 10
+role: Villain
+special_effects:
+  - description: This model adds one additional gadget card to the player's gadgets pool.
+    cost: 0
+    name: Gadget
+  - description: >-
+      When this model activates choose 2 friendly models within 6” who have not
+      activated this turn. Chosen models can activate this turn for free but
+      cannot use their own Leader or Unit Leader special effects this turn.
+    cost: 0
+    name: Leader 2
+  - description: >-
+      This model has to be a Star! In the prologue, choose any one Co-Star or
+      Extra model in your cast. When this model activates the chosen model can
+      activate for free. If this model is targeted by a strike, the chosen model
+      can be made the target of that strike if it is within 2".
+    cost: 0
+    name: Right Hand Man
+star_quality:
+  - cost: 2
+    decription: >
+      Immediately play one gadget card from your pool without paying its listed
+      ✪ cost. Do not discard this gadget card after playing it.
+    name: Cutting Edge
+    description: >-
+      Immediately play one gadget card from your pool without paying its listed
+      ✪ cost. Do not discard this gadget card after playing it.
+stats:
+  body: 3
+  defence: 10
+  fight: 4
+  mind: 4
+  shoot: 4
+  spirit: 5
+type: Star
+weapons:
+  - type: Melee
+    attack: Brawl
+    effects: 0 Health + Weakened
+    range: 0
+    strike: 7
+  - type: Range
+    attack: Pistol
+    effects: 2 Shots
+    range: 12
+    strike: 7
+__version: 0.0.1
+__card: Model
+customization: []
+id: 666407ea-fbf5-470c-9b7e-9983df3754ed
+description: >
+  As the head of a global web of business interests, you used to be about making
+  money and having absolute power. And they say absolute power corrupts
+  absolutely... Now you are intent on using your empire to put yourself in
+  charge of the planet – whatever that takes.
+
+---
+__custom: {}
+genres:
+  - Secret
+  - Science
+  - Unknown
+health: 3
+name: Otherworldly Invader
+notes: ''
+profile: Otherworldly Invader
+ratings: 10
+role: Villain
+special_effects:
+  - description: >-
+      This model can be set up anywhere on the table, as long as it is no
+      further than 12” from another friendly non-Spy model. Spies are placed
+      after all other models (see the rules about cast start locations (see page
+      51). Opposing models cannot make strikes against a model with this special
+      effect in their first turn of an episode.
+    cost: 0
+    name: Spy
+  - description: >-
+      This model cannot recover Health using the Medic special effect. In the
+      player’s end phase, this model can automatically remove one of its
+      statuses.
+    cost: 0
+    name: Alien
+  - cost: 1
+    description: >
+      Roll 1D6. On the roll of 4+ one point of Health is recovered, up to this
+      model’s starting Health value. This special effect can be used only once
+      per turn. You can add extra dice to this roll. You can never reroll or
+      change the results of these rolls by any means.
+    name: Regenerate
+  - description: >-
+      If this model is the target of a successfull strike, you can allocate the
+      effects of that strike to any other model in your cast wich is within 4".
+    cost: 0
+    name: Sacrifice
+star_quality:
+  - cost: 2
+    description: >
+      Choose a single oppossing Extra model within 6" with cost no greater then
+      2 ratings.If the choosen model fails a Spirit test it is now counted as
+      being part of your cast. This model cannot activate this turn.
+    name: Alien Duplicate
+stats:
+  body: 3
+  defence: 10
+  fight: 4
+  mind: 5
+  shoot: 4
+  spirit: 4
+type: Star
+weapons:
+  - type: Melee
+    attack: Brawl
+    effects: 0 Health + Weakened
+    range: 0
+    strike: 7
+  - type: Range
+    attack: Alien Pistol
+    effects: 2 Shots
+    range: 12
+    strike: 7
+__version: 0.0.1
+__card: Model
+customization: []
+id: c292cd76-a1f5-498a-9e3a-d2c5688223eb
+description: >
+  You keep your alien origins a secret from the snivelling primates who serve
+  you. Your ultimate aims are incomprehensible and too terrible for their tiny
+  human minds; and their primitive laws and moral code will not stand in the way
+  of your machinations.
+
+---
+__custom: {}
+genres:
+  - Civilian
+  - Secret
+  - Unknown
+health: 3
+name: Sinister Mystic
+notes: ''
+profile: Sinister Mystic
+ratings: 10
+role: Villain
+special_effects:
+  - description: >-
+      When this model activates choose 2 friendly models within 6” who have not
+      activated this turn. Chosen models can activate this turn for free but
+      cannot use their own Leader or Unit Leader special effects this turn.
+    cost: 0
+    name: Leader 2
+  - cost: 1
+    description: >
+      This model can change the result of up to two dice just rolled to either a
+      1 or a 6. These dice need to relate to an action the model performs or an
+      action another model performs on it. This special effect can be used
+      during an opponent’s turn.
+    name: Psychic
+  - cost: 0
+    description: >
+      This model and friendly models within 6" can purchase a maximum of 1 extra
+      die at the usual cost after the rest of the dice for a strike roll or
+      defence roll have been rolled.
+    name: Weaver of Fate
+star_quality:
+  - cost: 2
+    description: >
+      Next turn all strike rolls made by opposing Extra models within 6" of the
+      Sinister Mystic are counted as -1.
+    name: Arcane Summoming
+stats:
+  body: 3
+  defence: 10
+  fight: 4
+  mind: 4
+  shoot: 4
+  spirit: 5
+type: Star
+weapons:
+  - type: Melee
+    attack: Crystal Knife
+    effects: ''
+    range: 0
+    strike: 7
+  - type: Range
+    attack: Disorienting Gaze
+    effects: 0 health + Weakened. No effect if target is already Weakened
+    range: 8
+    strike: 8
+__version: 0.0.1
+__card: Model
+customization: []
+id: 79fa9cb6-cf75-4ece-b21c-3b2ed123fe83
+description: >
+  Unimaginable forces lurk on the fringes of our reality that most never have
+  the good sense or fortune to cross. But you seek them out, channel them and
+  try to bend their ancient power to your will. Such power attracts cults and
+  fanatics – your tools to bring chaos to these green and pleasant lands!
+
+---
+__custom: {}
+genres:
+  - Civilian
+  - Crime
+health: 3
+name: Underworld Boss
+notes: ''
+profile: Underworld Boss
+ratings: 10
+role: Villain
+special_effects:
+  - description: >-
+      Opposing non-vehicle models moving to within 1” of this model must either
+      end their movement or move into base contact with the blocking model.
+      Models cannot block if they are knocked down, or are Stunned or On Fire.
+    cost: 0
+    name: Block
+  - description: >-
+      All models in your cast can take a single free move action before you make
+      the first turn's initiative roll.
+    cost: 0
+    name: Get into Place
+  - description: >-
+      Roll 1D6 if this model receives the Stunned or Weakened statuses. On a
+      roll of 4+ this model does not gain that status. You can add extra dice to
+      this roll roll using ✪.
+    cost: 0
+    name: Hard
+  - description: >-
+      When this model activates choose 1 friendly models within 6” who have not
+      activated this turn. Chosen models can activate this turn for free but
+      cannot use their own Leader or Unit Leader special effects this turn.
+    cost: 0
+    name: Leader 1
+star_quality:
+  - cost: 2
+    description: >
+      Choose a single opposing Extra model. You can take one immediate free
+      action with this model.
+    name: On the Payroll
+stats:
+  body: 4
+  defence: 10
+  fight: 5
+  mind: 3
+  shoot: 4
+  spirit: 4
+type: Star
+weapons:
+  - type: Melee
+    attack: Brawl
+    effects: 0 Health + Weakened
+    range: 0
+    strike: 9
+  - type: Range
+    attack: Pistol
+    effects: 2 Shots
+    range: 12
+    strike: 7
+__version: 0.0.1
+__card: Model
+customization: []
+id: 4a930541-317b-4853-b0c6-9141c1cd054c
+description: >
+  Your manor can be lethal to the uninvited. Your business is protection,
+  smuggling, arson, gambling and narcotics – ideally all with menaces. With an
+  army of lowlifes ready to act on your orders, it’s time the world took notice.
+
+---
+__custom: {}
+genres:
+  - Civilian
+  - Secret
+health: 2
+name: Double Agent
+notes: ''
+profile: Double Agent
+ratings: 6
+role: Villain
+special_effects:
+  - description: >-
+      After this model makes a fight attack, they can move up to 2” as a free
+      action if no opposing models have this model in their fight range. Models
+      can only make Follow Up moves in your turn.
+    cost: 0
+    name: Follow Up
+  - description: >-
+      If this model has a cover bonus from soft cover, hard cover or obstacles,
+      then models making shoot attacks against this model automatically miss if
+      the distance to the target is more than half the attack’s range.
+    cost: 0
+    name: Hide
+  - description: >-
+      *Special Action.* One opposing model within 4" of this model cannot
+      activate next turn.
+    cost: 0
+    name: Sleight-Of-Hand
+  - description: >-
+      This model can be set up anywhere on the table, as long as it is no
+      further than 12” from another friendly non-Spy model. Spies are placed
+      after all other models (see the rules about cast start locations (see page
+      51). Opposing models cannot make strikes against a model with this special
+      effect in their first turn of an episode.
+    cost: 0
+    name: Spy
+star_quality:
+  - cost: 1
+    description: >
+      Opponent immediately loses ✪ for each of their models within 2" of the
+      Double Agent.
+    name: Sow Dissent
+stats:
+  body: 3
+  defence: 9
+  fight: 4
+  mind: 3
+  shoot: 4
+  spirit: 3
+type: Co-Star
+weapons:
+  - type: Melee
+    attack: Brawl
+    effects: 0 Health + Weakened
+    range: 0
+    strike: 7
+  - type: Range
+    attack: Pistol
+    effects: 2 Shots
+    range: 12
+    strike: 7
+__version: 0.0.1
+__card: Model
+customization: []
+id: 1f78e250-0c4e-40f0-9ffa-451cdb0067c4
+description: >
+  You use persuasion and cunning to infiltrate the enemy, stealing secrets with
+  one sleight-of-hand and sowing the seeds of suspicion and dissent with the
+  other.  You may be an unassuming mole or a seductive femme fatale, but your
+  actions prove one thing: trust no-one.
+
+---
+__custom: {}
+genres:
+  - Crime
+  - Military
+health: 2
+name: Faithful Lackey
+notes: ''
+profile: Faithful Lackey
+ratings: 6
+role: Villain
+special_effects:
+  - description: >-
+      Once per turn, the effects of a succesfull strike against this model can
+      be redirected to one friendly model within 2".
+    cost: 0
+    name: Fall Guy
+  - description: >-
+      When this model activates choose 2 friendly models within 6” who have not
+      activated this turn. Chosen models can activate this turn for free but
+      cannot use their own Leader or Unit Leader special effects this turn.
+    cost: 0
+    name: Leader 2
+  - description: >
+      *(specify one friendly model to be boss)* When the specified boss model is
+      activated, this model can activate for free if it is within 6”. A boss
+      model can only have one sidekick, and sidekicks activated in this way
+      cannot use their own Sidekick or Leader abilities this turn. When
+      specifiying the boss, Sidekick Stars must choose a friendly Star, Sidekick
+      Co-Stars must choose a friendly Star or Co-Star, and Sidekick Extras may
+      choose any friendly model.
+    cost: 0
+    name: Sidekick
+star_quality: []
+stats:
+  body: 4
+  defence: 9
+  fight: 4
+  mind: 3
+  shoot: 4
+  spirit: 3
+type: Co-Star
+weapons:
+  - type: Melee
+    attack: Brawl
+    effects: 0 Health + Weakened
+    range: 0
+    strike: 8
+  - type: Range
+    attack: SMG
+    effects: 'Blast 3", Cannot aim'
+    range: 16
+    strike: 7
+__version: 0.0.1
+__card: Model
+customization: []
+id: b8373e7c-2e73-4906-bf6e-d4731b09f4be
+description: >
+  Every arch-villain needs a trusted operative to undertake his plans. Having
+  the boss’ ear allows you the pick of the spoils or access to the latest
+  high-tech weaponry. Just don’t mess up or you may find yourself swimming in
+  the shark tank.
+
+---
+__custom: {}
+genres:
+  - Secret
+  - Unknown
+health: 2
+name: Inhuman Servitor
+notes: ''
+profile: Inhuman Servitor
+ratings: 6
+role: Villain
+special_effects:
+  - description: >-
+      This model cannot recover Health using the Medic special effect. In the
+      player’s end phase, this model can automatically remove one of its
+      statuses.
+    cost: 0
+    name: Alien
+  - description: >-
+      This model can activate for free if it is more than 6” from any other
+      model. This model can never have the Leader or Unit Leader special
+      effects.
+    cost: 0
+    name: Loner
+  - description: This model travels 5” with a single move action.
+    cost: 0
+    name: Move 5”
+  - cost: 1
+    description: >
+      Roll 1D6. On the roll of 4+ one point of Health is recovered, up to this
+      model’s starting Health value. This special effect can be used only once
+      per turn. You can add extra dice to this roll. You can never reroll or
+      change the results of these rolls by any means.
+    name: Regenerate
+  - description: >-
+      At the end of this model's activation, choose a friendly medium-based
+      Extra model within 4". Swap the positions of this model and the chosen
+      model. Neither of these models suffer free strikes.
+    cost: 0
+    name: Shifting Presence
+star_quality:
+  - cost: 1
+    description: >
+      Choose up to two models within 6". You can move this model and the chosen
+      models up to 2". These models do not suffer free strikes from this
+      movement.
+    name: Unseen Master
+stats:
+  body: 3
+  defence: 9
+  fight: 3
+  mind: 4
+  shoot: 4
+  spirit: 3
+type: Co-Star
+weapons:
+  - type: Melee
+    attack: Alien Nerve Grip
+    effects: 0 Health + Stunned
+    range: 0
+    strike: 6
+  - type: Range
+    attack: Alien Pistol
+    effects: '2 Shots, Deadly'
+    range: 12
+    strike: 7
+__version: 0.0.1
+__card: Model
+customization: []
+id: fbbfa6a1-0e2b-4523-8866-53adede6c608
+description: >
+  You serve otherworldly masters with minds more cold and calculating than our
+  own. You may be an ancient power, an alien observer or from a lost race of
+  superhumans – but you will ensure their plans remain secret at any cost.
+
+---
+__custom: {}
+genres:
+  - Civilian
+  - Military
+health: 2
+name: Jackbooted Sadist
+notes: ''
+profile: Jackbooted Sadist
+ratings: 6
+role: Villain
+special_effects:
+  - description: >-
+      when this model activates you can choose any one friendly Minion unit.
+      This model can activatie this unit as if they had the Unit Leader special
+      effect. Count any existing leader model of this unit as a normal member of
+      the unit.
+    cost: 0
+    name: Commander
+  - description: >-
+      Roll 1D6 if this model receives the Stunned or Weakened statuses. On a
+      roll of 4+ this model does not gain that status. You can add extra dice to
+      this roll roll using ✪.
+    cost: 0
+    name: Hard
+  - description: >-
+      When this model activates choose 1 friendly models within 6” who have not
+      activated this turn. Chosen models can activate this turn for free but
+      cannot use their own Leader or Unit Leader special effects this turn.
+    cost: 0
+    name: Leader 1
+  - description: >-
+      When this model makes a strike, it can choose to add +1 to its strike roll
+      for every ✪ spent on extra dice, instead of getting the extra dice.
+    cost: 0
+    name: Military Training
+star_quality:
+  - cost: 1
+    description: >
+      If this model is actiong as a Unit Leader, you can give one model in the
+      unit the Weakened status. All models in that unit gain +1 to their strike
+      rolls this turn.
+    name: Brutal Task Master
+stats:
+  body: 4
+  defence: 9
+  fight: 4
+  mind: 3
+  shoot: 4
+  spirit: 4
+type: Co-Star
+weapons:
+  - type: Melee
+    attack: Brawl
+    effects: 0 Health + Weakened
+    range: 0
+    strike: 8
+  - type: Range
+    attack: Pistol
+    effects: 2 Shots
+    range: 12
+    strike: 7
+__version: 0.0.1
+__card: Model
+customization: []
+id: 4bd15917-6a0c-4768-916e-db9ee3bc5399
+description: >
+  Your ‘talents’ are often required to do those jobs where any scruples or
+  compassion would only be a hindrance. Those under your command follow you into
+  battle, too scared to question your authority.
+
+---
+__custom: {}
+genres:
+  - Crime
+  - Science
+health: 2
+name: Mad Scientist
+notes: ''
+profile: Mad Scientist
+ratings: 6
+role: Villain
+special_effects:
+  - description: >-
+      If this model uses its Invulnarable special effect, all friendly models
+      within 2" of this model can count their Defence as +1 until the start of
+      your next turn.
+    cost: 0
+    name: Force Shield
+  - description: This model adds one additional gadget card to the player's gadgets pool.
+    cost: 0
+    name: Gadget
+  - cost: 1
+    description: >
+      This model can ignore any strike it has just suffered if it can roll 4+ on
+      1D6. This special effect can be used during an opponent’s turn. You can
+      add extra dice to this roll.
+    name: Invulnerable
+  - description: >-
+      *Special Action.* If this model passes a Mind test one friendly Robot or
+      Vehicle model in base contact can recover 1 lost Health.
+    cost: 0
+    name: Repair
+star_quality:
+  - cost: 1
+    description: >
+      Choose on Extra model in your cast. the chosen model can immediately make
+      one Spontaneous Mutation fight attack as a free action. You can add extra
+      strike dice to this attack.
+    name: Spontaneous Mutation
+stats:
+  body: 3
+  defence: 9
+  fight: 2
+  mind: 5
+  shoot: 5
+  spirit: 3
+type: Co-Star
+weapons:
+  - type: Melee
+    attack: Brawl
+    effects: 0 Health + Weakened
+    range: 0
+    strike: 5
+  - type: Range
+    attack: Experimantal Gun
+    effects: 2 Shots + Stunned
+    range: 12
+    strike: 8
+  - type: Melee
+    attack: Spontaneous Mutation
+    effects: +Deadly. Friendly Extras only
+    range: 1
+    strike: 6
+__version: 0.0.1
+__card: Model
+customization: []
+id: 2e609e10-a593-41cd-85cb-c377b947d0a0
+description: >
+  Mainstream science is too restrictive with its laws and ethics. When not busy
+  fitting lasers to sharks’ heads or installing underfloor heating in your
+  arctic lair, you still find the time to build the odd doomsday weapon.
+
+---
+__custom: {}
+genres:
+  - Science
+  - Unknown
+health: 3
+name: Marauding Monster
+notes: ''
+profile: Marauding Monster
+ratings: 5
+role: Villain
+special_effects:
+  - description: >-
+      This model must have Smash attack.If this model chooses not to move, it
+      can grow to Massive size temporarily. Until the start of your next turn it
+      gains +2 to strike rolls and +1" range to its Smash attack, but opposing
+      models gain additional +1 strike die on al attack rolls made against it.
+    cost: 0
+    name: Growth
+  - description: This model travels 4” with a single move action.
+    cost: 0
+    name: Move 4”
+  - description: >
+      Models on bases 40–50mm and between 40–60mm high (or long) automatically
+      gain this special effect for free – it is not optional. This model is much
+      larger than man-sized. Large models gain +1 Health – this is already
+      factored into our profiles. Opponents gain one extra die when making a
+      strike against a Large model.
+    cost: 0
+    name: Large
+  - cost: 1
+    description: >
+      Roll 1D6. On the roll of 4+ one point of Health is recovered, up to this
+      model’s starting Health value. This special effect can be used only once
+      per turn. You can add extra dice to this roll. You can never reroll or
+      change the results of these rolls by any means.
+    name: Regenerate
+  - description: >-
+      This model cannot recover Health using the Medic special effect. In the
+      player’s end phase, this model can automatically remove one of its
+      statuses.
+    cost: 0
+    name: Alien
+  - description: >-
+      Models making a fight attack against this model must pass a Spirit test or
+      must count their Strike number as half (round up) against this model until
+      the end of the turn.
+    cost: 0
+    name: Fearsome
+star_quality:
+  - cost: 1
+    description: |
+      Make a Smash attack against each model in your fight range.
+    name: Thrash
+stats:
+  body: 5
+  defence: 10
+  fight: 4
+  mind: 2
+  shoot: 2
+  spirit: 5
+type: Co-Star
+weapons: []
+__version: 0.0.1
+__card: Model
+customization: []
+id: 17e88ff8-76e4-4104-9cf0-70c590ce0bcc
+description: >
+  Widespread panic and a trail of destruction follow wherever you go. You may be
+  an ancient reptile brought back through time, a rampaging alien parasite
+  fallen to earth or an experimental giant robot gone rogue – but you absolutely
+  will not stop!

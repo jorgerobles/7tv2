@@ -1,0 +1,154 @@
+__card: "gadget_small"
+name: Adrenaline Boost
+description: >
+  **EFFECT**: For the rest of the game this model is never affected by 
+  Fearsome models and can count their strike rolls as +1 against these models
+cost: 0
+play: Model's activation
+---
+__card: "gadget_small"
+name:  Bulletproof umbrella
+play: Opponent declares strike
+description: >
+  **EFFECT**: The model gains two extra Defence dice against the next attack 
+cost: 1
+---
+__card: "gadget_small"
+name:  Capture bubble
+play: Model's Activation 
+description: >
+  **EFFECT**: A successful strike against an opposing Extra removes that model from play. 
+  Against a Star or Co-Star, place that model within 2" of a table edge of your choice.
+cost: 2
+range: 12
+strike: 8
+---
+__card: "gadget_small"
+name:  Climbing suckers
+cost: 1
+description: >
+  **EFFECT**: This model may immediately climb or descend up to 2 levels if adjacent to 
+  a vertical surface Opposing models free strikes before this movement.
+play: Model's Activation
+---
+__card: "gadget_small"
+name:  Clothing Brush Communicator
+play: Model's Activation
+cost: 0
+description: >
+  **EFFECT**: Choose one model which has not already activated this turn. 
+  This model can activate this turn for free
+---
+__card: "gadget_small"
+name: Dagger Shoe
+play: Model's Activation
+cost: 1
+range: 0
+strike: 6
+description: >
+  **EFFECT**: The defending model counts as disadvantaged.
+---
+__card: "gadget_small"
+name: Disguise Kit
+play: Model's Activation
+cost: 2
+description: >
+  **EFFECT**: This model cannot betargetted bystrikes until they attempt a strike, 
+  or until the start of your next turn. All attacks made by this model while using
+  the gadget count as rear attacks.
+---
+__card: "gadget_small"
+name: First Aid Kit
+description : >
+  **EFFECT**: The model using this gadget can ignore the effect of one strike on themselves or a model in base contact. This gadget has no effect on Robot models.
+play: Opponent's successful strike
+cost: 1
+---
+__card: "gadget_small"
+name: Grapple Gun
+description : >
+  **EFFECT**: Choose a point within line of sight, on any item ot terrain within 12” and up to 2 levels higher
+  or lower. Place the model using this gadget at that point. Opposing models are eligible to make tree strikes beforethis movement.
+play: Model's Activation
+cost: 2
+---
+__card: "gadget_small"
+name: Homing Beacon
+description : >
+  **EFFECT**: 1D3 friendly models within 12" maymakeafree move action toward this model.
+play: Model's Activation
+cost: 3
+---
+__card: "gadget_small"
+name: Jet Pack
+description : >
+  **EFFECT**: Choosea point within 12" and line of sight. Placethe model using
+  this gadget at that point. Opposing models do not get to make free strikes before this movement.
+play: Model's Activation
+cost: 2
+---
+__card: "gadget_small"
+name: Laser Scope
+description : >
+  **EFFECT**: This model's next aimed shoot attack this turn automatically causes a successful strike against an eligible target.
+play: Model's Activation
+cost: 1
+---
+__card: "gadget_small"
+name: Nerve gas canister
+description : >
+  **EFFECT**: Place the Blast 5" template in base contact with this model. 
+  All opposing non-Robot models under this template gain the Weakened status.
+play: Model's Activation
+cost: 2
+---
+__card: "gadget_small"
+name: Pen Gun
+description : >
+  **EFFECT**: One model in base contact loses -1 Health.
+play: Model's Activation
+cost: 1
+---
+__card: "gadget_small"
+name: Pocket watch jammer
+description : >
+  **EFFECT**: Placethe Blast 5" template centered on this model. All opposing Robot models under this template gain the Stunned status.
+cost: 0
+play: Model's Activation
+---
+__card: "gadget_small"
+name: Rocket cigarette
+description : >
+  **EFFECT**: Amodel successfully struck with this attack receives the On Fire status.
+cost: 1
+play: Model's Activation
+range: 6
+strike: 6
+---
+__card: "gadget_small"
+name: Sleep Spray
+description : >
+  **EFFECT**: One non -Robot model within 2” and in line of sight gains the Stunned status.
+cost: 0
+play: Model's Activation
+---
+__card: "gadget_small"
+name: Smelling salts
+description : >
+  **EFFECT**: Removethe Dominated, Stunned and Weakened statuses from this model ora model in base contact.
+cost: 0
+play: Your end phase
+---
+__card: "gadget_small"
+name: Wristwatch Buzzsaw
+description : >
+  **EFFECT**: You can immediately moveone opposing model in base contact upto 1". Youcannot make free strikes against this model.
+cost: 0
+play: Model's Activation
+---
+__card: "gadget_small"
+name: X-Ray specs
+description : >
+  **EFFECT**: Models defending against strikes made by this model do not gain the defence bonus for hard or soft cover, or for being behind an obstacle.
+cost: 0
+play: Model's Activation

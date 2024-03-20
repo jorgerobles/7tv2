@@ -1,0 +1,186 @@
+Ambush 🅟:
+  category: SFX
+  description: This model may add +1 to all strike attacks made within 1” of hard or soft cover.
+Aware 🅟:
+  category: SFX
+  description: This model can make fight attacks all round (360º) and never counts as  having been attacked in the back zone. This model loses this special effect while Stunned.
+Backstabber 🅟:
+  category: SFX
+  description: When attacking an enemy in its back zone, this model gains one stretch die to strike rolls.
+Block 🅟:
+  category: SFX
+  description: Enemies moving to within 1” of this model must either end their movement or move into base contact with this model. Models cannot block if they are knocked down, Stunned or Captured.
+Bloodthirsty 🅟:
+  category: SFX
+  description: Gain ✪ whenever this model removes an enemy from play.
+Brave 🅟:
+  category: SFX
+  description: This model never receives the Scared status. This model counts its strike as +1 against enemies with Scared status weapon effects.
+Break In 🅟:
+  category: SFX
+  description: This model can move through any door or window in base contact. Place this model on the other side of the door or window. It may ignore obstacles.
+Camouflage 🅟:
+  cost: 1
+  category: SFX
+  description: While using Camouflage, this model can move through other models and is not affected by the Block special effect. Enemies struck by a Camouflage model count as being attacked in the rear. The Camouflage state ends after this model makes a strike roll or at the end of the turn.
+Climb 🅟:
+  category: SFX
+  description: If this model falls, count the fall as though it was from two levels less. If this model falls two levels or less, it can continue its activation after the fall.
+Demolish 🅢:
+  cost: 1
+  category: SFX
+  description: Barrier. Remove any obstacle that is touched by the template. The area under the template is now rough ground.
+Disguise 🅟:
+  category: SFX
+  description: When targeted by a fight attack, this model can choose to withdraw 1” before the strike is made. The enemy’s action is still spent.
+Dodge 🅟:
+  category: SFX
+  description: When defending against a fight attack, this model gains one stretch die.
+Electronic 🅟:
+  category: SFX
+  description: This model can never be Poisoned or Stunned.
+Emotionless 🅟:
+  category: SFX
+  description: This model can never receive the Scared status. This model gains one stretch die to Defence against presence attacks.
+Espionage:
+  category: SFX
+  description: This model can be set up anywhere on the playing area, as long as it is no further than 12” from a non-Espionage ally. Espionage models are placed after all other models. Enemies cannot make strikes against a model with this special effect in their first turn of a scene.
+Fight Back 🅟❶:
+  category: SFX
+  description: After this model has been the target of a fight attack, it can make a fight attack against that enemy, if that enemy is in range of that attack.
+Fly X” 🅟:
+  category: SFX
+  description: When this model makes a move action it never incurs movement penalties for rough ground or obstacles. Flyers can move over other models but must end each move action clear of the bases of any other models.
+Follow Up 🅕:
+  category: SFX
+  description: After this model makes a fight attack, it can move up to 2” if no enemies have this model in their fight range.
+Hacker 🅕:
+  cost: 1
+  category: SFX
+  description: If this model passes a Mind statistic test, it can immediately activate any Robot or Electronic Extra with no more than 1 Health anywhere on the playing area and perform one action with that Extra.
+Hide 🅟:
+  category: SFX
+  description: If this model has a bonus from soft cover, hard cover or obstacles, then enemies making shoot attacks against this model automatically miss if the distance is more than half the attack’s range.
+Hotshot 🅟:
+  category: SFX
+  description: If it has entered a vehicle, this model can activate it for free. It may roll one stretch die when making Armour statistic tests.
+Hypnotise 🅢:
+  category: SFX
+  description: Choose any non-Robot or non-Electronic enemy with no more than 1 Health within 4”. That enemy receives the Dominated status. Only one enemy can be hypnotised at any one time by this model.
+Immunity 🅟:
+  category: SFX
+  description: Whenever this model would receive the Distracted, Captured or Immobilised status, roll 1D6. On the roll of 4+, this model ignores that status.
+Infamous 🅟:
+  category: SFX
+  description: This model can add +1 to the strike value of its presence attacks when attacking an enemy model that is entirely in its front zone.
+Inhuman 🅟:
+  category: SFX
+  description: In your end phase, this model can automatically remove one of its statuses. This model cannot recover Health using the Medic special effect.
+Intangible 🅕:
+  cost: 1
+  category: SFX
+  description: While Intangible, this model can move through scenery, obstacles, and other models. This model is not affected by Block and cannot be the target of physical strikes. The Intangible state ends after this model makes a strike roll or at the end of the turn.
+Invisible 🅟:
+  cost: 1
+  category: SFX
+  description: While using Invisible, this model can move through other models and is not affected by the Block special effect. Enemies struck by an Invisible model count as being attacked in the rear. The Invisible state ends after this model makes a strike roll or at the end of the turn.
+Invulnerable 🅟:
+  cost: 1
+  category: SFX
+  description: This model can ignore the effects of any physical strike it has ✪ust suffered if it can roll 4+ on 1D6.
+Leader X 🅕:
+  category: SFX
+  description: Choose X ally within 6” that has not been activated this turn. The ally can be activated for no plot point cost.
+Light Armour 🅟:
+  category: SFX
+  description: Whenever this model is the target of a successful strike, roll 1D6. On the roll of a 6, the effects of the strike are ignored.
+Living Dead 🅟:
+  category: SFX
+  description: This model never receives the Dominated, Poisoned or Scared status. It may roll one stretch die when defending against presence attacks.
+Loner 🅟:
+  category: SFX
+  description: This model activates for free if it is more than 6” from any other model.
+Lucky 🅟:
+  category: SFX
+  description: One ally in base contact with this model may re-roll any one die this turn.
+Magic User {#} 🅟:
+  category: SFX
+  description: This model may choose any spells from the listed grimoires. It gains a number of D6 equal to its rank {#}, which becomes its magic pool for that activation.
+Medic 🅢:
+  category: SFX
+  description: If this model passes a Mind statistic test, one ally in base contact can recover  1 lost Health up to its starting value. This special effect does not work on Robot or Electronic models.
+Mount 🅟:
+  category: SFX
+  description: This model may be ridden by models with the appropriate Rider special effect. It can also move through other models ignoring the Block special effect. Move these models the minimum distance to move their bases out of the way of this model. All such movements are considered to be pushes.
+Move X” 🅟:
+  category: SFX
+  description: This model travels X” with a single move action.
+Multitask 🅕:
+  cost: 1
+  category: SFX
+  description: This model can make a third action this turn, as long as it does not repeat the same action type (move, strike, special) twice.
+On The Hunt 🅕❶:
+  category: SFX
+  description: Whenever an enemy completes a move action, you may move this model 3” toward that enemy. This movement does not trigger free strikes.
+Parry 🅟:
+  category: SFX
+  description: If this model is the target of a fight strike, you can make your opponent reroll one die. This model never suffers free strikes.
+Prop:
+  category: SFX
+  description: This model adds one additional prop card to your prop store.
+Repair 🅢:
+  category: SFX
+  description: If this model passes a Mind statistic test, one Robot, Electronic or Vehicle ally  in base contact can recover 1 lost Health.
+Rider {#} 🅢:
+  category: SFX
+  description: This model may mount or to dismount a model with the appropriate Mount special effect.
+Robot 🅟:
+  category: SFX
+  description: This model never receives the Dominated, Poisoned or Scared status. It may roll one stretch die when defending against presence attacks.
+Ruthless 🅟:
+  category: SFX
+  description: This model can never receive the Distracted or Dominated statuses. It is never sub✪ect to risky shots.
+Screamer 🅟:
+  category: SFX
+  description: This model can activate without ✪ if there are one or more enemies within 6”.
+Shakedown 🅟:
+  category: SFX
+  description: After this model has made a successful attack, you may choose to ignore the weapon effect. Instead your opponent must give you ✪.
+Sidekick 🅟:
+  category: SFX
+  description: Specify one ally to be boss. When the specified boss is activated, this model can activate for free if it is within 6”. A boss can only have one sidekick.
+Single Bound 🅢❶:
+  category: SFX
+  description: Move this model up to 8”. It may move over enemies without incurring free strikes.
+Sixth Sense 🅟:
+  category: SFX
+  description: Enemies cannot use Camouflage, Espionage or Invisible if they are within 8” of this model, and instantly lose those benefits.
+Small 🅟:
+  category: SFX
+  description: This model can move through the bases  of enemies.
+Spot Clue 🅕:
+  category: SFX
+  description: This model may move 8” if that move action will bring it into base contact with an objective token or maguffin.
+Streetwise 🅕:
+  category: SFX
+  description: This model may remove the Distracted and Immobilised status by rolling 4+ on 1D6. This special effect can be used during your opponent’s turn. You can add extra dice to this roll.
+Steal 🅟❶:
+  cost: 1
+  category: SFX
+  description: Whenever your opponent discards a prop card, this model can make a Spirit statistic test. If successful, you may add that prop to your prop store.
+Tactics 🅕:
+  category: SFX
+  description: When this model is activated, choose up to two ally Extras within 6”. Each of these allies can immediately move up to 2” as free actions.
+Tough 🅟:
+  category: SFX
+  description: Roll 1D6 if this model receives the Stunned or Weakened statuses. On a roll of 4+ this model does not gain that status.
+Vanish 🅢:
+  cost: 1
+  category: SFX
+  description: Place this model 12” away without suffering free strikes. The effect can only be used as this model’s first action, and using it ends this model’s activation.
+Veteran 🅟:
+  category: SFX
+  description: Whenever this model would receive the Scared, Stunned or Weakened status, roll 1D6. On a roll of 4+, this model ignores that status.
+Wild Thing 🅟:
+  category: SFX
+  description: This model can move through wooded or rough ground as if it were clear ground. It may ignore obstacles and the Poisoned status.
