@@ -142,9 +142,9 @@ const Tags = ({ values, additional=[] }) => {
         if (typeof (v) == 'string')
             return <i key={i} className={"icon-genre-core-" + slug(v||"").toLowerCase()}></i>
         return <i key={i} className={`font-7tv2-${v.category}`}>{v.chr}</i>
-    })}{(additional || []).map((v, i) => {
-        return <img key={i +values.length} src={v.src} alt="" />
-    })}</div>
+    })}
+    {(additional || []).filter(i=>i).map((v, i) => { return <img key={i +values.length} src={v.src} alt="" /> })}
+    </div>
 }
 
 const CheckRibbon = ({stat, className})=>{
