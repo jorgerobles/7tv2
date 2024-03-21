@@ -11,6 +11,7 @@
     "ajv": "^8.10.0",
     "chunk": "0.0.2",
     "clean-deep": "^3.0.2",
+    "coi-serviceworker": "^0.1.7",
     "dot-prop": "^8.0.2",
     "html2canvas": "^1.4.1",
     "is-data-url": "^1.0.1",

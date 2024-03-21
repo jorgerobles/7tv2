@@ -132,7 +132,7 @@
       "id": "/properties/ratings",
       "minimum": 0,
       "title": "Ratings",
-      "type": ["string"]
+      "type": ["string","number"]
     },
     "role": {
       "default": "Heroic",
