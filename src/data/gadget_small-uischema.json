@@ -17,7 +17,7 @@
         "ui:options": {
             "rows": 15,
             "textTools":{
-                "ToolInsertText":["✪"]
+                "ToolInsertText":["✪","🅟","❶","🅕","🅢"]
             }
         }
     },

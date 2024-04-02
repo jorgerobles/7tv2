@@ -1,6 +1,6 @@
 {
   "name": "8tv",
-  "version": "0.6.0",
+  "version": "0.6.2",
   "private": true,
   "dependencies": {
     "@andrewray/react-split-pane": "^0.1.92",

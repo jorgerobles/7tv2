@@ -168,3 +168,19 @@ position: absolute;
 .eighties.card .tags i:nth-child(4) {margin-left: 40%}
 
 
+
+.eighties.card .weapons tbody tr.presence td.attack:before {
+  font-family: '7tv2 fantasy';
+  content: '\0044';
+  position: absolute;
+  left: -0.5em;
+  background: white;
+  border-radius: 100%;
+  font-size: 110%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  line-height: 100%;
+}
+
+.eighties.card .weapons tbody tr.presence td.attack:before {
+  content: '\0047';
+}

@@ -60,8 +60,8 @@ const textToolsWidgets = {
             widget.onChange(node.value)
         }
         return (props) => {
-            return <ButtonGroup bsSize="xsmall">{options.map((text, i) => {
-                return <Button bsStyle="info" key={i} onClick={e => insert(text)}>Insert {text}</Button>
+            return <ButtonGroup bsSize="small">{options.map((text, i) => {
+                return <Button bsStyle="info" key={i} onClick={e => insert(text)}>{text}</Button>
             })
             }</ButtonGroup>
         }

@@ -28,3 +28,5 @@
 /* D */.icon-genre-eighties-historical:before{font-family: '7tv2 eighties'; content:'\0044';}
 /* E */.icon-genre-eighties-horror:before{font-family: '7tv2 eighties'; content:'\0045';}
 /* F */.icon-genre-eighties-scifi:before{font-family: '7tv2 eighties'; content:'\0046';}
+
+/* G */.icon-presence:before { font-family: '7tv2 fantasy';content: '\0047'; }

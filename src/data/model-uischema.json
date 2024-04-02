@@ -45,7 +45,7 @@
         "ui:options": {
             "rows": 15,
             "textTools":{
-                "ToolInsertText":["✪"]
+                "ToolInsertText":["✪","🅟","❶","🅕","🅢"]
             }
         }
     },
@@ -62,7 +62,7 @@
                 "ui:options": {
                     "rows": 15,
                     "textTools":{
-                        "ToolInsertText":["✪"]
+                        "ToolInsertText":["✪","🅟","❶","🅕","🅢"]
                     }
                 }
             }
@@ -81,7 +81,7 @@
                 "ui:options": {
                     "rows": 15,
                     "textTools":{
-                        "ToolInsertText":["✪"]
+                        "ToolInsertText":["✪","🅟","❶","🅕","🅢"]
                     }
                 }
             }
