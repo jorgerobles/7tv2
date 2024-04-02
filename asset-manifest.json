@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.7ca58a16.css",
-    "main.js": "/static/js/main.a8232d81.js",
+    "main.css": "/static/css/main.8bda90c4.css",
+    "main.js": "/static/js/main.bec71eca.js",
     "static/js/213.3bbc29e1.chunk.js": "/static/js/213.3bbc29e1.chunk.js",
     "static/js/455.f1f706c7.chunk.js": "/static/js/455.f1f706c7.chunk.js",
     "static/media/veneer3.svg": "/static/media/veneer3.8e6766d36962734550be.svg",
@@ -72,13 +72,13 @@
     "static/media/HELP.md": "/static/media/HELP.dd99683a85621d131d91.md",
     "index.html": "/index.html",
     "static/media/mods.yaml": "/static/media/mods.bcc40aace95ca0bef254.yaml",
-    "main.7ca58a16.css.map": "/static/css/main.7ca58a16.css.map",
-    "main.a8232d81.js.map": "/static/js/main.a8232d81.js.map",
+    "main.8bda90c4.css.map": "/static/css/main.8bda90c4.css.map",
+    "main.bec71eca.js.map": "/static/js/main.bec71eca.js.map",
     "213.3bbc29e1.chunk.js.map": "/static/js/213.3bbc29e1.chunk.js.map",
     "455.f1f706c7.chunk.js.map": "/static/js/455.f1f706c7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7ca58a16.css",
-    "static/js/main.a8232d81.js"
+    "static/css/main.8bda90c4.css",
+    "static/js/main.bec71eca.js"
   ]
 }
