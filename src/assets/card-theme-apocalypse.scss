@@ -186,3 +186,19 @@
       clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
     }
   }
+
+  .apocalypse.card .weapons tbody tr.presence td.attack:before {
+    font-family: '7tv2 fantasy';
+    content: '\0044';
+    position: absolute;
+    left: -0.5em;
+    background: white;
+    border-radius: 100%;
+    font-size: 110%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    line-height: 100%;
+  }
+  
+  .apocalypse.card .weapons tbody tr.presence td.attack:before {
+    content: '\0047';
+  }
