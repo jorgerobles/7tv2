@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.17f282f2.css",
-    "main.js": "/static/js/main.edc14959.js",
+    "main.css": "/static/css/main.8bda90c4.css",
+    "main.js": "/static/js/main.11e3686e.js",
     "static/js/213.3bbc29e1.chunk.js": "/static/js/213.3bbc29e1.chunk.js",
     "static/js/455.f1f706c7.chunk.js": "/static/js/455.f1f706c7.chunk.js",
     "static/media/veneer3.svg": "/static/media/veneer3.8e6766d36962734550be.svg",
@@ -69,15 +69,16 @@
     "static/media/7tv2-fantasy.woff": "/static/media/7tv2-fantasy.37d0a62d952ed43fd5b1.woff",
     "static/media/7tv2-core.woff": "/static/media/7tv2-core.b7e018c50af97ba29d17.woff",
     "static/media/7tv2-eighties.woff": "/static/media/7tv2-eighties.9a9c981ef9d91f8db306.woff",
+    "static/media/HELP.md": "/static/media/HELP.dd99683a85621d131d91.md",
     "index.html": "/index.html",
     "static/media/mods.yaml": "/static/media/mods.bcc40aace95ca0bef254.yaml",
-    "main.17f282f2.css.map": "/static/css/main.17f282f2.css.map",
-    "main.edc14959.js.map": "/static/js/main.edc14959.js.map",
+    "main.8bda90c4.css.map": "/static/css/main.8bda90c4.css.map",
+    "main.11e3686e.js.map": "/static/js/main.11e3686e.js.map",
     "213.3bbc29e1.chunk.js.map": "/static/js/213.3bbc29e1.chunk.js.map",
     "455.f1f706c7.chunk.js.map": "/static/js/455.f1f706c7.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.17f282f2.css",
-    "static/js/main.edc14959.js"
+    "static/css/main.8bda90c4.css",
+    "static/js/main.11e3686e.js"
   ]
 }
