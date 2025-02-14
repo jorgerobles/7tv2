@@ -17,9 +17,9 @@
             },
             "ratings": {
               "$id": "#/properties/mods/item/ratings",
-              "type": "integer",
+              "type": "string",
               "title": "Ratings",
-              "default": 0
+              "default": "0"
             },
             "location": {
               "$id": "#/properties/mods/item/location",
@@ -144,7 +144,7 @@
         "id": "/properties/ratings",
         "minimum": 0,
         "title": "Ratings",
-        "type": "number"
+        "type": "string"
       },
       "weapons": {
         "title":"Weapons",

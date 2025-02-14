@@ -1,23 +1,28 @@
 /* eslint-disable */
 import React from 'react'
-import ReactDOM from 'react-dom'
-import { connect } from 'react-redux'
-import { DropdownButton, MenuItem} from 'react-bootstrap';
+import {connect} from 'react-redux'
+import {DropdownButton, MenuItem} from 'react-bootstrap';
 import slug from 'slug';
 import '../assets/fonts/din-cond/style.css';
 import '../assets/fonts/veneer3/style.css';
 import '../assets/card.scss'
-import { sendAsFile, sendAsImage } from '../lib/helpers'
+import {sendAsImage} from '../lib/helpers'
 import Yaml from "js-yaml"
 
-import {T,zip} from '../index'
+import {T, zip} from '../index'
 
 
+import {downloadSingleCharacter, Marked} from './Ui'
 
-import { downloadSingleCharacter, Marked } from './Ui'
-import { isString } from 'util';
+const stripUndefinedKeys = (obj)=>{
+    if (typeof obj !== 'object') return obj;
 
-
+    obj = Object.entries(obj).reduce((acc, [key, value]) => {
+        if (typeof value!=='undefined') return Object.assign({}, acc, { [key]: value });
+        return acc;
+    },{})
+    return obj;
+}
 
 const stats = { fight: 10, shoot: 10, defence: 10, mind: 10, body: 10, spirit: 10 };
 
@@ -41,7 +46,11 @@ const Pic = ({ photo, className, ...rest }) => {
 
 const Weapons = ({ items }) => {
 
-    let colspan=items.length? Object.keys(items[0].effects).length : 1
+    let colspan=(items.length && typeof items[0].effects =='object')? Object.keys(items[0].effects).length : 1
+
+
+
+
 
     return <table className="weapons">
         <thead><tr><td rowSpan="2" className="attack">Attack</td><td  className="range" rowSpan="2">Range</td><td rowSpan="2" className="strike">Strike</td><td className="effects" colSpan={colspan}>Effects</td></tr>
@@ -49,7 +58,11 @@ const Weapons = ({ items }) => {
             </thead>
         <tbody>
             {items.map((item, i) => {
-                let effects=isString(item.effects)? {effects: item.effects} : item.effects;
+
+                item  = {effects: '', attack:'', ...stripUndefinedKeys(item)}
+
+                let effects=typeof item.effects == 'string' ? {effects: item.effects} : item.effects;
+
                 return <tr className={slug(item.type||"").toLowerCase()} key={i}>
                     <td className="attack" dangerouslySetInnerHTML={item.attack.length? {__html:item.attack}:{__html:"&nbsp;"}}></td><td className="range">{item.range}</td><td className="strike">+{item.strike}</td>
                     { Object.entries(effects).map((entry,i)=>{
@@ -57,7 +70,7 @@ const Weapons = ({ items }) => {
                         return <Marked key={i} Component='td' className={key} md={value} Options={{inline:true}}/>
 
                     }) }
-                    
+
                 </tr>
             })}
         </tbody>
@@ -65,7 +78,7 @@ const Weapons = ({ items }) => {
 }
 
 class ModsTable extends React.Component {
-    
+
     constructor(props){
         super(props);
         this.state={mods:{}}
@@ -122,7 +135,7 @@ const Trait = ({ object, full }) => {
     let stars = cost ? Array(cost).fill("").map((v, i) => { return <i key={i} className="icon-star_icon"></i> }) : undefined
     if (full) {
         return <p><strong><Marked md={name} Options={{inline:true}}/>{level ? ` (${level})` : ''}{stars ? " " : ""}{stars}</strong><br /><Marked md={description}/></p>
-        
+
     }
     return <span>{name}{level ? ` (${level})` : ''}{stars ? " " : ""}{stars}</span>
 }
@@ -241,11 +254,11 @@ export class CardFront extends React.Component {
         let { fight = 0, shoot = 0, defence = 0, mind = 0, body = 0, spirit = 0 } = this.props.character.stats;
         let { health, ratings, weapons, name, role, type, photo, __custom } = this.props.character
         let __tint = __custom? __custom.tint : 0
-        let qlty = this.props.character.star_quality 
+        let qlty = this.props.character.star_quality
         let sfx = this.props.character.special_effects;
         let tags = this.props.character.genres || []
         let __genres= __custom ? __custom.genres: null
-        
+
         return <div className="cellophan"><div className={[theme,"card",card,"front",role.toLowerCase(), type.toLowerCase()].join(' ')}>
              <div className="background" style={{filter:`hue-rotate(${__tint}deg)`}}></div>
             <div className="foreground" >
@@ -275,7 +288,7 @@ export class CardFront extends React.Component {
             <div className="foreground" ></div>
         </div></div>
     }
-    
+
 }
 
 export class CardBack extends React.Component {
@@ -317,7 +330,7 @@ export class CardBack extends React.Component {
                 {notes? (<header>Notes</header>):undefined}
                 <p>{notes}</p>
             </section>
-            
+
         </div>
         </div></div>
     }
@@ -345,7 +358,7 @@ export class CardBack extends React.Component {
                 <p>{notes}</p>
             </section>
             <ModsTable character={this.props.character}/>
-            
+
             <div className="totalratings">{T('Total Vehicle Ratings')} <Ratings value={ratings} /></div>
         </div>
         </div></div>
@@ -376,14 +389,14 @@ export class CardBack extends React.Component {
         let { health, ratings, weapons, name, role, type, notes='',__custom } = this.props.character
         let __tint = __custom? __custom.tint : 0
 
-       
+
         return <div className="cellophan"><div className={[theme,"card",card,"back",role.toLowerCase(), type.toLowerCase()].join(' ')}>
             <div className="background" style={{filter:`hue-rotate(${__tint}deg)`}}></div>
             <div className="foreground">
             <Title name={name} alignment={T(role)} type={type} />
 
             <section>
-                {qlty.length? <header>Star quality</header> :undefined} 
+                {qlty.length? <header>Star quality</header> :undefined}
                 {qlty.map((v, i) => (<Trait key={i} object={v} full />))}
                 {sfx.length? <header>Special effects</header> : undefined}
                 {sfx.map((v, i) => (<Trait key={i} object={v} full />))}
@@ -396,7 +409,7 @@ export class CardBack extends React.Component {
 
     renderGadget(card,theme){
         let { name, play, weapon, cost, description,__custom } = this.props.character
-        
+
         let strike = (weapon.length)?weapon[0].strike:''
         let range = (weapon.length)?weapon[0].range:''
 
@@ -404,8 +417,8 @@ export class CardBack extends React.Component {
 
         let stars = cost ? Array(cost).fill("").map((v, i) => { return <i key={i} className="icon-star_icon"></i> }) : "Free"
 
-        let stats = zip(Object.entries({play, cost:stars, range, strike}).filter((i)=>{ 
-            let [key,value] = i; 
+        let stats = zip(Object.entries({play, cost:stars, range, strike}).filter((i)=>{
+            let [key,value] = i;
             return String(value!==undefined? value:"").length
         }))
 
@@ -429,7 +442,7 @@ export class Card extends React.Component {
         let id = this.props.character.id;
         let r = /_(large|small)$/gi.exec(this.props.character.__card);
         let cardsize = r? r[1]:'standard'
-        return (<div 
+        return (<div
             className={["viewport",((id == this.props.currentCharacter)?"selected":null),cardsize].join(" ")}
             onClick={e =>  {e.stopPropagation(); this.props.dispatch({ type: 'CHARACTER_SELECT', payload: { id } })}}
          >

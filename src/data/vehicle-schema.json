@@ -100,12 +100,11 @@
         "type": "string"
       },
       "ratings": {
-        "default": 0,
+        "default": "0",
         "description": "A number which represents the effectiveness and value of the model in the game.",
         "id": "/properties/ratings",
-        "minimum": 0,
         "title": "Ratings",
-        "type": "number"
+        "type": "string"
       },
       "weapons": {
         "title":"Weapons",
