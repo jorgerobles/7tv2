@@ -49,7 +49,7 @@
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@imgly/background-removal-data": "^1.4.5",
-    "gh-pages": "^3.2.3",
+    "gh-pages": "^5.0.0",
     "gh-pages-deploy": "^0.5.1",
     "sass": "^1.72.0",
     "sass-loader": "^14.1.1",
