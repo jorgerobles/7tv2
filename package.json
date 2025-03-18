@@ -16,7 +16,7 @@
     "html2canvas": "^1.4.1",
     "is-data-url": "^1.0.1",
     "jquery": "^3.5.0",
-    "jspdf": "2.5.1",
+    "jspdf": "3.0.1",
     "marked": "^12.0.1",
     "promise-queue": "^2.2.5",
     "prop-types": "^15.6.2",
